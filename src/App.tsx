@@ -157,21 +157,30 @@ export default function App() {
         })
       });
 
+      const data = await response.json().catch(() => ({}));
+
       if (!response.ok) {
-        throw new Error("API-Fehler beim Senden");
+        const serverMsg =
+          typeof data.error === "string"
+            ? data.error
+            : "Der Chat-Dienst ist vorübergehend nicht erreichbar.";
+        setMessages(prev => [...prev, { role: "assistant", content: serverMsg }]);
+        return;
       }
 
-      const data = await response.json();
+      if (!data.text) {
+        throw new Error("Ungültige Antwort vom Server");
+      }
+
       setMessages(prev => [...prev, { role: "assistant", content: data.text, isMock: data.isMock }]);
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error(error);
-      setMessages(prev => [
-        ...prev,
-        { 
-          role: "assistant", 
-          content: "Grüezi! Es gab leider eine Verbindungsstörung zum Gemini-Server. Bitte prüfen Sie, ob `GEMINI_API_KEY` in der Datei `.env.local` gesetzt ist und starten Sie die App mit `npm run dev` neu. Bis dahin erreichen Sie mich unter thomas.ballinari@pm.me!" 
-        }
-      ]);
+      const isNetlifyLive =
+        typeof window !== "undefined" && window.location.hostname.includes("netlify.app");
+      const fallback = isNetlifyLive
+        ? "Grüezi! Der Chat-Server konnte nicht erreicht werden. Prüfen Sie im Netlify-Dashboard unter Site configuration → Environment variables, ob GEMINI_API_KEY gesetzt ist, und starten Sie einen Redeploy. Bis dahin: thomas.ballinari@pm.me"
+        : "Grüezi! Der Chat-Server ist nicht erreichbar. Bitte GEMINI_API_KEY in `.env.local` setzen (siehe `.env.example`) und mit `npm run dev` neu starten. Bis dahin: thomas.ballinari@pm.me";
+      setMessages(prev => [...prev, { role: "assistant", content: fallback }]);
     } finally {
       setChatLoading(false);
     }

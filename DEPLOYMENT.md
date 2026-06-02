@@ -133,7 +133,8 @@ Keine Secrets `NETLIFY_AUTH_TOKEN` / `NETLIFY_SITE_ID` nötig, solange Netlify d
 | Doppelte / widersprüchliche Deploys | Nur Netlify-Git-Deploy; kein `deploy.yml` mit Netlify-CLI |
 | GitHub Pages weiter rot | Pages auf *None*; neuen Code pushen (ohne Pages-Workflow) |
 | Änderungen nicht online | Push wirklich auf `main`? Netlify-Deploy-Log prüfen |
-| API 404 auf Netlify | `netlify.toml` Redirects `/api/*` → Functions (im Repo enthalten) |
+| API 404 / 502 auf Netlify | `netlify.toml` Redirects `/api/*` → Functions; API-Code in `apiApp.ts` (ohne Vite-Import) |
+| Chat zeigt nur «Verbindungsstörung» | Meist 502 durch kaputte Function – nach Fix pushen; danach `GEMINI_API_KEY` in Netlify prüfen |
 
 ---
 
