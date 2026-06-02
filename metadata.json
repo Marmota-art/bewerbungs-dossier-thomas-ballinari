@@ -1,0 +1,6 @@
+{
+  "name": "Bewerbungs-Dossier Thomas Ballinari",
+  "description": "Interaktives, hochkompetentes Bewerbungs-Dossier von Thomas Ballinari - AI Business Specialist i.A., mit Lebenslauf, Zeugnissen, Zertifikaten, SmartGastro.ai Projekt und KI-Chatbot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
