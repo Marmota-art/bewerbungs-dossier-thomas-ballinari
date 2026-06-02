@@ -123,6 +123,8 @@ export default function App() {
   const [contactCompany, setContactCompany] = useState<string>("");
   const [contactMessage, setContactMessage] = useState<string>("");
   const [contactSubmitted, setContactSubmitted] = useState<boolean>(false);
+  const [contactSubmitting, setContactSubmitting] = useState<boolean>(false);
+  const [contactError, setContactError] = useState<string>("");
 
   // Load admin docs on startup
   useEffect(() => {
@@ -2523,6 +2525,7 @@ export default function App() {
                         setContactEmail("");
                         setContactCompany("");
                         setContactMessage("");
+                        setContactError("");
                         setContactSubmitted(false);
                       }}
                       className="px-5 py-2.5 rounded-full bg-slate-950 hover:bg-slate-850 border border-slate-800 text-xs font-semibold text-teal-400 transition-all cursor-pointer"
@@ -2540,41 +2543,58 @@ export default function App() {
                     </div>
 
                     <form
-                      onSubmit={(e) => {
+                      onSubmit={async (e) => {
                         e.preventDefault();
-                        if (contactName.trim() && contactEmail.trim()) {
-                          const formData = new URLSearchParams();
-                          formData.append("form-name", "contact");
-                          formData.append("name", contactName);
-                          formData.append("email", contactEmail);
-                          formData.append("company", contactCompany);
-                          formData.append("message", contactMessage);
+                        setContactError("");
+                        if (!contactName.trim() || !contactEmail.trim() || !contactMessage.trim()) {
+                          setContactError("Bitte Name, E-Mail und Nachricht ausfüllen.");
+                          return;
+                        }
+                        setContactSubmitting(true);
+                        const formData = new URLSearchParams();
+                        formData.append("form-name", "contact");
+                        formData.append("name", contactName.trim());
+                        formData.append("email", contactEmail.trim());
+                        formData.append("company", contactCompany.trim());
+                        formData.append("message", contactMessage.trim());
+                        formData.append("bot-field", "");
 
-                          fetch("/", {
+                        try {
+                          const res = await fetch("/", {
                             method: "POST",
                             headers: { "Content-Type": "application/x-www-form-urlencoded" },
                             body: formData.toString(),
-                          })
-                            .then(() => setContactSubmitted(true))
-                            .catch((err) => {
-                              console.error("Netlify form submission error:", err);
-                              // Fallback in case of netlify offline
-                              setContactSubmitted(true);
-                            });
-                        } else {
-                          alert("Bitte gib zumindest einen Namen und eine E-Mail-Adresse an.");
+                          });
+                          if (!res.ok) {
+                            throw new Error(`HTTP ${res.status}`);
+                          }
+                          setContactSubmitted(true);
+                        } catch (err) {
+                          console.error("Netlify form submission error:", err);
+                          setContactError(
+                            "Senden fehlgeschlagen. Bitte erneut versuchen oder direkt an thomas.ballinari@pm.me schreiben."
+                          );
+                        } finally {
+                          setContactSubmitting(false);
                         }
                       }}
                       className="space-y-4"
                       data-netlify="true"
+                      data-netlify-honeypot="bot-field"
                       name="contact"
                     >
                       <input type="hidden" name="form-name" value="contact" />
+                      <p className="hidden" aria-hidden="true">
+                        <label>
+                          Nicht ausfüllen: <input name="bot-field" tabIndex={-1} autoComplete="off" />
+                        </label>
+                      </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-1">
                           <label className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider block">Dein Name *</label>
                           <input
                             type="text"
+                            name="name"
                             required
                             placeholder="z.B. Beat"
                             value={contactName}
@@ -2587,6 +2607,7 @@ export default function App() {
                           <label className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider block">Deine E-Mail *</label>
                           <input
                             type="email"
+                            name="email"
                             required
                             placeholder="z.B. beat@monads.ch"
                             value={contactEmail}
@@ -2600,6 +2621,7 @@ export default function App() {
                         <label className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider block">Firma / Organisation (optional)</label>
                         <input
                           type="text"
+                          name="company"
                           placeholder="z.B. Monads GmbH"
                           value={contactCompany}
                           onChange={(e) => setContactCompany(e.target.value)}
@@ -2610,6 +2632,7 @@ export default function App() {
                       <div className="space-y-1">
                         <label className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider block">Deine Nachricht *</label>
                         <textarea
+                          name="message"
                           required
                           rows={4}
                           placeholder="Sali Thomas, wir haben uns dein Dossier angeschaut..."
@@ -2619,12 +2642,19 @@ export default function App() {
                         ></textarea>
                       </div>
 
+                      {contactError ? (
+                        <p className="text-xs text-red-400 font-medium" role="alert">
+                          {contactError}
+                        </p>
+                      ) : null}
+
                       <button
                         type="submit"
-                        className="w-full py-3 rounded-xl bg-gradient-to-r from-teal-500 to-blue-600 font-extrabold text-slate-950 text-xs hover:opacity-95 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer"
+                        disabled={contactSubmitting}
+                        className="w-full py-3 rounded-xl bg-gradient-to-r from-teal-500 to-blue-600 font-extrabold text-slate-950 text-xs hover:opacity-95 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
                       >
                         <Send className="w-3.5 h-3.5 text-slate-950" />
-                        <span>Nachricht absenden</span>
+                        <span>{contactSubmitting ? "Wird gesendet…" : "Nachricht absenden"}</span>
                       </button>
                     </form>
                   </div>

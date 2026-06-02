@@ -6,7 +6,8 @@ Diese Anleitung verbindet **Cursor** (lokal entwickeln), **GitHub** (Code-Quelle
 Cursor (bearbeiten) → git push → GitHub (main) → Netlify (automatischer Build & Go-Live)
 ```
 
-Live-URL (Beispiel): https://thomas-ballinari-ai-app.netlify.app
+Live-URL (Beispiel): https://thomas-ballinari-ai-app.netlify.app  
+Ziel-Domain: **https://www.thomoro.com**
 
 ---
 
@@ -114,7 +115,77 @@ Keine Secrets `NETLIFY_AUTH_TOKEN` / `NETLIFY_SITE_ID` nötig, solange Netlify d
 
 ---
 
-## 5. Checkliste «läuft alles?»
+## 5. Eigene Domain `www.thomoro.com` (Netlify)
+
+Die Domain wird im **Netlify-Dashboard** verknüpft; DNS liegt beim Domain-Registrar (z. B. Hostpoint, Infomaniak, Cloudflare).
+
+### Schritt A – Domain in Netlify hinzufügen
+
+1. [Netlify](https://app.netlify.com/) → Site **thomas-ballinari-ai-app**
+2. **Domain management** → **Add a domain** → `thomoro.com` eingeben
+3. Netlify schlägt meist vor: `www.thomoro.com` + `thomoro.com` (Apex) hinzufügen
+4. **Primary domain** auf **`www.thomoro.com`** setzen (HTTPS-Zertifikat wird automatisch ausgestellt)
+
+### Schritt B – DNS beim Registrar
+
+Netlify zeigt unter **Domain management → DNS** die exakten Werte. Typisch:
+
+| Typ | Host / Name | Ziel / Wert |
+|-----|-------------|-------------|
+| **CNAME** | `www` | `thomas-ballinari-ai-app.netlify.app` *(oder den von Netlify angezeigten Load-Balancer-Namen)* |
+| **A** oder **ALIAS** | `@` (Apex) | Netlify-IP(s) aus dem Dashboard *(oder Netlify DNS für die ganze Zone nutzen)* |
+
+DNS-Propagierung kann **15 Min. bis 48 Std.** dauern. Status in Netlify: **Pending** → **Verified**.
+
+### Schritt C – Redirects (im Repo)
+
+In `netlify.toml` leitet `thomoro.com` bereits auf `https://www.thomoro.com` um. Nach dem nächsten Deploy aktiv.
+
+### Schritt D – Test
+
+- https://www.thomoro.com lädt die App
+- https://thomoro.com leitet auf `www` um
+- Schloss-Symbol / gültiges TLS-Zertifikat
+
+---
+
+## 6. Kontaktformular → E-Mail an `thomas.ballinari@pm.me`
+
+Das Formular heisst im Code **`contact`**. Netlify speichert Einsendungen und kann bei jeder neuen Submission eine E-Mail schicken.
+
+**Die Empfänger-Adresse lässt sich nicht in `netlify.toml` setzen** – nur im Netlify-Dashboard (oder per Netlify API).
+
+### Einmalig im Netlify-Dashboard
+
+1. Site → **Forms** (nach dem ersten Deploy mit Formular sollte **`contact`** sichtbar sein)
+2. Falls leer: einmal Test-Nachricht über https://www.thomoro.com (Tab **Kontakt**) senden, dann neu laden
+3. **Site configuration** → **Notifications** → **Form submission notifications** → **Add notification**
+4. **Email notification** wählen:
+   - **Event:** New form submission
+   - **Email to notify:** `thomas.ballinari@pm.me`
+   - **Form:** `contact` *(nicht «Any form», falls mehrere existieren)*
+   - **Custom subject** (optional): z. B. `Neue Kontaktanfrage – thomoro.com`
+5. **Save**
+
+E-Mails kommen von **formresponses@netlify.com** (Absender von Netlify, nicht von deiner Domain). Inhalt: alle Formularfelder (Name, E-Mail, Firma, Nachricht).
+
+### Im Repo (bereits eingerichtet)
+
+- Verstecktes Formular in `index.html` + `public/contact.html` (SPA-Erkennung beim Build)
+- React-Formular im Tab **Kontakt** sendet per `POST` an `/`
+- Honeypot `bot-field` gegen Spam
+
+### Test
+
+1. Live-Seite → **Kontakt** → Testnachricht absenden → Erfolgsmeldung in der App
+2. Netlify → **Forms** → Submission sichtbar
+3. Postfach `thomas.ballinari@pm.me` (auch Spam-Ordner prüfen)
+
+**Hinweis Proton Mail (`@pm.me`):** Netlify-Mails manchmal im Spam; Absender `formresponses@netlify.com` als vertrauenswürdig markieren.
+
+---
+
+## 7. Checkliste «läuft alles?»
 
 - [ ] GitHub Pages: **None**
 - [ ] Netlify: Repo `Marmota-art/bewerbungs-dossier-thomas-ballinari`, Branch `main`
@@ -122,10 +193,12 @@ Keine Secrets `NETLIFY_AUTH_TOKEN` / `NETLIFY_SITE_ID` nötig, solange Netlify d
 - [ ] `.env.local` lokal mit gleichem Key (nur für `npm run dev`)
 - [ ] Push von Cursor → Netlify-Deploy **Published** (grün)
 - [ ] Live: Chatbot antwortet (nicht nur «Backup Assistent»)
+- [ ] Domain `www.thomoro.com` in Netlify **Verified**, Primary Domain gesetzt
+- [ ] Form-Benachrichtigung an `thomas.ballinari@pm.me` aktiv
 
 ---
 
-## 6. Häufige Probleme
+## 8. Häufige Probleme
 
 | Symptom | Lösung |
 |---------|--------|
@@ -135,6 +208,9 @@ Keine Secrets `NETLIFY_AUTH_TOKEN` / `NETLIFY_SITE_ID` nötig, solange Netlify d
 | Änderungen nicht online | Push wirklich auf `main`? Netlify-Deploy-Log prüfen |
 | API 404 / 502 auf Netlify | `netlify.toml` Redirects `/api/*` → Functions; API-Code in `apiApp.ts` (ohne Vite-Import) |
 | Chat zeigt nur «Verbindungsstörung» | Meist 502 durch kaputte Function – nach Fix pushen; danach `GEMINI_API_KEY` in Netlify prüfen |
+| Domain zeigt alte Seite / nicht erreichbar | DNS beim Registrar prüfen; in Netlify **Verify DNS**; ggf. 24–48 h warten |
+| Keine Formular-E-Mail | Notification unter **Form submission notifications** anlegen; Spam prüfen; Form-Name `contact` |
+| Formular «erfolgreich», nichts in Netlify | Neu deployen (`public/contact.html` muss im Build sein); Forms im Dashboard prüfen |
 
 ---
 

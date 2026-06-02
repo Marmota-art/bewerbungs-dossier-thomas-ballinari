@@ -38,3 +38,5 @@ Ausführliche Schritt-für-Schritt-Anleitung: **[DEPLOYMENT.md](./DEPLOYMENT.md)
 1. GitHub **Pages** auf *None* (alte Pages-Deployments stoppen).
 2. Netlify **Environment variables:** `GEMINI_API_KEY` für den Live-Chatbot.
 3. Lokal: `.env.local` mit demselben Key für `npm run dev`.
+4. **Domain:** `www.thomoro.com` in Netlify verknüpfen (DNS beim Registrar) – siehe [DEPLOYMENT.md §5](./DEPLOYMENT.md#5-eigene-domain-wwwthomorocom-netlify).
+5. **Kontaktformular:** Netlify **Form submission notifications** → E-Mail `thomas.ballinari@pm.me`, Form `contact` – siehe [DEPLOYMENT.md §6](./DEPLOYMENT.md#6-kontaktformular--e-mail-an-thomasballinari@pmme).

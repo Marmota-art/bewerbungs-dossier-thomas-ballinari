@@ -17,6 +17,19 @@
   status = 200
   force = true
 
+# Nach Domain-Anbindung in Netlify: Apex → www (Primary Domain: www.thomoro.com)
+[[redirects]]
+  from = "http://thomoro.com/*"
+  to = "https://www.thomoro.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://thomoro.com/*"
+  to = "https://www.thomoro.com/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
