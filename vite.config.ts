@@ -3,9 +3,20 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
+const siteUrl = (process.env.URL || 'https://www.thomoro.com').replace(/\/$/, '');
+
 export default defineConfig(() => {
   return {
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      {
+        name: 'inject-site-url',
+        transformIndexHtml(html) {
+          return html.replaceAll('%SITE_URL%', siteUrl);
+        },
+      },
+    ],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
