@@ -58,6 +58,8 @@ import {
   SmartUmbrellaProject,
   MonadsValues
 } from "./data";
+// @ts-ignore
+import thomasPhoto from "./thomas.png";
 
 export default function App() {
   // Tab states: 'home' | 'about' | 'resume' | 'testimonials' | 'certificates' | 'skills' | 'projects' | 'chatbot'
@@ -547,7 +549,7 @@ export default function App() {
                     {/* Portrait Photo matching Unsplash handsome mature Swiss gentleman */}
                     <div className="relative mx-auto aspect-[3/4] rounded-2xl border border-slate-800 overflow-hidden group shadow-inner">
                       <img 
-                        src="/src/thomas.png" 
+                        src={thomasPhoto} 
                         alt="Thomas Ballinari Portrait" 
                         className="w-full h-full object-cover grayscale-[15%] group-hover:scale-105 transition-transform duration-500"
                         referrerPolicy="no-referrer"
