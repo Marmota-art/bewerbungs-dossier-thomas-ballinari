@@ -60,6 +60,7 @@ import {
 } from "./data";
 // @ts-ignore
 import thomasPhoto from "./thomas.png";
+import ipsoUmbrellaPhoto from "./assets/ipso-smart-regenschirm.jpg";
 
 export default function App() {
   // Tab states: 'home' | 'about' | 'resume' | 'testimonials' | 'certificates' | 'skills' | 'projects' | 'chatbot'
@@ -168,7 +169,7 @@ export default function App() {
         ...prev,
         { 
           role: "assistant", 
-          content: "Grüezi! Es gab leider eine kurze Verbindungsstörung zum Gemini API-Server. Bitte stellen Sie sicher, dass Ihr `GEMINI_API_KEY` in den Secrets eingetragen ist. Bis dahin beantworte ich Ihre Fragen gerne im persönlichen Gespräch an thomas.ballinari@pm.me!" 
+          content: "Grüezi! Es gab leider eine Verbindungsstörung zum Gemini-Server. Bitte prüfen Sie, ob `GEMINI_API_KEY` in der Datei `.env.local` gesetzt ist und starten Sie die App mit `npm run dev` neu. Bis dahin erreichen Sie mich unter thomas.ballinari@pm.me!" 
         }
       ]);
     } finally {
@@ -549,15 +550,13 @@ export default function App() {
                     {/* Portrait Photo matching Unsplash handsome mature Swiss gentleman */}
                     <div className="relative mx-auto aspect-[3/4] rounded-2xl border border-slate-800 overflow-hidden group shadow-inner">
                       <img 
-                        src={thomasPhoto} 
+                        src={thomasPhoto || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=600&h=800"} 
                         alt="Thomas Ballinari Portrait" 
                         className="w-full h-full object-cover grayscale-[15%] group-hover:scale-105 transition-transform duration-500"
                         referrerPolicy="no-referrer"
                         onError={(e) => {
                           const img = e.currentTarget as HTMLImageElement;
-                          if (img.src !== "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=600&h=800") {
-                            img.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=600&h=800";
-                          }
+                          img.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=600&h=800";
                         }}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
@@ -1659,18 +1658,31 @@ export default function App() {
                 {/* Project Header card for Smart-Regenschirm */}
                 <div className="p-6 md:p-8 rounded-2xl bg-gradient-to-tr from-slate-900 to-slate-950 border border-slate-850 space-y-6 relative overflow-hidden text-left">
                   <div className="absolute right-0 top-0 translate-x-12 -translate-y-12 w-64 h-64 bg-teal-500/10 rounded-full blur-3xl"></div>
-                  
-                  <div className="space-y-3">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-xs font-mono font-bold text-teal-400 uppercase tracking-widest">
-                      Investitions- & Entwicklungsprojekt (IoT-Produktinnovation)
+
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center relative z-10">
+                    <div className="space-y-3">
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 border border-teal-500/20 text-xs font-mono font-bold text-teal-400 uppercase tracking-widest">
+                        Investitions- & Entwicklungsprojekt (IoT-Produktinnovation)
+                      </div>
+                      <h2 className="text-3xl sm:text-4xl font-extrabold text-white">{SmartUmbrellaProject.title}</h2>
+                      <h3 className="text-lg text-teal-300 font-semibold font-serif italic mt-0">
+                        {SmartUmbrellaProject.subTitle} — <span className="text-slate-400 font-sans text-sm font-medium not-italic">{SmartUmbrellaProject.model}</span>
+                      </h3>
                     </div>
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-white">{SmartUmbrellaProject.title}</h2>
-                    <h3 className="text-lg text-teal-300 font-semibold font-serif italic mt-0">
-                      {SmartUmbrellaProject.subTitle} — <span className="text-slate-400 font-sans text-sm font-medium not-italic">{SmartUmbrellaProject.model}</span>
-                    </h3>
+
+                    <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-3 shadow-inner overflow-hidden">
+                      <img
+                        src={ipsoUmbrellaPhoto}
+                        alt="IPSO Premium Smart-Regenschirm – geöffnet (120 cm Spannweite) und zusammengefaltet (20 cm Packmaß) mit IPSO-Branding"
+                        className="w-full h-auto rounded-xl object-contain"
+                      />
+                      <p className="text-[10px] text-slate-500 text-center mt-2 font-mono uppercase tracking-wider">
+                        Produktvisualisierung aus dem offiziellen Produktdatenblatt
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-slate-800">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-slate-800 relative z-10">
                     <div className="text-left font-mono">
                       <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">PROJEKTPARTNER:</p>
                       <p className="text-xs text-slate-300 font-sans mt-0.5">{SmartUmbrellaProject.creators}</p>
@@ -2545,7 +2557,10 @@ export default function App() {
                         }
                       }}
                       className="space-y-4"
+                      data-netlify="true"
+                      name="contact"
                     >
+                      <input type="hidden" name="form-name" value="contact" />
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-1">
                           <label className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider block">Dein Name *</label>

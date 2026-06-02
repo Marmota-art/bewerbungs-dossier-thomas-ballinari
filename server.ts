@@ -4,7 +4,8 @@ import dotenv from "dotenv";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 
-// Load environment variables
+// Load environment variables (.env.local has priority, as in AI Studio / README)
+dotenv.config({ path: ".env.local" });
 dotenv.config();
 
 const app = express();
@@ -12,19 +13,21 @@ const PORT = 3000;
 
 app.use(express.json());
 
-// Initialize Gemini Client
-const apiKey = process.env.GEMINI_API_KEY;
+// Initialize Gemini Client (Google AI Studio → API Keys)
+const apiKey = process.env.GEMINI_API_KEY?.trim();
+const geminiModel = process.env.GEMINI_MODEL?.trim() || "gemini-2.5-flash";
+const PLACEHOLDER_KEYS = new Set(["", "MY_GEMINI_API_KEY", "your_api_key_here"]);
 let ai: GoogleGenAI | null = null;
 
-if (apiKey && apiKey !== "MY_GEMINI_API_KEY") {
+if (apiKey && !PLACEHOLDER_KEYS.has(apiKey)) {
   try {
     ai = new GoogleGenAI({
-      apiKey: apiKey,
+      apiKey,
       httpOptions: {
         headers: {
-          'User-Agent': 'aistudio-build',
-        }
-      }
+          "User-Agent": "aistudio-build",
+        },
+      },
     });
   } catch (error) {
     console.error("Failed to initialize GoogleGenAI:", error);
@@ -122,7 +125,7 @@ app.post("/api/chat", async (req, res) => {
     promptParts.push({ text: "Thomas (antworte jetzt direkt auf das letzte Anliegen des Users, folge genau deiner Rolle):" });
 
     const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash",
+      model: geminiModel,
       contents: { parts: promptParts },
       config: {
         systemInstruction: SYSTEM_INSTRUCTION,
@@ -183,7 +186,14 @@ const startServer = async () => {
   }
 
   app.listen(PORT, "0.0.0.0", () => {
-    console.log(`Server running on http://0.0.0.0:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
+    if (ai) {
+      console.log(`Gemini Chatbot aktiv (Modell: ${geminiModel})`);
+    } else {
+      console.warn(
+        "Gemini Chatbot: GEMINI_API_KEY fehlt – nur Mock-Antworten. Key in .env.local eintragen (siehe .env.example)."
+      );
+    }
   });
 };
 

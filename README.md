@@ -8,13 +8,33 @@ This contains everything you need to run your app locally.
 
 View your app in AI Studio: https://ai.studio/apps/41aa3245-1144-4cb4-b4aa-21d26f2e94a8
 
-## Run Locally
+## Lokal starten (mit Chatbot)
 
-**Prerequisites:**  Node.js
+**Voraussetzung:** Node.js
 
+1. Abhängigkeiten installieren:
+   ```bash
+   npm install
+   ```
+2. **Google AI Studio API-Key** einrichten:
+   - Key erstellen: https://aistudio.google.com/apikey
+   - Datei `.env.local` öffnen (oder von `.env.example` kopieren)
+   - `GEMINI_API_KEY=your_api_key_here` durch Ihren echten Key ersetzen
+3. App starten:
+   ```bash
+   npm run dev
+   ```
+4. Im Terminal sollte erscheinen: `Gemini Chatbot aktiv (Modell: gemini-2.5-flash)`
+5. Im Browser: Tab **«Frag Thomas»** – der Chatbot antwortet dann über Gemini.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Deployment: Cursor → GitHub → Netlify
+
+Ausführliche Schritt-für-Schritt-Anleitung: **[DEPLOYMENT.md](./DEPLOYMENT.md)**
+
+**Kurz:** In Cursor bearbeiten → auf `main` pushen → **Netlify** baut automatisch (Site ist bereits mit GitHub verbunden). GitHub Actions prüft nur den Build (`ci.yml`), deployt nicht selbst.
+
+**Pflicht-Einstellungen:**
+
+1. GitHub **Pages** auf *None* (alte Pages-Deployments stoppen).
+2. Netlify **Environment variables:** `GEMINI_API_KEY` für den Live-Chatbot.
+3. Lokal: `.env.local` mit demselben Key für `npm run dev`.
