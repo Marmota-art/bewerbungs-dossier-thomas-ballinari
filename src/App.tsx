@@ -402,6 +402,28 @@ export default function App() {
 
   const activeTestimonialObj = Testimonials.find(t => t.id === selectedTestimonial) || Testimonials[0];
 
+  const renderDocumentLinks = (documentUrl: string, label = "Original") => (
+    <div className="flex flex-wrap items-center gap-2">
+      <a
+        href={documentUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500/20 text-[11px] font-semibold transition-all"
+      >
+        <ExternalLink className="w-3 h-3" />
+        <span>{label} ansehen</span>
+      </a>
+      <a
+        href={documentUrl}
+        download
+        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:text-white text-[11px] font-semibold transition-all"
+      >
+        <Download className="w-3 h-3" />
+        <span>Download</span>
+      </a>
+    </div>
+  );
+
   return (
     <div id="executive-app" className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-teal-500 selection:text-slate-950">
       
@@ -1061,18 +1083,22 @@ export default function App() {
                 {/* Original Document Letter Sheet Panel */}
                 <div className="lg:col-span-8">
                   <div className="bg-slate-950 rounded-2xl border border-slate-850 overflow-hidden flex flex-col h-full shadow-2xl">
-                    <div className="bg-slate-950 border-b border-slate-850 px-5 py-3 flex items-center justify-between text-[11px] text-slate-400 font-mono">
+                    <div className="bg-slate-950 border-b border-slate-850 px-5 py-3 flex flex-wrap items-center justify-between gap-3 text-[11px] text-slate-400 font-mono">
                       <span>OFFIZIELLES ORIGINAL-DOKUMENT</span>
-                      <button
-                        onClick={() => {
-                          const curr = Testimonials.find(t => t.id === selectedTestimonial) || Testimonials[0];
-                          navigator.clipboard.writeText(curr.fullText);
-                          alert("Dokumententext in die Zwischenablage kopiert!");
-                        }}
-                        className="text-emerald-400 hover:underline font-semibold"
-                      >
-                        Kopieren
-                      </button>
+                      <div className="flex flex-wrap items-center gap-3">
+                        {activeTestimonialObj.documentUrl
+                          ? renderDocumentLinks(activeTestimonialObj.documentUrl, "Original-PDF")
+                          : null}
+                        <button
+                          onClick={() => {
+                            navigator.clipboard.writeText(activeTestimonialObj.fullText);
+                            alert("Dokumententext in die Zwischenablage kopiert!");
+                          }}
+                          className="text-emerald-400 hover:underline font-semibold"
+                        >
+                          Text kopieren
+                        </button>
+                      </div>
                     </div>
 
                     {/* Verified Summary info */}
@@ -1198,15 +1224,18 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Transcript drawer button */}
-                  <div className="border-t border-slate-900 pt-3">
+                  {/* Transcript + Original */}
+                  <div className="border-t border-slate-900 pt-3 flex flex-col gap-2">
                     <button
                       onClick={() => setSelectedCertTranscript(cert)}
-                      className="text-teal-400 hover:text-teal-300 text-xs font-semibold font-mono flex items-center gap-1 group/btn cursor-pointer"
+                      className="text-teal-400 hover:text-teal-300 text-xs font-semibold font-mono flex items-center gap-1 group/btn cursor-pointer w-fit"
                     >
                       <span>Transkript abfragen</span>
                       <ExternalLink className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform" />
                     </button>
+                    {cert.documentUrl ? renderDocumentLinks(cert.documentUrl) : (
+                      <p className="text-[10px] text-slate-600 font-mono">Original-Scan folgt nach Upload</p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -1246,14 +1275,19 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="flex justify-between items-center border-t border-slate-800 pt-4">
+                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 border-t border-slate-800 pt-4">
                     <span className="text-[10px] text-slate-500 font-mono">Standard Schweizer nDSG Konformität</span>
-                    <button
-                      onClick={() => setSelectedCertTranscript(null)}
-                      className="px-5 py-2 rounded-xl bg-teal-500 hover:opacity-95 font-bold text-slate-950 text-xs transition-all cursor-pointer"
-                    >
-                      Schliessen
-                    </button>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {selectedCertTranscript.documentUrl
+                        ? renderDocumentLinks(selectedCertTranscript.documentUrl)
+                        : null}
+                      <button
+                        onClick={() => setSelectedCertTranscript(null)}
+                        className="px-5 py-2 rounded-xl bg-teal-500 hover:opacity-95 font-bold text-slate-950 text-xs transition-all cursor-pointer"
+                      >
+                        Schliessen
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

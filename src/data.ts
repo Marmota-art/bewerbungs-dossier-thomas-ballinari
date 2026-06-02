@@ -26,6 +26,8 @@ export interface CertificateItem {
   grade?: string;
   highlights: string[];
   transcript?: string;
+  /** Pfad zum Scan/PDF unter public/documents/certificates/ */
+  documentUrl?: string;
 }
 
 export interface TestimonialItem {
@@ -36,6 +38,8 @@ export interface TestimonialItem {
   summary: string;
   fullText: string;
   highlights: string[];
+  /** Pfad zum Scan/PDF unter public/documents/zeugnisse/ */
+  documentUrl?: string;
 }
 
 export const PersonalData = {
