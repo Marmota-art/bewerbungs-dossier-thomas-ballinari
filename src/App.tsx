@@ -502,7 +502,7 @@ export default function App() {
       </div>
 
       {/* CORE PORTAL LAYOUT CONTAINER */}
-      <main id="portal-content" className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+      <main id="portal-content" className={`flex-grow flex flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full ${activeTab === "chatbot" ? "py-3" : "py-8"}`}>
 
         {/* 1. PORTFOLIO PROFIL (HOME) */}
         {activeTab === "home" && (
@@ -2368,60 +2368,60 @@ export default function App() {
 
         {/* 8. KI-CHATBOT */}
         {activeTab === "chatbot" && (
-          <section id="sect-chatbot" className="space-y-8 animate-fade-in max-w-4xl mx-auto flex flex-col h-[700px]">
-            <div className="space-y-2">
-              <h2 className="text-3xl font-extrabold text-white flex items-center gap-2.5">
-                <Sparkles className="w-7 h-7 text-teal-400" />
+          <section id="sect-chatbot" className="space-y-3 animate-fade-in max-w-5xl mx-auto flex flex-col flex-1 min-h-0 h-[calc(100dvh-11rem)] lg:h-[calc(100dvh-6.5rem)]">
+            <div className="space-y-1 shrink-0">
+              <h2 className="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2">
+                <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-teal-400" />
                 <span>Digitale Bewerbungs-Assistenz</span>
               </h2>
-              <p className="text-slate-400 text-sm">
-                Fragen Sie den digitalen Assistenten von Thomas Ballinari. Die Antworten basieren ausschliesslich auf der Wissensdatenbank von Zeugnissen, Lebensläufen und Projekten.
+              <p className="text-slate-400 text-xs leading-snug">
+                Fragen Sie den digitalen Assistenten – Antworten basieren auf Zeugnissen, Lebenslauf und Projekten.
               </p>
             </div>
 
             {/* Main chatbot screen */}
-            <div className="flex-grow bg-slate-900 rounded-2xl border border-slate-850 overflow-hidden flex flex-col h-full shadow-2xl relative">
+            <div className="flex-1 min-h-0 bg-slate-900 rounded-2xl border border-slate-850 overflow-hidden flex flex-col shadow-2xl relative">
               {/* Header */}
-              <div className="bg-slate-950 border-b border-slate-850 px-6 py-4 flex items-center gap-3">
-                <div id="chatbot-avatar-indicator" className="w-3 h-3 rounded-full bg-teal-400 animate-pulse"></div>
+              <div className="bg-slate-950 border-b border-slate-850 px-4 sm:px-5 py-2.5 flex items-center gap-3 shrink-0">
+                <div id="chatbot-avatar-indicator" className="w-2.5 h-2.5 rounded-full bg-teal-400 animate-pulse"></div>
                 <div>
-                  <h3 className="font-extrabold text-sm text-white">Thomas Ballinari (Digitaler Assistent)</h3>
-                  <p className="text-[10px] text-teal-400 font-mono font-semibold uppercase tracking-wider">Faktenbasiert & nDSG konform gehostet</p>
+                  <h3 className="font-extrabold text-xs sm:text-sm text-white">Thomas Ballinari (Digitaler Assistent)</h3>
+                  <p className="text-[9px] text-teal-400 font-mono font-semibold uppercase tracking-wider">Faktenbasiert & nDSG konform gehostet</p>
                 </div>
                 {/* System rules lock */}
-                <div className="ml-auto text-slate-500 text-xs flex items-center gap-1.5 font-mono">
-                  <Lock className="w-3.5 h-3.5" />
-                  <span>RAG Guard</span>
+                <div className="ml-auto text-slate-500 text-[10px] flex items-center gap-1 font-mono">
+                  <Lock className="w-3 h-3" />
+                  <span className="hidden sm:inline">RAG Guard</span>
                 </div>
               </div>
 
               {/* Message scroll container */}
-              <div id="chat-messages-box" className="flex-grow p-6 overflow-y-auto space-y-4 max-h-[400px]">
+              <div id="chat-messages-box" className="flex-1 min-h-0 px-3 sm:px-5 py-3 overflow-y-auto space-y-2.5">
                 {messages.map((m, index) => (
                   <div
                     key={index}
                     id={`chat-msg-${index}`}
                     className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
                   >
-                    <div className={`p-4 rounded-2xl max-w-xl text-sm leading-relaxed ${
+                    <div className={`px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-xl max-w-[92%] sm:max-w-[85%] text-xs leading-snug ${
                       m.role === "user"
                         ? "bg-gradient-to-r from-teal-500 to-blue-600 text-slate-950 font-medium rounded-tr-none"
-                        : "bg-slate-950/70 text-slate-205 text-slate-350 border border-slate-850 rounded-tl-none space-y-1"
+                        : "bg-slate-950/70 text-slate-350 border border-slate-850 rounded-tl-none space-y-0.5"
                     }`}>
                       {m.role !== "user" && (
-                        <div className="flex items-center gap-1.5 text-[9px] text-teal-400 font-mono uppercase tracking-wider font-extrabold pb-1">
-                          <Brain className="w-3 h-3" />
+                        <div className="flex items-center gap-1 text-[8px] text-teal-400 font-mono uppercase tracking-wider font-extrabold pb-0.5">
+                          <Brain className="w-2.5 h-2.5" />
                           <span>Wissensbasis Thomas Ballinari {m.isMock ? "(Backup Assistent)" : ""}</span>
                         </div>
                       )}
-                      <p className="whitespace-pre-line text-[13px]">{m.content}</p>
+                      <p className="whitespace-pre-line text-[11px] sm:text-xs">{m.content}</p>
                     </div>
                   </div>
                 ))}
 
                 {chatLoading && (
                   <div className="flex justify-start">
-                    <div className="p-4 rounded-2xl bg-slate-950/70 border border-slate-850 rounded-tl-none flex items-center gap-2 text-xs text-slate-400">
+                    <div className="px-3 py-2 rounded-xl bg-slate-950/70 border border-slate-850 rounded-tl-none flex items-center gap-2 text-[10px] text-slate-400">
                       <div className="flex gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-teal-400 animate-bounce"></span>
                         <span className="w-1.5 h-1.5 rounded-full bg-teal-405 bg-teal-400 animate-bounce delay-100"></span>
@@ -2435,17 +2435,18 @@ export default function App() {
               </div>
 
               {/* Sample starters chips grid */}
-              <div className="px-6 py-3 border-t border-slate-850/60 bg-slate-950/50 flex flex-wrap gap-2">
-                <span className="text-slate-500 text-[10px] font-mono uppercase block w-full mb-1">Fragen-Schnelleinstieg:</span>
-                {chatStarters.map((starter, i) => (
-                  <button
-                    key={i}
-                    onClick={() => sendChatMessage(starter)}
-                    className="px-3 py-1.5 rounded-full bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-slate-700 text-xs font-medium text-slate-300 transition-all text-left"
-                  >
-                    {starter}
-                  </button>
-                ))}
+              <div className="px-3 sm:px-5 py-2 border-t border-slate-850/60 bg-slate-950/50 shrink-0">
+                <div className="flex gap-2 overflow-x-auto scrollbar-none pb-0.5">
+                  {chatStarters.map((starter, i) => (
+                    <button
+                      key={i}
+                      onClick={() => sendChatMessage(starter)}
+                      className="shrink-0 px-2.5 py-1 rounded-full bg-slate-900 hover:bg-slate-850 border border-slate-800 hover:border-slate-700 text-[10px] sm:text-xs font-medium text-slate-300 transition-all whitespace-nowrap"
+                    >
+                      {starter}
+                    </button>
+                  ))}
+                </div>
               </div>
 
               {/* Message text input */}
@@ -2454,18 +2455,18 @@ export default function App() {
                   e.preventDefault();
                   sendChatMessage(inputMsg);
                 }}
-                className="bg-slate-950 border-t border-slate-850 p-4 flex gap-2"
+                className="bg-slate-950 border-t border-slate-850 p-2.5 sm:p-3 flex gap-2 shrink-0"
               >
                 <input
                   type="text"
-                  placeholder="Fragen Sie mich über meinen Lebenslauf, SmartGastro.ai oder Zertifikate..."
+                  placeholder="Fragen Sie mich über Lebenslauf, SmartGastro.ai oder Zertifikate..."
                   value={inputMsg}
                   onChange={(e) => setInputMsg(e.target.value)}
-                  className="flex-grow bg-slate-900 border border-slate-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-teal-500 placeholder:text-slate-500 text-slate-200"
+                  className="flex-grow bg-slate-900 border border-slate-800 rounded-xl px-3 py-2 text-xs sm:text-sm focus:outline-none focus:border-teal-500 placeholder:text-slate-500 text-slate-200"
                 />
                 <button
                   type="submit"
-                  className="px-5 py-3 rounded-xl bg-teal-500 hover:opacity-95 font-bold text-slate-950 text-sm flex items-center justify-center transition-all shadow-md shadow-teal-500/10"
+                  className="px-4 py-2 rounded-xl bg-teal-500 hover:opacity-95 font-bold text-slate-950 text-sm flex items-center justify-center transition-all shadow-md shadow-teal-500/10"
                 >
                   <Send className="w-4 h-4 text-slate-950" />
                 </button>
@@ -2793,6 +2794,20 @@ export default function App() {
       </main>
 
       {/* CORE FOOTER SECTION */}
+      {activeTab === "chatbot" ? (
+        <footer id="main-footer" className="bg-slate-950 border-t border-slate-900 py-3 mt-2 shrink-0">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-2 text-[10px] text-slate-500 font-mono">
+            <span>© 2026 Thomas Ballinari</span>
+            <div className="flex items-center gap-3">
+              <a href="mailto:thomas.ballinari@pm.me" className="hover:text-teal-400 transition-colors">thomas.ballinari@pm.me</a>
+              <button onClick={() => setShowAdmin(true)} className="hover:text-teal-400 flex items-center gap-1">
+                <Settings className="w-3 h-3" />
+                <span>Admin</span>
+              </button>
+            </div>
+          </div>
+        </footer>
+      ) : (
       <footer id="main-footer" className="bg-slate-950 border-t border-slate-900 py-12 mt-12 bg-gradient-to-t from-slate-950 via-slate-950 to-slate-950/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           
@@ -2862,6 +2877,7 @@ export default function App() {
 
         </div>
       </footer>
+      )}
 
     </div>
   );
