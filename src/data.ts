@@ -964,6 +964,12 @@ Birger Stump, Niklaus Stump-Wiggli`
 export const SmartGastroProject = {
   title: "SmartGastro.ai",
   subTitle: "KI-gestützte Nachfrageprognose im Schweizer Gastgewerbe",
+  demo: {
+    version: "V3.3",
+    label: "Demo-Version V3.3",
+    url: "https://gemini.google.com/share/bcf2f6bba4e2?hl=de",
+    description: "Interaktiver Prototyp in Google Gemini mit POS-Anbindung (WaiterOne) und Forecast-Dashboard.",
+  },
   candidate: "Thomas Ballinari",
   role: "Analyst, Konzeptentwickler & Projektverantwortlicher (ipso Ausbildung AG, Fachausweis)",
   submissionDate: "22. August 2026",

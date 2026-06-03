@@ -1371,6 +1371,15 @@ export default function App() {
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-extrabold text-white">{SmartGastroProject.title}</h2>
                 <h3 className="text-lg text-teal-300 font-semibold font-serif italic mt-0">{SmartGastroProject.subTitle}</h3>
+                <a
+                  href={SmartGastroProject.demo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 mt-4 px-5 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-sm transition-all shadow-lg shadow-teal-500/20"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  <span>{SmartGastroProject.demo.label} öffnen</span>
+                </a>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-slate-800">
@@ -1516,13 +1525,37 @@ export default function App() {
 
             {/* LIVE DYNAMIC SYSTEM SIMULATOR */}
             <div className="p-6 sm:p-8 rounded-2xl bg-slate-900 border border-slate-800 space-y-8 animate-fade-in">
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <LayoutDashboard className="w-5 h-5 text-teal-400" />
-                  <h3 className="font-extrabold text-lg text-white">INTERAKTIVES SMARTGASTRO.AI FORECAST-STUDIO (PROTOTYP V3.3)</h3>
+              <div className="space-y-4">
+                <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+                  <div className="space-y-2">
+                    <div className="flex items-center gap-2">
+                      <LayoutDashboard className="w-5 h-5 text-teal-400" />
+                      <h3 className="font-extrabold text-lg text-white">INTERAKTIVES SMARTGASTRO.AI FORECAST-STUDIO (PROTOTYP {SmartGastroProject.demo.version})</h3>
+                    </div>
+                    <p className="text-xs text-slate-405 text-slate-400 leading-relaxed max-w-3xl">
+                      Passen Sie die äusseren Einflussfaktoren wie Wetter und das lokale Markt-Wochenende an. Simulieren Sie anschliessend die serverbasierte Inferenz, um zu sehen, wie sich der Zeitreihen-Forecast proaktiv anpasst und unproduktiven Food Waste vermeidet.
+                    </p>
+                  </div>
+                  <a
+                    href={SmartGastroProject.demo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 shrink-0 px-4 py-2.5 rounded-xl bg-slate-950 border border-teal-500/40 text-teal-300 hover:text-teal-200 hover:border-teal-400 font-bold text-xs transition-all"
+                  >
+                    <ExternalLink className="w-3.5 h-3.5" />
+                    <span>{SmartGastroProject.demo.label}</span>
+                  </a>
                 </div>
-                <p className="text-xs text-slate-405 text-slate-400 leading-relaxed">
-                  Passen Sie die äusseren Einflussfaktoren wie Wetter und das lokale Markt-Wochenende an. Simulieren Sie anschliessend die serverbasierte Inferenz, um zu sehen, wie sich der Zeitreihen-Forecast proaktiv anpasst und unproduktiven Food Waste vermeidet.
+                <p className="text-[11px] text-slate-500 leading-relaxed">
+                  {SmartGastroProject.demo.description}{" "}
+                  <a
+                    href={SmartGastroProject.demo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-teal-400 hover:text-teal-300 underline underline-offset-2"
+                  >
+                    In Google Gemini öffnen
+                  </a>
                 </p>
               </div>
 
