@@ -181,7 +181,9 @@ export default function App() {
     } catch (error: unknown) {
       console.error(error);
       const isNetlifyLive =
-        typeof window !== "undefined" && window.location.hostname.includes("netlify.app");
+        typeof window !== "undefined" &&
+        (window.location.hostname.includes("netlify.app") ||
+          window.location.hostname.endsWith("thomoro.com"));
       const fallback = isNetlifyLive
         ? "Grüezi! Der Chat-Server konnte nicht erreicht werden. Prüfen Sie im Netlify-Dashboard unter Site configuration → Environment variables, ob GEMINI_API_KEY gesetzt ist, und starten Sie einen Redeploy. Bis dahin: thomas.ballinari@pm.me"
         : "Grüezi! Der Chat-Server ist nicht erreichbar. Bitte GEMINI_API_KEY in `.env.local` setzen (siehe `.env.example`) und mit `npm run dev` neu starten. Bis dahin: thomas.ballinari@pm.me";

@@ -6,8 +6,8 @@ Diese Anleitung verbindet **Cursor** (lokal entwickeln), **GitHub** (Code-Quelle
 Cursor (bearbeiten) → git push → GitHub (main) → Netlify (automatischer Build & Go-Live)
 ```
 
-Live-URL (Beispiel): https://thomas-ballinari-ai-app.netlify.app  
-Ziel-Domain: **https://www.thomoro.com**
+Live-URL: **https://www.thomoro.com**  
+Netlify-Subdomain (leitet um): https://thomas-ballinari-ai-app.netlify.app
 
 ---
 
@@ -139,7 +139,7 @@ DNS-Propagierung kann **15 Min. bis 48 Std.** dauern. Status in Netlify: **Pendi
 
 ### Schritt C – Redirects (im Repo)
 
-In `netlify.toml` leitet `thomoro.com` bereits auf `https://www.thomoro.com` um. Nach dem nächsten Deploy aktiv.
+In `netlify.toml` leitet die Netlify-Subdomain per 301 auf `https://www.thomoro.com` um. Apex → www nur im Netlify-Dashboard (Domain management), nicht in netlify.toml – sonst Redirect-Schleife.
 
 ### Schritt D – Test
 

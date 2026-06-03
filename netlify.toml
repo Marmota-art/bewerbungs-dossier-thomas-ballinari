@@ -17,6 +17,14 @@
   status = 200
   force = true
 
+# Netlify-Subdomain → kanonische Domain (alte Links)
+[[redirects]]
+  from = "/*"
+  to = "https://www.thomoro.com/:splat"
+  status = 301
+  force = true
+  conditions = {Host = ["thomas-ballinari-ai-app.netlify.app"]}
+
 # Domain-Redirects (Apex ↔ www) nur im Netlify-Dashboard unter Domain management
 # einstellen – nicht hier, sonst Redirect-Schleife (ERR_TOO_MANY_REDIRECTS).
 
