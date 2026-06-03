@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Lock, ShieldCheck } from "lucide-react";
 
 type AccessStatus = {
@@ -7,7 +7,7 @@ type AccessStatus = {
 };
 
 interface SiteAccessGateProps {
-  children: React.ReactNode;
+  children: ReactNode;
   onAccessChange?: (unlocked: boolean, required: boolean) => void;
 }
 
