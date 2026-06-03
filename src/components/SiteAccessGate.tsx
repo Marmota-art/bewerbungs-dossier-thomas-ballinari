@@ -1,5 +1,6 @@
 import { useEffect, useState, type ReactNode } from "react";
 import { Lock, ShieldCheck } from "lucide-react";
+import { getTrackingRef, trackVisit } from "../analyticsClient";
 
 type AccessStatus = {
   required: boolean;
@@ -38,7 +39,11 @@ export function SiteAccessGate({ children, onAccessChange }: SiteAccessGateProps
         method: "POST",
         credentials: "include",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ key: key.trim() }),
+        body: JSON.stringify({
+          key: key.trim(),
+          ref: getTrackingRef(),
+          path: window.location.pathname,
+        }),
       });
       if (!res.ok) {
         setError("Ungültiger Zugangscode. Bitte prüfe die Angabe aus der Bewerbung.");
@@ -53,7 +58,10 @@ export function SiteAccessGate({ children, onAccessChange }: SiteAccessGateProps
   };
 
   useEffect(() => {
-    void refreshStatus();
+    void (async () => {
+      getTrackingRef();
+      await refreshStatus();
+    })();
     // Kein Auto-Unlock per URL – Code muss bewusst eingegeben werden
     const url = new URL(window.location.href);
     if (url.searchParams.has("zugang")) {
@@ -62,6 +70,15 @@ export function SiteAccessGate({ children, onAccessChange }: SiteAccessGateProps
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (!status) return;
+    if (status.unlocked || !status.required) {
+      void trackVisit("app_view");
+    } else {
+      void trackVisit("gate_view");
+    }
+  }, [status?.unlocked, status?.required]);
 
   if (!status) {
     return (

@@ -22,6 +22,12 @@ import {
   isSiteAccessConfigured,
   isSiteAccessGranted,
 } from "./siteAccess";
+import {
+  getAnalyticsSummary,
+  isAnalyticsViewer,
+  recordAnalyticsEvent,
+  renderAnalyticsHtml,
+} from "./siteAnalytics";
 
 // .env.local (lokal) bzw. Netlify Dashboard (GEMINI_API_KEY) – dotenv überschreibt bestehende Env-Vars nicht
 dotenv.config({ path: ".env.local" });
@@ -221,7 +227,7 @@ app.get("/api/access/status", (req, res) => {
   });
 });
 
-app.post("/api/access/unlock", (req, res) => {
+app.post("/api/access/unlock", async (req, res) => {
   if (!isSiteAccessConfigured()) {
     return res.json({ unlocked: true });
   }
@@ -230,7 +236,37 @@ app.post("/api/access/unlock", (req, res) => {
     return res.status(401).json({ error: "Ungültiger Zugangscode" });
   }
   res.setHeader("Set-Cookie", buildAccessCookie());
+  await recordAnalyticsEvent("access_unlock", req, {
+    ref: req.body?.ref,
+    path: req.body?.path,
+  });
   return res.json({ unlocked: true });
+});
+
+const ANALYTICS_EVENTS = new Set(["gate_view", "access_unlock", "app_view"]);
+
+app.post("/api/analytics/track", async (req, res) => {
+  const event = req.body?.event;
+  if (typeof event !== "string" || !ANALYTICS_EVENTS.has(event)) {
+    return res.status(400).json({ error: "Ungültiges Ereignis" });
+  }
+  await recordAnalyticsEvent(event as "gate_view" | "access_unlock" | "app_view", req, {
+    ref: req.body?.ref,
+    path: req.body?.path,
+  });
+  return res.json({ ok: true });
+});
+
+app.get("/api/analytics/summary", async (req, res) => {
+  if (!isAnalyticsViewer(req)) {
+    return res.status(401).json({ error: "Zugriff nur mit Analytics-Schlüssel." });
+  }
+  const summary = await getAnalyticsSummary();
+  if (req.query.format === "html") {
+    res.setHeader("Content-Type", "text/html; charset=utf-8");
+    return res.send(renderAnalyticsHtml(summary));
+  }
+  return res.json(summary);
 });
 
 app.post("/api/chat", async (req, res) => {
