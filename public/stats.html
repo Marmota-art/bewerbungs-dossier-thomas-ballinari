@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>thomoro.com – Zugriffsstatistik</title>
+  <style>
+    body { font-family: system-ui, sans-serif; background: #0f172a; color: #e2e8f0; margin: 0; padding: 2rem; }
+    .box { max-width: 420px; margin: 4rem auto; padding: 2rem; border: 1px solid #334155; border-radius: 16px; background: #1e293b; }
+    h1 { font-size: 1.25rem; color: #2dd4bf; margin: 0 0 1rem; }
+    label { display: block; font-size: 0.75rem; color: #94a3b8; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    input { width: 100%; box-sizing: border-box; padding: 0.75rem 1rem; border-radius: 10px; border: 1px solid #475569; background: #0f172a; color: #fff; font-size: 1rem; }
+    button { width: 100%; margin-top: 1rem; padding: 0.85rem; border: none; border-radius: 10px; background: #14b8a6; color: #0f172a; font-weight: 700; cursor: pointer; font-size: 1rem; }
+    button:hover { background: #2dd4bf; }
+    p { font-size: 0.85rem; color: #94a3b8; line-height: 1.5; margin: 1rem 0 0; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>Zugriffsstatistik</h1>
+    <p>Nur für dich. Schlüssel = <code>ANALYTICS_VIEW_KEY</code> aus Netlify (z.&nbsp;B. STATS-2026-TB).</p>
+    <form id="form">
+      <label for="key">Statistik-Schlüssel</label>
+      <input id="key" name="key" type="password" autocomplete="off" placeholder="STATS-2026-TB" required />
+      <button type="submit">Statistik anzeigen</button>
+    </form>
+    <p>Nach dem Setzen der Variable in Netlify einmal <strong>Deploy project</strong> auslösen.</p>
+  </div>
+  <script>
+    const saved = sessionStorage.getItem("tb_stats_key");
+    if (saved) document.getElementById("key").value = saved;
+    document.getElementById("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const key = document.getElementById("key").value.trim();
+      if (!key) return;
+      sessionStorage.setItem("tb_stats_key", key);
+      const q = new URLSearchParams({ key, format: "html" });
+      window.location.href = "/api/analytics/summary?" + q.toString();
+    });
+  </script>
+</body>
+</html>

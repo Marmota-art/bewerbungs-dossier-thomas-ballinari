@@ -259,7 +259,10 @@ app.post("/api/analytics/track", async (req, res) => {
 
 app.get("/api/analytics/summary", async (req, res) => {
   if (!isAnalyticsViewer(req)) {
-    return res.status(401).json({ error: "Zugriff nur mit Analytics-Schlüssel." });
+    return res.status(401).json({
+      error: "Zugriff nur mit Schlüssel in der URL.",
+      hint: "https://thomoro.com/stats.html öffnen oder ?key=STATS-2026-TB anhängen (nach Netlify-Redeploy).",
+    });
   }
   const summary = await getAnalyticsSummary();
   if (req.query.format === "html") {

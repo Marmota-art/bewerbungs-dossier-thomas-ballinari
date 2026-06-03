@@ -143,18 +143,33 @@ async function loadEvents(): Promise<AnalyticsEvent[]> {
     .sort((a, b) => b.ts.localeCompare(a.ts));
 }
 
-export function isAnalyticsViewer(req: Request): boolean {
-  const expected =
-    process.env.ANALYTICS_VIEW_KEY?.trim() || process.env.SITE_ACCESS_KEY?.trim();
-  if (!expected) return false;
-
+function getProvidedAnalyticsKey(req: Request): string {
   const fromQuery = typeof req.query.key === "string" ? req.query.key.trim() : "";
+  if (fromQuery) return fromQuery;
   const fromHeader =
     typeof req.headers["x-analytics-key"] === "string"
       ? req.headers["x-analytics-key"].trim()
       : "";
+  if (fromHeader) return fromHeader;
+  const rawUrl = req.originalUrl || req.url || "";
+  const q = rawUrl.indexOf("?");
+  if (q === -1) return "";
+  try {
+    return new URLSearchParams(rawUrl.slice(q + 1)).get("key")?.trim() || "";
+  } catch {
+    return "";
+  }
+}
 
-  return fromQuery === expected || fromHeader === expected;
+/** STATS-2026-TB (ANALYTICS_VIEW_KEY) oder Zugangscode (SITE_ACCESS_KEY) – beide möglich */
+export function isAnalyticsViewer(req: Request): boolean {
+  const provided = getProvidedAnalyticsKey(req);
+  if (!provided) return false;
+  const analyticsKey = process.env.ANALYTICS_VIEW_KEY?.trim();
+  const siteKey = process.env.SITE_ACCESS_KEY?.trim();
+  if (analyticsKey && provided === analyticsKey) return true;
+  if (siteKey && provided === siteKey) return true;
+  return false;
 }
 
 export async function getAnalyticsSummary() {
