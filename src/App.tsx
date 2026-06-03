@@ -58,6 +58,7 @@ import {
   SmartUmbrellaProject,
   MonadsValues,
   InterestsAndEngagement,
+  MonadsFitSection,
 } from "./data";
 import { OfficialPdfDocuments } from "./officialDocuments";
 // @ts-ignore
@@ -625,103 +626,35 @@ export default function App() {
 
             </div>
 
-            {/* BENTO GRID: WHY I FIT MONADS FROM SCREENSHOT 2 */}
+            {/* BENTO GRID: WHY I FIT MONADS */}
             <div className="space-y-10 pt-10 border-t border-slate-900 text-left">
               <div className="max-w-3xl space-y-3">
                 <h2 className="text-3xl sm:text-4xl font-serif font-black tracking-tight text-white leading-tight">
-                  Warum ich zu Monads passe
+                  {MonadsFitSection.title}
                 </h2>
-                <p className="text-slate-400 text-base font-light">
-                  Monads sucht jemanden, der AI-Domains aufbaut, in Business Cases denkt und Lösungen mit Claude umsetzt. Genau das bringe ich mit – plus 40 Jahre reale Unternehmererfahrung auf allen Hierarchiestufen. Als Team auf Augenhöhe kommen wir gemeinsam weiter!
+                <p className="text-slate-400 text-base font-light leading-relaxed">
+                  {MonadsFitSection.intro}
                 </p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                
-                {/* 1. AI Power-User */}
-                <div className="bg-slate-900/60 hover:bg-slate-900 border border-slate-900 hover:border-emerald-500/30 transition-all p-6 rounded-2xl space-y-3 shadow-md flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold font-mono">01</div>
-                    <h3 className="text-lg font-bold text-white tracking-tight">AI Power-User</h3>
-                    <p className="text-sm text-slate-350 leading-relaxed font-light">
-                      Claude, Claude Code, Google Studio AI täglich – nicht als Experiment, sondern als fundamentaler Bestandteil meiner Arbeitsweise.
-                    </p>
+                {MonadsFitSection.cards.map((card) => (
+                  <div
+                    key={card.number}
+                    className="bg-slate-900/60 hover:bg-slate-900 border border-slate-900 hover:border-emerald-500/30 transition-all p-6 rounded-2xl space-y-3 shadow-md flex flex-col justify-between"
+                  >
+                    <div className="space-y-3">
+                      <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold font-mono">
+                        {card.number}
+                      </div>
+                      <h3 className="text-lg font-bold text-white tracking-tight">{card.title}</h3>
+                      <p className="text-sm text-slate-350 leading-relaxed font-light">{card.body}</p>
+                    </div>
+                    <div className="pt-3 border-t border-slate-900/80 text-[11px] text-teal-400 font-mono">
+                      Hebel: {card.lever}
+                    </div>
                   </div>
-                  <div className="pt-3 border-t border-slate-900/80 text-[11px] text-teal-400 font-mono">
-                    Hebel: Extrem hohe Entwicklungsgeschwindigkeit
-                  </div>
-                </div>
-
-                {/* 2. Business Case Denker */}
-                <div className="bg-slate-900/60 hover:bg-slate-900 border border-slate-900 hover:border-emerald-500/30 transition-all p-6 rounded-2xl space-y-3 shadow-md flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold font-mono">02</div>
-                    <h3 className="text-lg font-bold text-white tracking-tight">Business Case Denker</h3>
-                    <p className="text-sm text-slate-350 leading-relaxed font-light">
-                      SmartGastro.ai: ROI 52%, Break-Even 7 Monate – echte handfeste Zahlen und eine reale funktionierende Kundenlösung.
-                    </p>
-                  </div>
-                  <div className="pt-3 border-t border-slate-900 /80 text-[11px] text-teal-400 font-mono">
-                    Hebel: Voller Fokus auf wirtschaftlichen Mehrwert
-                  </div>
-                </div>
-
-                {/* 3. Kundennah & kommunikativ */}
-                <div className="bg-slate-900/60 hover:bg-slate-900 border border-slate-900 hover:border-emerald-500/30 transition-all p-6 rounded-2xl space-y-3 shadow-md flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold font-mono">03</div>
-                    <h3 className="text-lg font-bold text-white tracking-tight">Kundennah & kommunikativ</h3>
-                    <p className="text-sm text-slate-350 leading-relaxed font-light">
-                      10 Jahre selbstständiger Pächter mit eigenem Betrieb, Lehrlingsausbildung und permanenten Stakeholder-Gesprächen auf Augenhöhe.
-                    </p>
-                  </div>
-                  <div className="pt-3 border-t border-slate-900/80 text-[11px] text-teal-400 font-mono">
-                    Hebel: Direkt-Involvierung aller Hierarchiestufen
-                  </div>
-                </div>
-
-                {/* 4. Gestalter, kein Verwalter */}
-                <div className="bg-slate-900/60 hover:bg-slate-900 border border-slate-900 hover:border-emerald-500/30 transition-all p-6 rounded-2xl space-y-3 shadow-md flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold font-mono">04</div>
-                    <h3 className="text-lg font-bold text-white tracking-tight">Gestalter, kein Verwalter</h3>
-                    <p className="text-sm text-slate-350 leading-relaxed font-light">
-                      Restaurant Löwenburg, Eispark Sargans, SmartGastro.ai – ich baue und etabliere erfolgreiche Geschäftsprozesse von Null auf.
-                    </p>
-                  </div>
-                  <div className="pt-3 border-t border-slate-900/80 text-[11px] text-teal-400 font-mono">
-                    Hebel: Unternehmergeist statt Konzernsitzungen
-                  </div>
-                </div>
-
-                {/* 5. Eidg. Fachausweis AI Business */}
-                <div className="bg-slate-900/60 hover:bg-slate-900 border border-slate-900 hover:border-emerald-500/30 transition-all p-6 rounded-2xl space-y-3 shadow-md flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold font-mono">05</div>
-                    <h3 className="text-lg font-bold text-white tracking-tight">Eidg. Fachausweis AI Business</h3>
-                    <p className="text-sm text-slate-350 leading-relaxed font-light">
-                      Fundierte Ausbildung in KI-Strategie, Datenmanagement, ML-Modellierung, nDSG-Ethik und modernem Wissensmanagement.
-                    </p>
-                  </div>
-                  <div className="pt-3 border-t border-slate-900/80 text-[11px] text-teal-400 font-mono">
-                    Hebel: Zertifiziertes Spitzen-Wissen 2025
-                  </div>
-                </div>
-
-                {/* 6. Eigenverantwortlich */}
-                <div className="bg-slate-900/60 hover:bg-slate-900 border border-slate-900 hover:border-emerald-500/30 transition-all p-6 rounded-2xl space-y-3 shadow-md flex flex-col justify-between">
-                  <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold font-mono">06</div>
-                    <h3 className="text-lg font-bold text-white tracking-tight">Eigenverantwortlich</h3>
-                    <p className="text-sm text-slate-350 leading-relaxed font-light">
-                      Als Pächter habe ich Buchhaltung, Personal, Einkauf und Marketing eigenständig verantwortet – Selbstständigkeit ist meine DNA.
-                    </p>
-                  </div>
-                  <div className="pt-3 border-t border-slate-900/80 text-[11px] text-teal-400 font-mono">
-                    Hebel: Selbstläufer ohne Mikromanagement
-                  </div>
-                </div>
-
+                ))}
               </div>
             </div>
 

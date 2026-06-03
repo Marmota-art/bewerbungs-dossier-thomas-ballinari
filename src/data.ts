@@ -1049,8 +1049,52 @@ export interface MonadsValueItem {
   howWeWin: string;
 }
 
+export const MonadsFitSection = {
+  title: "Warum ich zu Monads passe",
+  intro:
+    "Fabian, Christian, Marc, Adrian, Rafael, Tanja – euer Inserat beschreibt fast wortwörtlich meinen Alltag: AI-Domain aufbauen, Business Cases vor Technologie, beim Kunden Wirkung erzielen. Ihr verwandelt bei Monads «Complexity into Clarity» – genau so denke ich: nicht in Modellen, sondern in Hebeln, die live gehen. Kein klassisches Motivationsschreiben – hier ist mein Match zu eurem AI-Rollenprofil, im Du und auf Augenhöhe.",
+  cards: [
+    {
+      number: "01",
+      title: "AI-Domain mitgestalten",
+      body: "Fabian, Christian – ihr sucht jemanden, der Strategie, Positionierung und Angebot der AI-Domain verantwortet. Genau das will ich: die AI-Praxis bei Monads von Null auf mit euch definieren. SmartGastro.ai und diese App sind meine Antwort auf eure Aufforderung – zeigt Workflow und Business Case, nicht Folien.",
+      lever: "Erfolg = was beim Kunden live läuft",
+    },
+    {
+      number: "02",
+      title: "Business Cases, nicht Technologie",
+      body: "Marc, du knackst die kniffligen Fälle – ich starte einen Schritt früher: Gespräch mit Fachbereich und Management, Schmerz verstehen, ROI skizzieren. Food Waste, POS-Daten, manuelle Planung – erst der Case, dann Claude, Cursor oder die passende Pipeline.",
+      lever: "Business-first, wie Monads es lebt",
+    },
+    {
+      number: "03",
+      title: "Nah am Kunden – auf allen Ebenen",
+      body: "Adrian, du findest heraus, was wirklich zählt – nach 40 Jahren Gastronomie kenne ich diese Dialoge mit Küche, Pächter und Geschäftsleitung. Rafael, Brücken bauen ist auch meine Stärke: zwischen Fachbereich, IT und C-Level, damit AI nicht im Labor bleibt.",
+      lever: "Potenziale identifizieren, wo es weh tut",
+    },
+    {
+      number: "04",
+      title: "AI Power-User & Vibe Coding",
+      body: "Claude, Cursor und Google Studio AI nutze ich täglich – nicht als Spielerei, als Arbeitsweise. Lösungen designen und selbst in Rekordzeit umsetzen: Fullstack-Prototypen, serverlose ETL-Jobs, produktionsnahe Demos. Das ist der Wettbewerbsvorteil aus eurem Inserat – und meiner.",
+      lever: "Von Konzept zu produktionsreif in Tagen",
+    },
+    {
+      number: "05",
+      title: "AI Enablement & Wissensmanagement",
+      body: "Ihr wollt Kundenteams befähigen – Workshops, Methoden, Formate. In meiner AI-Business-Ausbildung ist Wissensmanagement (F6) zertifizierte Kernkompetenz. AI, die inspiriert statt ersetzt – passend zu eurer Enterprise Intelligence: vom Datenchaos zur klaren Entscheidung.",
+      lever: "Nachhaltige AI-Kultur beim Kunden",
+    },
+    {
+      number: "06",
+      title: "Freiheit, Du-Kultur & Nomad-Mindset",
+      body: "Tanja, du sorgst dafür, dass das Fundament trägt – ich bringe Tatkraft und Eigenverantwortung mit. Remote, flexibel, ohne Mikromanagement: euer Nomad-DNA («independent, mobile, efficient») ist meine. Als Team auf Augenhöhe – als Nomads – kommen wir gemeinsam weiter.",
+      lever: "Gestaltungsspielraum statt starre Strukturen",
+    },
+  ],
+} as const;
+
 export const MonadsValues = {
-  intro: "Hallo liebe Monads! Ihr sucht eine Macher-Persönlichkeit, die eure AI-Domain aufbaut, anfassbare Business Cases über graue Konzepte stellt und Vibe Coding atmet. Als Team auf Augenhöhe kommen wir gemeinsam weiter – hier ist meine interaktive Antwort auf euer Stelleninserat, ganz im Zeichen unserer gelebten Du-Kultur und systematischem Wissensmanagement.",
+  intro: "Fabian, Christian, Marc, Adrian, Rafael, Tanja – ihr sucht eine Macher-Persönlichkeit für eure AI-Domain: Business Cases statt Konzeptpapiere, Vibe Coding statt PowerPoint, Wirkung beim Kunden statt Technologie-Diskussionen. Hier meine interaktive Antwort auf euer Stelleninserat – im Du, mit SmartGastro.ai als konkretem Case.",
   items: [
     {
       title: "1. Aufbau & Verantwortung der Domain AI",
