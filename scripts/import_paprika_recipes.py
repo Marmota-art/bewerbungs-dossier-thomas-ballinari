@@ -196,7 +196,7 @@ def main() -> None:
     recipes = extract_recipes(archive, args.category)
 
     OUT.write_text(emit_ts(recipes), encoding="utf-8")
-    print(f"OK: {len(recipes)} Rezepte aus {archive.name} → {OUT.relative_to(REPO)}")
+    print(f"OK: {len(recipes)} Rezepte aus {archive.name} -> {OUT.relative_to(REPO)}")
 
 
 if __name__ == "__main__":
