@@ -13,6 +13,11 @@ import {
 import { getFullDocumentKnowledge } from "./src/knowledgeBase";
 import { getChatPersonalFactsKnowledge } from "./src/chatPersonalFacts";
 import {
+  ChatRecipes,
+  getChatRecipesKnowledge,
+  hasChatRecipes,
+} from "./src/chatRecipes";
+import {
   buildAccessCookie,
   isSiteAccessConfigured,
   isSiteAccessGranted,
@@ -73,6 +78,7 @@ PERSÖNLICHE DATEN & PROFIL:
 - Kontakt: E-Mail: thomas.ballinari@pm.me | Telefon: +41 79 705 63 14
 
 ${getChatPersonalFactsKnowledge()}
+${getChatRecipesKnowledge() ? `\n${getChatRecipesKnowledge()}\n` : ""}
 - Sprachen: Deutsch (Muttersprache, C2), Englisch (Advanced, C1), Französisch (Gute Kenntnisse, B2), Italienisch (Grundkenntnisse, A2).
 - Stärken: Analytisches Denken, unternehmerisches Denken, Kommunikationsstärke, Teamführung & Motivation, Belastbarkeit, Kreativität, selbstständiges Arbeiten.
 - Slogan: "Ich verbinde 40 Jahre Gastronomie-Erfahrung mit moderner künstlicher Intelligenz."
@@ -109,7 +115,8 @@ STRIKTE NUTZUNGSRICHTLINIEN FÜR DEN BOT:
 2. EINHALTUNG DER SCHWEIZER SCHREIBWEISE: Verwende niemals ein Eszett (ß). Immer Doppel-s (ss) schreiben.
 3. ABSOLUTE FAKTENBASIERTHEIT: Du darfst nur tatsächliche Fakten aus dieser Wissensdatenbank nennen (JSON + PDF-Volltext). Erfinde KEINE Abschlüsse, Jahreszahlen, Arbeitgeber, Gehälter oder Projekte. Wenn nach etwas gefragt wird, das nicht hier steht (z.B. deine Lieblingsfarbe oder Programmierkenntnisse in Python), antworte mit: "Dazu liegen mir in meinen offiziellen Bewerbungsunterlagen keine Angaben vor. Das beantworte ich jedoch sehr gerne in einem persönlichen Gespräch!"
 4. SCHWÄCHEN / SCHWACHSTELLEN: Bei Fragen wie «Wo sind deine Schwächen?», «Schwachstellen?», «Was ist deine grösste Schwäche?» nutze ausschliesslich den Abschnitt SCHWÄCHEN / ENTWICKLUNGSFELDER in den ergänzenden persönlichen Angaben. Sei ehrlich und selbstreflektiert, aber schliesse immer mit der Reife und dem aktiven Abholen bei diesen Punkten ab.
-5. GEWINNEND & DIREKT: Beantworte Fragen zielgerichtet, professionell, sympathisch und selbstbewusst. Zeige, dass du dich auf die Schnittstelle zwischen Business-Problemen des Kunden und pragmatischen KI-Lösungen spezialisiert hast.
+5. REZEPTE / KÜCHE: Erwähne Rezepte NIEMALS von dir aus. Nur wenn explizit nach einem Rezept, Gericht, Zutaten oder Zubereitung gefragt wird: nutze den Abschnitt KÜCHEN-REZEPTE. Gib das Rezept in Ich-Form wieder (was ich koche / mein Rezept). Wenn keine Rezepte hinterlegt sind, sage das ehrlich und verweise auf ein persönliches Gespräch.
+6. GEWINNEND & DIREKT: Beantworte Fragen zielgerichtet, professionell, sympathisch und selbstbewusst. Zeige, dass du dich auf die Schnittstelle zwischen Business-Problemen des Kunden und pragmatischen KI-Lösungen spezialisiert hast.
 `;
 
 const mockResponses: Record<string, string> = {
@@ -156,7 +163,44 @@ const mockResponses: Record<string, string> = {
     "Ehrlich gesagt: Ich habe manchmal Tunnelblick und sehe zu stark nur meine Lösung, ohne Alternativen genug abzuwägen. Selbstreflexion kommt bei mir nicht sofort, eher zu spät. Und ich lerne oft eher durch schmerzvolle Erfahrungen als durch intelligentes Durchdenken. Ich bin aber gereift und hole mich bei diesen Schwachpunkten bewusst ab – ich arbeite aktiv daran, früher zu reflektieren und Optionen offen zu halten.",
 };
 
+function formatRecipeReply(name: string, ingredients: string, directions: string): string {
+  return `Gerne – hier ist mein Rezept für «${name}»:\n\nZutaten:\n${ingredients.trim()}\n\nZubereitung:\n${directions.trim()}`;
+}
+
+function getRecipeMockReply(lastMessage: string): string | null {
+  const triggers = [
+    "rezept",
+    "recipe",
+    "zutaten",
+    "zubereitung",
+    "was kochst",
+    "kochst du",
+    "lieblingsgericht",
+    "signature",
+    "gericht",
+  ];
+  if (!triggers.some((t) => lastMessage.includes(t))) return null;
+
+  if (!hasChatRecipes()) {
+    return "Zu konkreten Rezepten habe ich in dieser App noch keine Daten hinterlegt – das bespreche ich sehr gerne persönlich. Frag mich sonst gern zu Lebenslauf, SmartGastro.ai oder meiner Küchenerfahrung!";
+  }
+
+  for (const r of ChatRecipes) {
+    const needle = r.name.toLowerCase();
+    if (lastMessage.includes(needle)) {
+      return formatRecipeReply(r.name, r.ingredients, r.directions);
+    }
+  }
+
+  const first = ChatRecipes[0];
+  const names = ChatRecipes.map((r) => r.name).join(", ");
+  return `Ich habe mehrere Signature-Rezepte hinterlegt, zum Beispiel: ${names}. Nenne mir ein Gericht, dann gebe ich dir das passende Rezept – oder hier gleich «${first.name}»:\n\nZutaten:\n${first.ingredients.trim()}\n\nZubereitung:\n${first.directions.trim()}`;
+}
+
 function getMockReply(lastMessage: string): string {
+  const recipeReply = getRecipeMockReply(lastMessage);
+  if (recipeReply) return recipeReply;
+
   for (const key of Object.keys(mockResponses)) {
     if (lastMessage.includes(key)) {
       return mockResponses[key];
