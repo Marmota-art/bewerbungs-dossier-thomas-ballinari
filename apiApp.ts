@@ -108,7 +108,8 @@ STRIKTE NUTZUNGSRICHTLINIEN FÜR DEN BOT:
 1. ANTWORTE IMMER ALS THOMAS (IN ICH-FORM): Sage "Ich habe..." anstelle von "Thomas hat...".
 2. EINHALTUNG DER SCHWEIZER SCHREIBWEISE: Verwende niemals ein Eszett (ß). Immer Doppel-s (ss) schreiben.
 3. ABSOLUTE FAKTENBASIERTHEIT: Du darfst nur tatsächliche Fakten aus dieser Wissensdatenbank nennen (JSON + PDF-Volltext). Erfinde KEINE Abschlüsse, Jahreszahlen, Arbeitgeber, Gehälter oder Projekte. Wenn nach etwas gefragt wird, das nicht hier steht (z.B. deine Lieblingsfarbe oder Programmierkenntnisse in Python), antworte mit: "Dazu liegen mir in meinen offiziellen Bewerbungsunterlagen keine Angaben vor. Das beantworte ich jedoch sehr gerne in einem persönlichen Gespräch!"
-4. GEWINNEND & DIREKT: Beantworte Fragen zielgerichtet, professionell, sympathisch und selbstbewusst. Zeige, dass du dich auf die Schnittstelle zwischen Business-Problemen des Kunden und pragmatischen KI-Lösungen spezialisiert hast.
+4. SCHWÄCHEN / SCHWACHSTELLEN: Bei Fragen wie «Wo sind deine Schwächen?», «Schwachstellen?», «Was ist deine grösste Schwäche?» nutze ausschliesslich den Abschnitt SCHWÄCHEN / ENTWICKLUNGSFELDER in den ergänzenden persönlichen Angaben. Sei ehrlich und selbstreflektiert, aber schliesse immer mit der Reife und dem aktiven Abholen bei diesen Punkten ab.
+5. GEWINNEND & DIREKT: Beantworte Fragen zielgerichtet, professionell, sympathisch und selbstbewusst. Zeige, dass du dich auf die Schnittstelle zwischen Business-Problemen des Kunden und pragmatischen KI-Lösungen spezialisiert hast.
 `;
 
 const mockResponses: Record<string, string> = {
@@ -143,6 +144,16 @@ const mockResponses: Record<string, string> = {
     "Nein, ich habe kein eigenes Auto – ich bin mit dem ÖV unterwegs.",
   fahrzeug:
     "Nein, ich habe kein eigenes Auto – ich bin mit dem ÖV unterwegs.",
+  schwäche:
+    "Ehrlich gesagt: Ich habe manchmal Tunnelblick und sehe zu stark nur meine Lösung, ohne Alternativen genug abzuwägen. Selbstreflexion kommt bei mir nicht sofort, eher zu spät. Und ich lerne oft eher durch schmerzvolle Erfahrungen als durch intelligentes Durchdenken. Ich bin aber gereift und hole mich bei diesen Schwachpunkten bewusst ab – ich arbeite aktiv daran, früher zu reflektieren und Optionen offen zu halten.",
+  schwache:
+    "Ehrlich gesagt: Ich habe manchmal Tunnelblick und sehe zu stark nur meine Lösung, ohne Alternativen genug abzuwägen. Selbstreflexion kommt bei mir nicht sofort, eher zu spät. Und ich lerne oft eher durch schmerzvolle Erfahrungen als durch intelligentes Durchdenken. Ich bin aber gereift und hole mich bei diesen Schwachpunkten bewusst ab – ich arbeite aktiv daran, früher zu reflektieren und Optionen offen zu halten.",
+  schwachstelle:
+    "Ehrlich gesagt: Ich habe manchmal Tunnelblick und sehe zu stark nur meine Lösung, ohne Alternativen genug abzuwägen. Selbstreflexion kommt bei mir nicht sofort, eher zu spät. Und ich lerne oft eher durch schmerzvolle Erfahrungen als durch intelligentes Durchdenken. Ich bin aber gereift und hole mich bei diesen Schwachpunkten bewusst ab – ich arbeite aktiv daran, früher zu reflektieren und Optionen offen zu halten.",
+  schwachpunkt:
+    "Ehrlich gesagt: Ich habe manchmal Tunnelblick und sehe zu stark nur meine Lösung, ohne Alternativen genug abzuwägen. Selbstreflexion kommt bei mir nicht sofort, eher zu spät. Und ich lerne oft eher durch schmerzvolle Erfahrungen als durch intelligentes Durchdenken. Ich bin aber gereift und hole mich bei diesen Schwachpunkten bewusst ab – ich arbeite aktiv daran, früher zu reflektieren und Optionen offen zu halten.",
+  entwicklungsfeld:
+    "Ehrlich gesagt: Ich habe manchmal Tunnelblick und sehe zu stark nur meine Lösung, ohne Alternativen genug abzuwägen. Selbstreflexion kommt bei mir nicht sofort, eher zu spät. Und ich lerne oft eher durch schmerzvolle Erfahrungen als durch intelligentes Durchdenken. Ich bin aber gereift und hole mich bei diesen Schwachpunkten bewusst ab – ich arbeite aktiv daran, früher zu reflektieren und Optionen offen zu halten.",
 };
 
 function getMockReply(lastMessage: string): string {

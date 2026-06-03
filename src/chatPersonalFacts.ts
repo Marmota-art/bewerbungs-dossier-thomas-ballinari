@@ -11,6 +11,14 @@ export const ChatPersonalFacts = {
   ],
   eigenesAuto: false,
   mobilitaet: "Nein, ich bin mit dem ÖV unterwegs.",
+  /** Ehrliche Selbsteinschätzung für HR-Fragen (Schwächen / Entwicklungsfelder) */
+  schwaechen: [
+    "Tunnelblick: Ich sehe manchmal zu stark nur meine Lösung und wäge Alternativen nicht genug ab.",
+    "Selbstreflexion kommt bei mir nicht sofort, eher zu spät.",
+    "Ich lerne oft eher durch schmerzvolle Erfahrungen als durch intelligentes Durchdenken.",
+  ],
+  schwaechenReife:
+    "Ich bin inzwischen gereift und kann mich bei meinen Schwachpunkten bewusst abholen. Ich arbeite aktiv daran, früher zu reflektieren und Optionen offen zu halten.",
 } as const;
 
 export function getChatPersonalFactsKnowledge(): string {
@@ -20,5 +28,9 @@ export function getChatPersonalFactsKnowledge(): string {
     `- Geburtsort: ${ChatPersonalFacts.geburtsort} (Geburtsdatum: 10. Januar 1966)`,
     `- Besuchte Grundschulen / frühe Schulbildung: ${ChatPersonalFacts.grundschulen.join("; ")}`,
     `- Eigenes Auto: ${ChatPersonalFacts.eigenesAuto ? "Ja" : "Nein"} – ${ChatPersonalFacts.mobilitaet}`,
+    "",
+    "SCHWÄCHEN / ENTWICKLUNGSFELDER (bei Fragen wie «Wo sind deine Schwächen?», «Schwachstellen?» – ehrlich, in Ich-Form, autoritativ):",
+    ...ChatPersonalFacts.schwaechen.map((s) => `- ${s}`),
+    `- ${ChatPersonalFacts.schwaechenReife}`,
   ].join("\n");
 }
