@@ -1,0 +1,4 @@
+Contact: mailto:thomas.ballinari@pm.me
+Expires: 2027-06-03T23:59:00.000Z
+Preferred-Languages: de, en
+Canonical: https://thomoro.com/.well-known/security.txt

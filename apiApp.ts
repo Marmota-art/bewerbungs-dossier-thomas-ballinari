@@ -12,6 +12,11 @@ import {
 } from "./src/data";
 import { getFullDocumentKnowledge } from "./src/knowledgeBase";
 import { getChatPersonalFactsKnowledge } from "./src/chatPersonalFacts";
+import {
+  buildAccessCookie,
+  isSiteAccessConfigured,
+  isSiteAccessGranted,
+} from "./siteAccess";
 
 // .env.local (lokal) bzw. Netlify Dashboard (GEMINI_API_KEY) – dotenv überschreibt bestehende Env-Vars nicht
 dotenv.config({ path: ".env.local" });
@@ -153,7 +158,30 @@ function getMockReply(lastMessage: string): string {
 const app = express();
 app.use(express.json());
 
+app.get("/api/access/status", (req, res) => {
+  const required = isSiteAccessConfigured();
+  res.json({
+    required,
+    unlocked: isSiteAccessGranted(req),
+  });
+});
+
+app.post("/api/access/unlock", (req, res) => {
+  if (!isSiteAccessConfigured()) {
+    return res.json({ unlocked: true });
+  }
+  const key = typeof req.body?.key === "string" ? req.body.key.trim() : "";
+  if (key !== process.env.SITE_ACCESS_KEY?.trim()) {
+    return res.status(401).json({ error: "Ungültiger Zugangscode" });
+  }
+  res.setHeader("Set-Cookie", buildAccessCookie());
+  return res.json({ unlocked: true });
+});
+
 app.post("/api/chat", async (req, res) => {
+  if (!isSiteAccessGranted(req)) {
+    return res.status(401).json({ error: "Geschützter Zugang: Bitte Zugangscode eingeben." });
+  }
   const { messages } = req.body;
 
   if (!messages || !Array.isArray(messages)) {

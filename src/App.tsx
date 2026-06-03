@@ -2879,7 +2879,10 @@ export default function App() {
                 <span>Admin</span>
               </button>
               <span>•</span>
-              <span>ISO-nDSG Schweizer Datenschutz-Standard</span>
+              <span className="flex items-center gap-1.5">
+                <ShieldCheck className="w-3.5 h-3.5 text-teal-500" />
+                TLS · thomoro.com · nDSG
+              </span>
             </div>
           </div>
 
