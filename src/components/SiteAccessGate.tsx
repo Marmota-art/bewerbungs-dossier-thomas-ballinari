@@ -20,8 +20,9 @@ export function SiteAccessGate({ children, onAccessChange }: SiteAccessGateProps
   const refreshStatus = async () => {
     const res = await fetch("/api/access/status", { credentials: "include" });
     if (!res.ok) {
-      setStatus({ required: false, unlocked: true });
-      onAccessChange?.(true, false);
+      setStatus({ required: true, unlocked: false });
+      onAccessChange?.(false, true);
+      setError("Verbindung zum Server fehlgeschlagen. Bitte später erneut versuchen.");
       return;
     }
     const data = (await res.json()) as AccessStatus;
@@ -40,13 +41,10 @@ export function SiteAccessGate({ children, onAccessChange }: SiteAccessGateProps
         body: JSON.stringify({ key: key.trim() }),
       });
       if (!res.ok) {
-        setError("Ungültiger Zugangscode. Bitte prüfen Sie die Angabe aus der Bewerbung.");
+        setError("Ungültiger Zugangscode. Bitte prüfe die Angabe aus der Bewerbung.");
         return;
       }
       await refreshStatus();
-      const url = new URL(window.location.href);
-      url.searchParams.delete("zugang");
-      window.history.replaceState({}, "", url.pathname + url.search + url.hash);
     } catch {
       setError("Verbindung zum Server fehlgeschlagen. Bitte später erneut versuchen.");
     } finally {
@@ -55,13 +53,13 @@ export function SiteAccessGate({ children, onAccessChange }: SiteAccessGateProps
   };
 
   useEffect(() => {
-    void (async () => {
-      await refreshStatus();
-      const urlKey = new URLSearchParams(window.location.search).get("zugang");
-      if (urlKey) {
-        await tryUnlock(urlKey);
-      }
-    })();
+    void refreshStatus();
+    // Kein Auto-Unlock per URL – Code muss bewusst eingegeben werden
+    const url = new URL(window.location.href);
+    if (url.searchParams.has("zugang")) {
+      url.searchParams.delete("zugang");
+      window.history.replaceState({}, "", url.pathname + url.search + url.hash);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -86,7 +84,7 @@ export function SiteAccessGate({ children, onAccessChange }: SiteAccessGateProps
           </div>
           <h1 className="text-xl font-bold text-white">Geschützter Bewerbungszugang</h1>
           <p className="text-sm text-slate-400 leading-relaxed">
-            Dieses Dossier ist für ausgewählte Personen freigeschaltet. Bitte geben Sie den
+            Dieses Dossier ist für ausgewählte Personen freigeschaltet. Bitte gib den
             Zugangscode aus der Bewerbungsnachricht ein.
           </p>
         </div>

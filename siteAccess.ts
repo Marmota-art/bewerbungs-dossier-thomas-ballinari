@@ -25,7 +25,7 @@ export function isSiteAccessGranted(req: Request): boolean {
 
 export function buildAccessCookie(): string {
   const token = getSiteAccessToken();
-  const maxAge = 60 * 60 * 24 * 30;
   const secure = process.env.NETLIFY ? "Secure; " : "";
-  return `tb_site_access=${token}; Path=/; HttpOnly; ${secure}SameSite=Lax; Max-Age=${maxAge}`;
+  // Session-Cookie: nach Schliessen des Browsers erneut Code eingeben
+  return `tb_site_access=${token}; Path=/; HttpOnly; ${secure}SameSite=Lax`;
 }
