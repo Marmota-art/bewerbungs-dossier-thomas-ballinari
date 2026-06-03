@@ -56,7 +56,8 @@ import {
   Testimonials,
   SmartGastroProject,
   SmartUmbrellaProject,
-  MonadsValues
+  MonadsValues,
+  InterestsAndEngagement,
 } from "./data";
 // @ts-ignore
 import thomasPhoto from "./thomas.png";
@@ -950,12 +951,24 @@ export default function App() {
                   </div>
                 </div>
 
-                {/* Interessen & Ehrenamt */}
+                {/* Interessen & freiwilliges Engagement (PDF-Volltext) */}
                 <div className="space-y-4 border-t border-slate-800/80 pt-6">
-                  <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-widest font-mono">Interessen & Engagement</h4>
-                  <p className="text-xs text-slate-400 leading-relaxed font-light">
-                    Technologie-Scouting, Kochen für Freunde & Familie, Digitale Transformation im Schweizer Gewerbe, lebenslange Weiterbildung.
-                  </p>
+                  <div className="space-y-2">
+                    <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-widest font-mono">Interessen</h4>
+                    <ul className="space-y-1.5 text-xs text-slate-400 leading-relaxed font-light list-disc list-outside pl-4">
+                      {InterestsAndEngagement.interests.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-widest font-mono">Freiwilliges Engagement</h4>
+                    <ul className="space-y-1.5 text-xs text-slate-400 leading-relaxed font-light list-none pl-0">
+                      {InterestsAndEngagement.voluntary.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
               </div>

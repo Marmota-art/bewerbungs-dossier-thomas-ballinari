@@ -83,6 +83,18 @@ export const PersonalData = {
   summary: "Thomas Ballinari verbindet über 40 Jahre wertvolle Gastronomie- und Führungserfahrung mit der modernen Welt der künstlichen Intelligenz. Als angehender AI Business Specialist (eidg. FA) und zertifizierter KI-Professional Business konzipiert er datenbasierte Lösungen zur drastischen Kosteneinsparung, Prozessoptimierung und Entlastung im Arbeitsalltag. Sein bestes Fallbeispiel dafür ist SmartGastro.ai – eine KI-gestützte Nachfrageprognose, welche praxisnah entwickelt wurde, um echte gastronomische Probleme wie Food Waste und Personalengpässe zu lösen."
 };
 
+export const InterestsAndEngagement = {
+  interests: [
+    "Prozessoptimierung & KI",
+    "Reisen & interkultureller Austausch",
+    "Curling",
+  ],
+  voluntary: [
+    "2006–2007: Aufbau & Betriebsleitung Eiskunstlaufbahn Sargans",
+    "Seit 2018: Beistandschaft für Brüder Oliver und René (Zerebralparese)",
+  ],
+} as const;
+
 export const Experiences: ExperienceItem[] = [
   {
     id: "exp-1",
@@ -198,6 +210,18 @@ export const Experiences: ExperienceItem[] = [
   },
   {
     id: "exp-10",
+    role: "Kellner",
+    company: "Gastronomiebetriebe Basma AG",
+    location: "St. Gallen",
+    period: "09/1990 – 01/1992",
+    category: "gastro",
+    highlights: [
+      "Einsatz in mehreren Betrieben der Basma AG (Filou-Bar, Goliath-Stübli, Peppermint-Bar).",
+      "Ehrliche, pünktliche und korrekte Arbeitsweise – im Arbeitszeugnis bestens empfohlen."
+    ]
+  },
+  {
+    id: "exp-11",
     role: "Sous-Chef / Saucier",
     company: "Chalet Suisse",
     location: "New York, USA",
@@ -206,6 +230,66 @@ export const Experiences: ExperienceItem[] = [
     highlights: [
       "Auslandserfahrung im renommierten Schweizer Restaurant mitten in New York City.",
       "Exzellente Fachpraxis in der klassischen Saucier-Kunst und Förderung interkultureller Kompetenz."
+    ]
+  },
+  {
+    id: "exp-12",
+    role: "Chef Tournant",
+    company: "Century Plaza Hotel",
+    location: "Los Angeles, USA",
+    period: "08/1988 – 02/1990",
+    category: "gastro",
+    highlights: [
+      "Springer für 14 Restaurants und die Hauptküche in einem der grössten Hotelkomplexe Los Angeles.",
+      "Organisation von Banketten und Grossveranstaltungen bis zu 2'000 Personen."
+    ]
+  },
+  {
+    id: "exp-13",
+    role: "Koch / Küchenchef",
+    company: "Hotel Residenza La Val",
+    location: "Brigels",
+    period: "12/1986 – 04/1988",
+    category: "gastro",
+    highlights: [
+      "Aufstieg vom Koch zum Küchenchef – erste Führungserfahrung in der Küchenleitung.",
+      "Kreative Menügestaltung; die Küche genoss unter seiner Leitung einen sehr guten Ruf."
+    ]
+  },
+  {
+    id: "exp-14",
+    role: "Alleinkoch",
+    company: "Restaurant Linsebühl",
+    location: "St. Gallen",
+    period: "06/1986 – 11/1986",
+    category: "gastro",
+    highlights: [
+      "Umsichtige Bewirtschaftung als selbstständiger Alleinkoch im Restaurantbetrieb.",
+      "Eigenständige Menüzusammenstellung mit hoher Kundenzufriedenheit."
+    ]
+  },
+  {
+    id: "exp-15",
+    role: "Tournant / Koch",
+    company: "Hotel Alpenrose",
+    location: "Wildhaus",
+    period: "10/1985 – 01/1986",
+    category: "gastro",
+    highlights: [
+      "Rückkehr in den Lehrbetrieb als Tournant vor Antritt der Rekrutenschule.",
+      "Gereifte Persönlichkeit und ausgezeichnete Einsatzfreude – für höhere Posten empfohlen."
+    ]
+  },
+  {
+    id: "exp-16",
+    role: "Commis de Cuisine",
+    company: "Hotel le Château d'Ouchy",
+    location: "Lausanne",
+    period: "06/1985 – 10/1985",
+    category: "gastro",
+    highlights: [
+      "Erster Einsatz in der Westschweiz im renommierten Schloss-Hotel am Genfersee.",
+      "Volle Zufriedenheit; sehr guter Kontakt mit Vorgesetzten und französischsprachigen Kollegen."
     ]
   }
 ];
