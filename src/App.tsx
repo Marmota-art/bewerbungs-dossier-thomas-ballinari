@@ -59,6 +59,7 @@ import {
   MonadsValues,
   InterestsAndEngagement,
 } from "./data";
+import { OfficialPdfDocuments } from "./officialDocuments";
 // @ts-ignore
 import thomasPhoto from "./thomas.png";
 import ipsoUmbrellaPhoto from "./assets/ipso-smart-regenschirm.jpg";
@@ -403,7 +404,7 @@ export default function App() {
 
   const activeTestimonialObj = Testimonials.find(t => t.id === selectedTestimonial) || Testimonials[0];
 
-  const renderDocumentLinks = (documentUrl: string, label = "Original") => (
+  const renderDocumentLinks = (documentUrl: string, label = "Original", downloadName?: string) => (
     <div className="flex flex-wrap items-center gap-2">
       <a
         href={documentUrl}
@@ -416,7 +417,7 @@ export default function App() {
       </a>
       <a
         href={documentUrl}
-        download
+        download={downloadName}
         className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 hover:text-white text-[11px] font-semibold transition-all"
       >
         <Download className="w-3 h-3" />
@@ -852,14 +853,21 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Printable trigger */}
-              <button 
-                onClick={() => window.print()}
-                className="px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-850 text-xs font-semibold text-emerald-400 flex items-center gap-2 border border-slate-800 transition-all cursor-pointer"
-              >
-                <Printer className="w-4 h-4" />
-                <span>Dossier drucken / Als PDF speichern</span>
-              </button>
+              {/* Printable trigger & offizielles Lebenslauf-PDF */}
+              <div className="flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-3">
+                {renderDocumentLinks(
+                  OfficialPdfDocuments.lebenslauf.path,
+                  "Offizieller Lebenslauf (PDF)",
+                  OfficialPdfDocuments.lebenslauf.fileName
+                )}
+                <button 
+                  onClick={() => window.print()}
+                  className="px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-850 text-xs font-semibold text-emerald-400 flex items-center gap-2 border border-slate-800 transition-all cursor-pointer"
+                >
+                  <Printer className="w-4 h-4" />
+                  <span>Dossier drucken / Als PDF speichern</span>
+                </button>
+              </div>
             </div>
 
             {/* TWO-COLUMN PHYSICAL DOSSIER LOOK */}
@@ -1063,11 +1071,16 @@ export default function App() {
 
             {/* INTEGRATED ORIGINAL WORK ZEUGNISSE IN COLLAPSIBLE ACCORDION FOR SWISS PORTFOLIO FOLDER */}
             <div className="p-8 rounded-[2rem] bg-slate-900 border border-slate-900 space-y-8 text-left mt-8">
-              <div className="max-w-2xl space-y-2">
+              <div className="max-w-3xl space-y-3">
                 <h3 className="text-2xl font-serif font-black text-white">Ausführliche Arbeitszeugnisse</h3>
                 <p className="text-slate-400 text-sm font-light">
                   Hier kannst du alle 15 Arbeitszeugnisse aus Schweizer und internationalen Betrieben im originalen und ungekürzten Wortlauf einsehen.
                 </p>
+                {renderDocumentLinks(
+                  OfficialPdfDocuments.arbeitszeugnisse.path,
+                  "Original-Zeugnisse (PDF-Sammlung)",
+                  OfficialPdfDocuments.arbeitszeugnisse.fileName
+                )}
               </div>
 
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
@@ -1158,9 +1171,16 @@ export default function App() {
         {/* 5. ZERTIFIKATE (CREDENTIALS) */}
         {activeTab === "certificates" && (
           <section id="sect-certificates" className="space-y-8 animate-fade-in">
-            <div className="space-y-1">
-              <h2 className="text-3xl font-extrabold text-white">Ausbildungsnachweise & Zertifikate</h2>
-              <p className="text-slate-400 text-sm">Akkreditierte Abschlüsse in den Bereichen KI, Informationstechnologie und gehobene Fachgastronomie</p>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+              <div className="space-y-1">
+                <h2 className="text-3xl font-extrabold text-white">Ausbildungsnachweise & Zertifikate</h2>
+                <p className="text-slate-400 text-sm">Akkreditierte Abschlüsse in den Bereichen KI, Informationstechnologie und gehobene Fachgastronomie</p>
+              </div>
+              {renderDocumentLinks(
+                OfficialPdfDocuments.zertifikate.path,
+                "Alle Zertifikate (PDF)",
+                OfficialPdfDocuments.zertifikate.fileName
+              )}
             </div>
 
             {/* Filter buttons */}
