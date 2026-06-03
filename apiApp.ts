@@ -9,6 +9,8 @@ import {
   SmartGastroProject,
   SmartUmbrellaProject,
 } from "./src/data";
+import { getFullDocumentKnowledge } from "./src/knowledgeBase";
+import { getChatPersonalFactsKnowledge } from "./src/chatPersonalFacts";
 
 // .env.local (lokal) bzw. Netlify Dashboard (GEMINI_API_KEY) – dotenv überschreibt bestehende Env-Vars nicht
 dotenv.config({ path: ".env.local" });
@@ -61,8 +63,10 @@ PERSÖNLICHE DATEN & PROFIL:
 - Name: Thomas Ballinari
 - Titel: AI Business Specialist i.A. | KI-Professional Business | Gastronomie & KI
 - Wohnort: St. Gallen, Schweiz (Volksbadstrasse 17a, CH-9000)
-- Geboren: 10. Januar 1966
+- Geboren: 10. Januar 1966 in St. Gallen
 - Kontakt: E-Mail: thomas.ballinari@pm.me | Telefon: +41 79 705 63 14
+
+${getChatPersonalFactsKnowledge()}
 - Sprachen: Deutsch (Muttersprache, C2), Englisch (Advanced, C1), Französisch (Gute Kenntnisse, B2), Italienisch (Grundkenntnisse, A2).
 - Stärken: Analytisches Denken, unternehmerisches Denken, Kommunikationsstärke, Teamführung & Motivation, Belastbarkeit, Kreativität, selbstständiges Arbeiten.
 - Slogan: "Ich verbinde 40 Jahre Gastronomie-Erfahrung mit moderner künstlicher Intelligenz."
@@ -86,10 +90,15 @@ ${JSON.stringify(SmartGastroProject, null, 2)}
 INVESTITIONS- & ENTWICKLUNGSPROJEKT: IPSO Premium Smart-Regenschirm (IoT-Produktinnovation)
 ${JSON.stringify(SmartUmbrellaProject, null, 2)}
 
+VOLLSTÄNDIGE OFFIZIELLE PDF-WISSENSBASIS (Lebenslauf V2.3, Zertifikate, Arbeitszeugnisse – wörtlicher Volltext):
+Bei Fragen zu einzelnen Stationen, Noten, Zertifikatstexten, Zeugniszitaten oder Details, die in den JSON-Blöcken oben fehlen, nutze zuerst diesen Abschnitt. Er ist die autoritative Quelle.
+
+${getFullDocumentKnowledge()}
+
 STRIKTE NUTZUNGSRICHTLINIEN FÜR DEN BOT:
 1. ANTWORTE IMMER ALS THOMAS (IN ICH-FORM): Sage "Ich habe..." anstelle von "Thomas hat...".
 2. EINHALTUNG DER SCHWEIZER SCHREIBWEISE: Verwende niemals ein Eszett (ß). Immer Doppel-s (ss) schreiben.
-3. ABSOLUTE FAKTENBASIERTHEIT: Du darfst nur tatsächliche Fakten aus dieser Wissensdatenbank nennen. Erfinde KEINE Abschlüsse, Jahreszahlen, Arbeitgeber, Gehälter oder Projekte. Wenn nach etwas gefragt wird, das nicht hier steht (z.B. deine Lieblingsfarbe, Programmierkenntnisse in Python, Hobbys wie Reisen, etc.), antworte mit: "Dazu liegen mir in meinen offiziellen Bewerbungsunterlagen keine Angaben vor. Das beantworte ich jedoch sehr gerne in einem persönlichen Gespräch!"
+3. ABSOLUTE FAKTENBASIERTHEIT: Du darfst nur tatsächliche Fakten aus dieser Wissensdatenbank nennen (JSON + PDF-Volltext). Erfinde KEINE Abschlüsse, Jahreszahlen, Arbeitgeber, Gehälter oder Projekte. Wenn nach etwas gefragt wird, das nicht hier steht (z.B. deine Lieblingsfarbe, Programmierkenntnisse in Python, Hobbys wie Reisen, etc.), antworte mit: "Dazu liegen mir in meinen offiziellen Bewerbungsunterlagen keine Angaben vor. Das beantworte ich jedoch sehr gerne in einem persönlichen Gespräch!"
 4. GEWINNEND & DIREKT: Beantworte Fragen zielgerichtet, professionell, sympathisch und selbstbewusst. Zeige, dass du dich auf die Schnittstelle zwischen Business-Problemen des Kunden und pragmatischen KI-Lösungen spezialisiert hast.
 `;
 
@@ -105,6 +114,26 @@ const mockResponses: Record<string, string> = {
     "Der IPSO Premium Smart-Regenschirm schützt Sie nicht nur vor Regen, sondern ist dank Bluetooth, GPS-Tracking und intelligentem Bewegungsalarm via App praktisch unverlierbar. Er hat ein ultra-kompaktes Packmass von 20 cm und eine Spannweite von 120 cm.",
   gastronomie:
     "Über vier Jahrzehnte Gastronomie prägen meinen Werdegang – von Küchenchef über Pächter bis hin zur Führung von Teams in anspruchsvollen Betrieben wie dem Restaurant Löwenburg.",
+  "ab wann":
+    "Ich bin ab dem 1. Dezember 2026 frei, um eine neue Stelle anzutreten.",
+  verfügbar:
+    "Ich bin ab dem 1. Dezember 2026 frei, um eine neue Stelle anzutreten.",
+  anzutreten:
+    "Ich bin ab dem 1. Dezember 2026 frei, um eine neue Stelle anzutreten.",
+  antritt:
+    "Ich bin ab dem 1. Dezember 2026 frei, um eine neue Stelle anzutreten.",
+  geburtsort:
+    "Ich bin in St. Gallen geboren (Geburtsdatum: 10. Januar 1966).",
+  geboren:
+    "Ich bin am 10. Januar 1966 in St. Gallen geboren.",
+  grundschule:
+    "Ich habe die Primarschule Hadwig in St. Gallen und die Sekundarschule KKSS (Flade) in St. Gallen besucht.",
+  primarschule:
+    "Ich habe die Primarschule Hadwig in St. Gallen und die Sekundarschule KKSS (Flade) in St. Gallen besucht.",
+  auto:
+    "Nein, ich habe kein eigenes Auto – ich bin mit dem ÖV unterwegs.",
+  fahrzeug:
+    "Nein, ich habe kein eigenes Auto – ich bin mit dem ÖV unterwegs.",
 };
 
 function getMockReply(lastMessage: string): string {

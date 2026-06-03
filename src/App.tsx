@@ -2765,7 +2765,7 @@ export default function App() {
                 <h4 className="text-xs font-bold text-slate-400 font-mono uppercase tracking-wider border-b border-slate-850 pb-2">Indexierte Ingestion-Dokumente</h4>
                 {adminDocs.length === 0 ? (
                   <p className="text-xs text-slate-500 italic leading-relaxed">
-                    Bisher wurden keine temporären Dokumente indexiert. Der Chatbot stützt sich ausschliesslich auf die standardmässigen 6 PDFs als unantastbare Wissensbasis.
+                    Bisher wurden keine temporären Dokumente indexiert. Der Chatbot stützt sich auf die drei offiziellen Kern-PDFs (Lebenslauf V2.3, Zertifikate, Arbeitszeugnisse) plus die strukturierte App-Datenbank als unantastbare Wissensbasis.
                   </p>
                 ) : (
                   <div className="space-y-2 max-h-48 overflow-y-auto">
