@@ -54,10 +54,10 @@ export const PersonalData = {
   location: "St. Gallen, Schweiz",
   birthdate: "10. Januar 1966",
   languages: [
-    { name: "Deutsch", level: "C2 – Muttersprache" },
-    { name: "Englisch", level: "C1 – Fortgeschritten, verhandlungssicher" },
-    { name: "Französisch", level: "B2 – Gute Kenntnisse" },
-    { name: "Italienisch", level: "A2 – Grundkenntnisse" }
+    { name: "Deutsch", level: "C2, Muttersprache" },
+    { name: "Englisch", level: "C1, fortgeschritten, verhandlungssicher" },
+    { name: "Französisch", level: "B2, gute Kenntnisse" },
+    { name: "Italienisch", level: "A2, Grundkenntnisse" }
   ],
   strengths: [
     "Analytisches & vernetztes Denken",
@@ -82,7 +82,7 @@ export const PersonalData = {
     { title: "Projektmanagement (BPMN, Agil)", score: 90, icon: "FolderGit2" },
     { title: "Business Case & ROI Berechnung", score: 95, icon: "TrendingUp" }
   ],
-  summary: "Thomas Ballinari verbindet über 40 Jahre wertvolle Gastronomie- und Führungserfahrung mit der modernen Welt der künstlichen Intelligenz. Als angehender AI Business Specialist (eidg. FA) und zertifizierter KI-Professional Business konzipiert er datenbasierte Lösungen zur drastischen Kosteneinsparung, Prozessoptimierung und Entlastung im Arbeitsalltag. Sein bestes Fallbeispiel dafür ist SmartGastro.ai – eine KI-gestützte Nachfrageprognose, welche praxisnah entwickelt wurde, um echte gastronomische Probleme wie Food Waste und Personalengpässe zu lösen."
+  summary: "Thomas Ballinari verbindet über 40 Jahre wertvolle Gastronomie- und Führungserfahrung mit der modernen Welt der künstlichen Intelligenz. Als angehender AI Business Specialist (eidg. FA) und zertifizierter KI-Professional Business konzipiert er datenbasierte Lösungen zur drastischen Kosteneinsparung, Prozessoptimierung und Entlastung im Arbeitsalltag. Sein bestes Fallbeispiel dafür ist SmartGastro.ai, eine KI-gestützte Nachfrageprognose, welche praxisnah entwickelt wurde, um echte gastronomische Probleme wie Food Waste und Personalengpässe zu lösen."
 };
 
 export const InterestsAndEngagement = {
@@ -92,7 +92,7 @@ export const InterestsAndEngagement = {
     "Curling",
   ],
   voluntary: [
-    "2006–2007: Aufbau & Betriebsleitung Eiskunstlaufbahn Sargans",
+    "2006 bis 2007: Aufbau & Betriebsleitung Eiskunstlaufbahn Sargans",
     "Seit 2018: Beistandschaft für Brüder Oliver und René (Zerebralparese)",
   ],
 } as const;
@@ -100,15 +100,14 @@ export const InterestsAndEngagement = {
 export const Experiences: ExperienceItem[] = [
   {
     id: "exp-1",
-    role: "KI-Specialist & Aushilfe Küchenchef",
+    role: "Aushilfe Küchenchef",
     company: "Säntis Gastronomie AG",
     location: "St. Gallen",
-    period: "02/2025 – aktuell",
-    category: "both",
+    period: "02/2025 bis aktuell",
+    category: "gastro",
     highlights: [
-      "Einsatz modernster KI-Werkzeuge (Claude, Google Studio AI / Gemini) zur signifikanten Prozessoptimierung im gastronomischen Betrieb.",
-      "Betreuung von Grossveranstaltungen und Banketten bis zu 5'000 Gästen, sowie Koordination der Take-Away-Ausstellungs-Gastronomie.",
-      "Küchenchef der renommierten 'Moststube' während der Olma-Messen St. Gallen."
+      "Grossevents, Bankette bis 5'000 Gästen, Take-Away Messegastronomie",
+      "Küchenchef Moststube, Olma-Messen St. Gallen"
     ]
   },
   {
@@ -116,7 +115,7 @@ export const Experiences: ExperienceItem[] = [
     role: "Selbstständiger Pächter & Geschäftsführer",
     company: "Restaurant Löwenburg",
     location: "Lienz",
-    period: "05/2013 – 03/2023",
+    period: "05/2013 bis 03/2023",
     category: "gastro",
     highlights: [
       "Erfolgreiche Leitung eines beliebten Ausflugsrestaurants mit 120 Innenplätzen und 185 Plätzen im Garten, Bewältigung von bis zu 500 Laufgästen an Spitzentagen.",
@@ -129,7 +128,7 @@ export const Experiences: ExperienceItem[] = [
     role: "Leiter Gastronomie",
     company: "VersuchsStollen Hagerbach AG",
     location: "Flums",
-    period: "08/2007 – 05/2013",
+    period: "08/2007 bis 05/2013",
     category: "gastro",
     highlights: [
       "Vollständige operative Führung des Restaurants, inkl. Menüplanung, Kalkulation, Einkauf und anspruchsvoller Mitarbeiterdisposition.",
@@ -140,10 +139,10 @@ export const Experiences: ExperienceItem[] = [
   },
   {
     id: "exp-4",
-    role: "Koch Teilzeit (20–40%)",
+    role: "Koch Teilzeit (20 bis 40 Prozent)",
     company: "Berit Paracelsus Klinik AG",
     location: "Niederteufen",
-    period: "06/2006 – 11/2006",
+    period: "06/2006 bis 11/2006",
     category: "gastro",
     highlights: [
       "Verantwortung für anspruchsvolle Diätküche und die hochqualitative Einzelpatientenversorgung.",
@@ -155,7 +154,7 @@ export const Experiences: ExperienceItem[] = [
     role: "Küchenchef",
     company: "Hotel Blumenstein",
     location: "Frauenfeld",
-    period: "02/2004 – 02/2006",
+    period: "02/2004 bis 02/2006",
     category: "gastro",
     highlights: [
       "Leitung der Küchenbrigade, Ausbildung von engagierten Lehrlingen.",
@@ -167,7 +166,7 @@ export const Experiences: ExperienceItem[] = [
     role: "Selbstständiger Unternehmer",
     company: "Markthandel",
     location: "Ostschweiz",
-    period: "10/1997 – 12/2003",
+    period: "10/1997 bis 12/2003",
     category: "gastro",
     highlights: [
       "Aufbau eines Handelsgeschäfts für den Einkauf & Import von Silberschmuck und trendigen Textilien.",
@@ -179,7 +178,7 @@ export const Experiences: ExperienceItem[] = [
     role: "Pächter",
     company: "Schwimmbadrestaurant",
     location: "Oberwinterthur",
-    period: "05/1995 – 09/1997",
+    period: "05/1995 bis 09/1997",
     category: "gastro",
     highlights: [
       "Operative und finanzielle Führung des saisonal hochfrequentierten Schwimmbadrestaurants mit bis zu 10 Mitarbeitenden.",
@@ -191,7 +190,7 @@ export const Experiences: ExperienceItem[] = [
     role: "Geschäftsführer",
     company: "Bistro La baguette",
     location: "Volketswil",
-    period: "09/1993 – 12/1994",
+    period: "09/1993 bis 12/1994",
     category: "gastro",
     highlights: [
       "Leitung eines Bistro-Betriebs mit 90 Sitzplätzen, Erzielung ausgezeichneter betrieblicher Umsatzzahlen.",
@@ -203,7 +202,7 @@ export const Experiences: ExperienceItem[] = [
     role: "Koch/Küchenchef",
     company: "Berggasthaus Tschuggenhütte",
     location: "Arosa",
-    period: "02/1992 – 03/1993",
+    period: "02/1992 bis 03/1993",
     category: "gastro",
     highlights: [
       "Führung der Küche in einem hochfrequentierten Skigebiet-Gasthaus mit Einkaufskoordination und Menügestaltung.",
@@ -215,11 +214,11 @@ export const Experiences: ExperienceItem[] = [
     role: "Kellner",
     company: "Gastronomiebetriebe Basma AG",
     location: "St. Gallen",
-    period: "09/1990 – 01/1992",
+    period: "09/1990 bis 01/1992",
     category: "gastro",
     highlights: [
       "Einsatz in mehreren Betrieben der Basma AG (Filou-Bar, Goliath-Stübli, Peppermint-Bar).",
-      "Ehrliche, pünktliche und korrekte Arbeitsweise – im Arbeitszeugnis bestens empfohlen."
+      "Ehrliche, pünktliche und korrekte Arbeitsweise. Im Arbeitszeugnis bestens empfohlen."
     ]
   },
   {
@@ -227,7 +226,7 @@ export const Experiences: ExperienceItem[] = [
     role: "Sous-Chef / Saucier",
     company: "Chalet Suisse",
     location: "New York, USA",
-    period: "04/1990 – 08/1990",
+    period: "04/1990 bis 08/1990",
     category: "gastro",
     highlights: [
       "Auslandserfahrung im renommierten Schweizer Restaurant mitten in New York City.",
@@ -239,7 +238,7 @@ export const Experiences: ExperienceItem[] = [
     role: "Chef Tournant",
     company: "Century Plaza Hotel",
     location: "Los Angeles, USA",
-    period: "08/1988 – 02/1990",
+    period: "08/1988 bis 02/1990",
     category: "gastro",
     highlights: [
       "Springer für 14 Restaurants und die Hauptküche in einem der grössten Hotelkomplexe Los Angeles.",
@@ -251,10 +250,10 @@ export const Experiences: ExperienceItem[] = [
     role: "Koch / Küchenchef",
     company: "Hotel Residenza La Val",
     location: "Brigels",
-    period: "12/1986 – 04/1988",
+    period: "12/1986 bis 04/1988",
     category: "gastro",
     highlights: [
-      "Aufstieg vom Koch zum Küchenchef – erste Führungserfahrung in der Küchenleitung.",
+      "Aufstieg vom Koch zum Küchenchef, meine erste Führungserfahrung in der Küchenleitung.",
       "Kreative Menügestaltung; die Küche genoss unter seiner Leitung einen sehr guten Ruf."
     ]
   },
@@ -263,7 +262,7 @@ export const Experiences: ExperienceItem[] = [
     role: "Alleinkoch",
     company: "Restaurant Linsebühl",
     location: "St. Gallen",
-    period: "06/1986 – 11/1986",
+    period: "06/1986 bis 11/1986",
     category: "gastro",
     highlights: [
       "Umsichtige Bewirtschaftung als selbstständiger Alleinkoch im Restaurantbetrieb.",
@@ -275,11 +274,11 @@ export const Experiences: ExperienceItem[] = [
     role: "Tournant / Koch",
     company: "Hotel Alpenrose",
     location: "Wildhaus",
-    period: "10/1985 – 01/1986",
+    period: "10/1985 bis 01/1986",
     category: "gastro",
     highlights: [
       "Rückkehr in den Lehrbetrieb als Tournant vor Antritt der Rekrutenschule.",
-      "Gereifte Persönlichkeit und ausgezeichnete Einsatzfreude – für höhere Posten empfohlen."
+      "Gereifte Persönlichkeit und ausgezeichnete Einsatzfreude. Im Zeugnis bin ich für höhere Posten empfohlen."
     ]
   },
   {
@@ -287,7 +286,7 @@ export const Experiences: ExperienceItem[] = [
     role: "Commis de Cuisine",
     company: "Hotel le Château d'Ouchy",
     location: "Lausanne",
-    period: "06/1985 – 10/1985",
+    period: "06/1985 bis 10/1985",
     category: "gastro",
     highlights: [
       "Erster Einsatz in der Westschweiz im renommierten Schloss-Hotel am Genfersee.",
@@ -299,19 +298,19 @@ export const Experiences: ExperienceItem[] = [
 export const Educations: EducationItem[] = [
   {
     id: "edu-1",
-    degree: "AI Business Specialist – Eidg. Fachausweis",
+    degree: "AI Business Specialist, Eidg. Fachausweis",
     institution: "ipso Bildung AG",
     location: "Zürich (Schweiz)",
-    period: "2025 – aktuell",
+    period: "2025 bis heute",
     details: [
-      "Informatik & Wirtschaft – Intensive Vorbereitung auf den neu geschaffenen eidg. Fachausweis.",
+      "Informatik & Wirtschaft. Intensive Vorbereitung auf den neu geschaffenen eidg. Fachausweis.",
       "Schwerpunkte: KI-Strategie, Business Intelligence (BI), Prototyping, Datenanalyse, Digitale Transformation.",
       "Praxisprojekt als Ausbildungsnachweis: Konzeptentwicklung und Prototyp für 'SmartGastro.ai' zur KI-gestützten Nachfrageprognose. Abgabe: 22. August 2026."
     ]
   },
   {
     id: "edu-2",
-    degree: "KI-Professional (Business) – Zertifikat",
+    degree: "KI-Professional (Business), Zertifikat",
     institution: "HSO Wirtschafts- und Informatikschule",
     location: "Bern / Oerlikon",
     period: "2025",
@@ -322,10 +321,10 @@ export const Educations: EducationItem[] = [
   },
   {
     id: "edu-3",
-    degree: "Wirtefachkurs – Fähigkeitsausweis",
+    degree: "Wirtefachkurs, Fähigkeitsausweis",
     institution: "GastroSuisse / Kanton St. Gallen",
     location: "St. Gallen",
-    period: "02/1993 – 06/1993",
+    period: "02/1993 bis 06/1993",
     details: [
       "Umfassende Ausbildung zur Berechtigung zur Führung eines gastgewerblichen Betriebs mit Alkoholausschank.",
       "Spitzennote im Notenblatt der Wirteprüfung: Durschnitt von 5.8 über alle Fachnoten (inklusive Küchenführung 6.0, Buchhaltung 6.0)."
@@ -333,7 +332,7 @@ export const Educations: EducationItem[] = [
   },
   {
     id: "edu-4",
-    degree: "Lehrmeisterkurs – Kursausweis",
+    degree: "Lehrmeisterkurs, Kursausweis",
     institution: "Amt für Berufsbildung / ZbW St. Gallen",
     location: "St. Gallen",
     period: "11/2004",
@@ -343,10 +342,10 @@ export const Educations: EducationItem[] = [
   },
   {
     id: "edu-5",
-    degree: "Kochlehre – Eidg. Fähigkeitszeugnis (EFZ) Koch",
+    degree: "Kochlehre, Eidg. Fähigkeitszeugnis (EFZ) Koch",
     institution: "Hotel Alpenrose",
     location: "Wildhaus",
-    period: "01/1982 – 01/1985",
+    period: "01/1982 bis 01/1985",
     details: [
       "Fundierte Ausbildung in hochstehender Schweizer Gastronomie, mit Auszeichnung absolviert.",
       "Direkt nach erfolgreichem Abschluss mit Führungsverantwortung in der Küchenleitung betraut."
@@ -357,7 +356,7 @@ export const Educations: EducationItem[] = [
 export const Certificates: CertificateItem[] = [
   {
     id: "cert-1",
-    title: "KI-Professional (Business) – Zertifikat",
+    title: "KI-Professional (Business), Zertifikat",
     issuer: "HSO Wirtschafts- und Informatikschule Schweiz",
     date: "18.07.2025",
     category: "ki_it",
@@ -369,7 +368,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-2",
-    title: "ECDL Modul 1 – PC-Aufbaukurs",
+    title: "ECDL Modul 1, PC-Aufbaukurs",
     issuer: "Spirig Computer AG Trainingscenter, Heerbrugg",
     date: "13.04.2007",
     category: "ki_it",
@@ -382,7 +381,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-3",
-    title: "ECDL Modul 2 – PC Grundkurs",
+    title: "ECDL Modul 2, PC Grundkurs",
     issuer: "Klubschule Migros Rapperswil",
     date: "30.03.2007",
     category: "ki_it",
@@ -394,7 +393,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-4",
-    title: "ECDL Modul 3 – Word Processing",
+    title: "ECDL Modul 3, Word Processing",
     issuer: "Spirig Computer AG Trainingscenter, Heerbrugg",
     date: "20.04.2007",
     category: "ki_it",
@@ -407,7 +406,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-5",
-    title: "ECDL Modul 4 – Spreadsheets",
+    title: "ECDL Modul 4, Spreadsheets",
     issuer: "Spirig Computer AG Trainingscenter, Heerbrugg",
     date: "27.04.2007",
     category: "ki_it",
@@ -420,7 +419,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-6",
-    title: "ECDL Modul 6 – Präsentation / PowerPoint",
+    title: "ECDL Modul 6, Präsentation / PowerPoint",
     issuer: "Spirig Computer AG Trainingscenter, Heerbrugg",
     date: "18.06.2007",
     category: "ki_it",
@@ -432,7 +431,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-7",
-    title: "ECDL Modul 7 – Internet & Outlook",
+    title: "ECDL Modul 7, Internet & Outlook",
     issuer: "Bildungszentrum BVS St. Gallen",
     date: "25.05.2007",
     category: "ki_it",
@@ -445,7 +444,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-8",
-    title: "ECDL Start Certificate (Module 1–4)",
+    title: "ECDL Start Certificate (Module 1 bis 4)",
     issuer: "ECDL European Computer Driving Licence",
     date: "03.05.2007",
     category: "ki_it",
@@ -470,20 +469,20 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-10",
-    title: "Berufsschulzeugnis – Kochlehre",
+    title: "Berufsschulzeugnis, Kochlehre",
     issuer: "Gewerbliche Berufsschule St. Gallen",
     date: "27.03.1985",
     category: "gastro",
     grade: "Mustergültige Semesternoten",
     highlights: [
-      "Offizielles Lehrzeugnis der Gewerblichen Berufsschule St. Gallen über die Lehrzeit von 1982–1985.",
+      "Offizielles Lehrzeugnis der Gewerblichen Berufsschule St. Gallen über die Lehrzeit von 1982 bis 1985.",
       "Fleiss-Note 6.0 durchgehend in allen Semestern."
     ],
     transcript: "Gewerbliche Berufsschule St. Gallen - ABTEILUNG FÜR DIENSTLEISTUNGSBERUFE\n\nKandidat: Ballinari Thomas, geb. 10.01.66, Kochlehre im Hotel Alpenrose Wildhaus.\n\nSemestralnoten 1982 - 1985 (Pflichtfächer / Freifächer):\n• Deutsch: Fleiss-Note 6 durchgehend | Leistung: 5, 6, 6, 4.5, 6, 5.5, 5, 5.5\n• Rechnen: Fleiss-Note 6 durchgehend | Leistung: 6, 6, 6\n• Wirtschaftskunde: Leistung 4.5, 5, 5\n• Staatskunde: Leistung 4.5, 6, 6\n• Geschäftskunde: Fleiss 6 | Leistung 5, 6, 5, 5.5, 5, 5, 5.5\n• Fachrechnen: Leistung 6, 4.5, 6\n• Betriebsleiterkunde: Fleiss 6 | Leistung 4.5, 5, 5\n• Warenkunde: Leistung 4.5, 5, 6, 5\n• Ernährungslehre: Leistung 6, 6, 5\n• Menükunde & Rechtschreibung: Leistung 6, 5.5, 6, 4.5, 5\n• Kochkunde: Leistung 6, 4.5, 6, 4.5, 6, 5\n\nBetragen: Note 6 durchgehend (Mustergültig)\nAbsenzen: Sehr gering (8 in Lehrjahren)\n\nSt. Gallen, den 27.03.85"
   },
   {
     id: "cert-11",
-    title: "Wirtefachkurs – Fähigkeitsausweis",
+    title: "Wirtefachkurs, Fähigkeitsausweis",
     issuer: "Volkswirtschaftsdepartement Kanton St. Gallen",
     date: "15.06.1993",
     category: "gastro",
@@ -508,7 +507,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-13",
-    title: "Lehrmeisterkurs – Kursausweis",
+    title: "Lehrmeisterkurs, Kursausweis",
     issuer: "Amt für Berufsbildung / ZbW St. Gallen",
     date: "25.11.2004",
     category: "gastro",
@@ -537,7 +536,7 @@ export const Testimonials: TestimonialItem[] = [
     id: "zeugnis-1",
     employer: "VersuchsStollen Hagerbach AG, Flums-Hochwiese",
     role: "Leiter Gastronomie",
-    period: "08/2007 – 05/2013",
+    period: "08/2007 bis 05/2013",
     summary: "Überdurchschnittliche Leistungsbereitschaft und hervorragende Qualitäten als umsichtiger Leiter und erfahrener Küchenchef. Kochen für Grossanlässe bis zu 500 Personen mit äusserstem Organisationstalent.",
     highlights: [
       "Führung des Restaurants, Menüplanung, Menükalkulation, Einkauf und anspruchsvolle Mitarbeiterdisposition.",
@@ -578,7 +577,7 @@ Flums-Hochwiese, 30. April 2013`
     id: "zeugnis-2",
     employer: "Berit Paracelsus Klinik AG, Teufen",
     role: "Koch Teilzeit (20-40%)",
-    period: "06/2006 – 11/2006",
+    period: "06/2006 bis 11/2006",
     summary: "Herr Ballinari bewies äusserst selbstständiges, effizientes, kreatives Arbeiten. Er bereitete köstliche Patientenspeisen und Diätgerichte mit viel Feingefühl zu und behielt auch in hektischen Zeiten die Ruhe.",
     highlights: [
       "Zubereitung von exklusiver Diätküche und Einzelpatientenverpflegung im Klinikbereich.",
@@ -615,7 +614,7 @@ Teufen, 22. November 2006`
     id: "zeugnis-3",
     employer: "Hotel Blumenstein, Frauenfeld",
     role: "Küchenchef",
-    period: "02/2004 – 02/2006",
+    period: "02/2004 bis 02/2006",
     summary: "Als Küchenchef leitete Thomas Ballinari die Geschicke des anspruchsvollen Hotelrestaurants. Kreative Menüplanung, Ausbildung der Lehrlinge und tadellose Hygiene.",
     highlights: [
       "Führung der Küchenbrigade und Lehrlingsausbildung.",
@@ -645,7 +644,7 @@ Frauenfeld, 28. Feb. 2006`
     id: "zeugnis-4",
     employer: "Arosa Bergbahnen AG (Tschuggenhütte)",
     role: "Küchenchef",
-    period: "12/2000 – 04/2001",
+    period: "12/2000 bis 04/2001",
     summary: "Hervorragende Zusammenarbeit als sehr tüchtige, zuverlässige Arbeitskraft in der alpinen Gastronomie. Vollste Zufriedenheit bei Team und Führung.",
     highlights: [
       "Tüchtige und zuverlässige Arbeitskraft im anspruchsvollen Wintersaison-Restaurant.",
@@ -669,9 +668,9 @@ Arosa, 22. April 2001 /rz`
   },
   {
     id: "zeugnis-5",
-    employer: "Bistrag AG – Bistro La baguette, Volketswil",
+    employer: "Bistrag AG, Bistro La baguette, Volketswil",
     role: "Geschäftsführer",
-    period: "09/1993 – 12/1994",
+    period: "09/1993 bis 12/1994",
     summary: "Herausragender geschäftlicher Einsatz, Erzielung ausgezeichneter Umsätze im 90-Plätze-Bistro. Frühzeitiger, gewinnbringender Einsatz moderner Gastronomie-EDV.",
     highlights: [
       "Vollständige geschäftliche Führung des Bistros mit 90 Plätzen.",
@@ -697,7 +696,7 @@ Bistrag AG: R. Ricco (Unterschrift)`
     id: "zeugnis-6",
     employer: "Berggasthaus Tschuggenhütte, Arosa",
     role: "Koch / Küchenchef",
-    period: "02/1992 – 03/1993",
+    period: "02/1992 bis 03/1993",
     summary: "Kombination aus Aushilfs- und Küchenchefführung in einem der lebhaftesten Bergrestaurants von Arosa. Ruhige, verlässliche Küchenorganisation.",
     highlights: [
       "Mister Allrounder: Vom Aushilfskoch zum alleinigen Küchenchef befördert.",
@@ -727,7 +726,7 @@ Schweizer Wirteverband`
     id: "zeugnis-7",
     employer: "Basma AG Gastronomiebetriebe, St. Gallen",
     role: "Kellner",
-    period: "09/1990 – 01/1992",
+    period: "09/1990 bis 01/1992",
     summary: "Abdeckung exzellenter Servicequalitäten in anspruchsvollen St. Galler Gastbetrieben wie Filou-Bar, Goliath-Stübli und Peppermint-Bar.",
     highlights: [
       "Ehrliche, pünktliche und korrekte Arbeitsweise im lebhaften Bar- und Restaurantbetrieb.",
@@ -757,7 +756,7 @@ BASMA AG: Peter Panella`
     id: "zeugnis-8",
     employer: "Chalet Suisse, New York (Manhattan)",
     role: "Sous-Chef / Saucier",
-    period: "04/1990 – 08/1990",
+    period: "04/1990 bis 08/1990",
     summary: "Internationale Auslandserfahrung in NYC. Tadellose professionelle Standards in exzellenter Saucier-Kunst und bemerkenswert positive Ausstrahlung im Team.",
     highlights: [
       "Hervorragende Arbeitsmoral und umfassendes Fachwissen als Saucier.",
@@ -786,7 +785,7 @@ Konrad Egli, President`
     id: "zeugnis-9",
     employer: "Hotel Residenza La Val, Brigels (Winter 1987/88)",
     role: "Küchenverantwortlicher / 1. Koch",
-    period: "12/1987 – 04/1988",
+    period: "12/1987 bis 04/1988",
     summary: "Alleinige Führung der Winter-Küchenbrigade. Angewandtes Handwerk in anspruchsvoller à la carte und Pensions-Küche, fantastisches Gebäck-Flair.",
     highlights: [
       "Volle Verantwortung für die lebhafte Hotelküche und Mitarbeiterkoordination.",
@@ -814,7 +813,7 @@ Th. Reimann, Dir.`
     id: "zeugnis-10",
     employer: "Hotel Residenza La Val, Brigels (Sommer 1987)",
     role: "1. Koch",
-    period: "06/1987 – 10/1987",
+    period: "06/1987 bis 10/1987",
     summary: "Massgeblicher Anteil an einer erheblichen Umsatzsteigerung durch überzeugende Qualitätssicherung und eine kreative Erweiterung der à la carte-Karte.",
     highlights: [
       "Operative Sommerverantwortung für die Hotelküche und ein kleines Team.",
@@ -842,7 +841,7 @@ Th. Reimann, Direktion`
     id: "zeugnis-11",
     employer: "Hotel Residenza La Val, Brigels (Winter 1986/87)",
     role: "Koch",
-    period: "12/1986 – 04/1987",
+    period: "12/1986 bis 04/1987",
     summary: "Bescheinigung erstklassigen Rufs durch unermüdlichen Wintersaison-Einsatz im 4-Mann-Brigadeteam.",
     highlights: [
       "Umfassender Beitrag zum Wintersaison-Erfolg für Pensionäre & à la carte.",
@@ -872,7 +871,7 @@ Th. Reimann, Direktion`
     id: "zeugnis-12",
     employer: "Restaurant Linsebühl, St. Gallen",
     role: "Alleinkoch",
-    period: "08/1986 – 11/1986",
+    period: "08/1986 bis 11/1986",
     summary: "Umsichtige Bewirtschaftung als selbstständiger Alleinkoch. Höchste Kundenzufriedenheit bei täglicher, freier Menügestaltung.",
     highlights: [
       "Volle Verantwortung als Alleinkoch bei eigenständiger Speisengestaltung.",
@@ -893,7 +892,7 @@ Fam. Fässler-Fuchs, Rest. Linsebühl, 9000 St.Gallen`
     id: "zeugnis-13",
     employer: "Hotel Alpenrose, Wildhaus (Tournant)",
     role: "Koch / Tournant",
-    period: "10/1985 – 01/1986",
+    period: "10/1985 bis 01/1986",
     summary: "Erfolgreiche Rückkehr in den Lehrbetrieb als reife Kochpersönlichkeit in der Position des Tournants vor dem Militärdienst.",
     highlights: [
       "Sofortige reibungslose Wiedereingliederung in die anspruchsvolle Küchenbrigade.",
@@ -919,7 +918,7 @@ Niklaus Stump-Wiggli, Telefon 074 5 21 21`
     id: "zeugnis-14",
     employer: "Hotel le Château d'Ouchy, Lausanne",
     role: "Commis de Cuisine",
-    period: "06/1985 – 10/1985",
+    period: "06/1985 bis 10/1985",
     documentTitle: "CERTIFICAT DE TRAVAIL",
     summary: "Erster Westschweiz-Aufenthalt zur Festigung französischer Fachbegriffe. Volle Zufriedenheit im renommierten Schloss-Hotel am Genfersee.",
     highlights: [
@@ -941,7 +940,7 @@ M. Martial Grand (Chef de cuisine), N. Gruss (Directeur)`
     id: "zeugnis-15",
     employer: "Hotel Alpenrose, Wildhaus (Ausbildung)",
     role: "Kochlehre (Kochlehrling)",
-    period: "05/1982 – 04/1985",
+    period: "05/1982 bis 04/1985",
     summary: "Herausragendes Fundament einer dreijährigen klassischen Kochlehre. Mit grossem Fleiss, Können und mustergültigem Benehmen hervorragend absolviert.",
     highlights: [
       "Erstklassiges Engagement beim Erlernen aller klassischen Kochdisziplinen.",
@@ -972,7 +971,7 @@ export const SmartGastroProject = {
     title: "Das tägliche Planungsdilemma in der Gastro-Küche",
     details: [
       "Fehlplanung beim Mise-en-Place führt direkt zu enormem Food Waste (Zubereitung auf Verdacht) oder unzufriedenen Gästen durch Out-of-Stock-Situationen.",
-      "Massiver Hektik und Stress während der Service-Stosszeiten (z. B. 12:15 Uhr) durch spontane, ungeplante Nachproduktionen.",
+      "Massiver Hektik und Stress während der Stosszeiten (z. B. 12:15 Uhr) durch spontane, ungeplante Nachproduktionen.",
       "Schwere Vorhersehbarkeit durch reine Intuition. Das Gästeaufkommen schwankt extrem je nach Wetter (Sonne = Terrassengeschäft, Regen = gutbürgerlich innen) und lokalen Events im Umkreis.",
       "Fehlende Datennutzung: Das vorhandene POS-Kassensystem (z. B. WaiterOne) erfasst zwar alle Transaktionen lückenlos, diese wertvollen Daten verbleiben jedoch ungenutzt im Archiv.",
       "Kosten als Schmerzpunkt: Ein durchschnittliches Schweizer Ausflugsrestaurant verliert monatlich CHF 1'000 bis CHF 2'000 durch vermeidbaren Food Waste."
@@ -981,7 +980,7 @@ export const SmartGastroProject = {
   solution: {
     title: "Die SmartGastro.ai Lösung: Datenbasierte Intelligenz",
     details: [
-      "Kombination historischer POS-Verkaufsdaten mit hyper-lokalen Wettervorhersagen (MeteoSchweiz Open Data) und registrierten Event-Daten (im 30km Umkreis).",
+      "Kombination historischer POS-Verkaufsdaten mit lokalen Wettervorhersagen (MeteoSchweiz Open Data) und registrierten Events im Umkreis von 30 km.",
       "Einsatz hoch-optimierter Machine Learning Algorithmen (XGBoost & LightGBM) zur Generierung eines präzisen 7- bis 14-Tage-Forecasts pro Gericht und Tag.",
       "Präzision: Erreichung einer nachgewiesenen Vorhersagegenauigkeit (MAPE) von unter 15% nach nur 3 Monaten Pilotbetrieb für die Top 10-Gerichte.",
       "Automatisierte Cloud-Pipeline: Serverlose ETL-Abfragen in eine sichere PostgreSQL-Datenbank (gehostet im AWS-Rechenzentrum Schweiz zur Einhaltung des nDSG) täglich um 06:00 Uhr.",
@@ -1052,55 +1051,55 @@ export interface MonadsValueItem {
 export const MonadsFitSection = {
   title: "Warum ich zu Monads passe",
   intro:
-    "Fabian, Christian, Marc, Adrian, Rafael, Tanja – euer Inserat beschreibt fast wortwörtlich meinen Alltag: AI-Domain aufbauen, Business Cases vor Technologie, beim Kunden Wirkung erzielen. Ihr verwandelt bei Monads «Complexity into Clarity» – genau so denke ich: nicht in Modellen, sondern in Hebeln, die live gehen. Kein klassisches Motivationsschreiben – hier ist mein Match zu eurem AI-Rollenprofil, im Du und auf Augenhöhe.",
+    "Fabian, Christian, Marc, Adrian, Rafael, Tanja: Euer Inserat trifft genau meinen Alltag. AI-Domain aufbauen, zuerst Business Cases denken, beim Kunden Wirkung erzielen. Bei Monads heisst das «Complexity into Clarity». Genau so arbeite ich. Nicht in Modellen, sondern in Hebeln, die live gehen. Kein klassisches Motivationsschreiben, sondern mein Match zu eurem AI-Rollenprofil. Im Du und auf Augenhöhe.",
   cards: [
     {
       number: "01",
       title: "AI-Domain mitgestalten",
-      body: "Fabian, Christian – ihr sucht jemanden, der Strategie, Positionierung und Angebot der AI-Domain verantwortet. Genau das will ich: die AI-Praxis bei Monads von Null auf mit euch definieren. SmartGastro.ai und diese App sind meine Antwort auf eure Aufforderung – zeigt Workflow und Business Case, nicht Folien.",
+      body: "Fabian, Christian, ihr sucht jemanden, der Strategie, Positionierung und Angebot der AI-Domain verantwortet. Genau das will ich mit euch. Die AI-Praxis bei Monads von Null auf definieren. SmartGastro.ai und diese App sind meine Antwort auf eure Aufforderung: Workflow und Business Case statt Folien.",
       lever: "Erfolg = was beim Kunden live läuft",
     },
     {
       number: "02",
       title: "Business Cases, nicht Technologie",
-      body: "Marc, du knackst die kniffligen Fälle – ich starte einen Schritt früher: Gespräch mit Fachbereich und Management, Schmerz verstehen, ROI skizzieren. Food Waste, POS-Daten, manuelle Planung – erst der Case, dann Claude, Cursor oder die passende Pipeline.",
+      body: "Marc, du knackst die kniffligen Fälle. Ich starte einen Schritt früher: Gespräch mit Fachbereich und Management, Schmerz verstehen, ROI skizzieren. Erst der Case, dann Claude, Cursor oder die passende Pipeline.",
       lever: "Business-first, wie Monads es lebt",
     },
     {
       number: "03",
-      title: "Nah am Kunden – auf allen Ebenen",
-      body: "Adrian, du findest heraus, was wirklich zählt – nach 40 Jahren Gastronomie kenne ich diese Dialoge mit Küche, Pächter und Geschäftsleitung. Rafael, Brücken bauen ist auch meine Stärke: zwischen Fachbereich, IT und C-Level, damit AI nicht im Labor bleibt.",
-      lever: "Potenziale identifizieren, wo es weh tut",
+      title: "Nah am Kunden auf allen Ebenen",
+      body: "Adrian, du findest heraus, was wirklich zählt. Nach 40 Jahren Gastronomie kenne ich diese Dialoge mit Küche, Pächter und Geschäftsleitung. Rafael, Brücken bauen ist auch meine Stärke, damit AI nicht im Labor bleibt.",
+      lever: "Potenziale finden, wo es weh tut",
     },
     {
       number: "04",
-      title: "AI Power-User & Vibe Coding",
-      body: "Claude, Cursor und Google Studio AI nutze ich täglich – nicht als Spielerei, als Arbeitsweise. Lösungen designen und selbst in Rekordzeit umsetzen: Fullstack-Prototypen, serverlose ETL-Jobs, produktionsnahe Demos. Das ist der Wettbewerbsvorteil aus eurem Inserat – und meiner.",
+      title: "AI Power-User und Vibe Coding",
+      body: "Claude, Cursor und Google Studio AI nutze ich täglich, nicht als Spielerei, sondern als Arbeitsweise. Lösungen designen und selbst in Rekordzeit umsetzen: Fullstack-Prototypen, serverlose ETL-Jobs, produktionsnahe Demos. Das ist der Wettbewerbsvorteil aus eurem Inserat und meiner.",
       lever: "Von Konzept zu produktionsreif in Tagen",
     },
     {
       number: "05",
-      title: "AI Enablement & Wissensmanagement",
-      body: "Ihr wollt Kundenteams befähigen – Workshops, Methoden, Formate. In meiner AI-Business-Ausbildung ist Wissensmanagement (F6) zertifizierte Kernkompetenz. AI, die inspiriert statt ersetzt – passend zu eurer Enterprise Intelligence: vom Datenchaos zur klaren Entscheidung.",
+      title: "AI Enablement und Wissensmanagement",
+      body: "Ihr wollt Kundenteams befähigen mit Workshops, Methoden und Formaten. In meiner AI-Business-Ausbildung ist Wissensmanagement (F6) zertifizierte Kernkompetenz. AI, die inspiriert statt ersetzt. Genau eure Enterprise Intelligence: vom Datenchaos zur klaren Entscheidung.",
       lever: "Nachhaltige AI-Kultur beim Kunden",
     },
     {
       number: "06",
-      title: "Freiheit, Du-Kultur & Nomad-Mindset",
-      body: "Tanja, du sorgst dafür, dass das Fundament trägt – ich bringe Tatkraft und Eigenverantwortung mit. Remote, flexibel, ohne Mikromanagement: euer Nomad-DNA («independent, mobile, efficient») ist meine. Als Team auf Augenhöhe – als Nomads – kommen wir gemeinsam weiter.",
+      title: "Freiheit, Du-Kultur und Nomad-Mindset",
+      body: "Tanja, du sorgst dafür, dass das Fundament trägt. Ich bringe Tatkraft und Eigenverantwortung mit. Remote, flexibel, ohne Mikromanagement. Euer Nomad-DNA ist auch meine. Als Team auf Augenhöhe kommen wir gemeinsam weiter.",
       lever: "Gestaltungsspielraum statt starre Strukturen",
     },
   ],
 } as const;
 
 export const MonadsValues = {
-  intro: "Fabian, Christian, Marc, Adrian, Rafael, Tanja – ihr sucht eine Macher-Persönlichkeit für eure AI-Domain: Business Cases statt Konzeptpapiere, Vibe Coding statt PowerPoint, Wirkung beim Kunden statt Technologie-Diskussionen. Hier meine interaktive Antwort auf euer Stelleninserat – im Du, mit SmartGastro.ai als konkretem Case.",
+  intro: "Fabian, Christian, Marc, Adrian, Rafael, Tanja: Ihr sucht eine Macher-Persönlichkeit für eure AI-Domain. Business Cases statt Konzeptpapiere, Vibe Coding statt PowerPoint, Wirkung beim Kunden statt Technologie-Diskussionen. Hier meine interaktive Antwort auf euer Stelleninserat, im Du, mit SmartGastro.ai als konkretem Case.",
   items: [
     {
       title: "1. Aufbau & Verantwortung der Domain AI",
       concept: "Unternehmerische Domain-Verantwortung",
       description: "Ich brenne darauf, die AI-Praxis bei Monads von Grund auf zu gestalten. Mit meiner 40-jährigen unternehmerischen Erfahrung als selbstständiger Pächter bringe ich genau das unternehmerische Denken, die finanzielle Disziplin und strategische Positionierung mit, die für einen erfolgreichen Business-Pfad nötig sind.",
-      howWeWin: "Wir etablieren ein klares AI-Dienstleistungsportfolio, das sich am ROI des Kunden misst – genau wie es in SmartGastro.ai vorgedacht ist."
+      howWeWin: "Wir etablieren ein klares AI-Dienstleistungsportfolio, das sich am ROI des Kunden misst, genau wie es in SmartGastro.ai vorgedacht ist."
     },
     {
       title: "2. Business Cases über Technologie stellen",
@@ -1111,7 +1110,7 @@ export const MonadsValues = {
     {
       title: "3. Vibe Coding & Schnelle Delivery",
       concept: "Pragmatische Prototypen in Rekordzeit",
-      description: "Lösungen designen und sofort selbst zum Leben erwecken: Ich nutze Claude, Cursor, Codex und APIs tagtäglich intensiv als Arbeitsweise – nicht als Experiment. SmartGastro.ai ist das lebende Beispiel – in kürzester Zeit als reaktionsfähiger Fullstack-Prototyp umgesetzt, fertig zur Kundenpräsentation.",
+      description: "Lösungen designen und sofort selbst zum Leben erwecken: Ich nutze Claude, Cursor, Codex und APIs tagtäglich intensiv als Arbeitsweise, nicht als Experiment. SmartGastro.ai ist das lebende Beispiel: in kürzester Zeit als reaktionsfähiger Fullstack-Prototyp umgesetzt, fertig zur Kundenpräsentation.",
       howWeWin: "Keine nutzlosen und teuren 100-seitigen Konzepte. Wir präsentieren dem Kunden funktionierende Prototypen nach wenigen Tagen. Das ist unser unschlagbarer Wettbewerbsvorteil bei Monads!"
     },
     {
@@ -1122,21 +1121,21 @@ export const MonadsValues = {
     },
     {
       title: "5. Flat Hierarchies & Du-Kultur",
-      concept: "Als Team weiterkommen – Keine Einzelgänger",
+      concept: "Als Team weiterkommen, keine Einzelgänger",
       description: "Ich liebe flache Strukturen, Freiheit und Eigenverantwortung. Bei Monads arbeiten wir auf Augenhöhe. Mit meiner langjährigen Leader-Erfahrung weiss ich, dass der Erfolg eines Projekts immer auf Teamarbeit beruht. Die Du-Kultur ist für mich keine Floskel, sondern gelebte Realität.",
-      howWeWin: "Gemeinsam am Tisch – Entwickler, Berater und Kunden ziehen an einem Strang. Transparenter Austausch, bei welchem jeder sein Bestes beisteuert."
+      howWeWin: "Gemeinsam am Tisch: Entwickler, Berater und Kunden ziehen an einem Strang. Transparenter Austausch, bei welchem jeder sein Bestes beisteuert."
     }
   ],
   workflowSteps: [
     {
       step: "01. Potenziale identifizieren",
       title: "Business Problem im Dialog",
-      desc: "Gespräch mit den Fachbereichen vor Ort. Analyse des Kern-Schmerzes (z. B. 2 Stunden manuelles Daten-Sichten, Materialschwund, Engpässe)."
+      desc: "Gespräch mit den Fachbereichen vor Ort. Analyse des Kernschmerzes (z. B. zwei Stunden manuelles Datensichten, Materialschwund, Engpässe)."
     },
     {
       step: "02. AI Lösungsdesign",
       title: "Schnittstellen & Frameworks",
-      desc: "Konzeptionierung der Technologie-Pipeline (z.B. Gemini Flash APIs, serverlose Cloud SQL, NLP-Agenten) und mathematische Plausibilitäts-Prüfung."
+      desc: "Konzeptionierung der Technologie-Pipeline (z.B. Gemini Flash APIs, serverlose Cloud SQL, NLP-Agenten) und mathematische Plausibilitätsprüfung."
     },
     {
       step: "03. Rapid Vibe Delivery",

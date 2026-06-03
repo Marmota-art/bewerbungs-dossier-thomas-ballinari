@@ -537,7 +537,7 @@ export default function App() {
                 </div>
 
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-light">
-                  Ich denke nicht in reinen Technologien – ich denke in <strong className="text-white font-semibold">Geschäftsproblemen</strong>. Mit Claude, Google Studio AI und einem eidgenössischen KI-Fachausweis transformiere ich deine operativen Herausforderungen in messbare AI-Lösungen mit echtem ROI.
+                  Ich denke nicht in Technologien, sondern in <strong className="text-white font-semibold">Geschäftsproblemen</strong>. Mit Claude, Google Studio AI und einem eidgenössischen KI-Fachausweis transformiere ich deine operativen Herausforderungen in messbare AI-Lösungen mit echtem ROI.
                 </p>
 
                 {/* TWIN CTAS FROM SCREENSHOT 1 */}
@@ -762,13 +762,13 @@ export default function App() {
                   Nach mehr als 40 intensiven und lohnenden Jahren im Schweizer Gastgewerbe, in welchen ich erfolgreiche Betriebe wie das <strong className="text-white">Restaurant Löwenburg</strong> geführt habe, habe ich mich entschlossen, meine jahrelange Führungserfahrung mit der zukunftsträchtigen Disziplin der künstlichen Intelligenz (KI) zusammenzubringen.
                 </p>
                 <p>
-                  Derzeit absolviere ich an der ipso Bildung AG in Zürich die Ausbildung zum <strong className="text-teal-300">AI Business Specialist mit eidgenössischem Fachausweis</strong>. Mein Fokus liegt ganz klar auf der <strong className="text-white">praktischen Realisierbarkeit</strong>. Viele KI-Lösungen bleiben am grünen Tisch hängen, weil die Entwickler den harten Arbeitsalltag in Betrieben nicht kennen. Ich kenne ihn haargenau: die Hektik beim Mittags-Ansturm (z.B. 12:15 Uhr), den Ärger über teuren Food Waste und den ständigen Stress durch Fehlplanung und Personalengpass.
+                  Derzeit absolviere ich an der ipso Bildung AG in Zürich die Ausbildung zum <strong className="text-teal-300">AI Business Specialist mit eidgenössischem Fachausweis</strong>. Mein Fokus liegt auf praktischer Realisierbarkeit. Viele KI-Lösungen bleiben am grünen Tisch hängen, weil die Entwickler den harten Arbeitsalltag in Betrieben nicht kennen. Ich kenne ihn: die Hektik beim Mittagsansturm gegen 12:15 Uhr, teurer Food Waste, Fehlplanung und Personalengpass.
                 </p>
                 <p>
                   Genau deshalb habe ich das System <strong className="text-white">SmartGastro.ai</strong> konzipiert und als funktionalen Prototyp umgesetzt. Es verbindet echte Daten des WaiterOne Kassensystems mit Wetterfaktoren und lokalen Events im Umkreis, um Küchenchefs das Leben spürbar zu erleichtern und Restaurants jährlich tausende Franken einzusparen.
                 </p>
                 <p>
-                  Ich rede nicht nur über AI-Strategie – ich konzipiere, promte und baue. Lassen Sie uns die Prozesse Ihrer Organisation gemeinsam datengetrieben optimieren!
+                  Ich rede nicht nur über AI-Strategie. Ich konzipiere, promte und baue. Lassen Sie uns die Prozesse Ihrer Organisation gemeinsam datengetrieben optimieren!
                 </p>
               </div>
             </div>
@@ -1684,14 +1684,14 @@ export default function App() {
                       </div>
                       <h2 className="text-3xl sm:text-4xl font-extrabold text-white">{SmartUmbrellaProject.title}</h2>
                       <h3 className="text-lg text-teal-300 font-semibold font-serif italic mt-0">
-                        {SmartUmbrellaProject.subTitle} — <span className="text-slate-400 font-sans text-sm font-medium not-italic">{SmartUmbrellaProject.model}</span>
+                        {SmartUmbrellaProject.subTitle} · <span className="text-slate-400 font-sans text-sm font-medium not-italic">{SmartUmbrellaProject.model}</span>
                       </h3>
                     </div>
 
                     <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-3 shadow-inner overflow-hidden">
                       <img
                         src={ipsoUmbrellaPhoto}
-                        alt="IPSO Premium Smart-Regenschirm – geöffnet (120 cm Spannweite) und zusammengefaltet (20 cm Packmaß) mit IPSO-Branding"
+                        alt="IPSO Premium Smart-Regenschirm, geöffnet (120 cm Spannweite) und zusammengefaltet (20 cm Packmaß) mit IPSO-Branding"
                         className="w-full h-auto rounded-xl object-contain"
                       />
                       <p className="text-[10px] text-slate-500 text-center mt-2 font-mono uppercase tracking-wider">
@@ -2095,7 +2095,7 @@ export default function App() {
                       Gemeinsam ans Ziel
                     </p>
                     <p className="text-sm text-slate-300 leading-relaxed font-light">
-                      „Als Team kommen wir gemeinsam weiter.“ Dieser Satz beschreibt meine tiefste Überzeugung. Ich stehe für flache Hierarchien, offene Ohren und gegenseitiges Empowerment. Ich gestalte die AI-Domain nicht als einsamer Wolf, sondern binde das gesamte Monads-Team aktiv ein und teile mein Wissen bedingungslos mit euch und unseren Kunden.
+                      «Als Team kommen wir gemeinsam weiter.» Das meine ich ernst. Flache Hierarchien, offene Ohren, gegenseitiges Empowerment. Die AI-Domain baue ich nicht allein, sondern mit euch und unseren Kunden, Wissen inklusive.
                     </p>
                   </div>
 
@@ -2348,7 +2348,7 @@ export default function App() {
                 <span>Digitale Bewerbungs-Assistenz</span>
               </h2>
               <p className="text-slate-400 text-xs leading-snug">
-                Fragen Sie den digitalen Assistenten – Antworten basieren auf Zeugnissen, Lebenslauf und Projekten.
+                Fragen Sie den digitalen Assistenten. Antworten basieren auf Zeugnissen, Lebenslauf und Projekten.
               </p>
             </div>
 
@@ -2524,7 +2524,7 @@ export default function App() {
                     <div className="space-y-2">
                       <h4 className="text-xl font-bold text-white tracking-tight">Sali, vielen Dank für deine Nachricht!</h4>
                       <p className="text-slate-400 text-xs sm:text-sm font-light max-w-sm mx-auto leading-relaxed">
-                        Ich habe dein Anliegen erhalten und freue mich über das Interesse. Ich werde mich unverzüglich bei dir melden – auf Augenhöhe im Sinne unserer Monads Du-Kultur!
+                        Ich habe dein Anliegen erhalten und freue mich über das Interesse. Ich werde mich unverzüglich bei dir melden, auf Augenhöhe im Sinne unserer Monads Du-Kultur!
                       </p>
                     </div>
                     <button
@@ -2828,7 +2828,7 @@ export default function App() {
                 </div>
                 <div className="flex items-center gap-2 font-mono text-[11px] text-teal-400">
                   <Clock className="w-4 h-4 text-teal-400 shrink-0" />
-                  <span>Erreichbar: Mo - Sa, Bürozeiten</span>
+                  <span>Erreichbar: Mo bis Sa, Bürozeiten</span>
                 </div>
               </div>
             </div>
