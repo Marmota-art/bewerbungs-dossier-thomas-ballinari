@@ -1066,7 +1066,7 @@ export default function App() {
               <div className="max-w-2xl space-y-2">
                 <h3 className="text-2xl font-serif font-black text-white">Ausführliche Arbeitszeugnisse</h3>
                 <p className="text-slate-400 text-sm font-light">
-                  Hier kannst du alle 15+ Arbeitszeugnisse Schweizer Betriebe im originalen und ungekürzten Wortlauf einsehen.
+                  Hier kannst du alle 15 Arbeitszeugnisse aus Schweizer und internationalen Betrieben im originalen und ungekürzten Wortlauf einsehen.
                 </p>
               </div>
 
@@ -1125,16 +1125,23 @@ export default function App() {
                     {/* Paper Area */}
                     <div className="p-8 md:p-10 overflow-y-auto max-h-[360px] bg-white text-slate-900 font-serif shadow-inner">
                       <div className="max-w-md mx-auto space-y-6 text-sm">
+                        {(() => {
+                          const activeDoc = Testimonials.find(t => t.id === selectedTestimonial) || Testimonials[0];
+                          return (
+                            <>
                         <div className="flex justify-between items-center border-b border-slate-150 pb-4 font-sans text-[10px] text-slate-400 uppercase tracking-wider">
-                          <span>{selectedTestimonial ? Testimonials.find(t => t.id === selectedTestimonial)?.employer : Testimonials[0].employer}</span>
+                          <span>{activeDoc.employer}</span>
                           <span>Bewerbungs-Beilage</span>
                         </div>
                         <h4 className="text-center font-sans font-black text-slate-900 text-lg border-b-2 border-slate-900 pb-1 uppercase tracking-tight">
-                          ARBEITSZEUGNIS
+                          {activeDoc.documentTitle || "ARBEITSZEUGNIS"}
                         </h4>
                         <p className="whitespace-pre-wrap leading-relaxed space-y-4 indent-4 text-slate-800">
-                          {(Testimonials.find(t => t.id === selectedTestimonial) || Testimonials[0]).fullText}
+                          {activeDoc.fullText}
                         </p>
+                            </>
+                          );
+                        })()}
                         <div className="pt-4 border-t border-slate-200 flex justify-between items-center font-sans text-[10px] text-slate-400">
                           <span>Urkunde elektronisch übermittelt</span>
                           <span className="font-mono text-emerald-600 font-bold bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">VERIFIED</span>

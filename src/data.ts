@@ -38,6 +38,8 @@ export interface TestimonialItem {
   summary: string;
   fullText: string;
   highlights: string[];
+  /** Überschrift im Dokumenten-Panel (z. B. CERTIFICAT DE TRAVAIL) */
+  documentTitle?: string;
   /** Pfad zum Scan/PDF unter public/documents/zeugnisse/ */
   documentUrl?: string;
 }
@@ -241,7 +243,7 @@ export const Experiences: ExperienceItem[] = [
     category: "gastro",
     highlights: [
       "Springer für 14 Restaurants und die Hauptküche in einem der grössten Hotelkomplexe Los Angeles.",
-      "Organisation von Banketten und Grossveranstaltungen bis zu 2'000 Personen."
+      "Organisation von Banketten und Grossveranstaltungen bis zu 4'700 Personen."
     ]
   },
   {
@@ -918,15 +920,14 @@ Niklaus Stump-Wiggli, Telefon 074 5 21 21`
     employer: "Hotel le Château d'Ouchy, Lausanne",
     role: "Commis de Cuisine",
     period: "06/1985 – 10/1985",
+    documentTitle: "CERTIFICAT DE TRAVAIL",
     summary: "Erster Westschweiz-Aufenthalt zur Festigung französischer Fachbegriffe. Volle Zufriedenheit im renommierten Schloss-Hotel am Genfersee.",
     highlights: [
       "Exzellente Arbeitsleistung und feine Berufshaltung als Commis de Cuisine.",
       "Sehr gute harmonische Zusammenarbeit mit Vorgesetzten und französischsprachigen Kollegen.",
       "Austritt in bestem, beiderseitigem Einvernehmen."
     ],
-    fullText: `Zeugnis Certifikat Certificato
-
-Herr BALLINARI Thomas, geb. 10.1.1966 von Campo Blenio/TI hat vom 1er juin 1985 au 13 octobre 1985 als COMMIS DE CUISINE in unseren Diensten gestanden in unserem Etablissement.
+    fullText: `Monsieur BALLINARI Thomas, né le 10 janvier 1966 de Campo Blenio/TI, a travaillé dans notre établissement du 1er juin 1985 au 13 octobre 1985 en qualité de COMMIS DE CUISINE.
 
 Durant cette période, Thomas nous a donné entière satisfaction, tant par son travail, sa tenue, que par son bon contact avec ses collègues et ses supérieurs.
 
