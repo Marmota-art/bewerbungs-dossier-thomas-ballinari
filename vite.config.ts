@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-const siteUrl = (process.env.URL || 'https://www.thomoro.com').replace(/\/$/, '');
+const siteUrl = (process.env.URL || 'https://thomoro.com').replace(/\/$/, '');
 
 export default defineConfig(() => {
   return {

@@ -1,0 +1,2 @@
+# Netlify-Subdomain → Primary Domain (301 erzwingen)
+https://thomas-ballinari-ai-app.netlify.app/*  https://thomoro.com/:splat  301!
