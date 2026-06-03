@@ -107,7 +107,7 @@ export function SiteAccessGate({ children, onAccessChange }: SiteAccessGateProps
               autoComplete="off"
               value={code}
               onChange={(e) => setCode(e.target.value)}
-              placeholder="z. B. MONADS-2026-TB"
+              placeholder="Einladungscode eingeben"
               className="w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-800 text-white text-sm focus:outline-none focus:border-teal-500/50"
             />
           </label>
