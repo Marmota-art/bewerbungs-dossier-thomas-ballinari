@@ -193,6 +193,8 @@ const mockResponses: Record<string, string> = {
     "Miriam Makeba war mir sehr nahe – wir haben uns 1992 in Luzern kennengelernt. «Pata Pata» verbindet mich natürlich emotional mit ihr.",
   reagan:
     "Als Küchenchef habe ich unter anderem 1988 für Ronald und Nancy Reagan sowie für George und Barbara Bush gekocht – prägende Erfahrungen in einem sehr hohen politischen Umfeld.",
+  trump:
+    "1990 habe ich im Chalet Suisse in New York für Donald und Ivana Trump gekocht.",
   elton:
     "Elton John gehört zu meinen sehr engen Kontakten aus Los Angeles (1988–1989).",
   freddie:

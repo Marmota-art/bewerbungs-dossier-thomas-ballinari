@@ -25,6 +25,11 @@
     "answer": "Als Küchenchef habe ich unter anderem für Ronald und Nancy Reagan sowie für George und Barbara Bush gekocht (1988). Auch in der Wahlkampfzeit um Michael Dukakis war ich im Umfeld der Demokraten aktiv."
   },
   {
+    "id": "trump",
+    "questions": ["Donald Trump", "Ivana Trump", "Trump gekocht", "Chalet Suisse New York"],
+    "answer": "1990 habe ich im Chalet Suisse in New York für Donald und Ivana Trump gekocht – eine weitere prägende Erfahrung in meiner internationalen Küchenchef-Karriere."
+  },
+  {
     "id": "brunei-peck",
     "questions": ["Brunei", "Sultan", "Gregory Peck", "Gregorie Peck"],
     "answer": "1988 kochte ich für Gregory Peck. 1988–1989 war ich auch im Umfeld des Sultans von Brunei und seiner Familie als Küchenchef tätig."

@@ -47,6 +47,7 @@ Hinweis für den Chatbot: Diese Angaben sind persönliche Kontakte und Begegnung
 | **Michael Dukakis** | US-Präsidentschaftswahlkampagne (Demokraten) | 1988 |
 | **Jesse Phillips** | Dayton, OH, USA | persönlicher Kontakt |
 | **Gregory Peck** | Schauspieler | 1988 |
+| **Donald und Ivana Trump** | Unternehmer-Paar | 1990, Chalet Suisse, New York, USA |
 | **Der Sultan von Brunei und Familie** | Staatsoberhaupt und Familie | 1988–1989 |
 
 ---

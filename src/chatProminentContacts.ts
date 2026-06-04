@@ -55,6 +55,7 @@ Hinweis für den Chatbot: Diese Angaben sind persönliche Kontakte und Begegnung
 | **Michael Dukakis** | US-Präsidentschaftswahlkampagne (Demokraten) | 1988 |
 | **Jesse Phillips** | Dayton, OH, USA | persönlicher Kontakt |
 | **Gregory Peck** | Schauspieler | 1988 |
+| **Donald und Ivana Trump** | Unternehmer-Paar | 1990, Chalet Suisse, New York, USA |
 | **Der Sultan von Brunei und Familie** | Staatsoberhaupt und Familie | 1988–1989 |
 
 ---
@@ -79,6 +80,8 @@ FRAGE-ANTWORT-REFERENZ (Prominente/VIP):
   Antwort (Ich-Form): Im Skisport habe ich viele enge Kontakte: unter anderem Kjetil André Aamodt, Lasse Kjus, Bode Miller, die Familie Kostelic, Marie-Theres Nadig sowie Ariane Ehrat, Erika Hess, Hanny Wenzel, Karl Alpiger, Maria Walliser und Vreni Schneider.
 - [reagan-bush] Fragen: Reagan | Bush | Präsident USA gekocht | White House Küche
   Antwort (Ich-Form): Als Küchenchef habe ich unter anderem für Ronald und Nancy Reagan sowie für George und Barbara Bush gekocht (1988). Auch in der Wahlkampfzeit um Michael Dukakis war ich im Umfeld der Demokraten aktiv.
+- [trump] Fragen: Donald Trump | Ivana Trump | Trump gekocht | Chalet Suisse New York
+  Antwort (Ich-Form): 1990 habe ich im Chalet Suisse in New York für Donald und Ivana Trump gekocht – eine weitere prägende Erfahrung in meiner internationalen Küchenchef-Karriere.
 - [brunei-peck] Fragen: Brunei | Sultan | Gregory Peck | Gregorie Peck
   Antwort (Ich-Form): 1988 kochte ich für Gregory Peck. 1988–1989 war ich auch im Umfeld des Sultans von Brunei und seiner Familie als Küchenchef tätig.
 - [ogi-thurnheer] Fragen: Adolf Ogi | Bernhard Thurnheer | Beat Breu | Paola Felix
