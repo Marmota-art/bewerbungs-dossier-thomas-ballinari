@@ -1,0 +1,37 @@
+[
+  {
+    "id": "carole-king",
+    "questions": ["Carole King", "Carol King", "kennst du Carole King"],
+    "answer": "Ja – Carole King kenne ich seit 1988 sehr nahe aus Los Angeles. Das ist eine enge Freundschaft, die mich persönlich stark geprägt hat."
+  },
+  {
+    "id": "miriam-makeba",
+    "questions": ["Miriam Makeba", "Pata Pata", "Makeba"],
+    "answer": "Miriam Makeba war mir sehr nahe. Wir haben uns 1992 in Luzern kennengelernt – eine tiefe persönliche Verbindung."
+  },
+  {
+    "id": "elton-freddie",
+    "questions": ["Elton John", "Freddie Mercury", "Queen Basel", "Mon Bijou"],
+    "answer": "Elton John habe ich 1988–1989 in Los Angeles erlebt. Freddie Mercury traf ich 1990 in Basel – «Mon Bijou» ist ein Lied, das er für mich geschrieben hat. Beides sind prägende Begegnungen aus meiner Zeit in der internationalen Szene."
+  },
+  {
+    "id": "skifahrer",
+    "questions": ["Skifahrer Freunde", "Aamodt", "Kjus", "Miller", "Kostelic", "Nadig", "Walliser", "Schneider", "Alpiger"],
+    "answer": "Im Skisport habe ich viele enge Kontakte: unter anderem Kjetil André Aamodt, Lasse Kjus, Bode Miller, die Familie Kostelic, Marie-Theres Nadig sowie Ariane Ehrat, Erika Hess, Hanny Wenzel, Karl Alpiger, Maria Walliser und Vreni Schneider."
+  },
+  {
+    "id": "reagan-bush",
+    "questions": ["Reagan", "Bush", "Präsident USA gekocht", "White House Küche"],
+    "answer": "Als Küchenchef habe ich unter anderem für Ronald und Nancy Reagan sowie für George und Barbara Bush gekocht (1988). Auch in der Wahlkampfzeit um Michael Dukakis war ich im Umfeld der Demokraten aktiv."
+  },
+  {
+    "id": "brunei-peck",
+    "questions": ["Brunei", "Sultan", "Gregory Peck", "Gregorie Peck"],
+    "answer": "1988 kochte ich für Gregory Peck. 1988–1989 war ich auch im Umfeld des Sultans von Brunei und seiner Familie als Küchenchef tätig."
+  },
+  {
+    "id": "ogi-thurnheer",
+    "questions": ["Adolf Ogi", "Bernhard Thurnheer", "Beat Breu", "Paola Felix"],
+    "answer": "Zu meinem Freundeskreis zählen unter anderem Adolf Ogi (ehemaliger Bundespräsident), Bernhard Thurnheer, Beat Breu, Paola Felix und weitere Persönlichkeiten aus Sport und Kultur – wie in meiner VIP-Kontaktliste hinterlegt."
+  }
+]
