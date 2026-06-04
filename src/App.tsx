@@ -448,8 +448,8 @@ export default function App() {
               { id: "home", label: "Profil" },
               { id: "resume", label: "Lebenslauf" },
               { id: "testimonials", label: "Arbeitszeugnisse" },
-              { id: "projects", label: "Projekte" },
               { id: "certificates", label: "Zertifikate" },
+              { id: "projects", label: "Projekte" },
               { id: "skills", label: "Skills" },
               { id: "chatbot", label: "Frag Thomas", icon: Sparkles },
               { id: "contact", label: "Kontakt" }
@@ -488,8 +488,8 @@ export default function App() {
           { id: "home", label: "Profil" },
           { id: "resume", label: "Lebenslauf" },
           { id: "testimonials", label: "Zeugnisse" },
-          { id: "projects", label: "Projekte" },
           { id: "certificates", label: "Zertifikate" },
+          { id: "projects", label: "Projekte" },
           { id: "skills", label: "Skills" },
           { id: "chatbot", label: "Frag Thomas" },
           { id: "contact", label: "Kontakt" }
