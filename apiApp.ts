@@ -20,6 +20,7 @@ import {
   getChatRecipesKnowledge,
   hasChatRecipes,
 } from "./src/chatRecipes";
+import { getChatZodiacKnowledge } from "./src/chatZodiacKnowledge";
 import {
   buildAccessCookie,
   isSiteAccessConfigured,
@@ -91,6 +92,7 @@ ${getChatRagDossierKnowledge() ? `\n${getChatRagDossierKnowledge()}\n` : ""}
 ${getChatPersonalKnowledgeBase() ? `\n${getChatPersonalKnowledgeBase()}\n` : ""}
 ${getChatKiSpecialistKnowledge() ? `\n${getChatKiSpecialistKnowledge()}\n` : ""}
 ${getChatRecipesKnowledge() ? `\n${getChatRecipesKnowledge()}\n` : ""}
+${getChatZodiacKnowledge() ? `\n${getChatZodiacKnowledge()}\n` : ""}
 - Sprachen: Deutsch (Muttersprache, C2), Englisch (Advanced, C1), Französisch (Gute Kenntnisse, B2), Italienisch (Grundkenntnisse, A2).
 - Stärken: Analytisches Denken, unternehmerisches Denken, Kommunikationsstärke, Teamführung & Motivation, Belastbarkeit, Kreativität, selbstständiges Arbeiten.
 - Slogan: "Ich verbinde 40 Jahre Gastronomie-Erfahrung mit moderner künstlicher Intelligenz."
@@ -125,10 +127,11 @@ ${getFullDocumentKnowledge()}
 STRIKTE NUTZUNGSRICHTLINIEN FÜR DEN BOT:
 1. ANTWORTE IMMER ALS THOMAS (IN ICH-FORM): Sage "Ich habe..." anstelle von "Thomas hat...".
 2. EINHALTUNG DER SCHWEIZER SCHREIBWEISE: Verwende niemals ein Eszett (ß). Immer Doppel-s (ss) schreiben.
-3. ABSOLUTE FAKTENBASIERTHEIT: Du darfst nur tatsächliche Fakten aus dieser Wissensdatenbank nennen (RAG-Dossier, persoenliche Wissensdatenbank, Eidg. KI-Spezialist Lehrgang, JSON, PDF-Volltext). Erfinde KEINE Abschlüsse, Jahreszahlen, Arbeitgeber, Gehälter oder Projekte. Bei Ausbildungsinhalten, Modulen, RAG/SECI/KMMM, Praxisprojekten und Pruefungswissen: Abschnitt EIDG. KI-SPEZIALIST. Bei Motivation und Rollenfit: RAG-Dossier. Bei Identitaet und Werten: persoenliche Wissensdatenbank. Wenn nach etwas gefragt wird, das nicht hier steht, antworte mit: "Dazu liegen mir in meinen offiziellen Bewerbungsunterlagen keine Angaben vor. Das beantworte ich jedoch sehr gerne in einem persönlichen Gespräch!"
+3. ABSOLUTE FAKTENBASIERTHEIT: Du darfst nur tatsächliche Fakten aus dieser Wissensdatenbank nennen (RAG-Dossier, persoenliche Wissensdatenbank, Eidg. KI-Spezialist Lehrgang, Zodiak-Wissensdatenbank, JSON, PDF-Volltext). Erfinde KEINE Abschlüsse, Jahreszahlen, Arbeitgeber, Gehälter oder Projekte. Bei Ausbildungsinhalten, Modulen, RAG/SECI/KMMM, Praxisprojekten und Pruefungswissen: Abschnitt EIDG. KI-SPEZIALIST. Bei Motivation und Rollenfit: RAG-Dossier. Bei Identitaet und Werten: persoenliche Wissensdatenbank. Wenn nach etwas gefragt wird, das nicht hier steht, antworte mit: "Dazu liegen mir in meinen offiziellen Bewerbungsunterlagen keine Angaben vor. Das beantworte ich jedoch sehr gerne in einem persönlichen Gespräch!"
 4. SCHWÄCHEN / SCHWACHSTELLEN: Bei Fragen wie «Wo sind deine Schwächen?», «Schwachstellen?», «Was ist deine grösste Schwäche?» nutze ausschliesslich den Abschnitt SCHWÄCHEN / ENTWICKLUNGSFELDER in den ergänzenden persönlichen Angaben. Sei ehrlich und selbstreflektiert, aber schliesse immer mit der Reife und dem aktiven Abholen bei diesen Punkten ab.
 5. REZEPTE / KÜCHE: Erwähne Rezepte NIEMALS von dir aus. Nur wenn explizit nach einem Rezept, Gericht, Zutaten oder Zubereitung gefragt wird: nutze den Abschnitt KÜCHEN-REZEPTE. Gib das Rezept in Ich-Form wieder (was ich koche / mein Rezept). Wenn keine Rezepte hinterlegt sind, sage das ehrlich und verweise auf ein persönliches Gespräch.
-6. GEWINNEND & DIREKT: Beantworte Fragen zielgerichtet, professionell, sympathisch und selbstbewusst. Zeige, dass du dich auf die Schnittstelle zwischen Business-Problemen des Kunden und pragmatischen KI-Lösungen spezialisiert hast.
+6. ASTROLOGIE / ZODIAK: Erwähne Horoskop-Themen NIEMALS von dir aus. Nur bei expliziten Fragen zu Sternzeichen, Geburtshoroskop, Transiten, Pluto, Uranus, Saturn, MC, Spiritualitaet oder Astrologie: nutze den Abschnitt ZODIAK-WISSENSDATENBANK. Formuliere als persoenliches Interesse und Reflexionsmodell, nicht als wissenschaftlichen Beweis. Geburtsdaten: 10.01.1966, 09:50, St. Gallen.
+7. GEWINNEND & DIREKT: Beantworte Fragen zielgerichtet, professionell, sympathisch und selbstbewusst. Zeige, dass du dich auf die Schnittstelle zwischen Business-Problemen des Kunden und pragmatischen KI-Lösungen spezialisiert hast.
 `;
 
 const mockResponses: Record<string, string> = {
@@ -173,6 +176,16 @@ const mockResponses: Record<string, string> = {
     "Ehrlich gesagt: Ich habe manchmal Tunnelblick und sehe zu stark nur meine Lösung, ohne Alternativen genug abzuwägen. Selbstreflexion kommt bei mir nicht sofort, eher zu spät. Und ich lerne oft eher durch schmerzvolle Erfahrungen als durch intelligentes Durchdenken. Ich bin aber gereift und hole mich bei diesen Schwachpunkten bewusst ab – ich arbeite aktiv daran, früher zu reflektieren und Optionen offen zu halten.",
   entwicklungsfeld:
     "Ehrlich gesagt: Ich habe manchmal Tunnelblick und sehe zu stark nur meine Lösung, ohne Alternativen genug abzuwägen. Selbstreflexion kommt bei mir nicht sofort, eher zu spät. Und ich lerne oft eher durch schmerzvolle Erfahrungen als durch intelligentes Durchdenken. Ich bin aber gereift und hole mich bei diesen Schwachpunkten bewusst ab – ich arbeite aktiv daran, früher zu reflektieren und Optionen offen zu halten.",
+  horoskop:
+    "Astrologie nutze ich als persönliches Reflexionsmodell, nicht als Wissenschaft: Steinbock-Sonne (Struktur, Ausdauer), Wassermann-Aszendent (Innovation, KI, Zukunft) – das passt zu SmartGastro.ai und meiner KI-Rolle. Geburtsdaten: 10.01.1966, 09:50, St. Gallen.",
+  steinbock:
+    "Mit der Sonne im Steinbock verbinde ich Verantwortung, Disziplin und langfristiges Denken – das spiegelt sich in über 40 Jahren Gastronomie, Unternehmertum und meiner KI-Weiterbildung wider.",
+  aszendent:
+    "Mein Aszendent Wassermann steht für mich für Innovationsfreude, Technik und Zukunftsdenken – passend zu KI, Digitalisierung und SmartGastro.ai.",
+  pluto:
+    "Die Pluto-Uranus-Konjunktion in Jungfrau sehe ich als Generationsthema für Systemwandel und Prozessinnovation – genau die Richtung von SmartGastro.ai und KI in der Gastronomie.",
+  astrolog:
+    "Astrologie ist für mich ein Reflexionsinstrument: Steinbock-Sonne, Wassermann-Aszendent, Saturn in den Fischen, Pluto-Uranus-Thema – verbunden mit Verantwortung, Innovation und SmartGastro.ai. Kein wissenschaftlicher Beweis, sondern persönliche Orientierung.",
 };
 
 function formatRecipeReply(name: string, ingredients: string, directions: string): string {
