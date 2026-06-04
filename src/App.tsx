@@ -447,7 +447,7 @@ export default function App() {
             {[
               { id: "home", label: "Profil" },
               { id: "resume", label: "Lebenslauf" },
-              { id: "testimonials", label: "Arbeitszeugnisse", icon: Award },
+              { id: "testimonials", label: "Arbeitszeugnisse" },
               { id: "projects", label: "Projekte" },
               { id: "certificates", label: "Zertifikate" },
               { id: "skills", label: "Skills" },
