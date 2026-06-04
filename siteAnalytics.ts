@@ -161,7 +161,7 @@ function getProvidedAnalyticsKey(req: Request): string {
   }
 }
 
-/** STATS-2026-TB (ANALYTICS_VIEW_KEY) oder Zugangscode (SITE_ACCESS_KEY) – beide möglich */
+/** ANALYTICS_VIEW_KEY oder SITE_ACCESS_KEY (beide nur in Netlify Environment variables) */
 export function isAnalyticsViewer(req: Request): boolean {
   const provided = getProvidedAnalyticsKey(req);
   if (!provided) return false;

@@ -18,10 +18,10 @@
 <body>
   <div class="box">
     <h1>Zugriffsstatistik</h1>
-    <p>Nur für dich. Schlüssel = <code>ANALYTICS_VIEW_KEY</code> aus Netlify (z.&nbsp;B. STATS-2026-TB).</p>
+    <p>Nur für dich. Schlüssel = <code>ANALYTICS_VIEW_KEY</code> aus dem Netlify-Dashboard (Environment variables).</p>
     <form id="form">
       <label for="key">Statistik-Schlüssel</label>
-      <input id="key" name="key" type="password" autocomplete="off" placeholder="STATS-2026-TB" required />
+      <input id="key" name="key" type="password" autocomplete="off" placeholder="Schlüssel aus Netlify" required />
       <button type="submit">Statistik anzeigen</button>
     </form>
     <p>Nach dem Setzen der Variable in Netlify einmal <strong>Deploy project</strong> auslösen.</p>

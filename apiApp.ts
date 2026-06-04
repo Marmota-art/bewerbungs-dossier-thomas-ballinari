@@ -267,7 +267,7 @@ app.get("/api/analytics/summary", async (req, res) => {
   if (!isAnalyticsViewer(req)) {
     return res.status(401).json({
       error: "Zugriff nur mit Schlüssel in der URL.",
-      hint: "https://thomoro.com/stats.html öffnen oder ?key=STATS-2026-TB anhängen (nach Netlify-Redeploy).",
+      hint: "https://thomoro.com/stats.html öffnen und den Schlüssel aus Netlify (ANALYTICS_VIEW_KEY) eingeben.",
     });
   }
   const summary = await getAnalyticsSummary();
