@@ -156,7 +156,7 @@ Chalet Suisse, New York   |   New York, USA   |   04/1990 – 08/1990
 – Exzellente Fachkenntnis, gründlich – ausgezeichnete interpersonelle Fähigkeiten 
 Chef Tournant 
 Century Plaza Hotel, Los Angeles   |   Los Angeles, USA   |   08/1988 – 02/1990 
-– Springer für 14 Restaurants & Hauptküche; Bankettorganisation bis 4700 Pers. 
+– Springer für 14 Restaurants & Hauptküche; Bankettorganisation bis 2000 Pers. 
 Koch / Küchenchef 
 Hotel Residenza La Val, Brigels   |   Brigels   |   12/1986 – 04/1988 
 – Aufstieg vom Koch zum Küchenchef; erste Führungserfahrung 
