@@ -7,8 +7,8 @@ export const OfficialPdfDocuments = {
   },
   zertifikate: {
     path: "/documents/zertifikate-ausbildung.pdf",
-    title: "Zertifikate & Ausbildung",
-    fileName: "Thomas_Ballinari_Zertifikate_Ausbildung_LinkedTOC.pdf",
+    title: "Zertifikate & Ausbildung V2",
+    fileName: "Zertifikate_V2.pdf",
   },
   arbeitszeugnisse: {
     path: "/documents/arbeitszeugnisse.pdf",

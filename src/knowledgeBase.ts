@@ -262,8 +262,8 @@ beliebt`;
 const ZERTIFIKATE_TEXT = String.raw`Thomas Ballinari
 AI Business Specialist (eidg. FA)
 ZERTIFIKATE & AUSBILDUNGSNACHWEISE
-Eidgenössische Abschlüsse · IT-Zertifikate · Behördliche Patente
-thomas.ballinari@pm.me  ·  +41 79 705 63 14  ·  CH-9000 St. Gallen
+Eidgenössische Abschlüsse  ·  IT-Zertifikate  ·  Behördliche Patente
+thomas.ballinari@pm.me   ·   +41 79 705 63 14   ·   CH-9000 St. Gallen
 13
 Zertifikate
 3
@@ -272,13 +272,14 @@ Kategorien
 Jahre Erfahrung
 2025
 Neuestes Cert.
+Vertraulich · Nur für Bewerbungszwecke
 Inhaltsverzeichnis
 Zertifikate & Ausbildungsnachweise · nach Kategorie geordnet
+KI & IT-ZERTIFIKATE
 1
 KI-Professional (Business) – Zertifikat
 HSO Wirtschafts- und Informatikschule Schweiz
 18.07.2025
-KI & IT-ZERTIFIKATE
 2
 ECDL Modul 1 – PC-Aufbaukurs
 Spirig Computer AG Trainingscenter, Heerbrugg
@@ -307,14 +308,14 @@ Bildungszentrum BVS St. Gallen
 ECDL Start Certificate (Module 1–4)
 ECDL European Computer Driving Licence Foundation
 03.05.2007
+GASTRONOMIE-FACHAUSWEISE
 9
 Eidg. Fähigkeitszeugnis Koch
 Schweizerische Eidgenossenschaft / Hotel Alpenrose, Wildhaus
 02.04.1985
-GASTRONOMIE-FACHAUSWEISE
 10
 Berufsschulzeugnis – Kochlehre
-Gewerbliche Berufsschule St. Gallen / Hotel Alpenrose, Wildhaus
+Gewerbliche Berufsschule St. Gallen / Hotel Alpenrose, Wildh…
 27.03.1985
 11
 Wirtefachkurs – Fähigkeitsausweis
@@ -334,7 +335,91 @@ Gastwirtschaftspatente Kanton Zürich
 Kanton Zürich – Finanzdirektion / Abt. Wirtschaftswesen
 1993 / 1995
 Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 2 von 16`;
+Seite 2 von 16
+KI-Professional (Business) – Zertifikat
+HSO Wirtschafts- und Informatikschule Schweiz  ·  18.07.2025
+KI & IT-Zertifikate
+6 Module: KI-Grundlagen, Maschinelles Lernen, Sprachmodelle, KI-Ethik, KI im Geschäftsalltag
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 3 von 16
+ECDL Modul 1 – PC-Aufbaukurs
+Spirig Computer AG Trainingscenter, Heerbrugg  ·  13.04.2007
+KI & IT-Zertifikate
+IT-Grundlagen · Hard- & Software · Netzwerke · Datenschutz · Prüfungsnote: 91%
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 4 von 16
+ECDL Modul 2 – PC Grundkurs
+Klubschule Migros Rapperswil  ·  30.03.2007
+KI & IT-Zertifikate
+Computer-Grundlagen · Windows XP · 6 Lektionen à 45 Minuten
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 5 von 16
+ECDL Modul 3 – Word Processing
+Spirig Computer AG Trainingscenter, Heerbrugg  ·  20.04.2007
+KI & IT-Zertifikate
+Textverarbeitung · Word 2003 · Formatieren, Dokumente, Serienbriefe · Note: 97%
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 6 von 16
+ECDL Modul 4 – Spreadsheets
+Spirig Computer AG Trainingscenter, Heerbrugg  ·  27.04.2007
+KI & IT-Zertifikate
+Excel 2003 · Tabellenkalkulation · Formeln & Funktionen · Note: 97%
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 7 von 16
+ECDL Modul 6 – Präsentation / PowerPoint
+Spirig Computer AG Trainingscenter, Heerbrugg  ·  18.06.2007
+KI & IT-Zertifikate
+PowerPoint 2003 · Animationen · Diagramme · Folienübergänge
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 8 von 16
+ECDL Modul 7 – Internet & Outlook
+Bildungszentrum BVS St. Gallen  ·  25.05.2007
+KI & IT-Zertifikate
+Internet-Grundlagen · E-Mail · Outlook · Note: 100% · 30 Lektionen
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 9 von 16
+ECDL Start Certificate (Module 1–4)
+ECDL European Computer Driving Licence Foundation  ·  03.05.2007
+KI & IT-Zertifikate
+Skills Card CH-0079487 · Syllabus Version 4.0 · Internationale EU-Zertifizierung
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 10 von 16
+Eidg. Fähigkeitszeugnis Koch
+Schweizerische Eidgenossenschaft / Hotel Alpenrose, Wildhaus  ·  02.04.1985
+Gastronomie-Fachausweise
+Gesamtnote 5,2 · Arbeitsprüfung 5,1 · Berufskenntnisse 5,3 · Kanton St. Gallen
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 11 von 16
+Berufsschulzeugnis – Kochlehre
+Gewerbliche Berufsschule St. Gallen / Hotel Alpenrose, Wildhaus  ·  27.03.1985
+Gastronomie-Fachausweise
+Semestralnoten 1982–1985 · Fleiss-Note 6 durchgehend · Abt. Dienstleistungsberufe
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 12 von 16
+Wirtefachkurs – Fähigkeitsausweis
+Volkswirtschaftsdepartement Kanton St. Gallen  ·  15.06.1993
+Gastronomie-Fachausweise
+Führung gastgewerblicher Betriebe mit Berechtigung zum Alkoholausschank
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 13 von 16
+Notenblatt Wirtefachprüfung
+Wirteprüfungskommission Kanton St. Gallen  ·  16.06.1993
+Gastronomie-Fachausweise
+Küche 6,0 · Buchhaltung 6,0 · Lebensmittelrecht 6,0 · Ø aller Fachnoten: 5,8
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 14 von 16
+Lehrmeisterkurs – Kursausweis
+Amt für Berufsbildung / ZbW St. Gallen  ·  25.11.2004
+Gastronomie-Fachausweise
+40 Lektionen · Jugendpsychologie · Führungspsychologie · Berufsbildungsrecht
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 15 von 16
+Gastwirtschaftspatente Kanton Zürich
+Kanton Zürich – Finanzdirektion / Abt. Wirtschaftswesen  ·  1993 / 1995
+Behördliche Patente & Lizenzen
+Pat. 131477: Restaurant Bistro la baguette, Volketswil (1993) · Pat. 133629: Kiosk Schwimmbad Oberwinterthur (1995)
+Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
+Seite 16 von 16`;
 
 const ARBEITSZEUGNISSE_TEXT = String.raw`Inhaltsverzeichnis
 Chronologisch geordnet · neueste Zeugnisse zuerst
