@@ -8,11 +8,11 @@ export const OfficialPdfDocuments = {
   zertifikate: {
     path: "/documents/zertifikate-ausbildung.pdf",
     title: "Zertifikate & Ausbildung",
-    fileName: "Thomas_Ballinari_Zertifikate_Ausbildung.pdf",
+    fileName: "Thomas_Ballinari_Zertifikate_Ausbildung_LinkedTOC.pdf",
   },
   arbeitszeugnisse: {
     path: "/documents/arbeitszeugnisse.pdf",
-    title: "Arbeitszeugnisse (Original-Sammlung)",
-    fileName: "Thomas_Ballinari_Arbeitszeugnisse_Professionell.pdf",
+    title: "Arbeitszeugnisse V2 (Original-Sammlung)",
+    fileName: "Thomas_Ballinari_Zeugnisse_V2_LinkedTOC.pdf",
   },
 } as const;

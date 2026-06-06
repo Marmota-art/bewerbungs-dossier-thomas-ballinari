@@ -11,8 +11,8 @@ ROOT = Path(r"C:\Users\loewe\OneDrive\Desktop\Bewerbungsunterlagen\2026")
 
 PDFS = {
     "lebenslauf": ROOT / "Thomas_Ballinari_Lebenslauf_KI_Specialist_V2.3.pdf",
-    "zertifikate": ROOT / "Thomas_Ballinari_Zertifikate_Ausbildung.pdf",
-    "arbeitszeugnisse": ROOT / "Thomas_Ballinari_Arbeitszeugnisse_Professionell.pdf",
+    "zertifikate": ROOT / "Thomas_Ballinari_Zertifikate_Ausbildung_LinkedTOC.pdf",
+    "arbeitszeugnisse": ROOT / "Thomas_Ballinari_Zeugnisse_V2_LinkedTOC.pdf",
 }
 
 

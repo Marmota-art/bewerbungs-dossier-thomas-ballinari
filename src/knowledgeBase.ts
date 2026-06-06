@@ -262,8 +262,8 @@ beliebt`;
 const ZERTIFIKATE_TEXT = String.raw`Thomas Ballinari
 AI Business Specialist (eidg. FA)
 ZERTIFIKATE & AUSBILDUNGSNACHWEISE
-Eidgenössische Abschlüsse  ·  IT-Zertifikate  ·  Behördliche Patente
-thomas.ballinari@pm.me   ·   +41 79 705 63 14   ·   CH-9000 St. Gallen
+Eidgenössische Abschlüsse · IT-Zertifikate · Behördliche Patente
+thomas.ballinari@pm.me  ·  +41 79 705 63 14  ·  CH-9000 St. Gallen
 13
 Zertifikate
 3
@@ -272,14 +272,13 @@ Kategorien
 Jahre Erfahrung
 2025
 Neuestes Cert.
-Vertraulich · Nur für Bewerbungszwecke
 Inhaltsverzeichnis
 Zertifikate & Ausbildungsnachweise · nach Kategorie geordnet
-KI & IT-ZERTIFIKATE
 1
 KI-Professional (Business) – Zertifikat
 HSO Wirtschafts- und Informatikschule Schweiz
 18.07.2025
+KI & IT-ZERTIFIKATE
 2
 ECDL Modul 1 – PC-Aufbaukurs
 Spirig Computer AG Trainingscenter, Heerbrugg
@@ -308,14 +307,14 @@ Bildungszentrum BVS St. Gallen
 ECDL Start Certificate (Module 1–4)
 ECDL European Computer Driving Licence Foundation
 03.05.2007
-GASTRONOMIE-FACHAUSWEISE
 9
 Eidg. Fähigkeitszeugnis Koch
 Schweizerische Eidgenossenschaft / Hotel Alpenrose, Wildhaus
 02.04.1985
+GASTRONOMIE-FACHAUSWEISE
 10
 Berufsschulzeugnis – Kochlehre
-Gewerbliche Berufsschule St. Gallen / Hotel Alpenrose, Wildh…
+Gewerbliche Berufsschule St. Gallen / Hotel Alpenrose, Wildhaus
 27.03.1985
 11
 Wirtefachkurs – Fähigkeitsausweis
@@ -335,282 +334,135 @@ Gastwirtschaftspatente Kanton Zürich
 Kanton Zürich – Finanzdirektion / Abt. Wirtschaftswesen
 1993 / 1995
 Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 2 von 16
-KI-Professional (Business) – Zertifikat
-HSO Wirtschafts- und Informatikschule Schweiz  ·  18.07.2025
-KI & IT-Zertifikate
-6 Module: KI-Grundlagen, Maschinelles Lernen, Sprachmodelle, KI-Ethik, KI im Geschäftsalltag
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 3 von 16
-ECDL Modul 1 – PC-Aufbaukurs
-Spirig Computer AG Trainingscenter, Heerbrugg  ·  13.04.2007
-KI & IT-Zertifikate
-IT-Grundlagen · Hard- & Software · Netzwerke · Datenschutz · Prüfungsnote: 91%
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 4 von 16
-ECDL Modul 2 – PC Grundkurs
-Klubschule Migros Rapperswil  ·  30.03.2007
-KI & IT-Zertifikate
-Computer-Grundlagen · Windows XP · 6 Lektionen à 45 Minuten
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 5 von 16
-ECDL Modul 3 – Word Processing
-Spirig Computer AG Trainingscenter, Heerbrugg  ·  20.04.2007
-KI & IT-Zertifikate
-Textverarbeitung · Word 2003 · Formatieren, Dokumente, Serienbriefe · Note: 97%
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 6 von 16
-ECDL Modul 4 – Spreadsheets
-Spirig Computer AG Trainingscenter, Heerbrugg  ·  27.04.2007
-KI & IT-Zertifikate
-Excel 2003 · Tabellenkalkulation · Formeln & Funktionen · Note: 97%
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 7 von 16
-ECDL Modul 6 – Präsentation / PowerPoint
-Spirig Computer AG Trainingscenter, Heerbrugg  ·  18.06.2007
-KI & IT-Zertifikate
-PowerPoint 2003 · Animationen · Diagramme · Folienübergänge
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 8 von 16
-ECDL Modul 7 – Internet & Outlook
-Bildungszentrum BVS St. Gallen  ·  25.05.2007
-KI & IT-Zertifikate
-Internet-Grundlagen · E-Mail · Outlook · Note: 100% · 30 Lektionen
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 9 von 16
-ECDL Start Certificate (Module 1–4)
-ECDL European Computer Driving Licence Foundation  ·  03.05.2007
-KI & IT-Zertifikate
-Skills Card CH-0079487 · Syllabus Version 4.0 · Internationale EU-Zertifizierung
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 10 von 16
-Eidg. Fähigkeitszeugnis Koch
-Schweizerische Eidgenossenschaft / Hotel Alpenrose, Wildhaus  ·  02.04.1985
-Gastronomie-Fachausweise
-Gesamtnote 5,2 · Arbeitsprüfung 5,1 · Berufskenntnisse 5,3 · Kanton St. Gallen
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 11 von 16
-Berufsschulzeugnis – Kochlehre
-Gewerbliche Berufsschule St. Gallen / Hotel Alpenrose, Wildhaus  ·  27.03.1985
-Gastronomie-Fachausweise
-Semestralnoten 1982–1985 · Fleiss-Note 6 durchgehend · Abt. Dienstleistungsberufe
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 12 von 16
-Wirtefachkurs – Fähigkeitsausweis
-Volkswirtschaftsdepartement Kanton St. Gallen  ·  15.06.1993
-Gastronomie-Fachausweise
-Führung gastgewerblicher Betriebe mit Berechtigung zum Alkoholausschank
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 13 von 16
-Notenblatt Wirtefachprüfung
-Wirteprüfungskommission Kanton St. Gallen  ·  16.06.1993
-Gastronomie-Fachausweise
-Küche 6,0 · Buchhaltung 6,0 · Lebensmittelrecht 6,0 · Ø aller Fachnoten: 5,8
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 14 von 16
-Lehrmeisterkurs – Kursausweis
-Amt für Berufsbildung / ZbW St. Gallen  ·  25.11.2004
-Gastronomie-Fachausweise
-40 Lektionen · Jugendpsychologie · Führungspsychologie · Berufsbildungsrecht
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 15 von 16
-Gastwirtschaftspatente Kanton Zürich
-Kanton Zürich – Finanzdirektion / Abt. Wirtschaftswesen  ·  1993 / 1995
-Behördliche Patente & Lizenzen
-Pat. 131477: Restaurant Bistro la baguette, Volketswil (1993) · Pat. 133629: Kiosk Schwimmbad Oberwinterthur (1995)
-Thomas Ballinari · Zertifikate & Ausbildungsnachweise · Vertraulich
-Seite 16 von 16`;
+Seite 2 von 16`;
 
-const ARBEITSZEUGNISSE_TEXT = String.raw`Thomas Ballinari
-AI Business Specialist (eidg. FA)
-ARBEITSZEUGNISSE
-Original-Zeugnisse  •  1982 – 2013
-thomas.ballinari@pm.me   •   +41 79 705 63 14   •   CH-9000 St. Gallen
-16
-Zeugnisse
-40+
-Berufsjahre
-15
-Arbeitgeber
-3
-Länder
-Vertraulich · Nur für Bewerbungszwecke
-Inhaltsverzeichnis
+const ARBEITSZEUGNISSE_TEXT = String.raw`Inhaltsverzeichnis
 Chronologisch geordnet · neueste Zeugnisse zuerst
-#
-ARBEITGEBER
+#   ARBEITGEBER
 FUNKTION
 ZEITRAUM
 1
 VersuchsStollen Hagerbach AG
-Überdurchschnittliche Leistungsbereitschaft · Selbstständigkeit ·…
+Überdurchschnittliche Leistungsbereitschaft · Selbstständigkeit · Zuver…
 Leiter Gastronomie
 2007 – 2013
 S. 3
 2
 Berit Paracelsus Klinik AG
-Selbstständig · effizient · kreativ · behielt Überblick in hektis…
+Selbstständig · effizient · kreativ · behielt Überblick in hektischen Zeiten
 Koch Teilzeit
 2006 – 2006
-S. 4
+S. 5
 3
 Hotel Blumenstein, Frauenfeld
 Sehr geschickt · pflichtbewusst · vorbildlicher Umgang
 Küchenchef
 2004 – 2006
-S. 5
+S. 6
 4
 Arosa Bergbahnen AG (Tschuggenhütte)
 Tüchtige und zuverlässige Arbeitskraft · angenehmer Mitarbeiter
 Küchenchef
 2000 – 2001
-S. 6
+S. 7
 5
 Bistrag AG – Bistro La baguette
 Hervorragender Einsatz · ausgezeichnete Umsatzzahlen
 Geschäftsführer
 1993 – 1994
-S. 7
+S. 8
 6
 Berggasthaus Tschuggenhütte, Arosa
 Ruhig und zuverlässig · volle Zufriedenheit
-Koch/Küchenchef
+Koch / Küchenchef
 1992 – 1993
-S. 8
+S. 9
 7
 Basma AG Gastronomiebetriebe
 Ehrlich · pünktlich · korrekt · bestens empfohlen
 Kellner
 1990 – 1992
-S. 9
+S. 10
 8
 Chalet Suisse, New York (USA)
 Excellent working habits · complete knowledge of profession
 Sous-Chef / Saucier
 1990 – 1990
-S. 10
+S. 11
 9
 Hotel Residenza La Val, Brigels
 Kreativität · Freude am Beruf · Küche genoss guten Ruf
 Küchenverantw. / 1. Koch
 1987 – 1988
-S. 11
+S. 12
 10
 Hotel Residenza La Val, Brigels
 Fachliches Können sehr zufrieden · Umsatz erheblich gesteigert
 1. Koch
 1987 – 1987
-S. 12
+S. 13
 11
 Hotel Residenza La Val, Brigels
 Vorbildliches Verhalten · für Küchenführung empfohlen
 Koch
 1986 – 1987
-S. 13
+S. 14
 12
 Restaurant Linsebühl, St. Gallen
-Zuverlässig · ordnungsgemäss · selbstständige Menüzusammenstellun…
+Zuverlässig · ordnungsgemäss · selbstständige Menüzusammenstellung
 Alleinkoch
 1986 – 1986
-S. 14
+S. 15
 13
 Hotel Alpenrose, Wildhaus
 Gereifte Persönlichkeit · Einsatzfreude
 Koch / Tournant
 1985 – 1986
-S. 15
+S. 16
 14
 Hotel le Château d'Ouchy, Lausanne
 Entière satisfaction · bon contact
 Commis de Cuisine
 1985 – 1985
-S. 16
+S. 17
 15
 Hotel Alpenrose, Wildhaus
 Hervorragend absolviert · mustergültig · sehr beliebt
 Kochlehre
 1982 – 1985
-S. 17
+S. 18
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 2 von 18
-VersuchsStollen Hagerbach AG
-Leiter Gastronomie  ·  August 2007 – April 2013
-Zeugnis 1/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 3 von 18
-VersuchsStollen Hagerbach AG (Fortsetzung)
-Leiter Gastronomie  ·  August 2007 – April 2013
-Zeugnis 1/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 4 von 18
-Berit Paracelsus Klinik AG
-Koch Teilzeit  ·  Juni 2006 – November 2006
-Zeugnis 2/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 5 von 18
-Hotel Blumenstein, Frauenfeld
-Küchenchef  ·  Februar 2004 – Februar 2006
-Zeugnis 3/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 6 von 18
-Arosa Bergbahnen AG (Tschuggenhütte)
-Küchenchef  ·  Dezember 2000 – April 2001
-Zeugnis 4/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 7 von 18
-Bistrag AG – Bistro La baguette
-Geschäftsführer  ·  September 1993 – Dezember 1994
-Zeugnis 5/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 8 von 18
-Berggasthaus Tschuggenhütte, Arosa
-Koch/Küchenchef  ·  Februar 1992 – März 1993
-Zeugnis 6/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 9 von 18
-Basma AG Gastronomiebetriebe
-Kellner  ·  September 1990 – Januar 1992
-Zeugnis 7/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 10 von 18
-Chalet Suisse, New York (USA)
-Sous-Chef / Saucier  ·  April 1990 – August 1990
-Zeugnis 8/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 11 von 18
-Hotel Residenza La Val, Brigels
-Küchenverantw. / 1. Koch  ·  Dez. 1987 – April 1988
-Zeugnis 9/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 12 von 18
-Hotel Residenza La Val, Brigels
-1. Koch  ·  Juni 1987 – Oktober 1987
-Zeugnis 10/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 13 von 18
-Hotel Residenza La Val, Brigels
-Koch  ·  Dezember 1986 – April 1987
-Zeugnis 11/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 14 von 18
-Restaurant Linsebühl, St. Gallen
-Alleinkoch  ·  August 1986 – November 1986
-Zeugnis 12/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 15 von 18
-Hotel Alpenrose, Wildhaus
-Koch / Tournant  ·  Oktober 1985 – Januar 1986
-Zeugnis 13/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 16 von 18
-Hotel le Château d'Ouchy, Lausanne
-Commis de Cuisine  ·  Juni 1985 – Oktober 1985
-Zeugnis 14/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 17 von 18
-Hotel Alpenrose, Wildhaus
-Kochlehre  ·  Mai 1982 – April 1985
-Zeugnis 15/15
 Thomas Ballinari · Arbeitszeugnisse · Vertraulich
 Seite 18 von 18`;
 
