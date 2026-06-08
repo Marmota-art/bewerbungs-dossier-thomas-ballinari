@@ -208,6 +208,8 @@ const mockResponses: Record<string, string> = {
     "Monad (ohne s) ist eine Layer-1-Blockchain: EVM-äquivalent, schneller Durchsatz durch Pipelining, Mainnet seit Nov. 2025. Monads (mit s) ist euer Unternehmen auf monads.ch – das sind zwei verschiedene Dinge. Ich bewerbe mich bei Monads AG für die AI-Domain.",
   blockchain:
     "Monad ist eine skalierbare Layer-1 mit voller EVM-Äquivalenz – Ethereum-Apps migrieren ohne Code-Umbau. Für Enterprise-Kontext ordne ich das business-first ein: Nutzen, Risiko, ROI.",
+  nullwert:
+    "Bei Monads-Integrationen trenne ich drei Zustände: Feld fehlt, Feld ist leer, SQL NULL. Mit Extended XML Handling, COALESCE und sauberen Partial-Update-Regeln verhindern wir, dass Schnittstellen Bestandsdaten still löschen – Complexity into Clarity auch bei Daten.",
 };
 
 function formatRecipeReply(name: string, ingredients: string, directions: string): string {

@@ -60,6 +60,7 @@ import {
   InterestsAndEngagement,
   MonadsFitSection,
   MonadBlockchainBrief,
+  MonadsNullHandlingBrief,
 } from "./data";
 import { OfficialPdfDocuments } from "./officialDocuments";
 import { TestimonialsPage } from "./components/TestimonialsPage";
@@ -682,6 +683,31 @@ export default function App() {
                   ))}
                 </ul>
                 <p className="text-xs text-slate-500 font-light pt-2 border-t border-slate-900">{MonadBlockchainBrief.relevance}</p>
+              </div>
+
+              <div className="p-6 sm:p-8 rounded-2xl bg-slate-950 border border-slate-850 space-y-4">
+                <p className="text-[10px] font-mono font-bold text-teal-400 uppercase tracking-widest">Integration · Datenqualität</p>
+                <h3 className="text-xl font-bold text-white tracking-tight">{MonadsNullHandlingBrief.title}</h3>
+                <p className="text-sm text-slate-350 font-light leading-relaxed">{MonadsNullHandlingBrief.intro}</p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider">Grundsätze</p>
+                    <ul className="list-disc list-outside pl-5 space-y-1 text-slate-400 font-light">
+                      {MonadsNullHandlingBrief.principles.map((p) => (
+                        <li key={p}>{p}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider">SAP-Technik</p>
+                    <ul className="list-disc list-outside pl-5 space-y-1 text-slate-400 font-light">
+                      {MonadsNullHandlingBrief.sapTechniques.map((p) => (
+                        <li key={p}>{p}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <p className="text-xs text-slate-500 font-light pt-2 border-t border-slate-900">{MonadsNullHandlingBrief.aiAngle}</p>
               </div>
             </div>
 

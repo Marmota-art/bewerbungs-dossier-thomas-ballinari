@@ -1070,6 +1070,25 @@ export const MonadBlockchainBrief = {
     "Für Monads relevant, wenn Kunden über Systemmigration, Skalierung oder neue Plattformen sprechen: Technik verstehen, Entscheidung business-first – wie bei eurer Enterprise Intelligence.",
 } as const;
 
+/** Umgang mit Nullwerten – SAP/Integrations-Kontext (Monads-typisch) */
+export const MonadsNullHandlingBrief = {
+  title: "Nullwerte bei Monads-Integrationen",
+  intro:
+    "Monads veröffentlicht kein separates Nullwert-Whitepaper – in SAP- und Integrationsprojekten gilt trotzdem klare Semantik: Complexity into Clarity auch bei Daten.",
+  principles: [
+    "Drei Zustände trennen: Feld fehlt im Payload · Feld ist leer/initial · SQL NULL",
+    "NULL ist nicht dasselbe wie leerer String – Joins und KPIs verfälschen sich sonst",
+    "Mapping-Spec pro Schnittstelle: wann SAP-Bestand erhalten, überschrieben oder gelöscht wird",
+  ],
+  sapTechniques: [
+    "Extended XML Handling (CONTROLLER / sai_ctrl_none vs. sai_ctrl_initial)",
+    "COALESCE / IFNULL in Joins und Abfragen",
+    "Partial Updates: fehlende Felder dürfen gepflegte Stammdaten nicht still löschen (BAdI)",
+  ],
+  aiAngle:
+    "Bei Enterprise Intelligence: fehlende Werte nicht als Null in KPIs rechnen – Datenqualität sichtbar machen, wie bei belastbaren Business Cases.",
+} as const;
+
 export const MonadsFitSection = {
   title: "Warum ich zu Monads passe",
   intro:
