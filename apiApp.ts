@@ -22,6 +22,7 @@ import {
 } from "./src/chatRecipes";
 import { getChatZodiacKnowledge } from "./src/chatZodiacKnowledge";
 import { getChatProminentContactsKnowledge } from "./src/chatProminentContacts";
+import { getChatMonadBlockchainKnowledge } from "./src/chatMonadBlockchain";
 import {
   buildAccessCookie,
   isSiteAccessConfigured,
@@ -95,6 +96,7 @@ ${getChatKiSpecialistKnowledge() ? `\n${getChatKiSpecialistKnowledge()}\n` : ""}
 ${getChatRecipesKnowledge() ? `\n${getChatRecipesKnowledge()}\n` : ""}
 ${getChatZodiacKnowledge() ? `\n${getChatZodiacKnowledge()}\n` : ""}
 ${getChatProminentContactsKnowledge() ? `\n${getChatProminentContactsKnowledge()}\n` : ""}
+${getChatMonadBlockchainKnowledge() ? `\n${getChatMonadBlockchainKnowledge()}\n` : ""}
 - Sprachen: Deutsch (Muttersprache, C2), Englisch (Advanced, C1), Französisch (Gute Kenntnisse, B2), Italienisch (Grundkenntnisse, A2).
 - Stärken: Analytisches Denken, unternehmerisches Denken, Kommunikationsstärke, Teamführung & Motivation, Belastbarkeit, Kreativität, selbstständiges Arbeiten.
 - Slogan: "Ich verbinde 40 Jahre Gastronomie-Erfahrung mit moderner künstlicher Intelligenz."
@@ -134,7 +136,8 @@ STRIKTE NUTZUNGSRICHTLINIEN FÜR DEN BOT:
 5. REZEPTE / KÜCHE: Erwähne Rezepte NIEMALS von dir aus. Nur wenn explizit nach einem Rezept, Gericht, Zutaten oder Zubereitung gefragt wird: nutze den Abschnitt KÜCHEN-REZEPTE. Gib das Rezept in Ich-Form wieder (was ich koche / mein Rezept). Wenn keine Rezepte hinterlegt sind, sage das ehrlich und verweise auf ein persönliches Gespräch.
 6. ASTROLOGIE / ZODIAK: Erwähne Horoskop-Themen NIEMALS von dir aus. Nur bei expliziten Fragen zu Sternzeichen, Geburtshoroskop, Transiten, Pluto, Uranus, Saturn, MC, Spiritualitaet oder Astrologie: nutze den Abschnitt ZODIAK-WISSENSDATENBANK. Formuliere als persoenliches Interesse und Reflexionsmodell, nicht als wissenschaftlichen Beweis. Geburtsdaten: 10.01.1966, 09:50, St. Gallen.
 7. PROMINENTE / VIP: Erwähne Stars, Politiker, Skifahrer oder Promi-Kontakte NIEMALS von dir aus. Nur bei expliziter Nachfrage: nutze PROMINENTE & VIP-KONTAKTE. Respektvoll, ohne Prahlerei, nur Personen aus der Liste.
-8. GEWINNEND & DIREKT: Beantworte Fragen zielgerichtet, professionell, sympathisch und selbstbewusst. Zeige, dass du dich auf die Schnittstelle zwischen Business-Problemen des Kunden und pragmatischen KI-Lösungen spezialisiert hast.
+8. MONAD vs. MONADS: Monads (mit s) = Arbeitgeber monads.ch, SAP & Enterprise Intelligence. Monad (ohne s) = Layer-1-Blockchain (Web3). Bei Verwechslung freundlich klären. Monad-Blockchain nur bei expliziter Nachfrage erklären; Monads ist kein Crypto-Unternehmen.
+9. GEWINNEND & DIREKT: Beantworte Fragen zielgerichtet, professionell, sympathisch und selbstbewusst. Zeige, dass du dich auf die Schnittstelle zwischen Business-Problemen des Kunden und pragmatischen KI-Lösungen spezialisiert hast.
 `;
 
 const mockResponses: Record<string, string> = {
@@ -201,6 +204,10 @@ const mockResponses: Record<string, string> = {
     "Freddie Mercury traf ich 1990 in Basel – «Mon Bijou» ist ein persönliches Lied von ihm für mich.",
   prominent:
     "Zu meinem Netzwerk zählen enge Freundschaften unter anderem mit Carole King, Miriam Makeba, Elton John und Freddie Mercury sowie viele Skifahrer und Persönlichkeiten aus Sport und Politik – Details nur auf Nachfrage, respektvoll.",
+  monad:
+    "Monad (ohne s) ist eine Layer-1-Blockchain: EVM-äquivalent, schneller Durchsatz durch Pipelining, Mainnet seit Nov. 2025. Monads (mit s) ist euer Unternehmen auf monads.ch – das sind zwei verschiedene Dinge. Ich bewerbe mich bei Monads AG für die AI-Domain.",
+  blockchain:
+    "Monad ist eine skalierbare Layer-1 mit voller EVM-Äquivalenz – Ethereum-Apps migrieren ohne Code-Umbau. Für Enterprise-Kontext ordne ich das business-first ein: Nutzen, Risiko, ROI.",
 };
 
 function formatRecipeReply(name: string, ingredients: string, directions: string): string {

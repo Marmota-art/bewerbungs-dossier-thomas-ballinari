@@ -667,6 +667,21 @@ export default function App() {
                   </div>
                 ))}
               </div>
+
+              <div className="p-6 sm:p-8 rounded-2xl bg-slate-950 border border-slate-850 space-y-4">
+                <p className="text-[10px] font-mono font-bold text-teal-400 uppercase tracking-widest">Hintergrund · Web3</p>
+                <h3 className="text-xl font-bold text-white tracking-tight">{MonadBlockchainBrief.title}</h3>
+                <p className="text-sm text-amber-200/90 font-light leading-relaxed border-l-2 border-amber-500/40 pl-4">
+                  {MonadBlockchainBrief.disclaimer}
+                </p>
+                <p className="text-sm text-slate-350 font-light leading-relaxed">{MonadBlockchainBrief.summary}</p>
+                <ul className="list-disc list-outside pl-5 space-y-1.5 text-sm text-slate-400 font-light">
+                  {MonadBlockchainBrief.bullets.map((b) => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ul>
+                <p className="text-xs text-slate-500 font-light pt-2 border-t border-slate-900">{MonadBlockchainBrief.relevance}</p>
+              </div>
             </div>
 
             {/* MY WORK DATA PIPELINE FLOW FROM SCREENSHOT PAGE 6 */}

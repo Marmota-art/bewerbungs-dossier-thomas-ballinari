@@ -1054,6 +1054,22 @@ export interface MonadsValueItem {
   howWeWin: string;
 }
 
+/** Kurzinfo Monad-Blockchain (≠ Monads AG) – optional im Profil sichtbar */
+export const MonadBlockchainBrief = {
+  title: "Was ist Monad? – und was ist Monads?",
+  disclaimer:
+    "Zur Einordnung: Ich bewerbe mich bei Monads (mit «s») auf monads.ch – SAP & Enterprise Intelligence. Monad (ohne «s») ist eine separate Layer-1-Blockchain im Web3. Gleicher Name, verschiedene Welten.",
+  summary:
+    "Monad ist eine Layer-1-Blockchain für höhere Skalierbarkeit und effizientere Smart Contracts. Sie ist vollständig EVM-äquivalent: Ethereum-Contracts laufen ohne Anpassung. Technisch setzt Monad auf Pipelining und parallele Transaktionsausführung (Ziel: Tausende TPS, Blockzeit ca. 1 Sekunde). MON-Token und Mainnet gingen im November 2025 live.",
+  bullets: [
+    "EVM-äquivalent: MetaMask, Hardhat, Foundry – bestehende Ethereum-Apps nahezu 1:1 migrierbar",
+    "Vorteil für DeFi & On-Chain-Apps: schnellere Bestätigungen, tiefere Gebühren als überlastetes Ethereum",
+    "Dezentralisierungsziel: Nodes auch mit moderater Hardware betreibbar",
+  ],
+  relevance:
+    "Für Monads relevant, wenn Kunden über Systemmigration, Skalierung oder neue Plattformen sprechen: Technik verstehen, Entscheidung business-first – wie bei eurer Enterprise Intelligence.",
+} as const;
+
 export const MonadsFitSection = {
   title: "Warum ich zu Monads passe",
   intro:
