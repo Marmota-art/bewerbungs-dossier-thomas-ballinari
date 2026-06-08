@@ -59,6 +59,7 @@ import {
   MonadsValues,
   InterestsAndEngagement,
   MonadsFitSection,
+  MonadBlockchainBrief,
 } from "./data";
 import { OfficialPdfDocuments } from "./officialDocuments";
 import { TestimonialsPage } from "./components/TestimonialsPage";
