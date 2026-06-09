@@ -26,6 +26,10 @@ import {
   getChatTestimonialsKnowledge,
   getTestimonialLinkReply,
 } from "./src/chatTestimonials";
+import {
+  getChatCertificatesKnowledge,
+  getCertificateLinkReply,
+} from "./src/chatCertificates";
 import { getChatMonadBlockchainKnowledge } from "./src/chatMonadBlockchain";
 import {
   buildAccessCookie,
@@ -116,6 +120,8 @@ ${JSON.stringify(Educations, null, 2)}
 ZERTIFIKATE & ABSCHLÜSSE:
 ${JSON.stringify(Certificates, null, 2)}
 
+${getChatCertificatesKnowledge()}
+
 ARBEITSZEUGNISSE (TESTIMONIALS):
 ${JSON.stringify(Testimonials, null, 2)}
 
@@ -144,7 +150,8 @@ STRIKTE NUTZUNGSRICHTLINIEN FÜR DEN BOT:
 6. ASTROLOGIE / ZODIAK: Erwähne Horoskop-Themen NIEMALS von dir aus. Nur bei expliziten Fragen zu Sternzeichen, Geburtshoroskop, Transiten, Pluto, Uranus, Saturn, MC, Spiritualitaet oder Astrologie: nutze den Abschnitt ZODIAK-WISSENSDATENBANK. Formuliere als persoenliches Interesse und Reflexionsmodell, nicht als wissenschaftlichen Beweis. Geburtsdaten: 10.01.1966, 09:50, St. Gallen.
 7. PROMINENTE / VIP: Erwähne Stars, Politiker, Skifahrer oder Promi-Kontakte NIEMALS von dir aus. Nur bei expliziter Nachfrage: nutze PROMINENTE & VIP-KONTAKTE. Respektvoll, ohne Prahlerei, nur Personen aus der Liste.
 8. ARBEITSZEUGNISSE / LINKS: Bei Fragen nach Original-Zeugnissen, PDF, Link oder konkretem Arbeitgeber: gib sofort klickbare Markdown-Links aus dem Abschnitt ZEUGNIS-LINKS (Format: [Bezeichnung](URL)). Nicht nur beschreiben – direkten Original-PDF-Link mitgeben (/documents/arbeitszeugnisse.pdf#page=N). Optional zusätzlich App-Volltext (#testimonials/zeugnis-N).
-9. GEWINNEND & DIREKT: Beantworte Fragen zielgerichtet, professionell, sympathisch und selbstbewusst. Zeige, dass du dich auf die Schnittstelle zwischen Business-Problemen des Kunden und pragmatischen KI-Lösungen spezialisiert hast.
+9. ZERTIFIKATE / LINKS & INHALT: Bei Fragen nach Original-Zertifikaten, PDF, Link, Modulen, Noten, Inhalt oder Transkript: nutze ZERTIFIKAT-LINKS und die JSON-/Transkript-Daten. Gib klickbare Original-PDF-Links (/documents/zertifikate-ausbildung.pdf#page=N) mit, nenne Highlights und relevante Transkript-Auszüge – nicht nur beschreiben.
+10. GEWINNEND & DIREKT: Beantworte Fragen zielgerichtet, professionell, sympathisch und selbstbewusst. Zeige, dass du dich auf die Schnittstelle zwischen Business-Problemen des Kunden und pragmatischen KI-Lösungen spezialisiert hast.
 `;
 
 const mockResponses: Record<string, string> = {
@@ -256,6 +263,9 @@ function getMockReply(lastMessage: string): string {
   const zeugnisReply = getTestimonialLinkReply(lastMessage);
   if (zeugnisReply) return zeugnisReply;
 
+  const certReply = getCertificateLinkReply(lastMessage);
+  if (certReply) return certReply;
+
   for (const key of Object.keys(mockResponses)) {
     if (lastMessage.includes(key)) {
       return mockResponses[key];
@@ -331,9 +341,15 @@ app.post("/api/chat", async (req, res) => {
     return res.status(400).json({ error: "Messages is required and must be an array" });
   }
 
+  const lastMessage = messages[messages.length - 1]?.content || "";
+  const zeugnisReply = getTestimonialLinkReply(lastMessage);
+  if (zeugnisReply) return res.json({ text: zeugnisReply });
+  const certReply = getCertificateLinkReply(lastMessage);
+  if (certReply) return res.json({ text: certReply });
+
   if (!ai) {
-    const lastMessage = messages[messages.length - 1]?.content?.toLowerCase() || "";
-    return res.json({ text: getMockReply(lastMessage), isMock: true });
+    const lastLower = lastMessage.toLowerCase();
+    return res.json({ text: getMockReply(lastLower), isMock: true });
   }
 
   try {

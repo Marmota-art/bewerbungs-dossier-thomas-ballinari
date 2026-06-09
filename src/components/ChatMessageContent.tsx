@@ -1,9 +1,10 @@
 import type { MouseEvent, ReactNode } from "react";
-import { parseChatLink, testimonialPdfUrl } from "../chatAppLinks";
+import { parseChatLink, testimonialPdfUrl, certificatePdfUrl } from "../chatAppLinks";
 
 type ChatMessageContentProps = {
   content: string;
   onOpenTestimonial?: (testimonialId?: string) => void;
+  onOpenCertificate?: (certificateId?: string) => void;
 };
 
 function openPdf(path: string) {
@@ -11,7 +12,7 @@ function openPdf(path: string) {
 }
 
 /** Rendert Chat-Text mit klickbaren Markdown-Links [Label](url) */
-export function ChatMessageContent({ content, onOpenTestimonial }: ChatMessageContentProps) {
+export function ChatMessageContent({ content, onOpenTestimonial, onOpenCertificate }: ChatMessageContentProps) {
   const nodes: ReactNode[] = [];
   const linkRe = /\[([^\]]+)\]\(([^)]+)\)/g;
   let lastIndex = 0;
@@ -31,6 +32,14 @@ export function ChatMessageContent({ content, onOpenTestimonial }: ChatMessageCo
       }
       return;
     }
+    if (parsed.type === "certificate") {
+      if (parsed.id) {
+        openPdf(certificatePdfUrl(parsed.id));
+      } else {
+        onOpenCertificate?.();
+      }
+      return;
+    }
     if (parsed.type === "pdf") {
       openPdf(parsed.path);
     }
@@ -43,7 +52,10 @@ export function ChatMessageContent({ content, onOpenTestimonial }: ChatMessageCo
 
     const href = match[2];
     const parsed = parseChatLink(href);
-    const isInternal = parsed?.type === "testimonial" || parsed?.type === "pdf";
+    const isInternal =
+      parsed?.type === "testimonial" ||
+      parsed?.type === "certificate" ||
+      parsed?.type === "pdf";
 
     nodes.push(
       <a

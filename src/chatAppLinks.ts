@@ -1,4 +1,4 @@
-import { Testimonials } from "./data";
+import { Certificates, Testimonials } from "./data";
 import { OfficialPdfDocuments } from "./officialDocuments";
 
 /** Original-PDF; mit testimonialId springt der Link direkt zur Zeugnis-Seite (#page=N). */
@@ -14,8 +14,22 @@ export function testimonialAppUrl(testimonialId?: string): string {
   return "#testimonials";
 }
 
+/** Original-PDF; mit certificateId springt der Link direkt zur Zertifikats-Seite (#page=N). */
+export function certificatePdfUrl(certificateId?: string): string {
+  const base = OfficialPdfDocuments.zertifikate.path;
+  if (!certificateId) return base;
+  const page = Certificates.find((c) => c.id === certificateId)?.pdfPage;
+  return page ? `${base}#page=${page}` : base;
+}
+
+export function certificateAppUrl(certificateId?: string): string {
+  if (certificateId) return `#certificates/${certificateId}`;
+  return "#certificates";
+}
+
 export type ParsedChatLink =
   | { type: "testimonial"; id?: string }
+  | { type: "certificate"; id?: string }
   | { type: "pdf"; path: string };
 
 /** Erkennt App-interne Zeugnis- und PDF-Links aus dem Chat */
@@ -25,6 +39,11 @@ export function parseChatLink(href: string): ParsedChatLink | null {
   const hashOnly = trimmed.match(/^#testimonials(?:\/(zeugnis-\d+))?$/);
   if (hashOnly) {
     return { type: "testimonial", id: hashOnly[1] };
+  }
+
+  const certHash = trimmed.match(/^#certificates(?:\/(cert-\d+))?$/);
+  if (certHash) {
+    return { type: "certificate", id: certHash[1] };
   }
 
   const pdfPath = trimmed.match(/^(\/documents\/[^#]+\.pdf)(?:#page=\d+)?$/i);
@@ -44,7 +63,18 @@ export function parseChatLink(href: string): ParsedChatLink | null {
         id: id?.startsWith("zeugnis-") ? id : undefined,
       };
     }
-    if (url.pathname.includes("arbeitszeugnisse") || url.pathname.endsWith(".pdf")) {
+    if (hash.startsWith("certificates")) {
+      const id = hash.split("/")[1];
+      return {
+        type: "certificate",
+        id: id?.startsWith("cert-") ? id : undefined,
+      };
+    }
+    if (
+      url.pathname.includes("arbeitszeugnisse") ||
+      url.pathname.includes("zertifikate") ||
+      url.pathname.endsWith(".pdf")
+    ) {
       return { type: "pdf", path: `${url.pathname}${url.hash}` };
     }
   } catch {

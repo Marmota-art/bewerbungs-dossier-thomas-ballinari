@@ -131,7 +131,7 @@ export default function App() {
   const [contactSubmitting, setContactSubmitting] = useState<boolean>(false);
   const [contactError, setContactError] = useState<string>("");
 
-  // Deep-Links: #testimonials oder #testimonials/zeugnis-N
+  // Deep-Links: #testimonials, #certificates (+ /id)
   const openTestimonialFromChat = (testimonialId?: string) => {
     setActiveTab("testimonials");
     if (testimonialId && Testimonials.some((t) => t.id === testimonialId)) {
@@ -144,15 +144,35 @@ export default function App() {
     }, 80);
   };
 
+  const openCertificateFromChat = (certificateId?: string) => {
+    setActiveTab("certificates");
+    if (certificateId) {
+      const cert = Certificates.find((c) => c.id === certificateId);
+      if (cert) setSelectedCertTranscript(cert);
+    }
+    const hash = certificateId ? `#certificates/${certificateId}` : "#certificates";
+    window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}${hash}`);
+    window.setTimeout(() => {
+      document.getElementById("sect-certificates")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
+  };
+
   useEffect(() => {
     const applyHash = () => {
       const raw = window.location.hash.replace(/^#/, "").trim();
       if (!raw) return;
-      const [section, testimonialId] = raw.split("/");
+      const [section, itemId] = raw.split("/");
       if (section === "testimonials") {
         setActiveTab("testimonials");
-        if (testimonialId && Testimonials.some((t) => t.id === testimonialId)) {
-          setSelectedTestimonial(testimonialId);
+        if (itemId && Testimonials.some((t) => t.id === itemId)) {
+          setSelectedTestimonial(itemId);
+        }
+      }
+      if (section === "certificates") {
+        setActiveTab("certificates");
+        if (itemId) {
+          const cert = Certificates.find((c) => c.id === itemId);
+          if (cert) setSelectedCertTranscript(cert);
         }
       }
     };
@@ -233,6 +253,7 @@ export default function App() {
     "Welche Gastronomie-Erfahrung bringt Thomas mit?",
     "Warum passt Thomas als AI Business Specialist?",
     "Link zum Arbeitszeugnis Hagerbach?",
+    "Link zum KI-Professional Zertifikat?",
   ];
 
   // SmartGastro Forecast Simulation Algorithm
@@ -1186,7 +1207,15 @@ export default function App() {
                       <span>Transkript abfragen</span>
                       <ExternalLink className="w-3 h-3 group-hover/btn:translate-x-0.5 transition-transform" />
                     </button>
-                    {cert.documentUrl ? renderDocumentLinks(cert.documentUrl) : (
+                    {cert.documentUrl ? (
+                      renderDocumentLinks(cert.documentUrl)
+                    ) : cert.pdfPage ? (
+                      renderDocumentLinks(
+                        `${OfficialPdfDocuments.zertifikate.path}#page=${cert.pdfPage}`,
+                        "Original-PDF",
+                        OfficialPdfDocuments.zertifikate.fileName
+                      )
+                    ) : (
                       <p className="text-[10px] text-slate-600 font-mono">Original-Scan folgt nach Upload</p>
                     )}
                   </div>
@@ -1233,7 +1262,13 @@ export default function App() {
                     <div className="flex flex-wrap items-center gap-2">
                       {selectedCertTranscript.documentUrl
                         ? renderDocumentLinks(selectedCertTranscript.documentUrl)
-                        : null}
+                        : selectedCertTranscript.pdfPage
+                          ? renderDocumentLinks(
+                              `${OfficialPdfDocuments.zertifikate.path}#page=${selectedCertTranscript.pdfPage}`,
+                              "Original-PDF",
+                              OfficialPdfDocuments.zertifikate.fileName
+                            )
+                          : null}
                       <button
                         onClick={() => setSelectedCertTranscript(null)}
                         className="px-5 py-2 rounded-xl bg-teal-500 hover:opacity-95 font-bold text-slate-950 text-xs transition-all cursor-pointer"
@@ -2407,6 +2442,7 @@ export default function App() {
                         <ChatMessageContent
                           content={m.content}
                           onOpenTestimonial={openTestimonialFromChat}
+                          onOpenCertificate={openCertificateFromChat}
                         />
                       )}
                     </div>

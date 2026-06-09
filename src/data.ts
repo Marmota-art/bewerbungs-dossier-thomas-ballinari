@@ -28,6 +28,8 @@ export interface CertificateItem {
   transcript?: string;
   /** Pfad zum Scan/PDF unter public/documents/certificates/ */
   documentUrl?: string;
+  /** Seite im Original-PDF zertifikate-ausbildung.pdf (Zertifikate_V2) */
+  pdfPage?: number;
 }
 
 export interface TestimonialItem {
@@ -358,6 +360,7 @@ export const Educations: EducationItem[] = [
 export const Certificates: CertificateItem[] = [
   {
     id: "cert-1",
+    pdfPage: 3,
     title: "KI-Professional (Business), Zertifikat",
     issuer: "HSO Wirtschafts- und Informatikschule Schweiz",
     date: "18.07.2025",
@@ -370,6 +373,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-2",
+    pdfPage: 4,
     title: "ECDL Modul 1, PC-Aufbaukurs",
     issuer: "Spirig Computer AG Trainingscenter, Heerbrugg",
     date: "13.04.2007",
@@ -383,6 +387,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-3",
+    pdfPage: 5,
     title: "ECDL Modul 2, PC Grundkurs",
     issuer: "Klubschule Migros Rapperswil",
     date: "30.03.2007",
@@ -395,6 +400,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-4",
+    pdfPage: 6,
     title: "ECDL Modul 3, Word Processing",
     issuer: "Spirig Computer AG Trainingscenter, Heerbrugg",
     date: "20.04.2007",
@@ -408,6 +414,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-5",
+    pdfPage: 7,
     title: "ECDL Modul 4, Spreadsheets",
     issuer: "Spirig Computer AG Trainingscenter, Heerbrugg",
     date: "27.04.2007",
@@ -421,6 +428,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-6",
+    pdfPage: 8,
     title: "ECDL Modul 6, Präsentation / PowerPoint",
     issuer: "Spirig Computer AG Trainingscenter, Heerbrugg",
     date: "18.06.2007",
@@ -433,6 +441,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-7",
+    pdfPage: 9,
     title: "ECDL Modul 7, Internet & Outlook",
     issuer: "Bildungszentrum BVS St. Gallen",
     date: "25.05.2007",
@@ -446,6 +455,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-8",
+    pdfPage: 10,
     title: "ECDL Start Certificate (Module 1 bis 4)",
     issuer: "ECDL European Computer Driving Licence",
     date: "03.05.2007",
@@ -458,6 +468,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-9",
+    pdfPage: 11,
     title: "Eidg. Fähigkeitszeugnis Koch",
     issuer: "Kanton St. Gallen / Eidgenossenschaft",
     date: "02.04.1985",
@@ -471,6 +482,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-10",
+    pdfPage: 12,
     title: "Berufsschulzeugnis, Kochlehre",
     issuer: "Gewerbliche Berufsschule St. Gallen",
     date: "27.03.1985",
@@ -484,6 +496,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-11",
+    pdfPage: 13,
     title: "Wirtefachkurs, Fähigkeitsausweis",
     issuer: "Volkswirtschaftsdepartement Kanton St. Gallen",
     date: "15.06.1993",
@@ -496,6 +509,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-12",
+    pdfPage: 14,
     title: "Notenblatt Wirtefachprüfung",
     issuer: "Wirteprüfungskommission Kanton St. Gallen",
     date: "16.06.1993",
@@ -509,6 +523,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-13",
+    pdfPage: 15,
     title: "Lehrmeisterkurs, Kursausweis",
     issuer: "Amt für Berufsbildung / ZbW St. Gallen",
     date: "25.11.2004",
@@ -521,6 +536,7 @@ export const Certificates: CertificateItem[] = [
   },
   {
     id: "cert-14",
+    pdfPage: 16,
     title: "Gastwirtschaftspatente Kanton Zürich",
     issuer: "Finanzdirektion Kanton Zürich / Abt. Wirtschaftswesen",
     date: "1993 / 1995",
