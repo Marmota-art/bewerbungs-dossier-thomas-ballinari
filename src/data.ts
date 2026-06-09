@@ -1089,49 +1089,49 @@ export interface MonadsValueItem {
 
 export const MonadsFitSection = {
   title: "Warum ich zu Monads passe",
-  role: "AI Domain Lead (m/w/d) · Remote · 60–100%",
+  role: "AI Domain Lead (m/w/d) · Remote · 60 bis 100%",
   intro:
-    "Ihr sucht eine Persönlichkeit, die die Domain AI bei Monads aufbaut und verantwortet – jemanden, der erkennt, wo AI echten Mehrwert schafft, Lösungen designt und misst, was beim Kunden live geht. Nicht in Technologien, sondern in Business Cases. Das ist mein Alltag. Kein klassisches Motivationsschreiben: SmartGastro.ai ist mein Business Case, diese App mein Workflow. Beides zeigt, wie ich heute Claude, Cursor und Codex einsetze – vom Gespräch mit Fachbereich und Management bis zur produktionsnahen Umsetzung.",
+    "Ihr sucht jemanden, der die Domain AI bei Monads aufbaut und wirklich verantwortet. Jemand, der merkt, wo AI echten Nutzen bringt, Lösungen entwickelt und am Schluss schaut, was beim Kunden wirklich läuft. Nicht in Technologien, sondern in Business Cases. So arbeite ich jeden Tag. Das hier ist kein klassisches Motivationsschreiben. SmartGastro.ai ist mein Business Case, diese App mein Workflow. Beides zeigt, wie ich heute mit Claude, Cursor und Codex arbeite, vom Gespräch mit Fachbereich und Management bis zur Umsetzung, die man anfassen kann.",
   cards: [
     {
       number: "01",
       title: "Domain AI aufbauen und verantworten",
-      body: "Strategie, Positionierung und Angebot der AI-Domain – das wollt ihr, das will ich. Den AI-Bereich bei Monads von Grund auf gestalten, das Beratungsangebot aus Projekterfahrung weiterentwickeln und messbare Wirkung beim Kunden zur Leitlinie machen.",
-      lever: "Eigene Domain gestalten, nicht nur mitarbeiten",
+      body: "Strategie, Positionierung und Angebot der AI Domain, das wollt ihr und genau das will ich auch. Den AI Bereich bei Monads von Grund auf mitgestalten, das Beratungsangebot aus Projekterfahrung weiterentwickeln und am Kunden prüfen, ob es wirklich wirkt.",
+      lever: "Eigene Domain gestalten, nicht nur mitlaufen",
     },
     {
       number: "02",
       title: "Business Cases statt Technologie",
-      body: "Ich denke in Geschäftsproblemen: Food Waste, Personalknappheit, Planungsaufwand in der Gastronomie – bei euren Kunden sind es andere Schmerzpunkte, aber dieselbe Logik. Erst Potenzial und ROI klären, dann Tool und Architektur wählen.",
-      lever: "Mehrwert erkennen, bevor Code fließt",
+      body: "Ich denke zuerst in Geschäftsproblemen. Food Waste, Personalknappheit, Planungsstress in der Gastronomie kenne ich aus eigener Haut. Bei euren Kunden sind es andere Themen, aber die Logik bleibt dieselbe. Erst Potenzial und ROI klären, dann Tool und Architektur wählen.",
+      lever: "Mehrwert erkennen, bevor Code fliesst",
     },
     {
       number: "03",
-      title: "Nah am Kunden – Fachbereich und Management",
-      body: "Nach über 40 Jahren als Küchenchef, Pächter und Unternehmer führe ich Gespräche auf Augenhöhe – nicht nur mit der IT. Ich identifiziere Potenziale vor Ort und übersetze Anforderungen in AI-gestützte Lösungskonzepte, die Fachbereiche wirklich nutzen.",
+      title: "Nah am Kunden, Fachbereich und Management",
+      body: "Nach über 40 Jahren als Küchenchef, Pächter und Unternehmer führe ich Gespräche auf Augenhöhe, und zwar nicht nur mit der IT. Ich gehe vor Ort hin, höre zu, finde Potenziale und mache daraus Lösungen, die Fachbereiche auch wirklich nutzen.",
       lever: "Wirkung dort, wo es weh tut",
     },
     {
       number: "04",
-      title: "AI Power-User: Claude & Codex im Alltag",
-      body: "Claude, Cursor, Google Studio AI und Codex nutze ich täglich und intensiv – nicht als Experiment, sondern als Arbeitsweise. Ich kenne Stärken und Grenzen der Tools und setze sie gezielt ein: Analyse, Prototyping, Dokumentation, Enablement.",
-      lever: "AI-Nerd im besten Sinne",
+      title: "AI Power User: Claude und Codex im Alltag",
+      body: "Claude, Cursor, Google Studio AI und Codex nutze ich täglich und intensiv, nicht als Experiment, sondern als normale Arbeitsweise. Ich kenne Stärken und Grenzen der Tools und setze sie gezielt ein, für Analyse, Prototyping, Dokumentation und Enablement.",
+      lever: "AI Nerd im besten Sinne",
     },
     {
       number: "05",
-      title: "Vibe Coding – designen und selbst umsetzen",
-      body: "Lösungen designe ich nicht nur – ich setze sie mit AI-Tools in Rekordzeit um: Fullstack-Prototypen, serverlose Pipelines, interaktive Demos. SmartGastro.ai und diese Bewerbungs-App sind der Beweis: schnell, pragmatisch, produktionsnah.",
-      lever: "Wettbewerbsvorteil aus eurem Inserat",
+      title: "Vibe Coding, designen und selbst umsetzen",
+      body: "Lösungen entwerfe ich nicht nur, ich setze sie selbst um, mit AI Tools und in kürzerer Zeit als man früher gebraucht hätte. Fullstack Prototypen, serverlose Pipelines, interaktive Demos. SmartGastro.ai und diese Bewerbungsapp sind der Beweis: schnell, pragmatisch und nah an der Realität.",
+      lever: "Der Vorteil, den ihr im Inserat sucht",
     },
     {
       number: "06",
-      title: "AI Enablement & Wissensmanagement",
-      body: "Kundenteams befähigen, AI produktiv in den Alltag zu integrieren: Workshops, Methoden, Formate. In meiner Ausbildung zum AI Business Specialist ist Wissensmanagement (F6) zertifizierte Kernkompetenz – nachhaltige AI-Kultur statt Einmal-Projekt.",
-      lever: "Was live bleibt, wenn wir gehen",
+      title: "AI Enablement und Wissensmanagement",
+      body: "Kundenteams sollen AI später selbstständig nutzen können. Dafür mache ich Workshops, Methoden und Formate, die hängen bleiben. Wissensmanagement war in meiner Ausbildung zum AI Business Specialist eine Kernkompetenz. Mir geht es um eine AI Kultur, nicht um ein Projekt, das nach drei Monaten verstaubt.",
+      lever: "Was bleibt, wenn wir wieder weg sind",
     },
   ],
   closing:
-    "Remote, flexibel 60–100%, Freiheit und Eigenverantwortung – genau so arbeite ich am liebsten. Lasst uns im Du sprechen: über eure AI-Domain, über SmartGastro.ai und darüber, wie wir gemeinsam Complexity into Clarity machen.",
+    "Remote, flexibel zwischen 60 und 100 Prozent, mit Freiheit und Eigenverantwortung, so arbeite ich am liebsten. Lasst uns im Du reden, über eure AI Domain, über SmartGastro.ai und darüber, wie wir gemeinsam aus Complexity into Clarity etwas machen, das beim Kunden ankommt.",
 } as const;
 
 export const MonadsValues = {
