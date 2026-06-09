@@ -22,6 +22,10 @@ import {
 } from "./src/chatRecipes";
 import { getChatZodiacKnowledge } from "./src/chatZodiacKnowledge";
 import { getChatProminentContactsKnowledge } from "./src/chatProminentContacts";
+import {
+  getChatTestimonialsKnowledge,
+  getTestimonialLinkReply,
+} from "./src/chatTestimonials";
 import { getChatMonadBlockchainKnowledge } from "./src/chatMonadBlockchain";
 import {
   buildAccessCookie,
@@ -115,6 +119,8 @@ ${JSON.stringify(Certificates, null, 2)}
 ARBEITSZEUGNISSE (TESTIMONIALS):
 ${JSON.stringify(Testimonials, null, 2)}
 
+${getChatTestimonialsKnowledge()}
+
 HAUPT-PRAXISPROJEKT: SmartGastro.ai
 ${JSON.stringify(SmartGastroProject, null, 2)}
 
@@ -137,7 +143,8 @@ STRIKTE NUTZUNGSRICHTLINIEN FÜR DEN BOT:
 5. REZEPTE / KÜCHE: Erwähne Rezepte NIEMALS von dir aus. Nur wenn explizit nach einem Rezept, Gericht, Zutaten oder Zubereitung gefragt wird: nutze den Abschnitt KÜCHEN-REZEPTE. Gib das Rezept in Ich-Form wieder (was ich koche / mein Rezept). Wenn keine Rezepte hinterlegt sind, sage das ehrlich und verweise auf ein persönliches Gespräch.
 6. ASTROLOGIE / ZODIAK: Erwähne Horoskop-Themen NIEMALS von dir aus. Nur bei expliziten Fragen zu Sternzeichen, Geburtshoroskop, Transiten, Pluto, Uranus, Saturn, MC, Spiritualitaet oder Astrologie: nutze den Abschnitt ZODIAK-WISSENSDATENBANK. Formuliere als persoenliches Interesse und Reflexionsmodell, nicht als wissenschaftlichen Beweis. Geburtsdaten: 10.01.1966, 09:50, St. Gallen.
 7. PROMINENTE / VIP: Erwähne Stars, Politiker, Skifahrer oder Promi-Kontakte NIEMALS von dir aus. Nur bei expliziter Nachfrage: nutze PROMINENTE & VIP-KONTAKTE. Respektvoll, ohne Prahlerei, nur Personen aus der Liste.
-8. GEWINNEND & DIREKT: Beantworte Fragen zielgerichtet, professionell, sympathisch und selbstbewusst. Zeige, dass du dich auf die Schnittstelle zwischen Business-Problemen des Kunden und pragmatischen KI-Lösungen spezialisiert hast.
+8. ARBEITSZEUGNISSE / LINKS: Bei Fragen nach Original-Zeugnissen, PDF, Link oder konkretem Arbeitgeber: gib sofort klickbare Markdown-Links aus dem Abschnitt ZEUGNIS-LINKS (Format: [Bezeichnung](URL)). Nicht nur beschreiben – direkten Link mitgeben. PDF-Sammlung und App-Deep-Link (#testimonials/zeugnis-N) nutzen.
+9. GEWINNEND & DIREKT: Beantworte Fragen zielgerichtet, professionell, sympathisch und selbstbewusst. Zeige, dass du dich auf die Schnittstelle zwischen Business-Problemen des Kunden und pragmatischen KI-Lösungen spezialisiert hast.
 `;
 
 const mockResponses: Record<string, string> = {
@@ -245,6 +252,9 @@ function getRecipeMockReply(lastMessage: string): string | null {
 function getMockReply(lastMessage: string): string {
   const recipeReply = getRecipeMockReply(lastMessage);
   if (recipeReply) return recipeReply;
+
+  const zeugnisReply = getTestimonialLinkReply(lastMessage);
+  if (zeugnisReply) return zeugnisReply;
 
   for (const key of Object.keys(mockResponses)) {
     if (lastMessage.includes(key)) {

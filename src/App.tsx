@@ -62,6 +62,7 @@ import {
 } from "./data";
 import { OfficialPdfDocuments } from "./officialDocuments";
 import { TestimonialsPage } from "./components/TestimonialsPage";
+import { renderChatMessageContent } from "./components/ChatMessageContent";
 // @ts-ignore
 import thomasPhoto from "./thomas.png";
 import ipsoUmbrellaPhoto from "./assets/ipso-smart-regenschirm.jpg";
@@ -129,6 +130,24 @@ export default function App() {
   const [contactSubmitted, setContactSubmitted] = useState<boolean>(false);
   const [contactSubmitting, setContactSubmitting] = useState<boolean>(false);
   const [contactError, setContactError] = useState<string>("");
+
+  // Deep-Links: #testimonials oder #testimonials/zeugnis-N
+  useEffect(() => {
+    const applyHash = () => {
+      const raw = window.location.hash.replace(/^#/, "").trim();
+      if (!raw) return;
+      const [section, testimonialId] = raw.split("/");
+      if (section === "testimonials") {
+        setActiveTab("testimonials");
+        if (testimonialId && Testimonials.some((t) => t.id === testimonialId)) {
+          setSelectedTestimonial(testimonialId);
+        }
+      }
+    };
+    applyHash();
+    window.addEventListener("hashchange", applyHash);
+    return () => window.removeEventListener("hashchange", applyHash);
+  }, []);
 
   // Load admin docs on startup
   useEffect(() => {
@@ -200,7 +219,8 @@ export default function App() {
     "Welche KI-Ausbildung besitzt Thomas?",
     "Was ist SmartGastro.ai?",
     "Welche Gastronomie-Erfahrung bringt Thomas mit?",
-    "Warum passt Thomas als AI Business Specialist?"
+    "Warum passt Thomas als AI Business Specialist?",
+    "Link zum Arbeitszeugnis Hagerbach?",
   ];
 
   // SmartGastro Forecast Simulation Algorithm
@@ -2369,7 +2389,9 @@ export default function App() {
                           <span>Wissensbasis Thomas Ballinari {m.isMock ? "(Backup Assistent)" : ""}</span>
                         </div>
                       )}
-                      <p className="whitespace-pre-line text-[11px] sm:text-xs">{m.content}</p>
+                      <p className="whitespace-pre-line text-[11px] sm:text-xs">
+                        {m.role === "user" ? m.content : renderChatMessageContent(m.content)}
+                      </p>
                     </div>
                   </div>
                 ))}
