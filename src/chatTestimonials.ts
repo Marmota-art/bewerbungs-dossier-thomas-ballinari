@@ -35,13 +35,14 @@ function findTestimonialInMessage(message: string): TestimonialItem | null {
 }
 
 function formatTestimonialReply(t: TestimonialItem): string {
+  const pdfLink = testimonialPdfUrl(t.id);
   const appLink = testimonialAppUrl(t.id);
-  const pdfLink = testimonialPdfUrl();
+  const label = t.employer.split(",")[0].trim();
   return [
     `Gerne – hier ist mein originales Arbeitszeugnis von ${t.employer} (${t.period}, ${t.role}):`,
     "",
-    `- In der App (Volltext): [Arbeitszeugnis ${t.employer.split(",")[0].trim()}](${appLink})`,
-    `- Original-PDF-Sammlung: [${OfficialPdfDocuments.arbeitszeugnisse.fileName}](${pdfLink})`,
+    `- Original-PDF: [Arbeitszeugnis ${label}](${pdfLink})`,
+    `- Volltext in der App: [${label} (interaktiv)](${appLink})`,
     "",
     `Kurz-Auszug: «${t.summary}»`,
   ].join("\n");
@@ -87,13 +88,13 @@ export function getChatTestimonialsKnowledge(): string {
 
   for (const t of Testimonials) {
     lines.push(
-      `- ${t.employer} (${t.period}): [Zeugnis ${t.employer.split(",")[0].trim()}](${testimonialAppUrl(t.id)})`
+      `- ${t.employer} (${t.period}): [Original-PDF ${t.employer.split(",")[0].trim()}](${testimonialPdfUrl(t.id)})`
     );
   }
 
   lines.push(
     "",
-    "Regel: Bei «Original-Zeugnis», «PDF», «Link» oder konkretem Arbeitgeber → passenden Link sofort mitgeben, nicht nur beschreiben."
+    "Regel: Bei «Original-Zeugnis», «PDF», «Link» oder konkretem Arbeitgeber → zuerst den Original-PDF-Link (#page=N) mitgeben, nicht nur beschreiben."
   );
 
   return lines.join("\n");

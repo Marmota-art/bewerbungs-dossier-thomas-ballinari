@@ -42,6 +42,8 @@ export interface TestimonialItem {
   documentTitle?: string;
   /** Pfad zum Scan/PDF unter public/documents/zeugnisse/ */
   documentUrl?: string;
+  /** Seite im Original-PDF arbeitszeugnisse.pdf (Thomas_Ballinari_Zeugnisse_V2_LinkedTOC) */
+  pdfPage?: number;
 }
 
 export const PersonalData = {
@@ -534,6 +536,7 @@ export const Certificates: CertificateItem[] = [
 export const Testimonials: TestimonialItem[] = [
   {
     id: "zeugnis-1",
+    pdfPage: 3,
     employer: "VersuchsStollen Hagerbach AG, Flums-Hochwiese",
     role: "Leiter Gastronomie",
     period: "08/2007 bis 05/2013",
@@ -575,6 +578,7 @@ Flums-Hochwiese, 30. April 2013`
   },
   {
     id: "zeugnis-2",
+    pdfPage: 5,
     employer: "Berit Paracelsus Klinik AG, Teufen",
     role: "Koch Teilzeit (20-40%)",
     period: "06/2006 bis 11/2006",
@@ -612,6 +616,7 @@ Teufen, 22. November 2006`
   },
   {
     id: "zeugnis-3",
+    pdfPage: 6,
     employer: "Hotel Blumenstein, Frauenfeld",
     role: "Küchenchef",
     period: "02/2004 bis 02/2006",
@@ -642,6 +647,7 @@ Frauenfeld, 28. Feb. 2006`
   },
   {
     id: "zeugnis-4",
+    pdfPage: 7,
     employer: "Arosa Bergbahnen AG (Tschuggenhütte)",
     role: "Küchenchef",
     period: "12/2000 bis 04/2001",
@@ -668,6 +674,7 @@ Arosa, 22. April 2001 /rz`
   },
   {
     id: "zeugnis-5",
+    pdfPage: 8,
     employer: "Bistrag AG, Bistro La baguette, Volketswil",
     role: "Geschäftsführer",
     period: "09/1993 bis 12/1994",
@@ -694,6 +701,7 @@ Bistrag AG: R. Ricco (Unterschrift)`
   },
   {
     id: "zeugnis-6",
+    pdfPage: 9,
     employer: "Berggasthaus Tschuggenhütte, Arosa",
     role: "Koch / Küchenchef",
     period: "02/1992 bis 03/1993",
@@ -724,6 +732,7 @@ Schweizer Wirteverband`
   },
   {
     id: "zeugnis-7",
+    pdfPage: 10,
     employer: "Basma AG Gastronomiebetriebe, St. Gallen",
     role: "Kellner",
     period: "09/1990 bis 01/1992",
@@ -754,6 +763,7 @@ BASMA AG: Peter Panella`
   },
   {
     id: "zeugnis-8",
+    pdfPage: 11,
     employer: "Chalet Suisse, New York (Manhattan)",
     role: "Sous-Chef / Saucier",
     period: "04/1990 bis 08/1990",
@@ -783,6 +793,7 @@ Konrad Egli, President`
   },
   {
     id: "zeugnis-9",
+    pdfPage: 12,
     employer: "Hotel Residenza La Val, Brigels (Winter 1987/88)",
     role: "Küchenverantwortlicher / 1. Koch",
     period: "12/1987 bis 04/1988",
@@ -811,6 +822,7 @@ Th. Reimann, Dir.`
   },
   {
     id: "zeugnis-10",
+    pdfPage: 13,
     employer: "Hotel Residenza La Val, Brigels (Sommer 1987)",
     role: "1. Koch",
     period: "06/1987 bis 10/1987",
@@ -839,6 +851,7 @@ Th. Reimann, Direktion`
   },
   {
     id: "zeugnis-11",
+    pdfPage: 14,
     employer: "Hotel Residenza La Val, Brigels (Winter 1986/87)",
     role: "Koch",
     period: "12/1986 bis 04/1987",
@@ -869,6 +882,7 @@ Th. Reimann, Direktion`
   },
   {
     id: "zeugnis-12",
+    pdfPage: 15,
     employer: "Restaurant Linsebühl, St. Gallen",
     role: "Alleinkoch",
     period: "08/1986 bis 11/1986",
@@ -890,6 +904,7 @@ Fam. Fässler-Fuchs, Rest. Linsebühl, 9000 St.Gallen`
   },
   {
     id: "zeugnis-13",
+    pdfPage: 16,
     employer: "Hotel Alpenrose, Wildhaus (Tournant)",
     role: "Koch / Tournant",
     period: "10/1985 bis 01/1986",
@@ -916,6 +931,7 @@ Niklaus Stump-Wiggli, Telefon 074 5 21 21`
   },
   {
     id: "zeugnis-14",
+    pdfPage: 17,
     employer: "Hotel le Château d'Ouchy, Lausanne",
     role: "Commis de Cuisine",
     period: "06/1985 bis 10/1985",
@@ -938,6 +954,7 @@ M. Martial Grand (Chef de cuisine), N. Gruss (Directeur)`
   },
   {
     id: "zeugnis-15",
+    pdfPage: 18,
     employer: "Hotel Alpenrose, Wildhaus (Ausbildung)",
     role: "Kochlehre (Kochlehrling)",
     period: "05/1982 bis 04/1985",

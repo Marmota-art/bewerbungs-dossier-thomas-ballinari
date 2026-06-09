@@ -1,8 +1,12 @@
+import { Testimonials } from "./data";
 import { OfficialPdfDocuments } from "./officialDocuments";
 
-/** Relative Deep-Links – funktionieren in derselben App-Session */
-export function testimonialPdfUrl(): string {
-  return OfficialPdfDocuments.arbeitszeugnisse.path;
+/** Original-PDF; mit testimonialId springt der Link direkt zur Zeugnis-Seite (#page=N). */
+export function testimonialPdfUrl(testimonialId?: string): string {
+  const base = OfficialPdfDocuments.arbeitszeugnisse.path;
+  if (!testimonialId) return base;
+  const page = Testimonials.find((t) => t.id === testimonialId)?.pdfPage;
+  return page ? `${base}#page=${page}` : base;
 }
 
 export function testimonialAppUrl(testimonialId?: string): string {
@@ -23,7 +27,8 @@ export function parseChatLink(href: string): ParsedChatLink | null {
     return { type: "testimonial", id: hashOnly[1] };
   }
 
-  if (trimmed.startsWith("/documents/") && trimmed.toLowerCase().endsWith(".pdf")) {
+  const pdfPath = trimmed.match(/^(\/documents\/[^#]+\.pdf)(?:#page=\d+)?$/i);
+  if (pdfPath) {
     return { type: "pdf", path: trimmed };
   }
 
@@ -40,7 +45,7 @@ export function parseChatLink(href: string): ParsedChatLink | null {
       };
     }
     if (url.pathname.includes("arbeitszeugnisse") || url.pathname.endsWith(".pdf")) {
-      return { type: "pdf", path: url.pathname };
+      return { type: "pdf", path: `${url.pathname}${url.hash}` };
     }
   } catch {
     return null;

@@ -1,5 +1,5 @@
 import type { MouseEvent, ReactNode } from "react";
-import { parseChatLink } from "../chatAppLinks";
+import { parseChatLink, testimonialPdfUrl } from "../chatAppLinks";
 
 type ChatMessageContentProps = {
   content: string;
@@ -24,7 +24,11 @@ export function ChatMessageContent({ content, onOpenTestimonial }: ChatMessageCo
 
     e.preventDefault();
     if (parsed.type === "testimonial") {
-      onOpenTestimonial?.(parsed.id);
+      if (parsed.id) {
+        openPdf(testimonialPdfUrl(parsed.id));
+      } else {
+        onOpenTestimonial?.();
+      }
       return;
     }
     if (parsed.type === "pdf") {

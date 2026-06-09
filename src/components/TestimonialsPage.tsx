@@ -106,7 +106,13 @@ export function TestimonialsPage({
               <div className="flex flex-wrap items-center gap-3">
                 {activeTestimonial.documentUrl
                   ? renderDocumentLinks(activeTestimonial.documentUrl, "Original-PDF")
-                  : null}
+                  : activeTestimonial.pdfPage
+                    ? renderDocumentLinks(
+                        `${OfficialPdfDocuments.arbeitszeugnisse.path}#page=${activeTestimonial.pdfPage}`,
+                        "Original-PDF",
+                        OfficialPdfDocuments.arbeitszeugnisse.fileName
+                      )
+                    : null}
                 <button
                   type="button"
                   onClick={() => {
