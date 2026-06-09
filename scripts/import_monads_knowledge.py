@@ -8,7 +8,6 @@ MONADS_DIR = REPO / "data" / "monads"
 OUT_TS = REPO / "src" / "chatMonadBlockchain.ts"
 
 ORDER = (
-    "monad_blockchain_brief.md",
     "nullwerte_handling.md",
 )
 
@@ -31,7 +30,7 @@ def build_body() -> str:
 def emit_ts(text: str) -> str:
     body = ts_escape_for_raw(text)
     return f"""/**
- * Monads-AG Hintergrundwissen (Blockchain-Abgrenzung, Nullwerte, …) – nur Chatbot.
+ * Monads-AG Hintergrundwissen (SAP/Integration) – nur Chatbot.
  * Aktualisieren: python scripts/import_monads_knowledge.py
  */
 
@@ -40,8 +39,7 @@ const MONADS_KNOWLEDGE_TEXT = String.raw`{body}`;
 export function getChatMonadBlockchainKnowledge(): string {{
   if (!MONADS_KNOWLEDGE_TEXT.trim()) return "";
   return [
-    "MONADS-AG KONTEXT (nur bei Nachfrage):",
-    "Monads (mit s) = Bewerbungsempfaenger monads.ch. Monad (ohne s) = Layer-1-Blockchain.",
+    "MONADS-AG KONTEXT (nur bei Nachfrage, z. B. SAP-Integration):",
     "Nullwerte: drei Zustaende unterscheiden (fehlt / leer / SQL NULL). SAP: Extended XML, COALESCE, Partial Updates.",
     "",
     MONADS_KNOWLEDGE_TEXT,

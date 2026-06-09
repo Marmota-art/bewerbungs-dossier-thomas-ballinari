@@ -1054,93 +1054,61 @@ export interface MonadsValueItem {
   howWeWin: string;
 }
 
-/** Kurzinfo Monad-Blockchain (≠ Monads AG) – optional im Profil sichtbar */
-export const MonadBlockchainBrief = {
-  title: "Was ist Monad? – und was ist Monads?",
-  disclaimer:
-    "Zur Einordnung: Ich bewerbe mich bei Monads (mit «s») auf monads.ch – SAP & Enterprise Intelligence. Monad (ohne «s») ist eine separate Layer-1-Blockchain im Web3. Gleicher Name, verschiedene Welten.",
-  summary:
-    "Monad ist eine Layer-1-Blockchain für höhere Skalierbarkeit und effizientere Smart Contracts. Sie ist vollständig EVM-äquivalent: Ethereum-Contracts laufen ohne Anpassung. Technisch setzt Monad auf Pipelining und parallele Transaktionsausführung (Ziel: Tausende TPS, Blockzeit ca. 1 Sekunde). MON-Token und Mainnet gingen im November 2025 live.",
-  bullets: [
-    "EVM-äquivalent: MetaMask, Hardhat, Foundry – bestehende Ethereum-Apps nahezu 1:1 migrierbar",
-    "Vorteil für DeFi & On-Chain-Apps: schnellere Bestätigungen, tiefere Gebühren als überlastetes Ethereum",
-    "Dezentralisierungsziel: Nodes auch mit moderater Hardware betreibbar",
-  ],
-  relevance:
-    "Für Monads relevant, wenn Kunden über Systemmigration, Skalierung oder neue Plattformen sprechen: Technik verstehen, Entscheidung business-first – wie bei eurer Enterprise Intelligence.",
-} as const;
-
-/** Umgang mit Nullwerten – SAP/Integrations-Kontext (Monads-typisch) */
-export const MonadsNullHandlingBrief = {
-  title: "Nullwerte bei Monads-Integrationen",
-  intro:
-    "Monads veröffentlicht kein separates Nullwert-Whitepaper – in SAP- und Integrationsprojekten gilt trotzdem klare Semantik: Complexity into Clarity auch bei Daten.",
-  principles: [
-    "Drei Zustände trennen: Feld fehlt im Payload · Feld ist leer/initial · SQL NULL",
-    "NULL ist nicht dasselbe wie leerer String – Joins und KPIs verfälschen sich sonst",
-    "Mapping-Spec pro Schnittstelle: wann SAP-Bestand erhalten, überschrieben oder gelöscht wird",
-  ],
-  sapTechniques: [
-    "Extended XML Handling (CONTROLLER / sai_ctrl_none vs. sai_ctrl_initial)",
-    "COALESCE / IFNULL in Joins und Abfragen",
-    "Partial Updates: fehlende Felder dürfen gepflegte Stammdaten nicht still löschen (BAdI)",
-  ],
-  aiAngle:
-    "Bei Enterprise Intelligence: fehlende Werte nicht als Null in KPIs rechnen – Datenqualität sichtbar machen, wie bei belastbaren Business Cases.",
-} as const;
-
 export const MonadsFitSection = {
   title: "Warum ich zu Monads passe",
+  role: "AI Domain Lead (m/w/d) · Remote · 60–100%",
   intro:
-    "Fabian, Christian, Marc, Adrian, Rafael, Tanja: Euer Inserat trifft genau meinen Alltag. AI-Domain aufbauen, zuerst Business Cases denken, beim Kunden Wirkung erzielen. Bei Monads heisst das «Complexity into Clarity». Genau so arbeite ich. Nicht in Modellen, sondern in Hebeln, die live gehen. Kein klassisches Motivationsschreiben, sondern mein Match zu eurem AI-Rollenprofil. Im Du und auf Augenhöhe.",
+    "Ihr sucht eine Persönlichkeit, die die Domain AI bei Monads aufbaut und verantwortet – jemanden, der erkennt, wo AI echten Mehrwert schafft, Lösungen designt und misst, was beim Kunden live geht. Nicht in Technologien, sondern in Business Cases. Das ist mein Alltag. Kein klassisches Motivationsschreiben: SmartGastro.ai ist mein Business Case, diese App mein Workflow. Beides zeigt, wie ich heute Claude, Cursor und Codex einsetze – vom Gespräch mit Fachbereich und Management bis zur produktionsnahen Umsetzung.",
   cards: [
     {
       number: "01",
-      title: "AI-Domain mitgestalten",
-      body: "Fabian, Christian, ihr sucht jemanden, der Strategie, Positionierung und Angebot der AI-Domain verantwortet. Genau das will ich mit euch. Die AI-Praxis bei Monads von Null auf definieren. SmartGastro.ai und diese App sind meine Antwort auf eure Aufforderung: Workflow und Business Case statt Folien.",
-      lever: "Erfolg = was beim Kunden live läuft",
+      title: "Domain AI aufbauen und verantworten",
+      body: "Strategie, Positionierung und Angebot der AI-Domain – das wollt ihr, das will ich. Den AI-Bereich bei Monads von Grund auf gestalten, das Beratungsangebot aus Projekterfahrung weiterentwickeln und messbare Wirkung beim Kunden zur Leitlinie machen.",
+      lever: "Eigene Domain gestalten, nicht nur mitarbeiten",
     },
     {
       number: "02",
-      title: "Business Cases, nicht Technologie",
-      body: "Marc, du knackst die kniffligen Fälle. Ich starte einen Schritt früher: Gespräch mit Fachbereich und Management, Schmerz verstehen, ROI skizzieren. Erst der Case, dann Claude, Cursor oder die passende Pipeline.",
-      lever: "Business-first, wie Monads es lebt",
+      title: "Business Cases statt Technologie",
+      body: "Ich denke in Geschäftsproblemen: Food Waste, Personalknappheit, Planungsaufwand in der Gastronomie – bei euren Kunden sind es andere Schmerzpunkte, aber dieselbe Logik. Erst Potenzial und ROI klären, dann Tool und Architektur wählen.",
+      lever: "Mehrwert erkennen, bevor Code fließt",
     },
     {
       number: "03",
-      title: "Nah am Kunden auf allen Ebenen",
-      body: "Adrian, du findest heraus, was wirklich zählt. Nach 40 Jahren Gastronomie kenne ich diese Dialoge mit Küche, Pächter und Geschäftsleitung. Rafael, Brücken bauen ist auch meine Stärke, damit AI nicht im Labor bleibt.",
-      lever: "Potenziale finden, wo es weh tut",
+      title: "Nah am Kunden – Fachbereich und Management",
+      body: "Nach über 40 Jahren als Küchenchef, Pächter und Unternehmer führe ich Gespräche auf Augenhöhe – nicht nur mit der IT. Ich identifiziere Potenziale vor Ort und übersetze Anforderungen in AI-gestützte Lösungskonzepte, die Fachbereiche wirklich nutzen.",
+      lever: "Wirkung dort, wo es weh tut",
     },
     {
       number: "04",
-      title: "AI Power-User und Vibe Coding",
-      body: "Claude, Cursor und Google Studio AI nutze ich täglich, nicht als Spielerei, sondern als Arbeitsweise. Lösungen designen und selbst in Rekordzeit umsetzen: Fullstack-Prototypen, serverlose ETL-Jobs, produktionsnahe Demos. Das ist der Wettbewerbsvorteil aus eurem Inserat und meiner.",
-      lever: "Von Konzept zu produktionsreif in Tagen",
+      title: "AI Power-User: Claude & Codex im Alltag",
+      body: "Claude, Cursor, Google Studio AI und Codex nutze ich täglich und intensiv – nicht als Experiment, sondern als Arbeitsweise. Ich kenne Stärken und Grenzen der Tools und setze sie gezielt ein: Analyse, Prototyping, Dokumentation, Enablement.",
+      lever: "AI-Nerd im besten Sinne",
     },
     {
       number: "05",
-      title: "AI Enablement und Wissensmanagement",
-      body: "Ihr wollt Kundenteams befähigen mit Workshops, Methoden und Formaten. In meiner AI-Business-Ausbildung ist Wissensmanagement (F6) zertifizierte Kernkompetenz. AI, die inspiriert statt ersetzt. Genau eure Enterprise Intelligence: vom Datenchaos zur klaren Entscheidung.",
-      lever: "Nachhaltige AI-Kultur beim Kunden",
+      title: "Vibe Coding – designen und selbst umsetzen",
+      body: "Lösungen designe ich nicht nur – ich setze sie mit AI-Tools in Rekordzeit um: Fullstack-Prototypen, serverlose Pipelines, interaktive Demos. SmartGastro.ai und diese Bewerbungs-App sind der Beweis: schnell, pragmatisch, produktionsnah.",
+      lever: "Wettbewerbsvorteil aus eurem Inserat",
     },
     {
       number: "06",
-      title: "Freiheit, Du-Kultur und Nomad-Mindset",
-      body: "Tanja, du sorgst dafür, dass das Fundament trägt. Ich bringe Tatkraft und Eigenverantwortung mit. Remote, flexibel, ohne Mikromanagement. Euer Nomad-DNA ist auch meine. Als Team auf Augenhöhe kommen wir gemeinsam weiter.",
-      lever: "Gestaltungsspielraum statt starre Strukturen",
+      title: "AI Enablement & Wissensmanagement",
+      body: "Kundenteams befähigen, AI produktiv in den Alltag zu integrieren: Workshops, Methoden, Formate. In meiner Ausbildung zum AI Business Specialist ist Wissensmanagement (F6) zertifizierte Kernkompetenz – nachhaltige AI-Kultur statt Einmal-Projekt.",
+      lever: "Was live bleibt, wenn wir gehen",
     },
   ],
+  closing:
+    "Remote, flexibel 60–100%, Freiheit und Eigenverantwortung – genau so arbeite ich am liebsten. Lasst uns im Du sprechen: über eure AI-Domain, über SmartGastro.ai und darüber, wie wir gemeinsam Complexity into Clarity machen.",
 } as const;
 
 export const MonadsValues = {
-  intro: "Fabian, Christian, Marc, Adrian, Rafael, Tanja: Ihr sucht eine Macher-Persönlichkeit für eure AI-Domain. Business Cases statt Konzeptpapiere, Vibe Coding statt PowerPoint, Wirkung beim Kunden statt Technologie-Diskussionen. Hier meine interaktive Antwort auf euer Stelleninserat, im Du, mit SmartGastro.ai als konkretem Case.",
+  intro: "Meine Antwort auf euer Stelleninserat AI Domain Lead: Business Case plus Workflow statt Motivationsschreiben. SmartGastro.ai für den Case, diese App für die Arbeitsweise – im Du, business-first, mit dem Anspruch, dass beim Kunden etwas live geht.",
   items: [
     {
       title: "1. Aufbau & Verantwortung der Domain AI",
-      concept: "Unternehmerische Domain-Verantwortung",
-      description: "Ich brenne darauf, die AI-Praxis bei Monads von Grund auf zu gestalten. Mit meiner 40-jährigen unternehmerischen Erfahrung als selbstständiger Pächter bringe ich genau das unternehmerische Denken, die finanzielle Disziplin und strategische Positionierung mit, die für einen erfolgreichen Business-Pfad nötig sind.",
-      howWeWin: "Wir etablieren ein klares AI-Dienstleistungsportfolio, das sich am ROI des Kunden misst, genau wie es in SmartGastro.ai vorgedacht ist."
+      concept: "Strategie, Positionierung, Angebot",
+      description: "Domain AI bei Monads aufbauen und verantworten – genau das Inserat. Mit 40 Jahren unternehmerischer Praxis als Pächter und Küchenchef bringe ich unternehmerisches Denken, finanzielle Disziplin und Kundenfokus mit, um das AI-Angebot strategisch zu positionieren und aus Projekterfahrung weiterzuentwickeln.",
+      howWeWin: "Ein klares AI-Portfolio, das sich am ROI des Kunden misst – wie in SmartGastro.ai mit 52% ROI und CHF 18'000 Einsparpotenzial skizziert."
     },
     {
       title: "2. Business Cases über Technologie stellen",

@@ -59,8 +59,6 @@ import {
   MonadsValues,
   InterestsAndEngagement,
   MonadsFitSection,
-  MonadBlockchainBrief,
-  MonadsNullHandlingBrief,
 } from "./data";
 import { OfficialPdfDocuments } from "./officialDocuments";
 import { TestimonialsPage } from "./components/TestimonialsPage";
@@ -642,6 +640,9 @@ export default function App() {
             {/* BENTO GRID: WHY I FIT MONADS */}
             <div className="space-y-10 pt-10 border-t border-slate-900 text-left">
               <div className="max-w-3xl space-y-3">
+                <p className="text-[10px] font-mono font-bold text-teal-400 uppercase tracking-widest">
+                  {MonadsFitSection.role}
+                </p>
                 <h2 className="text-3xl sm:text-4xl font-serif font-black tracking-tight text-white leading-tight">
                   {MonadsFitSection.title}
                 </h2>
@@ -670,45 +671,9 @@ export default function App() {
                 ))}
               </div>
 
-              <div className="p-6 sm:p-8 rounded-2xl bg-slate-950 border border-slate-850 space-y-4">
-                <p className="text-[10px] font-mono font-bold text-teal-400 uppercase tracking-widest">Hintergrund · Web3</p>
-                <h3 className="text-xl font-bold text-white tracking-tight">{MonadBlockchainBrief.title}</h3>
-                <p className="text-sm text-amber-200/90 font-light leading-relaxed border-l-2 border-amber-500/40 pl-4">
-                  {MonadBlockchainBrief.disclaimer}
-                </p>
-                <p className="text-sm text-slate-350 font-light leading-relaxed">{MonadBlockchainBrief.summary}</p>
-                <ul className="list-disc list-outside pl-5 space-y-1.5 text-sm text-slate-400 font-light">
-                  {MonadBlockchainBrief.bullets.map((b) => (
-                    <li key={b}>{b}</li>
-                  ))}
-                </ul>
-                <p className="text-xs text-slate-500 font-light pt-2 border-t border-slate-900">{MonadBlockchainBrief.relevance}</p>
-              </div>
-
-              <div className="p-6 sm:p-8 rounded-2xl bg-slate-950 border border-slate-850 space-y-4">
-                <p className="text-[10px] font-mono font-bold text-teal-400 uppercase tracking-widest">Integration · Datenqualität</p>
-                <h3 className="text-xl font-bold text-white tracking-tight">{MonadsNullHandlingBrief.title}</h3>
-                <p className="text-sm text-slate-350 font-light leading-relaxed">{MonadsNullHandlingBrief.intro}</p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                  <div className="space-y-2">
-                    <p className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider">Grundsätze</p>
-                    <ul className="list-disc list-outside pl-5 space-y-1 text-slate-400 font-light">
-                      {MonadsNullHandlingBrief.principles.map((p) => (
-                        <li key={p}>{p}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="space-y-2">
-                    <p className="text-[10px] font-mono text-emerald-400 uppercase tracking-wider">SAP-Technik</p>
-                    <ul className="list-disc list-outside pl-5 space-y-1 text-slate-400 font-light">
-                      {MonadsNullHandlingBrief.sapTechniques.map((p) => (
-                        <li key={p}>{p}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <p className="text-xs text-slate-500 font-light pt-2 border-t border-slate-900">{MonadsNullHandlingBrief.aiAngle}</p>
-              </div>
+              <p className="text-sm text-slate-400 font-light leading-relaxed max-w-3xl border-l-2 border-emerald-500/40 pl-4">
+                {MonadsFitSection.closing}
+              </p>
             </div>
 
             {/* MY WORK DATA PIPELINE FLOW FROM SCREENSHOT PAGE 6 */}
@@ -2041,6 +2006,7 @@ export default function App() {
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
                   Gemeinsam die <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">AI-Domain</span> bei Monads aufbauen
                 </h2>
+                <p className="text-[10px] font-mono text-teal-400 uppercase tracking-widest mb-2">AI Domain Lead · Remote · 60–100%</p>
                 
                 <p className="text-lg text-slate-300 leading-relaxed font-light">
                   {MonadsValues.intro}
