@@ -1,21 +1,6 @@
 import { Testimonials, type TestimonialItem } from "./data";
 import { OfficialPdfDocuments } from "./officialDocuments";
-
-export function getSiteBaseUrl(): string {
-  const fromEnv = process.env.APP_URL?.trim() || process.env.URL?.trim();
-  if (fromEnv) return fromEnv.replace(/\/$/, "");
-  return "https://thomoro.com";
-}
-
-export function testimonialPdfUrl(): string {
-  return `${getSiteBaseUrl()}${OfficialPdfDocuments.arbeitszeugnisse.path}`;
-}
-
-export function testimonialAppUrl(testimonialId?: string): string {
-  const base = getSiteBaseUrl();
-  if (testimonialId) return `${base}/#testimonials/${testimonialId}`;
-  return `${base}/#testimonials`;
-}
+import { testimonialAppUrl, testimonialPdfUrl } from "./chatAppLinks";
 
 function employerKeywords(employer: string): string[] {
   const stop = new Set(["ag", "gmbh", "sa", "der", "die", "das", "und", "the", "hotel", "restaurant"]);

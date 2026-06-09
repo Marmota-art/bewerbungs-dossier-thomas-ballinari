@@ -62,7 +62,7 @@ import {
 } from "./data";
 import { OfficialPdfDocuments } from "./officialDocuments";
 import { TestimonialsPage } from "./components/TestimonialsPage";
-import { renderChatMessageContent } from "./components/ChatMessageContent";
+import { ChatMessageContent } from "./components/ChatMessageContent";
 // @ts-ignore
 import thomasPhoto from "./thomas.png";
 import ipsoUmbrellaPhoto from "./assets/ipso-smart-regenschirm.jpg";
@@ -132,6 +132,18 @@ export default function App() {
   const [contactError, setContactError] = useState<string>("");
 
   // Deep-Links: #testimonials oder #testimonials/zeugnis-N
+  const openTestimonialFromChat = (testimonialId?: string) => {
+    setActiveTab("testimonials");
+    if (testimonialId && Testimonials.some((t) => t.id === testimonialId)) {
+      setSelectedTestimonial(testimonialId);
+    }
+    const hash = testimonialId ? `#testimonials/${testimonialId}` : "#testimonials";
+    window.history.replaceState(null, "", `${window.location.pathname}${window.location.search}${hash}`);
+    window.setTimeout(() => {
+      document.getElementById("sect-testimonials")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 80);
+  };
+
   useEffect(() => {
     const applyHash = () => {
       const raw = window.location.hash.replace(/^#/, "").trim();
@@ -2389,9 +2401,14 @@ export default function App() {
                           <span>Wissensbasis Thomas Ballinari {m.isMock ? "(Backup Assistent)" : ""}</span>
                         </div>
                       )}
-                      <p className="whitespace-pre-line text-[11px] sm:text-xs">
-                        {m.role === "user" ? m.content : renderChatMessageContent(m.content)}
-                      </p>
+                      {m.role === "user" ? (
+                        <p className="whitespace-pre-line text-[11px] sm:text-xs">{m.content}</p>
+                      ) : (
+                        <ChatMessageContent
+                          content={m.content}
+                          onOpenTestimonial={openTestimonialFromChat}
+                        />
+                      )}
                     </div>
                   </div>
                 ))}
