@@ -1088,108 +1088,114 @@ export interface MonadsValueItem {
 }
 
 export const MonadsFitSection = {
-  title: "Warum ich zu Monads passe",
-  role: "AI Domain Lead (m/w/d) · Remote · 60 bis 100%",
+  title: "Bevor KI hilft, müssen die Daten stimmen",
+  role: "Weiterbildungsangebot für GastroSuisse · SmartGastro.ai · Juni 2026",
   intro:
-    "Ihr sucht jemanden, der die Domain AI bei Monads aufbaut und wirklich verantwortet. Jemand, der merkt, wo AI echten Nutzen bringt, Lösungen entwickelt und am Schluss schaut, was beim Kunden wirklich läuft. Nicht in Technologien, sondern in Business Cases. So arbeite ich jeden Tag. Das hier ist kein klassisches Motivationsschreiben. SmartGastro.ai ist mein Business Case, diese App mein Workflow. Beides zeigt, wie ich heute mit Claude, Cursor und Codex arbeite, vom Gespräch mit Fachbereich und Management bis zur Umsetzung, die man anfassen kann.",
+    "Im Rahmen meiner Ausbildung zum eidg. KI-Specialist sowie meiner langjährigen Tätigkeit in der Gastronomie beschäftige ich mich intensiv mit den Chancen und Herausforderungen von Künstlicher Intelligenz in unserer Branche. Zusätzlich entwickle ich mit SmartGastro.ai Praxisprojekte rund um digitale Speisekarten, Datenanalysen, Gästeprognosen, Forecasting und KI-gestützte Entscheidungsunterstützung. Dabei stelle ich immer wieder fest: Die grösste Hürde ist nicht die Technologie – sondern die Qualität und Verfügbarkeit der Daten. Rund 80 % eines erfolgreichen KI-Projekts bestehen aus Datenerfassung, Bereinigung, Strukturierung und Pflege.",
   cards: [
     {
       number: "01",
-      title: "Domain AI aufbauen und verantworten",
-      body: "Strategie, Positionierung und Angebot der AI Domain, das wollt ihr und genau das will ich auch. Den AI Bereich bei Monads von Grund auf mitgestalten, das Beratungsangebot aus Projekterfahrung weiterentwickeln und am Kunden prüfen, ob es wirklich wirkt.",
-      lever: "Eigene Domain gestalten, nicht nur mitlaufen",
+      title: "Unvollständige Stammdaten & POS-Chaos",
+      body: "Unvollständige oder uneinheitliche Artikelstammdaten, provisorische Kassennamen, fehlende Warengruppen und doppelte Einträge – der Alltag vom Landgasthof bis zum Stadtrestaurant.",
+      lever: "Kassensystem als Datenbasis verstehen",
     },
     {
       number: "02",
-      title: "Business Cases statt Technologie",
-      body: "Ich denke zuerst in Geschäftsproblemen. Food Waste, Personalknappheit, Planungsstress in der Gastronomie kenne ich aus eigener Haut. Bei euren Kunden sind es andere Themen, aber die Logik bleibt dieselbe. Erst Potenzial und ROI klären, dann Tool und Architektur wählen.",
-      lever: "Mehrwert erkennen, bevor Code fliesst",
+      title: "Speisekarte ohne Struktur",
+      body: "Menüs in zehn Formaten, aber nirgends strukturiert. Fehlende Verknüpfung von Speisen und Getränken, mangelnde Rezeptur- und Kalkulationsdaten erschweren jede fundierte Entscheidung.",
+      lever: "Menü als Datenbank denken",
     },
     {
       number: "03",
-      title: "Nah am Kunden, Fachbereich und Management",
-      body: "Nach über 40 Jahren als Küchenchef, Pächter und Unternehmer führe ich Gespräche auf Augenhöhe, und zwar nicht nur mit der IT. Ich gehe vor Ort hin, höre zu, finde Potenziale und mache daraus Lösungen, die Fachbereiche auch wirklich nutzen.",
-      lever: "Wirkung dort, wo es weh tut",
+      title: "Historische Daten & Kontext fehlen",
+      body: "Ungenügende historische POS-Daten, fehlende Verknüpfung von Wetter-, Event- oder Gästedaten und unterschiedliche Erfassungsstandards innerhalb eines Betriebs.",
+      lever: "Grundlage für Forecasting legen",
     },
     {
       number: "04",
-      title: "AI Power User: Claude und Codex im Alltag",
-      body: "Claude, Cursor, Google Studio AI und Codex nutze ich täglich und intensiv, nicht als Experiment, sondern als normale Arbeitsweise. Ich kenne Stärken und Grenzen der Tools und setze sie gezielt ein, für Analyse, Prototyping, Dokumentation und Enablement.",
-      lever: "AI Nerd im besten Sinne",
+      title: "Keine Datenpflege & Verantwortung",
+      body: "Fehlende Datenpflegeprozesse und klare Verantwortlichkeiten. Viele Betriebe werden mit KI konfrontiert, obwohl die Grundlagen für sinnvollen Einsatz noch fehlen.",
+      lever: "Daten-Governance für KMU",
     },
     {
       number: "05",
-      title: "Vibe Coding, designen und selbst umsetzen",
-      body: "Lösungen entwerfe ich nicht nur, ich setze sie selbst um, mit AI Tools und in kürzerer Zeit als man früher gebraucht hätte. Fullstack Prototypen, serverlose Pipelines, interaktive Demos. SmartGastro.ai und diese Bewerbungsapp sind der Beweis: schnell, pragmatisch und nah an der Realität.",
-      lever: "Der Vorteil, den ihr im Inserat sucht",
+      title: "Bildungslücke in der Branche",
+      body: "Wir brauchen Angebote, die vor dem KI-Einsatz ansetzen: Datenqualität, korrekte POS-Erfassung, Artikelstammdaten, Rezepturen, Datenbereinigung und KI-Readiness für Gastronomiebetriebe.",
+      lever: "Praxis vor Buzzword-Bingo",
     },
     {
       number: "06",
-      title: "AI Enablement und Wissensmanagement",
-      body: "Kundenteams sollen AI später selbstständig nutzen können. Dafür mache ich Workshops, Methoden und Formate, die hängen bleiben. Wissensmanagement war in meiner Ausbildung zum AI Business Specialist eine Kernkompetenz. Mir geht es um eine AI Kultur, nicht um ein Projekt, das nach drei Monaten verstaubt.",
-      lever: "Was bleibt, wenn wir wieder weg sind",
+      title: "Pilotprojekt & Kurskonzept",
+      body: "Halbtagesseminar, Ganztags-Workshop, Modulreihe oder Inhouse für Verbände – praxisorientiert, ohne IT-Sprache, von jemandem, der Jahrzehnte hinter dem Pass und am Betriebsrechner gestanden hat.",
+      lever: "SmartGastro.ai als Fallstudie",
     },
   ],
   closing:
-    "Remote, flexibel zwischen 60 und 100 Prozent, mit Freiheit und Eigenverantwortung, so arbeite ich am liebsten. Lasst uns im Du reden, über eure AI Domain, über SmartGastro.ai und darüber, wie wir gemeinsam aus Complexity into Clarity etwas machen, das beim Kunden ankommt.",
+    "Genau hier sehe ich eine Lücke im Bildungsangebot unserer Branche – und eine Chance, die Schweizer Gastronomie praxisnah vorzubereiten. Sollte seitens GastroSuisse oder einer Gastronomiefachschule Interesse bestehen, entwickle ich gerne ein Bildungs- oder Pilotprojekt im Rahmen meiner laufenden Ausbildung zum eidg. KI-Specialist. Für einen fachlichen Austausch stehe ich jederzeit zur Verfügung.",
 } as const;
 
 export const MonadsValues = {
-  intro: "Meine Antwort auf euer Stelleninserat AI Domain Lead: Business Case plus Workflow statt Motivationsschreiben. SmartGastro.ai für den Case, diese App für die Arbeitsweise – im Du, business-first, mit dem Anspruch, dass beim Kunden etwas live geht.",
+  intro:
+    "Viele Gastronomiebetriebe scheitern nicht an der KI – sie scheitern an fehlerhaften Kassendaten, doppelten Artikeln und Menüs, die niemand je strukturiert hat. Mein Kurskonzept für GastroSuisse-Mitglieder setzt genau dort an: Datenqualität als Wettbewerbsvorteil, bevor Forecasting, Einkaufsoptimierung oder KI-Entscheidungen überhaupt Sinn ergeben.",
   items: [
     {
-      title: "1. Aufbau & Verantwortung der Domain AI",
-      concept: "Strategie, Positionierung, Angebot",
-      description: "Domain AI bei Monads aufbauen und verantworten – genau das Inserat. Mit 40 Jahren unternehmerischer Praxis als Pächter und Küchenchef bringe ich unternehmerisches Denken, finanzielle Disziplin und Kundenfokus mit, um das AI-Angebot strategisch zu positionieren und aus Projekterfahrung weiterzuentwickeln.",
-      howWeWin: "Ein klares AI-Portfolio, das sich am ROI des Kunden misst – wie in SmartGastro.ai mit 52% ROI und CHF 18'000 Einsparpotenzial skizziert."
+      title: "1. Datenqualität als Wettbewerbsvorteil",
+      concept: "Modul 1 · Grundlagen",
+      description:
+        "Warum Daten wichtiger sind als jedes KI-Tool. Typische Fehler in Kassensystemen – und was sie kosten. Warum Erwartungen an KI oft zu hoch sind, wenn die Datenbasis fehlt.",
+      howWeWin: "Mitgliedsbetriebe verstehen, warum ihre aktuelle Datenlage Entscheidungen erschwert – und wie sie das in wenigen Schritten ändern.",
     },
     {
-      title: "2. Business Cases über Technologie stellen",
-      concept: "Nutzenzentriertes Solution Design",
-      description: "Ich denke in Geschäftsproblemen statt in Algorithmen. In der Gastronomie waren das Food Waste, Personalknappheit und hohe Betriebskosten. Für eure Kunden übersetze ich komplexe organisatorische Ineffizienzen in klare AI-Interventionen (z.B. prädiktive Analysen, automatisierte Dokumentenverarbeitung).",
-      howWeWin: "Direkte Gespräche mit Fachbereichen und C-Level auf Augenhöhe. Ich finde die Hebel, die echten finanziellen Mehrwert schaffen."
+      title: "2. POS-Daten richtig strukturieren",
+      concept: "Modul 2 · Kassendaten",
+      description:
+        "Das Kassensystem als Datenbasis nutzen. Verkaufsdaten historisch nutzbar machen. Artikelstammdaten aufbauen und pflegen. Grundlage für Forecasting und Analysen schaffen.",
+      howWeWin: "Konkrete Werkzeuge für den Betriebsalltag statt abstrakter IT-Theorie.",
     },
     {
-      title: "3. Vibe Coding & Schnelle Delivery",
-      concept: "Pragmatische Prototypen in Rekordzeit",
-      description: "Lösungen designen und sofort selbst zum Leben erwecken: Ich nutze Claude, Cursor, Codex und APIs tagtäglich intensiv als Arbeitsweise, nicht als Experiment. SmartGastro.ai ist das lebende Beispiel: in kürzester Zeit als reaktionsfähiger Fullstack-Prototyp umgesetzt, fertig zur Kundenpräsentation.",
-      howWeWin: "Keine nutzlosen und teuren 100-seitigen Konzepte. Wir präsentieren dem Kunden funktionierende Prototypen nach wenigen Tagen. Das ist unser unschlagbarer Wettbewerbsvorteil bei Monads!"
+      title: "3. Speisekarte als Datenbank",
+      concept: "Modul 3 · Menü & Kalkulation",
+      description:
+        "Menüs standardisieren, Rezepturen strukturieren, Kalkulationsdaten pflegen. Datenbasis für Allergene, Preise, Food-Cost und spätere KI-Prognosen aufbauen.",
+      howWeWin: "Eine Speisekarte, die nicht nur verkauft, sondern steuert und prognostizierbar macht.",
     },
     {
-      title: "4. Systematisches Wissensmanagement",
-      concept: "F6-zertifiziertes Ensurement & Enablement",
-      description: "Wissen darf kein Herrschaftswissen sein. In meiner Ausbildung zum AI Business Specialist ist das Sichern des KI-Wissensmanagements (Handlungsfeld F6) eine zertifizierte Kernkompetenz. Ich baue Methoden, Formate und durchsuchbare Wissensspeicher (wie das RAG in dieser App), damit der Kunde lernt, AI selbstständig im Alltag produktiv einzusetzen.",
-      howWeWin: "Wir befähigen Kundenteams durch strukturierte Workshops und etablieren eine nachhaltige AI-Kultur, die im Unternehmen verankert bleibt."
+      title: "4. Praxis: Daten bereinigen live",
+      concept: "Workshop · Fallstudie",
+      description:
+        "Analyse echter Kassendaten. Aufbau einer KI-fähigen Datenstruktur. Fallstudie SmartGastro.ai: Forecasting, Gästeprognosen und Entscheidungsunterstützung aus der Praxis.",
+      howWeWin: "Keine Theorie allein – Teilnehmende sehen an echten Beispielen, wie saubere Daten KI erst möglich machen.",
     },
     {
-      title: "5. Flat Hierarchies & Du-Kultur",
-      concept: "Als Team weiterkommen, keine Einzelgänger",
-      description: "Ich liebe flache Strukturen, Freiheit und Eigenverantwortung. Bei Monads arbeiten wir auf Augenhöhe. Mit meiner langjährigen Leader-Erfahrung weiss ich, dass der Erfolg eines Projekts immer auf Teamarbeit beruht. Die Du-Kultur ist für mich keine Floskel, sondern gelebte Realität.",
-      howWeWin: "Gemeinsam am Tisch: Entwickler, Berater und Kunden ziehen an einem Strang. Transparenter Austausch, bei welchem jeder sein Bestes beisteuert."
-    }
+      title: "5. Kursformate für Verbände & Fachschulen",
+      concept: "Flexibel buchbar",
+      description:
+        "Halbtagesseminar (4 h), Ganztags-Workshop (7 h), Modulreihe (3 × 4 h) oder Inhouse für Verbände. Entwicklung als Pilotprojekt im Rahmen meiner Ausbildung zum eidg. KI-Specialist möglich.",
+      howWeWin: "Ein praxisorientiertes Schulungsmodell, direkt auf die Bedürfnisse von Gastronomiebetrieben zugeschnitten.",
+    },
   ],
   workflowSteps: [
     {
-      step: "01. Potenziale identifizieren",
-      title: "Business Problem im Dialog",
-      desc: "Gespräch mit den Fachbereichen vor Ort. Analyse des Kernschmerzes (z. B. zwei Stunden manuelles Datensichten, Materialschwund, Engpässe)."
+      step: "01. Ist-Analyse",
+      title: "Datenlage im Betrieb prüfen",
+      desc: "Artikelstammdaten, POS-Historie, Menüstruktur und Pflegeprozesse erfassen. Typische Fehlerquellen identifizieren – vom provisorischen Kassenartikel bis zur fehlenden Rezeptur.",
     },
     {
-      step: "02. AI Lösungsdesign",
-      title: "Schnittstellen & Frameworks",
-      desc: "Konzeptionierung der Technologie-Pipeline (z.B. Gemini Flash APIs, serverlose Cloud SQL, NLP-Agenten) und mathematische Plausibilitätsprüfung."
+      step: "02. Struktur & Standards",
+      title: "KI-fähige Daten aufbauen",
+      desc: "Warengruppen, einheitliche Benennungen, Rezeptur- und Kalkulationsdaten, Verknüpfung mit Wetter- und Event-Kontext. Daten-Governance und Verantwortlichkeiten für KMU definieren.",
     },
     {
-      step: "03. Rapid Vibe Delivery",
-      title: "Iterative Entwicklung mit LLMs",
-      desc: "Einsatz von Claude, Cursor und APIs zur direkten Umsetzung von Mockups, ETL-Pipelines und interaktiven Benutzeroberflächen binnen weniger Tage."
+      step: "03. Bereinigung & Pflege",
+      title: "Datenqualität sichern",
+      desc: "Dubletten bereinigen, historische Verkaufsdaten nutzbar machen, Pflegeroutinen etablieren. Der Schritt, an dem laut Erfahrung rund 80 % des Projekterfolgs entstehen.",
     },
     {
-      step: "04. Enablement & Transfer",
-      title: "Wissensmanagement & Workshops",
-      desc: "Dokumentenspeicher aufbauen, interaktive Schulungen über Prompting & Tool-Einsatz halten, sodass das Team die Lösung liebt und beherrscht."
-    }
-  ]
+      step: "04. KI-Readiness & Forecasting",
+      title: "Erst dann: KI & Prognosen",
+      desc: "Vorbereitung von Forecasting- und KI-Projekten. SmartGastro.ai als Praxisbeispiel: Gästeprognosen, Entscheidungsunterstützung und messbarer Nutzen – nur auf sauberer Datenbasis.",
+    },
+  ],
 };
 
 export const SmartUmbrellaProject = {

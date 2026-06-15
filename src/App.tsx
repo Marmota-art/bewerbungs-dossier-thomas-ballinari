@@ -690,7 +690,7 @@ export default function App() {
 
             </div>
 
-            {/* BENTO GRID: WHY I FIT MONADS */}
+            {/* BENTO GRID: GASTROSUISSE / DATENQUALITÄT */}
             <div className="space-y-10 pt-10 border-t border-slate-900 text-left">
               <div className="max-w-3xl space-y-3">
                 <p className="text-[10px] font-mono font-bold text-teal-400 uppercase tracking-widest">
@@ -758,7 +758,7 @@ export default function App() {
                   <div className="inline-flex px-3 py-1 bg-teal-500/10 font-bold font-mono text-[10px] text-teal-400 rounded-full">SCHRITT 2</div>
                   <h3 className="text-base font-bold text-white">Prototyping & Umsetzung</h3>
                   <p className="text-xs text-slate-400 leading-relaxed font-light">
-                    Claude Code, Cursor und Google Studio AI ermöglichen mir, in Rekordzeit funktionierende Web-Prototypen (Fullstack) und serverlose ETL-Datenpipelines zu entwickeln. Dieses agile &quot;Vibe Coding&quot; ist unserer grösster Wettbewerbsvorteil bei Monads!
+                    Mit SmartGastro.ai und praxisnahen Workshops zeige ich, wie saubere Stammdaten, POS-Historie und strukturierte Speisekarten die Grundlage für Forecasting und KI in der Gastronomie bilden – bevor ein einziges KI-Tool versprochen wird.
                   </p>
                 </div>
 
@@ -2067,13 +2067,13 @@ export default function App() {
               <div className="max-w-3xl space-y-6 relative z-10 text-left">
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-950 border border-teal-500/30 rounded-full text-xs font-mono text-teal-300 font-semibold tracking-wide">
                   <Sparkles className="w-3.5 h-3.5 text-teal-400" />
-                  <span>Monads Special Edition</span>
+                  <span>GastroSuisse · SmartGastro.ai</span>
                 </div>
                 
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white leading-tight">
-                  Gemeinsam die <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">AI-Domain</span> bei Monads aufbauen
+                  Datenqualität in der <span className="bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">Schweizer Gastronomie</span>
                 </h2>
-                <p className="text-[10px] font-mono text-teal-400 uppercase tracking-widest mb-2">AI Domain Lead · Remote · 60–100%</p>
+                <p className="text-[10px] font-mono text-teal-400 uppercase tracking-widest mb-2">Weiterbildungsangebot · KI-Specialist (i.A.) · Gründer SmartGastro.ai</p>
                 
                 <p className="text-lg text-slate-300 leading-relaxed font-light">
                   {MonadsValues.intro}
@@ -2082,15 +2082,15 @@ export default function App() {
                 <div className="flex flex-wrap gap-4 pt-2">
                   <div className="px-4 py-2 rounded-xl bg-slate-950 border border-slate-850 flex items-center gap-2 text-xs">
                     <Users className="w-4 h-4 text-teal-400 shrink-0" />
-                    <span className="text-slate-300 font-mono">100% Gelebte Du-Kultur</span>
+                    <span className="text-slate-300 font-mono">80 % Erfolg = saubere Daten</span>
                   </div>
                   <div className="px-4 py-2 rounded-xl bg-slate-950 border border-slate-850 flex items-center gap-2 text-xs">
                     <Brain className="w-4 h-4 text-teal-400 shrink-0" />
-                    <span className="text-slate-300 font-mono">KI-Wissensmanagement (F6)</span>
+                    <span className="text-slate-300 font-mono">KI-Readiness für KMU-Betriebe</span>
                   </div>
                   <div className="px-4 py-2 rounded-xl bg-slate-950 border border-slate-850 flex items-center gap-2 text-xs">
                     <Cpu className="w-4 h-4 text-teal-400 shrink-0" />
-                    <span className="text-slate-300 font-mono">Claude / Codex / Gemini-Power-User</span>
+                    <span className="text-slate-300 font-mono">40+ Jahre Gastronomiepraxis</span>
                   </div>
                 </div>
               </div>
@@ -2099,9 +2099,9 @@ export default function App() {
             {/* Why I Fit / Match Grid */}
             <div className="space-y-8">
               <div className="space-y-2 text-center">
-                <h3 className="text-2xl font-extrabold text-white">Das perfekte Match für Monads</h3>
+                <h3 className="text-2xl font-extrabold text-white">Kursinhalte im Überblick</h3>
                 <p className="text-slate-400 text-sm max-w-2xl mx-auto">
-                  Wie mein Profil und meine Arbeitsweise haargenau auf eure Anforderungen und Kultur einzahlen.
+                  Vier Module plus Workshop – praxiserprobtes Wissen für GastroSuisse-Mitglieder, bevor KI überhaupt Sinn ergibt.
                 </p>
                 <div className="h-0.5 w-12 bg-teal-500 mx-auto mt-4 rounded"></div>
               </div>
@@ -2125,7 +2125,7 @@ export default function App() {
                     </div>
 
                     <div className="border-t border-slate-850 pt-4 text-left">
-                      <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider block mb-1">Unser Hebel für Kunden:</p>
+                      <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider block mb-1">Nutzen für Mitgliedsbetriebe:</p>
                       <p className="text-xs text-white leading-relaxed font-semibold">
                         {item.howWeWin}
                       </p>
@@ -2138,20 +2138,20 @@ export default function App() {
                   <div className="space-y-3.5 text-left">
                     <Users className="w-8 h-8 text-teal-400 animate-pulse" />
                     <h4 className="text-lg font-bold text-white uppercase font-mono tracking-tight">
-                      Unser Teamspirit & die Du-Kultur
+                      Pilotprojekt & Fachlicher Austausch
                     </h4>
                     <p className="text-xs text-teal-300 font-semibold uppercase tracking-wider font-mono bg-teal-500/10 py-1 px-2.5 rounded inline-block">
-                      Gemeinsam ans Ziel
+                      GastroSuisse · Fachschulen
                     </p>
                     <p className="text-sm text-slate-300 leading-relaxed font-light">
-                      «Als Team kommen wir gemeinsam weiter.» Das meine ich ernst. Flache Hierarchien, offene Ohren, gegenseitiges Empowerment. Die AI-Domain baue ich nicht allein, sondern mit euch und unseren Kunden, Wissen inklusive.
+                      Sollte seitens GastroSuisse oder einer Gastronomiefachschule Interesse bestehen, entwickle ich gerne ein Bildungs- oder Pilotprojekt im Rahmen meiner laufenden Ausbildung zum eidg. KI-Specialist – praxisorientiert und direkt auf die Bedürfnisse von Gastronomiebetrieben zugeschnitten.
                     </p>
                   </div>
 
                   <div className="bg-slate-950/80 p-4 rounded-xl border border-teal-500/20">
-                    <p className="text-[10px] text-teal-400 font-mono uppercase tracking-wider font-semibold">Thomas&apos; Credo:</p>
+                    <p className="text-[10px] text-teal-400 font-mono uppercase tracking-wider font-semibold">Kursformate:</p>
                     <p className="text-xs text-slate-300 mt-1 italic font-serif">
-                      &quot;Keine Elfenbeintürme. Wissen teilen, Kundenteams befähigen und Erfolge gemeinsam als Team feiern!&quot;
+                      Halbtagesseminar (4 h) · Ganztags-Workshop (7 h) · Modulreihe (3 × 4 h) · Inhouse für Verbände
                     </p>
                   </div>
                 </div>
@@ -2165,10 +2165,10 @@ export default function App() {
               <div className="space-y-2 text-left">
                 <h3 className="text-xl sm:text-2xl font-extrabold text-white flex items-center gap-2.5">
                   <Code className="w-6 h-6 text-teal-400" />
-                  <span>Mein AI-Arbeits-Workflow & Praxisnachweis (Interaktiv)</span>
+                  <span>Mein Kurskonzept: Von der Datenlage zur KI-Readiness</span>
                 </h3>
                 <p className="text-xs text-slate-400 leading-relaxed max-w-3xl">
-                  Monads verlangt keinen staubigen Lebenslauf, sondern einen echten Praxisworkflow. Wähle unten einen meiner 4 standardisierten Projektschritte aus, um live zu sehen, wie ich echte geschäftliche Hebel mit AI-Technologie in Rekordzeit entfessele.
+                  Vier aufeinander aufbauende Schritte – wie im Kurskonzept für GastroSuisse. Von der Ist-Analyse über Datenstruktur und Pflege bis zur sinnvollen Nutzung von Forecasting und KI.
                 </p>
               </div>
 
@@ -2210,21 +2210,21 @@ export default function App() {
                 {activeMonadsStep === 0 && (
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in text-xs font-sans">
                     <div className="p-4 rounded-xl bg-slate-900 border border-slate-850 space-y-2.5">
-                      <h5 className="font-bold text-white text-xs uppercase font-mono tracking-wider border-b border-slate-850 pb-1.5 text-teal-400">1. Problem-Scouting (Vor Ort)</h5>
+                      <h5 className="font-bold text-white text-xs uppercase font-mono tracking-wider border-b border-slate-850 pb-1.5 text-teal-400">1. Typische Datenprobleme</h5>
                       <p className="text-slate-300 leading-relaxed">
-                        Ich stelle mich beim Kunden direkt an die Rampe, in die Küche oder ins Büro. Ich stelle unbequeme Fragen zur manuellen Belastung, Fehlplanungsfaktoren und suche Hebel, die unmittelbar Geld verbrennen (z.B. 100 kg weggeworfenes Gemüse wöchentlich).
+                        Unvollständige Artikelstammdaten, uneinheitliche POS-Erfassung, fehlende Rezepturen und kaum verknüpfte Wetter- oder Eventdaten – in fast jedem Betrieb dieselben Muster.
                       </p>
                     </div>
                     <div className="p-4 rounded-xl bg-slate-900 border border-slate-850 space-y-2.5">
-                      <h5 className="font-bold text-white text-xs uppercase font-mono tracking-wider border-b border-slate-850 pb-1.5 text-teal-400">2. Ishikawa Brainstorming</h5>
+                      <h5 className="font-bold text-white text-xs uppercase font-mono tracking-wider border-b border-slate-850 pb-1.5 text-teal-400">2. Erwartung vs. Realität</h5>
                       <p className="text-slate-300 leading-relaxed">
-                        Ich strukturiere Fehlerquellen sauber nach Mensch, Maschine, Methode, Umwelt und Material. Für SmartGastro zeigte sich: Wetter und ungenutzte historische Kassenarchive waren die blinden Flecken der Betriebsleitung.
+                        Betriebe werden mit KI konfrontiert, obwohl die Datenbasis fehlt. Hohe Erwartungen an Systeme, deren sinnvoller Einsatz ohne saubere Grundlagen nicht möglich ist.
                       </p>
                     </div>
                     <div className="p-4 rounded-xl bg-slate-900 border border-slate-850 space-y-2.5">
-                      <h5 className="font-bold text-white text-xs uppercase font-mono tracking-wider border-b border-slate-850 pb-1.5 text-teal-400">3. Business Case & ROI</h5>
+                      <h5 className="font-bold text-white text-xs uppercase font-mono tracking-wider border-b border-slate-850 pb-1.5 text-teal-400">3. Die 80-%-Regel</h5>
                       <p className="text-slate-300 leading-relaxed">
-                        Wir rechnen! Bevor wir eine Zeile Code schreiben, quantifiziere ich den potenziellen Nutzen des Kunden. Bei SmartGastro.ai ermittelte ich einen Hebel von CHF 18&apos;750 Nettoersparnis pro Jahr bei minimalen Onboarding-Kosten.
+                        Rund 80 % eines erfolgreichen KI-Projekts bestehen aus Datenerfassung, Bereinigung, Strukturierung und Pflege. Erst danach entfaltet KI ihr volles Potenzial.
                       </p>
                     </div>
                   </div>
@@ -2320,32 +2320,32 @@ export default function App() {
                     <div className="p-4 rounded-xl bg-slate-900 border border-slate-850 space-y-3">
                       <h5 className="font-bold text-white text-xs uppercase font-mono tracking-wider border-b border-slate-850 pb-1.5 text-teal-400 flex items-center gap-1.5">
                         <Brain className="w-4 h-4" />
-                        <span>F6-Wissensmanagement beim Kunden</span>
+                        <span>Bildungsthemen für die Branche</span>
                       </h5>
                       <p className="text-slate-300 leading-relaxed font-light font-sans">
-                        AI-Lösungen scheitern oft am User Adoption Gap: Die Mitarbeiter verstehen die Tools nicht oder verweigern die Handhabung. Meine Spezialisierung als AI Business Specialist zielt genau darauf ab (Handlungsfeld F6):
+                        Kurse, die vor dem KI-Einsatz ansetzen: Datenqualität, POS-Erfassung, Artikelstammdaten, Menü- und Kalkulationsdaten, Datenbereinigung, Daten-Governance und KI-Readiness.
                       </p>
                       
                       <ul className="list-disc list-outside pl-4 space-y-1 text-slate-400 font-mono text-[11px]">
-                        <li>Aufbau bedienerfreundlicher Wissensdatenbanken (RAG-basiert) für schnellen Onboarding-Zugriff</li>
-                        <li>Entwicklung massgeschneiderter AI-Cockpits, die Ängste abbauen</li>
-                        <li>Strukturierte Befähigungs-Konzepte: Mitarbeiter für Prompting ertüchtigen</li>
+                        <li>Vorbereitung von Forecasting- und KI-Projekten</li>
+                        <li>Datenpflegeprozesse und Verantwortlichkeiten</li>
+                        <li>Praxisorientiert für KMU-Betriebe</li>
                       </ul>
                     </div>
                     
                     <div className="p-4 rounded-xl bg-slate-900 border border-slate-850 space-y-3">
                       <h5 className="font-bold text-white text-xs uppercase font-mono tracking-wider border-b border-slate-850 pb-1.5 text-teal-400 flex items-center gap-1.5">
                         <Users className="w-4 h-4" />
-                        <span>Workshops & AI-Enablement</span>
+                        <span>SmartGastro.ai als Fallstudie</span>
                       </h5>
                       <p className="text-slate-300 leading-relaxed font-light font-sans">
-                        Ich befähige Kundenteams, AI produktiv in ihren Alltag zu integrieren, ohne technologisches Kauderwelsch. Wir leben das „Du“ und lernen an echten Anwendungsfällen. 
+                        Digitale Speisekarten, Gästeprognosen, Forecasting und KI-gestützte Entscheidungsunterstützung – aber nur auf sauberer Datenbasis. Kein Buzzword-Bingo, keine IT-Sprache.
                       </p>
                       
                       <div className="bg-slate-950 p-3 rounded-lg border border-slate-850 font-sans">
-                        <p className="text-[10px] text-teal-300 font-mono font-bold uppercase tracking-wider">Erprobtes Workshop-Format:</p>
+                        <p className="text-[10px] text-teal-300 font-mono font-bold uppercase tracking-wider">Zielgruppe:</p>
                         <p className="text-slate-300 italic mt-1 leading-relaxed text-xs">
-                          „Wir bringen Thomas&apos; Vibe Coding mit Claude, Cursor & ChatGPT direkt zu euren Key-Users. In 1 Tag bauen wir gemeinsam einen fiktiven Workflow-Assistenten live. Der Lerneffekt ist immens!“
+                          GastroSuisse-Mitglieder vom Landgasthof bis zum Stadtrestaurant – mit Werkzeugen für den echten Betriebsalltag.
                         </p>
                       </div>
                     </div>
@@ -2361,19 +2361,19 @@ export default function App() {
               <div className="max-w-2xl mx-auto space-y-6">
                 <Users className="w-12 h-12 text-teal-400 mx-auto animate-bounce" />
                 <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-sans">
-                  Bereit, gemeinsam die AI-Domain zu rocken?
+                  Bereit für einen fachlichen Austausch?
                 </h3>
                 <p className="text-base text-slate-300 leading-relaxed font-light font-sans">
-                  Ich suche keine verstaubten Agenturen, sondern ein dynamisches Team auf Augenhöhe, das meine Freiheit schätzt, von meinem Tatendrang lebt und mit mir echte Hebel bewegt. Lasst uns per Du über konkrete Visionen für Monads sprechen!
+                  Ich stelle das vollständige Kurskonzept gerne in einem persönlichen Gespräch vor – unverbindlich, in 30 Minuten. Für GastroSuisse, Gastronomiefachschulen oder interessierte Mitgliedsbetriebe.
                 </p>
 
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
                   <a
-                    href="mailto:thomas.ballinari@pm.me?subject=AI%20Domain%20Lead%2520Monads"
+                    href="mailto:thomas.ballinari@pm.me?subject=SmartGastro.ai%20Kurskonzept%20GastroSuisse"
                     className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-teal-500 hover:opacity-95 font-bold text-slate-950 text-sm flex items-center justify-center gap-2 transition-all shadow-lg shadow-teal-500/10"
                   >
                     <Mail className="w-4 h-4 text-slate-950" />
-                    <span>Lass uns treffen! (per Du)</span>
+                    <span>Gespräch vereinbaren</span>
                   </a>
                   <button
                     onClick={() => setActiveTab("chatbot")}
