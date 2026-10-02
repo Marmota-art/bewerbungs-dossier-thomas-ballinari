@@ -13,6 +13,7 @@ import {
 import { getFullDocumentKnowledge } from "./src/knowledgeBase";
 import { getChatPersonalFactsKnowledge } from "./src/chatPersonalFacts";
 import { getChatRagDossierKnowledge } from "./src/chatRagDossier";
+import { getChatAmagooKnowledge } from "./src/chatAmagooKnowledge";
 import { getChatPersonalKnowledgeBase } from "./src/chatPersonalKnowledge";
 import { getChatKiSpecialistKnowledge } from "./src/chatKiSpecialistKnowledge";
 import {
@@ -100,6 +101,7 @@ PERSÖNLICHE DATEN & PROFIL:
 
 ${getChatPersonalFactsKnowledge()}
 ${getChatRagDossierKnowledge() ? `\n${getChatRagDossierKnowledge()}\n` : ""}
+${getChatAmagooKnowledge() ? `\n${getChatAmagooKnowledge()}\n` : ""}
 ${getChatPersonalKnowledgeBase() ? `\n${getChatPersonalKnowledgeBase()}\n` : ""}
 ${getChatKiSpecialistKnowledge() ? `\n${getChatKiSpecialistKnowledge()}\n` : ""}
 ${getChatRecipesKnowledge() ? `\n${getChatRecipesKnowledge()}\n` : ""}
