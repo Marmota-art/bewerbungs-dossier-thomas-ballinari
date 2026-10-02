@@ -1134,6 +1134,77 @@ export const MonadsFitSection = {
     "Genau hier sehe ich eine Lücke im Bildungsangebot unserer Branche – und eine Chance, die Schweizer Gastronomie praxisnah vorzubereiten. Sollte seitens GastroSuisse oder einer Gastronomiefachschule Interesse bestehen, entwickle ich gerne ein Bildungs- oder Pilotprojekt im Rahmen meiner laufenden Ausbildung zum eidg. KI-Specialist. Für einen fachlichen Austausch stehe ich jederzeit zur Verfügung.",
 } as const;
 
+export const AmagooApplication = {
+  position: "AI Business Specialist (80–100 %)",
+  company: "Amagoo AG",
+  place: "Arbon TG",
+  date: "St. Gallen, 2. Oktober 2026",
+  recipient: {
+    lines: ["Amagoo AG", "Herr Dieter Janout", "Niederfeld", "9320 Arbon"],
+    name: "Dieter Janout",
+    email: "Dieter.Janout@amagoo.com",
+    phone: "+41 79 127 77 88",
+  },
+  greeting: "Sehr geehrter Herr Janout",
+  paragraphs: [
+    "Damit KI im Betrieb etwas bringt, müssen Prozesse, Daten und Menschen dazu passen. An dieser Schnittstelle arbeite ich seit 2025, und genau sie beschreibt Ihre Stellenausschreibung. Deshalb bewerbe ich mich bei Ihnen.",
+    "Ich komme aus der Praxis, nicht aus der IT. Über 40 Jahre habe ich als Koch, Geschäftsführer und Pächter Betriebe geführt, zuletzt bis 2023 das Restaurant Löwenburg mit gut 300 Plätzen und der Verantwortung für Personal, Buchhaltung und Lohnwesen. Dort habe ich gelernt, was unsaubere Abläufe kosten und was Mitarbeitende brauchen, damit eine Neuerung im Alltag auch genutzt wird. Ich habe Lernende ausgebildet, Teams geführt und Anlässe mit bis zu 500 Gästen organisiert.",
+    "Fachlich habe ich mich 2025 neu aufgestellt: mit dem Zertifikat KI-Professional (Business) der HSO und der Ausbildung zum AI Business Specialist bei der ipso Bildung AG, deren Abschlussprüfung im Oktober 2026 ansteht. Mit SmartGastro.ai setze ich das in eigenen Projekten um. Für ein Restaurant habe ich die POS-Daten von sieben Monaten aufbereitet, Datenlücken dokumentiert, Deckungsbeiträge berechnet und Schulungsunterlagen erstellt. Dabei hat sich bestätigt, was Ihre Stelle unter «Daten und Integration» festhält: KI scheitert selten am Tool, meistens an den Stammdaten. Im Alltag arbeite ich mit Claude, Gemini und lokalen Sprachmodellen und setze KI-Tools auch in meiner Tätigkeit bei der Säntis Gastronomie AG ein.",
+    "Was ich nicht mitbringe, sage ich offen: Ich habe noch kein ERP-Einführungsprojekt geleitet, und die Druck- und Verpackungsbranche ist neu für mich. Kassen- und Warenbewirtschaftungssysteme kenne ich aus der Anwendersicht eines Betriebsleiters. In ERPNext und Odoo arbeite ich mich gezielt ein, damit ich die Ablösung von MyFactory als Business Owner fachlich sicher begleiten kann.",
+    "Ich arbeite pragmatisch, bin es gewohnt, unter Zeitdruck zu entscheiden, und erkläre Technik so, dass sie im Fachbereich verstanden wird. Die Schulung der Mitarbeitenden und der Aufbau eines Netzes von KI-Champions liegen mir. Arbon ist von St. Gallen aus gut erreichbar. Gerne erläutere ich Ihnen in einem Gespräch, wie ich die ersten zwölf Monate angehen würde.",
+  ],
+  closing: "Freundliche Grüsse",
+  signature: "Thomas Ballinari",
+  enclosures: "Beilagen: Lebenslauf, Arbeitszeugnisse, Zertifikate",
+} as const;
+
+export const AmagooFitSection = {
+  role: "Bewerbung · AI Business Specialist (80–100 %) · Amagoo AG, Arbon",
+  title: "Die Stelle im Abgleich mit meinem Profil",
+  intro:
+    "Die sechs Aufgabenbereiche Ihrer Stellenbeschreibung, jeweils mit dem, was ich dazu mitbringe, und dort, wo es noch Aufbau braucht, offen benannt. Ich komme aus der Praxis und schliesse im Oktober 2026 die Ausbildung zum AI Business Specialist mit eidg. Fachausweis ab.",
+  cards: [
+    {
+      number: "01",
+      title: "KI-Strategie & Use-Case-Management",
+      body: "Use Cases nach Nutzen, Aufwand, Risiko und Datenverfügbarkeit bewerten und Piloten sauber entscheiden. Mit SmartGastro.ai habe ich ein Forecasting-Konzept samt Business Case für einen Gastronomiebetrieb entwickelt.",
+      lever: "Business Case vor Tool-Entscheid",
+    },
+    {
+      number: "02",
+      title: "Prozessanalyse & Automatisierung",
+      body: "Abläufe dort aufnehmen, wo sie entstehen, und daraus Soll-Prozesse mit messbaren Kennzahlen ableiten. 40 Jahre Betriebsführung, von der Küche bis zu Grossanlässen mit bis zu 5000 Gästen.",
+      lever: "Praxis vor Modell",
+    },
+    {
+      number: "03",
+      title: "ERP-/CRM-Transformation",
+      body: "Hier fehlt mir die Projekterfahrung, das sage ich offen. Mitbringen kann ich die Sicht des Fachbereichs: Kassen- und Warenbewirtschaftungssysteme kenne ich als Anwender und Betriebsleiter. ERPNext und Odoo arbeite ich mich gezielt ein.",
+      lever: "Business Owner aus dem Fachbereich",
+    },
+    {
+      number: "04",
+      title: "Daten & Integration",
+      body: "Stammdaten, Datenqualität und Datenflüsse als Grundlage jeder KI-Anwendung. Für ein Restaurant habe ich POS-Daten von sieben Monaten bereinigt, Lücken dokumentiert und Deckungsbeiträge berechnet.",
+      lever: "Stammdaten vor KI",
+    },
+    {
+      number: "05",
+      title: "Governance, Recht & Ethik",
+      body: "Datenschutz, KI-Ethik und KI-Governance gehören zu meiner Ausbildung (revDSG, DSGVO, EU AI Act als Grundlagen). Eine Unternehmensrichtlinie habe ich noch nicht betreut. Das Bewusstsein für Kundendaten bringe ich aus dem Gastgewerbe mit.",
+      lever: "Richtlinie, die im Alltag gelebt wird",
+    },
+    {
+      number: "06",
+      title: "Befähigung & Change Management",
+      body: "Lernende ausgebildet, Teams geführt, Schulungsunterlagen für Betriebe erstellt. Neuerungen setzen sich durch, wenn die Mitarbeitenden sie im Alltag nutzen. Ein Netz von KI-Champions aufzubauen liegt mir.",
+      lever: "Schulen statt nur einführen",
+    },
+  ],
+  closing:
+    "Mein Ziel für die ersten Monate: Prozesslandkarte und Use-Case-Liste erstellen, den ERP-Anforderungskatalog gemeinsam mit den Fachbereichen aufbauen und zwei bis drei Piloten sauber bewerten. Für ein Gespräch stehe ich gerne zur Verfügung.",
+} as const;
+
 export const MonadsValues = {
   intro:
     "Viele Gastronomiebetriebe scheitern nicht an der KI – sie scheitern an fehlerhaften Kassendaten, doppelten Artikeln und Menüs, die niemand je strukturiert hat. Mein Kurskonzept für GastroSuisse-Mitglieder setzt genau dort an: Datenqualität als Wettbewerbsvorteil, bevor Forecasting, Einkaufsoptimierung oder KI-Entscheidungen überhaupt Sinn ergeben.",
