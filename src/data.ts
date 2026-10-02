@@ -999,9 +999,9 @@ export const SmartGastroProject = {
   subTitle: "KI-gestützte Nachfrageprognose im Schweizer Gastgewerbe",
   demo: {
     version: "V3.3",
-    label: "Demo-Version V3.3",
-    url: "https://gemini.google.com/share/bcf2f6bba4e2?hl=de",
-    description: "Interaktiver Prototyp in Google Gemini mit POS-Anbindung (WaiterOne) und Forecast-Dashboard.",
+    label: "Demo-Login SmartGastro.ai Dashboard",
+    url: "https://smartgastro-demoforecast.netlify.app/",
+    description: "Interaktiver Prototyp mit POS-Anbindung (WaiterOne) und Forecast-Dashboard. Der Zugang erfolgt über einen Demo-Login, die Zugangsdaten erhalten Sie auf Anfrage.",
   },
   candidate: "Thomas Ballinari",
   role: "Analyst, Konzeptentwickler & Projektverantwortlicher (ipso Ausbildung AG, Fachausweis)",

@@ -1596,7 +1596,7 @@ export default function App() {
                     rel="noopener noreferrer"
                     className="text-teal-400 hover:text-teal-300 underline underline-offset-2"
                   >
-                    In Google Gemini öffnen
+                    Dashboard öffnen (Demo-Login)
                   </a>
                 </p>
               </div>
