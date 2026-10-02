@@ -1135,7 +1135,7 @@ export const MonadsFitSection = {
 } as const;
 
 export const AmagooApplication = {
-  position: "AI Business Specialist (80–100 %)",
+  position: "AI Business Specialist (80 bis 100 %)",
   company: "Amagoo AG",
   place: "Arbon TG",
   date: "St. Gallen, 2. Oktober 2026",
@@ -1147,11 +1147,11 @@ export const AmagooApplication = {
   },
   greeting: "Sehr geehrter Herr Janout",
   paragraphs: [
-    "Damit KI im Betrieb etwas bringt, müssen Prozesse, Daten und Menschen dazu passen. An dieser Schnittstelle arbeite ich seit 2025, und genau sie beschreibt Ihre Stellenausschreibung. Deshalb bewerbe ich mich bei Ihnen.",
-    "Ich komme aus der Praxis, nicht aus der IT. Über 40 Jahre habe ich als Koch, Geschäftsführer und Pächter Betriebe geführt, zuletzt bis 2023 das Restaurant Löwenburg mit gut 300 Plätzen und der Verantwortung für Personal, Buchhaltung und Lohnwesen. Dort habe ich gelernt, was unsaubere Abläufe kosten und was Mitarbeitende brauchen, damit eine Neuerung im Alltag auch genutzt wird. Ich habe Lernende ausgebildet, Teams geführt und Anlässe mit bis zu 500 Gästen organisiert.",
-    "Fachlich habe ich mich 2025 neu aufgestellt: mit dem Zertifikat KI-Professional (Business) der HSO und der Ausbildung zum AI Business Specialist bei der ipso Bildung AG, deren Prüfungen am 30. Oktober und 2. November 2026 stattfinden. Mit SmartGastro.ai setze ich das in eigenen Projekten um. Für ein Restaurant habe ich die POS-Daten von sieben Monaten aufbereitet, Datenlücken dokumentiert, Deckungsbeiträge berechnet und Schulungsunterlagen erstellt. Dabei hat sich bestätigt, was Ihre Stelle unter «Daten und Integration» festhält: KI scheitert selten am Tool, meistens an den Stammdaten. Im Alltag arbeite ich mit Claude, Gemini, Claude Code, Cursor und weiteren Modellen.",
-    "Was ich nicht mitbringe, sage ich offen: Ich habe noch kein ERP-Einführungsprojekt geleitet, und die Druck- und Verpackungsbranche ist neu für mich. Kassen- und Warenbewirtschaftungssysteme kenne ich aus der Anwendersicht eines Betriebsleiters. Ich werde mich mit ERPNext oder Odoo beschäftigen und mich einarbeiten, damit ich die Ablösung von MyFactory als Business Owner fachlich sicher begleiten kann.",
-    "Ich arbeite pragmatisch, bin es gewohnt, unter Zeitdruck zu entscheiden, und erkläre Technik so, dass sie im Fachbereich verstanden wird. Die Schulung der Mitarbeitenden und der Aufbau eines Netzes von KI-Champions liegen mir. Arbon ist von St. Gallen aus gut erreichbar. Gerne erläutere ich Ihnen in einem Gespräch, wie ich die ersten zwölf Monate angehen würde.",
+    "Ihre Stelle beschreibt etwas, womit ich mich seit 2025 beschäftige: KI in einem Betrieb so einzuführen, dass sie am Ende auch jemand nutzt. Dafür braucht es saubere Daten, geklärte Abläufe und Leute, die mitziehen. Deshalb bewerbe ich mich bei Ihnen als AI Business Specialist.",
+    "Ich komme aus der Praxis. Über vierzig Jahre habe ich Betriebe geführt, als Koch, als Geschäftsführer und als Pächter, zuletzt bis 2023 das Restaurant Löwenburg mit gut 300 Plätzen. Ich war dort für Personal, Buchhaltung und Lohnwesen verantwortlich. Ich weiss aus eigener Erfahrung, was unsaubere Abläufe kosten und warum eine Neuerung im Alltag scheitert, wenn sie den Mitarbeitenden nichts bringt. Ich habe Lernende ausgebildet, Teams geführt und Anlässe mit bis zu 500 Gästen organisiert.",
+    "2025 habe ich mich fachlich neu aufgestellt. Ich habe das Zertifikat KI Professional (Business) der HSO und mache bei der ipso Bildung AG die Ausbildung zum AI Business Specialist. Die Prüfungen sind am 30. Oktober und am 2. November 2026. Nebenbei baue ich SmartGastro.ai auf. Für ein Restaurant habe ich die Kassendaten von sieben Monaten aufbereitet, die Lücken in den Daten festgehalten, Deckungsbeiträge berechnet und Schulungsunterlagen geschrieben. Dabei hat sich bestätigt, was auch in Ihrer Ausschreibung steht: KI scheitert selten am Tool, meistens an den Stammdaten. Im Alltag arbeite ich mit Claude, Gemini, Claude Code, Cursor und weiteren Modellen.",
+    "Was mir fehlt, sage ich lieber gleich. Ich habe noch kein ERP Projekt geleitet, und die Branche Verpackungsdruck ist neu für mich. Kassensysteme und Warenwirtschaft kenne ich als Anwender, aus der Sicht eines Betriebsleiters. Ich werde mich mit ERPNext oder Odoo beschäftigen und mich einarbeiten, damit ich die Ablösung von MyFactory als Business Owner fachlich sicher begleiten kann.",
+    "Ich arbeite pragmatisch und entscheide auch unter Zeitdruck. Technik erkläre ich so, dass man sie im Fachbereich versteht. Mitarbeitende zu schulen und im Betrieb Leute zu finden, die KI weitertragen, liegt mir. Arbon erreiche ich von St. Gallen aus ohne Probleme. Gerne erzähle ich Ihnen im Gespräch, wie ich die ersten zwölf Monate angehen würde.",
   ],
   closing: "Freundliche Grüsse",
   signature: "Thomas Ballinari",
