@@ -597,7 +597,7 @@ export default function App() {
                 </div>
 
                 <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-light">
-                  Ich komme aus der <strong className="text-white font-semibold">Praxis</strong>: 40 Jahre Betriebsführung, dazu der eidgenössische Fachausweis als AI Business Specialist (Abschlussprüfung Oktober 2026). Ich übersetze zwischen Fachbereich, Geschäftsleitung und Technik und sorge dafür, dass KI-Vorhaben auf sauberen Daten und gelebten Abläufen aufbauen.
+                  Ich komme aus der <strong className="text-white font-semibold">Praxis</strong>: 40 Jahre Betriebsführung, dazu der eidgenössische Fachausweis als AI Business Specialist (Prüfungen am 30. Oktober und 2. November 2026). Ich übersetze zwischen Fachbereich, Geschäftsleitung und Technik und sorge dafür, dass KI-Vorhaben auf sauberen Daten und gelebten Abläufen aufbauen.
                 </p>
 
                 {/* TWIN CTAS FROM SCREENSHOT 1 */}
@@ -636,8 +636,8 @@ export default function App() {
                       <p className="text-[10px] text-slate-500 uppercase font-semibold font-mono tracking-wider">Plätze in eigener Verantwortung</p>
                     </div>
                     <div className="space-y-0.5">
-                      <p className="text-4xl sm:text-5xl font-extrabold text-emerald-400 font-mono tracking-tight">10/26</p>
-                      <p className="text-[10px] text-slate-500 uppercase font-semibold font-mono tracking-wider">AIBS-Abschlussprüfung</p>
+                      <p className="text-4xl sm:text-5xl font-extrabold text-emerald-400 font-mono tracking-tight">30.10.</p>
+                      <p className="text-[10px] text-slate-500 uppercase font-semibold font-mono tracking-wider">AIBS-Prüfungen · mündlich 2.11.</p>
                     </div>
                   </div>
                 </div>
