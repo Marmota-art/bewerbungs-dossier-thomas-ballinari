@@ -387,7 +387,7 @@ export default function App() {
       ...prev,
       `[Incident Simulation] Wetter-Inferenz gestartet.`,
       `🌧️ [Meteo Inferenz] App syncht mit MeteoSchweiz GPS-Standort St. Gallen. Regenwahrscheinlichkeit steigt rasant auf 95%.`,
-      `🌧️ [Wetter Alarm] Push-Benachrichtigung an Thomas: 'Regenschauer nähert sich in 10-15 min an deinem Standort. Nimm deinen IPSO-Regenschirm mit!'`
+      `🌧️ [Wetter Alarm] Push-Benachrichtigung an Thomas: 'Regenschauer nähert sich in 10-15 min an Ihrem Standort. Nehmen Sie Ihren IPSO-Regenschirm mit!'`
     ]);
   };
 
@@ -674,7 +674,7 @@ export default function App() {
                     onClick={() => setActiveTab("chatbot")}
                     className="px-6 py-3 rounded-full bg-emerald-400 text-slate-950 font-bold hover:bg-emerald-300 active:scale-95 transition-all flex items-center gap-2 text-sm"
                   >
-                    <span>Frag mich direkt</span>
+                    <span>Fragen Sie mich direkt</span>
                     <ChevronRight className="w-4 h-4 text-slate-950" />
                   </button>
                   <button
@@ -1095,7 +1095,7 @@ export default function App() {
 
             <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 rounded-2xl bg-slate-900 border border-slate-800">
               <p className="text-sm text-slate-400 font-light">
-                Alle offiziellen Arbeitszeugnisse mit Volltext und PDF-Sammlung findest du auf der eigenen Seite.
+                Alle offiziellen Arbeitszeugnisse mit Volltext und PDF-Sammlung finden Sie auf der eigenen Seite.
               </p>
               <button
                 onClick={() => setActiveTab("testimonials")}
@@ -1419,8 +1419,8 @@ export default function App() {
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-slate-800">
                 <div className="text-left font-mono">
-                  <p className="text-[10px] text-slate-500">PROJEKTBEGLEITER:</p>
-                  <p className="text-xs text-slate-300 font-sans mt-0.5">Sabine Jungk, Begleitdozentin HKB</p>
+                  <p className="text-[10px] text-slate-500">FORECAST IM BETRIEB:</p>
+                  <p className="text-xs text-slate-300 font-sans mt-0.5">Seit 1. Mai 2026</p>
                 </div>
                 <div className="text-left font-mono">
                   <p className="text-[10px] text-slate-500">SCHWERPUNKTMETHODEN:</p>
@@ -1998,7 +1998,7 @@ export default function App() {
                           <span className="text-[10px] font-bold font-mono text-slate-400 uppercase tracking-wide">Diebstahl-Alarm (Gyrosensor)</span>
                           <ShieldAlert className="w-4 h-4 text-red-400" />
                         </div>
-                        <p className="text-[11px] text-slate-400 leading-relaxed font-light">Gyroskop meldet unerlaubte Lageänderung während du einkaufst oder isst.</p>
+                        <p className="text-[11px] text-slate-400 leading-relaxed font-light">Gyroskop meldet unerlaubte Lageänderung während Sie einkaufen oder essen.</p>
                       </button>
 
                       <button
@@ -2013,7 +2013,7 @@ export default function App() {
                           <span className="text-[10px] font-bold font-mono text-slate-400 uppercase tracking-wide">Geofencing Out-of-Range</span>
                           <Bell className="w-4 h-4 text-orange-400" />
                         </div>
-                        <p className="text-[11px] text-slate-400 leading-relaxed font-light">RSSI sinkt abrupt ab: Push-Meldung warnt dich beim Verlassen des Lokals.</p>
+                        <p className="text-[11px] text-slate-400 leading-relaxed font-light">RSSI sinkt abrupt ab: Push-Meldung warnt Sie beim Verlassen des Lokals.</p>
                       </button>
 
                       <button
@@ -2061,7 +2061,7 @@ export default function App() {
                       <div className="space-y-1 border-t sm:border-t-0 sm:border-l border-slate-800 sm:pt-0 sm:pl-6 pt-4 font-mono">
                         <span className="text-slate-500 text-[10px] font-bold uppercase tracking-wider">VERHINDERTE REGENTAGE:</span>
                         <p className="text-xl font-bold font-sans text-amber-400">48 Tage trocken</p>
-                        <p className="text-[10px] text-slate-500 leading-normal">Anzahl Tage, an denen du völlig trocken nach Hause kamst</p>
+                        <p className="text-[10px] text-slate-500 leading-normal">Anzahl Tage, an denen Sie völlig trocken nach Hause kamen</p>
                       </div>
                       <div className="space-y-1 border-t sm:border-t-0 sm:border-l border-slate-800 sm:pt-0 sm:pl-6 pt-4 font-mono">
                         <span className="text-slate-500 text-[10px] font-bold uppercase tracking-wider">LETZTER GPS-LOCATION SYNC:</span>
@@ -2529,9 +2529,9 @@ export default function App() {
         {activeTab === "contact" && (
           <section id="sect-contact" className="space-y-12 animate-fade-in max-w-4xl mx-auto text-left font-sans">
             <div className="space-y-2">
-              <h2 className="text-3xl font-serif font-black text-white">Lass uns in Kontakt treten!</h2>
+              <h2 className="text-3xl font-serif font-black text-white">Lassen Sie uns in Kontakt treten!</h2>
               <p className="text-slate-400 text-sm">
-                Suchst du einen pragmatischen Macher, der eure AI-Domain proaktiv gestaltet und im Team auf Augenhöhe Höchstleistungen erbringt? Ich freue mich auf deine Nachricht.
+                Suchen Sie einen pragmatischen Macher, der Ihre AI-Domain proaktiv gestaltet und im Team auf Augenhöhe Höchstleistungen erbringt? Ich freue mich auf Ihre Nachricht.
               </p>
             </div>
 
@@ -2543,7 +2543,7 @@ export default function App() {
                   <div className="space-y-2">
                     <h4 className="text-xs font-bold text-emerald-400 uppercase tracking-widest font-mono">Direkte Koordinaten</h4>
                     <p className="text-xs text-slate-400 font-light leading-relaxed">
-                      Thomas Ballinari steht dir direkt per E-Mail, Mobile oder für ein persönliches Treffen zur Verfügung.
+                      Thomas Ballinari steht Ihnen direkt per E-Mail, Mobile oder für ein persönliches Treffen zur Verfügung.
                     </p>
                   </div>
 
@@ -2584,7 +2584,7 @@ export default function App() {
                     <span>Erreichbarkeit</span>
                   </div>
                   <p className="font-light text-slate-300 text-[11px] leading-relaxed">
-                    Montag bis Samstag, während den üblichen Bürozeiten. Du erhältst in der Regel innerhalb von 24 Stunden eine Rückmeldung.
+                    Montag bis Samstag, während den üblichen Bürozeiten. Sie erhalten in der Regel innerhalb von 24 Stunden eine Rückmeldung.
                   </p>
                 </div>
               </div>
@@ -2676,7 +2676,7 @@ export default function App() {
                       </p>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-1">
-                          <label className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider block">Dein Name *</label>
+                          <label className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider block">Ihr Name *</label>
                           <input
                             type="text"
                             name="name"
@@ -2689,7 +2689,7 @@ export default function App() {
                         </div>
 
                         <div className="space-y-1">
-                          <label className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider block">Deine E-Mail *</label>
+                          <label className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider block">Ihre E-Mail *</label>
                           <input
                             type="email"
                             name="email"
@@ -2715,12 +2715,12 @@ export default function App() {
                       </div>
 
                       <div className="space-y-1">
-                        <label className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider block">Deine Nachricht *</label>
+                        <label className="text-[10px] font-bold text-slate-400 font-mono uppercase tracking-wider block">Ihre Nachricht *</label>
                         <textarea
                           name="message"
                           required
                           rows={4}
-                          placeholder="Sali Thomas, wir haben uns dein Dossier angeschaut..."
+                          placeholder="Grüezi Herr Ballinari, wir haben uns Ihr Dossier angeschaut..."
                           value={contactMessage}
                           onChange={(e) => setContactMessage(e.target.value)}
                           className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-teal-500 text-slate-255 text-slate-250 placeholder:text-slate-500 leading-relaxed resize-none"

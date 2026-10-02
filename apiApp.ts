@@ -260,7 +260,7 @@ function getRecipeMockReply(lastMessage: string): string | null {
 
   const first = ChatRecipes[0];
   const names = ChatRecipes.map((r) => r.name).join(", ");
-  return `Ich habe mehrere Signature-Rezepte hinterlegt, zum Beispiel: ${names}. Nenne mir ein Gericht, dann gebe ich dir das passende Rezept – oder hier gleich «${first.name}»:\n\nZutaten:\n${first.ingredients.trim()}\n\nZubereitung:\n${first.directions.trim()}`;
+  return `Ich habe mehrere Signature-Rezepte hinterlegt, zum Beispiel: ${names}. Nennen Sie mir ein Gericht, dann gebe ich Ihnen das passende Rezept – oder hier gleich «${first.name}»:\n\nZutaten:\n${first.ingredients.trim()}\n\nZubereitung:\n${first.directions.trim()}`;
 }
 
 function getMockReply(lastMessage: string): string {
