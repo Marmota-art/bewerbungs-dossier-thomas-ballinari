@@ -1150,7 +1150,7 @@ export const AmagooApplication = {
     "Damit KI im Betrieb etwas bringt, müssen Prozesse, Daten und Menschen dazu passen. An dieser Schnittstelle arbeite ich seit 2025, und genau sie beschreibt Ihre Stellenausschreibung. Deshalb bewerbe ich mich bei Ihnen.",
     "Ich komme aus der Praxis, nicht aus der IT. Über 40 Jahre habe ich als Koch, Geschäftsführer und Pächter Betriebe geführt, zuletzt bis 2023 das Restaurant Löwenburg mit gut 300 Plätzen und der Verantwortung für Personal, Buchhaltung und Lohnwesen. Dort habe ich gelernt, was unsaubere Abläufe kosten und was Mitarbeitende brauchen, damit eine Neuerung im Alltag auch genutzt wird. Ich habe Lernende ausgebildet, Teams geführt und Anlässe mit bis zu 500 Gästen organisiert.",
     "Fachlich habe ich mich 2025 neu aufgestellt: mit dem Zertifikat KI-Professional (Business) der HSO und der Ausbildung zum AI Business Specialist bei der ipso Bildung AG, deren Prüfungen am 30. Oktober und 2. November 2026 stattfinden. Mit SmartGastro.ai setze ich das in eigenen Projekten um. Für ein Restaurant habe ich die POS-Daten von sieben Monaten aufbereitet, Datenlücken dokumentiert, Deckungsbeiträge berechnet und Schulungsunterlagen erstellt. Dabei hat sich bestätigt, was Ihre Stelle unter «Daten und Integration» festhält: KI scheitert selten am Tool, meistens an den Stammdaten. Im Alltag arbeite ich mit Claude, Gemini und lokalen Sprachmodellen.",
-    "Was ich nicht mitbringe, sage ich offen: Ich habe noch kein ERP-Einführungsprojekt geleitet, und die Druck- und Verpackungsbranche ist neu für mich. Kassen- und Warenbewirtschaftungssysteme kenne ich aus der Anwendersicht eines Betriebsleiters. In ERPNext und Odoo arbeite ich mich gezielt ein, damit ich die Ablösung von MyFactory als Business Owner fachlich sicher begleiten kann.",
+    "Was ich nicht mitbringe, sage ich offen: Ich habe noch kein ERP-Einführungsprojekt geleitet, und die Druck- und Verpackungsbranche ist neu für mich. Kassen- und Warenbewirtschaftungssysteme kenne ich aus der Anwendersicht eines Betriebsleiters. Ich werde mich mit ERPNext oder Odoo beschäftigen und mich einarbeiten, damit ich die Ablösung von MyFactory als Business Owner fachlich sicher begleiten kann.",
     "Ich arbeite pragmatisch, bin es gewohnt, unter Zeitdruck zu entscheiden, und erkläre Technik so, dass sie im Fachbereich verstanden wird. Die Schulung der Mitarbeitenden und der Aufbau eines Netzes von KI-Champions liegen mir. Arbon ist von St. Gallen aus gut erreichbar. Gerne erläutere ich Ihnen in einem Gespräch, wie ich die ersten zwölf Monate angehen würde.",
   ],
   closing: "Freundliche Grüsse",
@@ -1179,7 +1179,7 @@ export const AmagooFitSection = {
     {
       number: "03",
       title: "ERP-/CRM-Transformation",
-      body: "Hier fehlt mir die Projekterfahrung, das sage ich offen. Mitbringen kann ich die Sicht des Fachbereichs: Kassen- und Warenbewirtschaftungssysteme kenne ich als Anwender und Betriebsleiter. ERPNext und Odoo arbeite ich mich gezielt ein.",
+      body: "Hier fehlt mir die Projekterfahrung, das sage ich offen. Mitbringen kann ich die Sicht des Fachbereichs: Kassen- und Warenbewirtschaftungssysteme kenne ich als Anwender und Betriebsleiter. Ich werde mich mit ERPNext oder Odoo beschäftigen und mich einarbeiten.",
       lever: "Business Owner aus dem Fachbereich",
     },
     {

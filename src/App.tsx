@@ -110,7 +110,7 @@ export default function App() {
   const [messages, setMessages] = useState<any[]>([
     {
       role: "assistant",
-      content: "Grüezi! Ich bin der digitale Bewerbungsassistent von Thomas Ballinari. Fragen Sie mich gerne über meine berufliche Laufbahn, meine KI-Kompetenzen, Zertifikate, Arbeitszeugnisse oder mein Projekt SmartGastro.ai!"
+      content: "Grüezi! Ich bin der digitale Bewerbungsassistent von Thomas Ballinari. Fragen Sie mich gerne über meine berufliche Laufbahn, meine KI-Kompetenzen, Zertifikate, Arbeitszeugnisse oder mein Projekt SmartGastro.ai oder die Passung zur Stelle bei der Amagoo AG!"
     }
   ]);
   const [inputMsg, setInputMsg] = useState<string>("");
@@ -936,9 +936,10 @@ export default function App() {
                     {[
                       { name: "Prozessoptimierung (AI-gestützt)", rate: 95 },
                       { name: "Prompt Engineering (Claude, Gemini)", rate: 95 },
-                      { name: "Google Studio AI / Gemini API", rate: 90 },
-                      { name: "Claude Code Integration", rate: 90 },
-                      { name: "Machine Learning Concepts", rate: 80 }
+                      { name: "Teamführung & Schulung", rate: 90 },
+                      { name: "Datenqualität & Stammdaten", rate: 85 },
+                      { name: "Machine Learning Concepts", rate: 80 },
+                      { name: "ERP/CRM (in Einarbeitung)", rate: 20 }
                     ].map((comp, idx) => (
                       <div key={idx} className="space-y-1">
                         <div className="flex justify-between items-center text-xs">
@@ -1026,7 +1027,7 @@ export default function App() {
 
                 {/* Short Profile Intro text */}
                 <div className="text-sm sm:text-base text-slate-700 leading-relaxed font-light italic">
-                  „Nach über 40 erfolgreichen Jahren in der Schweizer Gastronomie verbinde ich meine ausgeprägte betriebswirtschaftliche Denkweise mit den immensen Möglichkeiten künstlicher Intelligenz. Ich gestalte praxisnahe AI-Prototypen, die echte betriebliche Ineffizienzen nachhaltig beheben.“
+                  „Nach über 40 Jahren Betriebsführung verbinde ich meine Praxis mit dem Fachwissen eines AI Business Specialist. Ich sorge dafür, dass KI-Vorhaben auf sauberen Daten und gelebten Abläufen aufbauen, und übersetze zwischen Fachbereich, Geschäftsleitung und Technik.“
                 </div>
 
                 {/* Timeline: Berufliche Stationen */}
@@ -2605,9 +2606,9 @@ export default function App() {
                       <CheckCircle className="w-8 h-8 animate-pulse" />
                     </div>
                     <div className="space-y-2">
-                      <h4 className="text-xl font-bold text-white tracking-tight">Sali, vielen Dank für deine Nachricht!</h4>
+                      <h4 className="text-xl font-bold text-white tracking-tight">Grüezi, vielen Dank für Ihre Nachricht!</h4>
                       <p className="text-slate-400 text-xs sm:text-sm font-light max-w-sm mx-auto leading-relaxed">
-                        Ich habe dein Anliegen erhalten und freue mich über das Interesse. Ich werde mich unverzüglich bei dir melden, auf Augenhöhe im Sinne unserer Monads Du-Kultur!
+                        Ich habe Ihr Anliegen erhalten und freue mich über das Interesse. Ich melde mich zeitnah bei Ihnen.
                       </p>
                     </div>
                     <button
@@ -2700,7 +2701,7 @@ export default function App() {
                             type="email"
                             name="email"
                             required
-                            placeholder="z.B. beat@monads.ch"
+                            placeholder="z.B. name@firma.ch"
                             value={contactEmail}
                             onChange={(e) => setContactEmail(e.target.value)}
                             className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-teal-500 text-slate-250 placeholder:text-slate-500"
@@ -2713,7 +2714,7 @@ export default function App() {
                         <input
                           type="text"
                           name="company"
-                          placeholder="z.B. Monads GmbH"
+                          placeholder="z.B. Amagoo AG"
                           value={contactCompany}
                           onChange={(e) => setContactCompany(e.target.value)}
                           className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-teal-500 text-slate-250 placeholder:text-slate-500"
