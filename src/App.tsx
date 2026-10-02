@@ -571,10 +571,10 @@ export default function App() {
         {activeTab === "home" && (
           <section id="sect-home" className="space-y-20 animate-fade-in font-sans">
             {/* HERO PROFILE SECTION */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start pt-4">
-              
-              {/* Left Bio Column */}
-              <div className="lg:col-span-7 space-y-8 text-left">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start pt-4">
+
+              {/* Left Column - Anschreiben (gross, ohne Foto) */}
+              <div id="cover-letter-card" className="lg:col-span-8 space-y-5 text-left">
                 <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800">
                   <span className="flex h-2.5 w-2.5 relative">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
@@ -583,133 +583,120 @@ export default function App() {
                   <span className="text-xs font-mono font-medium text-emerald-400">Bewerbung · AI Business Specialist · Amagoo AG</span>
                 </div>
 
-                <div className="space-y-6">
-                  {/* Big Stacked Display Heading from Screenshot 1 */}
-                  <h1 className="text-6xl sm:text-7xl lg:text-8xl font-black font-serif tracking-tight text-white leading-[0.85] select-none">
-                    Thomas<br />
-                    <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-blue-500 bg-clip-text text-transparent">Ballinari</span>
-                  </h1>
-                  
-                  {/* Subtle Sub Heading */}
-                  <p className="text-lg sm:text-xl font-bold tracking-tight text-slate-300 font-mono">
-                    AI Business Specialist <span className="text-teal-500">·</span> Prozesse &amp; Daten <span className="text-teal-500">·</span> Brücke Fachbereich–Technik
-                  </p>
-                </div>
-
-                <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-light">
-                  Ich komme aus der <strong className="text-white font-semibold">Praxis</strong>: 40 Jahre Betriebsführung, dazu der eidgenössische Fachausweis als AI Business Specialist (Prüfungen am 30. Oktober und 2. November 2026). Ich übersetze zwischen Fachbereich, Geschäftsleitung und Technik und sorge dafür, dass KI-Vorhaben auf sauberen Daten und gelebten Abläufen aufbauen.
-                </p>
-
-                {/* TWIN CTAS FROM SCREENSHOT 1 */}
-                <div className="flex flex-col sm:flex-row gap-4 max-w-xl">
-                  <button
-                    onClick={() => setActiveTab("chatbot")}
-                    className="px-8 py-4 rounded-full bg-emerald-400 text-slate-950 font-bold hover:bg-emerald-300 active:scale-95 transition-all shadow-xl shadow-emerald-400/10 flex items-center justify-center gap-2 text-sm"
-                  >
-                    <span>Frag mich direkt</span>
-                    <ChevronRight className="w-4 h-4 text-slate-950" />
-                  </button>
-                  
-                  <button
-                    onClick={() => setActiveTab("resume")}
-                    className="px-8 py-4 rounded-full bg-slate-900 hover:bg-slate-850 active:scale-95 text-slate-300 border border-slate-800 transition-all font-bold flex items-center justify-center text-sm"
-                  >
-                    <span>Lebenslauf ansehen</span>
-                  </button>
-                  <button
-                    onClick={() => setActiveTab("testimonials")}
-                    className="px-8 py-4 rounded-full bg-slate-900 hover:bg-slate-850 active:scale-95 text-slate-300 border border-slate-800 transition-all font-bold flex items-center justify-center text-sm"
-                  >
-                    <span>Arbeitszeugnisse</span>
-                  </button>
-                </div>
-
-                {/* STATISTICS CHIPS GRID MATCHING SCREENSHOT 1 */}
-                <div className="pt-8 border-t border-slate-900">
-                  <div className="grid grid-cols-3 gap-6">
-                    <div className="space-y-0.5">
-                      <p className="text-4xl sm:text-5xl font-extrabold text-emerald-400 font-mono tracking-tight">40+</p>
-                      <p className="text-[10px] text-slate-500 uppercase font-semibold font-mono tracking-wider">Jahre Führung</p>
-                    </div>
-                    <div className="space-y-0.5">
-                      <p className="text-4xl sm:text-5xl font-extrabold text-emerald-400 font-mono tracking-tight">300+</p>
-                      <p className="text-[10px] text-slate-500 uppercase font-semibold font-mono tracking-wider">Plätze in eigener Verantwortung</p>
-                    </div>
-                    <div className="space-y-0.5">
-                      <p className="text-4xl sm:text-5xl font-extrabold text-emerald-400 font-mono tracking-tight">30.10.</p>
-                      <p className="text-[10px] text-slate-500 uppercase font-semibold font-mono tracking-wider">AIBS-Prüfungen · mündlich 2.11.</p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Right Column - Anschreiben direkt neben dem Profil */}
-              <div id="cover-letter-card" className="lg:col-span-5 flex justify-center lg:justify-end">
                 <div className="relative w-full rounded-[2rem] p-1 bg-gradient-to-br from-slate-800 via-teal-500/20 to-blue-600/20 shadow-2xl">
-                  <div className="rounded-[1.9rem] bg-slate-900 p-5 md:p-6 space-y-5 text-left">
+                  <div className="rounded-[1.9rem] bg-slate-900 p-7 md:p-10 space-y-7 text-left">
 
-                    {/* Kopf: Portrait + Name */}
-                    <div className="flex items-center gap-4">
-                      <div className="relative w-16 h-20 shrink-0 rounded-xl border border-slate-800 overflow-hidden shadow-inner">
-                        <img
-                          src={thomasPhoto || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=600&h=800"}
-                          alt="Thomas Ballinari Portrait"
-                          className="w-full h-full object-cover grayscale-[15%]"
-                          referrerPolicy="no-referrer"
-                          onError={(e) => {
-                            const img = e.currentTarget as HTMLImageElement;
-                            img.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=600&h=800";
-                          }}
-                        />
-                      </div>
-                      <div className="space-y-1.5 min-w-0">
-                        <span className="inline-block px-3 py-1 rounded-full bg-slate-950/90 border border-emerald-500/30 text-[10px] text-emerald-400 font-mono font-bold uppercase tracking-wider">
+                    <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+                      <div className="space-y-2">
+                        <span className="inline-block px-3 py-1 rounded-full bg-slate-950/90 border border-emerald-500/30 text-[11px] text-emerald-400 font-mono font-bold uppercase tracking-wider">
                           Anschreiben
                         </span>
-                        <h3 className="font-extrabold text-white text-xl font-serif leading-tight">Thomas Ballinari</h3>
-                        <p className="text-slate-400 text-xs font-mono">St. Gallen, Schweiz 🇨🇭</p>
+                        <h1 className="font-extrabold text-white text-3xl md:text-4xl font-serif leading-tight">
+                          Bewerbung als {AmagooApplication.position}
+                        </h1>
                       </div>
+                      <p className="text-xs md:text-sm font-mono text-slate-500 sm:text-right">{AmagooApplication.date}</p>
                     </div>
 
-                    {/* Empfänger + Datum */}
-                    <div className="flex flex-col sm:flex-row sm:justify-between gap-3 text-[11px] font-mono text-slate-500 leading-relaxed border-t border-slate-850 pt-4">
-                      <div>
-                        {AmagooApplication.recipient.lines.map((line) => (
-                          <p key={line}>{line}</p>
-                        ))}
-                      </div>
-                      <p className="sm:text-right">{AmagooApplication.date}</p>
+                    <div className="text-xs md:text-sm font-mono text-slate-500 leading-relaxed border-t border-slate-850 pt-5">
+                      {AmagooApplication.recipient.lines.map((line) => (
+                        <p key={line}>{line}</p>
+                      ))}
                     </div>
 
-                    <p className="text-sm font-bold text-white">Bewerbung als {AmagooApplication.position}</p>
-
-                    <div className="space-y-3 text-sm text-slate-300 font-light leading-relaxed">
+                    <div className="space-y-4 text-base md:text-lg text-slate-200 font-light leading-relaxed">
                       <p>{AmagooApplication.greeting}</p>
                       {AmagooApplication.paragraphs.map((para, i) => (
                         <p key={i}>{para}</p>
                       ))}
                       <p className="pt-1">{AmagooApplication.closing}</p>
-                      <p className="font-serif font-bold text-white text-base">{AmagooApplication.signature}</p>
-                      <p className="text-[11px] font-mono text-slate-500">{AmagooApplication.enclosures}</p>
+                      <p className="font-serif font-bold text-white text-xl">{AmagooApplication.signature}</p>
+                      <p className="text-xs font-mono text-slate-500">{AmagooApplication.enclosures}</p>
                     </div>
 
-                    {/* Ansprechperson */}
-                    <div className="bg-slate-950 rounded-xl p-3 border border-slate-850 flex items-center justify-between gap-3">
+                    <div className="bg-slate-950 rounded-xl p-4 border border-slate-850 flex items-center justify-between gap-3">
                       <div className="text-left min-w-0">
-                        <p className="text-[9px] text-slate-500 font-bold uppercase tracking-widest font-mono">Ansprechperson Amagoo AG</p>
-                        <p className="text-xs font-bold text-slate-200">{AmagooApplication.recipient.name}</p>
-                        <p className="text-[11px] text-slate-400 font-mono truncate">{AmagooApplication.recipient.email}</p>
+                        <p className="text-[10px] text-slate-500 font-bold uppercase tracking-widest font-mono">Ansprechperson Amagoo AG</p>
+                        <p className="text-sm font-bold text-slate-200">{AmagooApplication.recipient.name}</p>
+                        <p className="text-xs text-slate-400 font-mono truncate">{AmagooApplication.recipient.email}</p>
                       </div>
                       <a
                         href={`mailto:${AmagooApplication.recipient.email}`}
-                        className="text-[10px] bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 px-2.5 py-1 rounded font-mono font-bold uppercase shrink-0 inline-flex items-center gap-1.5 transition-all"
+                        className="text-[11px] bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 px-3 py-1.5 rounded font-mono font-bold uppercase shrink-0 inline-flex items-center gap-1.5 transition-all"
                       >
-                        <Mail className="w-3 h-3" />
+                        <Mail className="w-3.5 h-3.5" />
                         <span>Mail</span>
                       </a>
                     </div>
 
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Column - Profil, dezent mit Foto */}
+              <div className="lg:col-span-4 space-y-6 text-left lg:sticky lg:top-24">
+                <div className="flex items-center gap-4">
+                  <div className="relative w-24 h-32 shrink-0 rounded-2xl border border-slate-800 overflow-hidden shadow-xl">
+                    <img
+                      src={thomasPhoto || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=600&h=800"}
+                      alt="Thomas Ballinari Portrait"
+                      className="w-full h-full object-cover grayscale-[15%]"
+                      referrerPolicy="no-referrer"
+                      onError={(e) => {
+                        const img = e.currentTarget as HTMLImageElement;
+                        img.src = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=600&h=800";
+                      }}
+                    />
+                  </div>
+                  <div className="space-y-1.5 min-w-0">
+                    <p className="text-3xl font-black font-serif tracking-tight text-white leading-none">
+                      Thomas <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-blue-500 bg-clip-text text-transparent">Ballinari</span>
+                    </p>
+                    <p className="text-xs font-mono text-slate-400 leading-relaxed">
+                      AI Business Specialist <span className="text-teal-500">·</span> Prozesse &amp; Daten
+                    </p>
+                    <p className="text-[11px] font-mono text-slate-500">St. Gallen, Schweiz 🇨🇭</p>
+                  </div>
+                </div>
+
+                <p className="text-sm text-slate-400 leading-relaxed font-light">
+                  Ich komme aus der <strong className="text-slate-200 font-semibold">Praxis</strong>: 40 Jahre Betriebsführung, dazu der eidgenössische Fachausweis als AI Business Specialist (Prüfungen am 30. Oktober und 2. November 2026). Ich übersetze zwischen Fachbereich, Geschäftsleitung und Technik.
+                </p>
+
+                <div className="flex flex-wrap gap-2.5">
+                  <button
+                    onClick={() => setActiveTab("chatbot")}
+                    className="px-5 py-2.5 rounded-full bg-emerald-400 text-slate-950 font-bold hover:bg-emerald-300 active:scale-95 transition-all flex items-center gap-1.5 text-xs"
+                  >
+                    <span>Frag mich direkt</span>
+                    <ChevronRight className="w-3.5 h-3.5 text-slate-950" />
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("resume")}
+                    className="px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-850 active:scale-95 text-slate-300 border border-slate-800 transition-all font-bold text-xs"
+                  >
+                    Lebenslauf
+                  </button>
+                  <button
+                    onClick={() => setActiveTab("testimonials")}
+                    className="px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-850 active:scale-95 text-slate-300 border border-slate-800 transition-all font-bold text-xs"
+                  >
+                    Arbeitszeugnisse
+                  </button>
+                </div>
+
+                <div className="pt-5 border-t border-slate-900 grid grid-cols-3 gap-3">
+                  <div>
+                    <p className="text-2xl font-extrabold text-emerald-400 font-mono">40+</p>
+                    <p className="text-[9px] text-slate-500 uppercase font-semibold font-mono tracking-wider">Jahre Führung</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl font-extrabold text-emerald-400 font-mono">300+</p>
+                    <p className="text-[9px] text-slate-500 uppercase font-semibold font-mono tracking-wider">Plätze verantwortet</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl font-extrabold text-emerald-400 font-mono">30.10.</p>
+                    <p className="text-[9px] text-slate-500 uppercase font-semibold font-mono tracking-wider">AIBS · mündl. 2.11.</p>
                   </div>
                 </div>
               </div>
