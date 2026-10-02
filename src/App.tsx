@@ -575,27 +575,19 @@ export default function App() {
 
               {/* Left Column - Anschreiben (gross, ohne Foto) */}
               <div id="cover-letter-card" className="lg:col-span-8 space-y-5 text-left">
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800">
-                  <span className="flex h-2.5 w-2.5 relative">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                  </span>
-                  <span className="text-xs font-mono font-medium text-emerald-400">Bewerbung · AI Business Specialist · Amagoo AG</span>
-                </div>
-
                 <div className="relative w-full rounded-[2rem] p-1 bg-gradient-to-br from-slate-800 via-teal-500/20 to-blue-600/20 shadow-2xl">
                   <div className="rounded-[1.9rem] bg-slate-900 p-7 md:p-10 space-y-7 text-left">
 
                     <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
                       <div className="space-y-2">
                         <span className="inline-block px-3 py-1 rounded-full bg-slate-950/90 border border-emerald-500/30 text-[11px] text-emerald-400 font-mono font-bold uppercase tracking-wider">
-                          Anschreiben
+                          Anschreiben · Amagoo AG
                         </span>
                         <h1 className="font-extrabold text-white text-3xl md:text-4xl font-serif leading-tight">
                           Bewerbung als {AmagooApplication.position}
                         </h1>
                       </div>
-                      <p className="text-xs md:text-sm font-mono text-slate-500 sm:text-right">{AmagooApplication.date}</p>
+                      <p className="text-xs md:text-sm font-mono text-slate-500 sm:text-right whitespace-nowrap">{AmagooApplication.date}</p>
                     </div>
 
                     <div className="text-xs md:text-sm font-mono text-slate-500 leading-relaxed border-t border-slate-850 pt-5">
@@ -634,9 +626,9 @@ export default function App() {
               </div>
 
               {/* Right Column - Profil, dezent mit Foto */}
-              <div className="lg:col-span-4 space-y-6 text-left lg:sticky lg:top-24">
-                <div className="flex items-center gap-4">
-                  <div className="relative w-24 h-32 shrink-0 rounded-2xl border border-slate-800 overflow-hidden shadow-xl">
+              <div className="lg:col-span-4 space-y-7 text-left lg:sticky lg:top-24">
+                <div className="space-y-5">
+                  <div className="relative w-44 h-56 rounded-2xl border border-slate-800 overflow-hidden shadow-xl">
                     <img
                       src={thomasPhoto || "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=600&h=800"}
                       alt="Thomas Ballinari Portrait"
@@ -648,55 +640,69 @@ export default function App() {
                       }}
                     />
                   </div>
-                  <div className="space-y-1.5 min-w-0">
-                    <p className="text-3xl font-black font-serif tracking-tight text-white leading-none">
+                  <div className="space-y-2">
+                    <p className="text-4xl font-black font-serif tracking-tight text-white leading-none">
                       Thomas <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-blue-500 bg-clip-text text-transparent">Ballinari</span>
                     </p>
-                    <p className="text-xs font-mono text-slate-400 leading-relaxed">
+                    <p className="text-sm font-mono text-slate-400">
                       AI Business Specialist <span className="text-teal-500">·</span> Prozesse &amp; Daten
                     </p>
-                    <p className="text-[11px] font-mono text-slate-500">St. Gallen, Schweiz 🇨🇭</p>
+                    <p className="text-xs font-mono text-slate-500">St. Gallen, Schweiz 🇨🇭</p>
                   </div>
                 </div>
 
-                <p className="text-sm text-slate-400 leading-relaxed font-light">
-                  Ich komme aus der <strong className="text-slate-200 font-semibold">Praxis</strong>: 40 Jahre Betriebsführung, dazu der eidgenössische Fachausweis als AI Business Specialist (Prüfungen am 30. Oktober und 2. November 2026). Ich übersetze zwischen Fachbereich, Geschäftsleitung und Technik.
+                <p className="text-base lg:text-lg text-slate-300 leading-relaxed font-light">
+                  Ich komme aus der <strong className="text-white font-semibold">Praxis</strong>: 40 Jahre Betriebsführung, dazu der eidgenössische Fachausweis als AI Business Specialist (Prüfungen am 30. Oktober und 2. November 2026). Ich übersetze zwischen Fachbereich, Geschäftsleitung und Technik und sorge dafür, dass KI-Vorhaben auf sauberen Daten und gelebten Abläufen aufbauen.
                 </p>
 
-                <div className="flex flex-wrap gap-2.5">
+                <ul className="space-y-2.5 text-sm lg:text-base text-slate-400 font-light">
+                  {[
+                    "Prozesse verstehen, bevor automatisiert wird",
+                    "Saubere Daten als Basis für KI",
+                    "Brücke zwischen Fachbereich und Technik",
+                    "Mitarbeitende befähigen, damit Neues im Alltag genutzt wird",
+                  ].map((item) => (
+                    <li key={item} className="flex gap-3 items-start">
+                      <span className="mt-2 h-1.5 w-1.5 rounded-full bg-emerald-400 shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="flex flex-wrap gap-3">
                   <button
                     onClick={() => setActiveTab("chatbot")}
-                    className="px-5 py-2.5 rounded-full bg-emerald-400 text-slate-950 font-bold hover:bg-emerald-300 active:scale-95 transition-all flex items-center gap-1.5 text-xs"
+                    className="px-6 py-3 rounded-full bg-emerald-400 text-slate-950 font-bold hover:bg-emerald-300 active:scale-95 transition-all flex items-center gap-2 text-sm"
                   >
                     <span>Frag mich direkt</span>
-                    <ChevronRight className="w-3.5 h-3.5 text-slate-950" />
+                    <ChevronRight className="w-4 h-4 text-slate-950" />
                   </button>
                   <button
                     onClick={() => setActiveTab("resume")}
-                    className="px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-850 active:scale-95 text-slate-300 border border-slate-800 transition-all font-bold text-xs"
+                    className="px-6 py-3 rounded-full bg-slate-900 hover:bg-slate-850 active:scale-95 text-slate-300 border border-slate-800 transition-all font-bold text-sm"
                   >
                     Lebenslauf
                   </button>
                   <button
                     onClick={() => setActiveTab("testimonials")}
-                    className="px-5 py-2.5 rounded-full bg-slate-900 hover:bg-slate-850 active:scale-95 text-slate-300 border border-slate-800 transition-all font-bold text-xs"
+                    className="px-6 py-3 rounded-full bg-slate-900 hover:bg-slate-850 active:scale-95 text-slate-300 border border-slate-800 transition-all font-bold text-sm"
                   >
                     Arbeitszeugnisse
                   </button>
                 </div>
 
-                <div className="pt-5 border-t border-slate-900 grid grid-cols-3 gap-3">
+                <div className="pt-6 border-t border-slate-900 grid grid-cols-3 gap-4">
                   <div>
-                    <p className="text-2xl font-extrabold text-emerald-400 font-mono">40+</p>
-                    <p className="text-[9px] text-slate-500 uppercase font-semibold font-mono tracking-wider">Jahre Führung</p>
+                    <p className="text-3xl font-extrabold text-emerald-400 font-mono">40+</p>
+                    <p className="text-[10px] text-slate-500 uppercase font-semibold font-mono tracking-wider">Jahre Führung</p>
                   </div>
                   <div>
-                    <p className="text-2xl font-extrabold text-emerald-400 font-mono">300+</p>
-                    <p className="text-[9px] text-slate-500 uppercase font-semibold font-mono tracking-wider">Plätze verantwortet</p>
+                    <p className="text-3xl font-extrabold text-emerald-400 font-mono">300+</p>
+                    <p className="text-[10px] text-slate-500 uppercase font-semibold font-mono tracking-wider">Plätze verantwortet</p>
                   </div>
                   <div>
-                    <p className="text-2xl font-extrabold text-emerald-400 font-mono">30.10.</p>
-                    <p className="text-[9px] text-slate-500 uppercase font-semibold font-mono tracking-wider">AIBS · mündl. 2.11.</p>
+                    <p className="text-3xl font-extrabold text-emerald-400 font-mono">30.10.</p>
+                    <p className="text-[10px] text-slate-500 uppercase font-semibold font-mono tracking-wider">AIBS · mündl. 2.11.</p>
                   </div>
                 </div>
               </div>
@@ -790,7 +796,7 @@ export default function App() {
               <div className="bg-slate-950/80 p-5 rounded-2xl border border-slate-850 flex flex-col sm:flex-row justify-between items-center gap-4">
                 <div className="space-y-1">
                   <p className="text-xs text-slate-400 font-mono">PRAXIS-SIMULATION</p>
-                  <p className="text-sm font-bold text-white">Möchtest du sehen, wie dieser Workflow als echte Anwendung aussieht?</p>
+                  <p className="text-sm font-bold text-white">Möchten Sie sehen, wie dieser Workflow als echte Anwendung aussieht?</p>
                 </div>
                 <button
                   onClick={() => setActiveTab("projects")}
