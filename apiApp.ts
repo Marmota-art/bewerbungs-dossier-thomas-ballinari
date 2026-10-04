@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 import express from "express";
 import dotenv from "dotenv";
 import { GoogleGenAI } from "@google/genai";
@@ -14,6 +16,7 @@ import { getFullDocumentKnowledge } from "./src/knowledgeBase";
 import { getChatPersonalFactsKnowledge } from "./src/chatPersonalFacts";
 import { getChatRagDossierKnowledge } from "./src/chatRagDossier";
 import { getChatAmagooKnowledge } from "./src/chatAmagooKnowledge";
+import { getChatPraxisprojektV3Knowledge } from "./src/chatPraxisprojektV3";
 import { getChatPersonalKnowledgeBase } from "./src/chatPersonalKnowledge";
 import { getChatKiSpecialistKnowledge } from "./src/chatKiSpecialistKnowledge";
 import {
@@ -101,7 +104,7 @@ PERSÖNLICHE DATEN & PROFIL:
 
 ${getChatPersonalFactsKnowledge()}
 ${getChatRagDossierKnowledge() ? `\n${getChatRagDossierKnowledge()}\n` : ""}
-${getChatAmagooKnowledge() ? `\n${getChatAmagooKnowledge()}\n` : ""}
+${getChatAmagooKnowledge() ? `\n${getChatAmagooKnowledge()}\n` : ""}${getChatPraxisprojektV3Knowledge() ? `\n${getChatPraxisprojektV3Knowledge()}\n` : ""}
 ${getChatPersonalKnowledgeBase() ? `\n${getChatPersonalKnowledgeBase()}\n` : ""}
 ${getChatKiSpecialistKnowledge() ? `\n${getChatKiSpecialistKnowledge()}\n` : ""}
 ${getChatRecipesKnowledge() ? `\n${getChatRecipesKnowledge()}\n` : ""}
@@ -336,6 +339,47 @@ app.get("/api/analytics/summary", async (req, res) => {
     return res.send(renderAnalyticsHtml(summary));
   }
   return res.json(summary);
+});
+
+// Geschützte Projektdateien (nur mit gültigem Zugangscode abrufbar)
+const PROJEKT_DATEIEN: Record<string, { file: string; type: string }> = {
+  praxisprojekt: { file: "SmartGastro_Praxisprojekt_V3.pdf", type: "application/pdf" },
+  praesentation: {
+    file: "SmartGastro_Praesentation_V6.0_Dunkel.pptx",
+    type: "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+  },
+  datenschutz: {
+    file: "Datenschutzkonzept_SmartGastro.docx",
+    type: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  },
+};
+
+app.get("/api/projekt/dateien/:id", (req, res) => {
+  if (!isSiteAccessGranted(req)) {
+    return res.status(401).json({ error: "Geschützter Zugang: Bitte Zugangscode eingeben." });
+  }
+  const entry = PROJEKT_DATEIEN[req.params.id];
+  if (!entry) return res.status(404).json({ error: "Datei nicht gefunden" });
+  const bases = [process.cwd(), process.env.LAMBDA_TASK_ROOT].filter(Boolean) as string[];
+  for (const base of bases) {
+    const full = path.join(base, "data", "projekt-dateien", entry.file);
+    if (fs.existsSync(full)) {
+      res.setHeader("Content-Type", entry.type);
+      res.setHeader("Content-Disposition", `inline; filename="${entry.file}"`);
+      res.setHeader("Cache-Control", "private, no-store");
+      return res.send(fs.readFileSync(full));
+    }
+  }
+  return res.status(404).json({ error: "Datei auf dem Server nicht vorhanden" });
+});
+
+app.get("/api/projekt/demo-zugang", (req, res) => {
+  if (!isSiteAccessGranted(req)) {
+    return res.status(401).json({ error: "Geschützter Zugang: Bitte Zugangscode eingeben." });
+  }
+  res.setHeader("Cache-Control", "private, no-store");
+  const code = process.env.DEMO_ACCESS_CODE?.trim() || "";
+  return res.json({ code: code || null });
 });
 
 app.post("/api/chat", async (req, res) => {

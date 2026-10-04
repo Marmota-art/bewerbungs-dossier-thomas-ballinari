@@ -309,7 +309,7 @@ export const Educations: EducationItem[] = [
     details: [
       "Informatik & Wirtschaft. Intensive Vorbereitung auf den neu geschaffenen eidg. Fachausweis.",
       "Schwerpunkte: KI-Strategie, Business Intelligence (BI), Prototyping, Datenanalyse, Digitale Transformation.",
-      "Praxisprojekt als Ausbildungsnachweis: Konzeptentwicklung und Prototyp für 'SmartGastro.ai' zur KI-gestützten Nachfrageprognose. Abgabe: 22. August 2026."
+      "Praxisprojekt als Ausbildungsnachweis: Konzeptentwicklung und Prototyp für 'SmartGastro.ai' zur KI-gestützten Nachfrageprognose. Abgabe: 30. September 2026."
     ]
   },
   {
@@ -998,14 +998,14 @@ export const SmartGastroProject = {
   title: "SmartGastro.ai",
   subTitle: "KI-gestützte Nachfrageprognose im Schweizer Gastgewerbe",
   demo: {
-    version: "V3.3",
+    version: "V3.5",
     label: "Demo-Login SmartGastro.ai Dashboard",
     url: "https://smartgastro-demoforecast.netlify.app/",
     description: "Interaktiver Prototyp mit POS-Anbindung (WaiterOne) und Forecast-Dashboard. Der Zugang erfolgt über einen Demo-Login, die Zugangsdaten erhalten Sie auf Anfrage.",
   },
   candidate: "Thomas Ballinari",
   role: "Analyst, Konzeptentwickler & Projektverantwortlicher (ipso Ausbildung AG, Fachausweis)",
-  submissionDate: "22. August 2026",
+  submissionDate: "30. September 2026",
   problem: {
     title: "Das tägliche Planungsdilemma in der Gastro-Küche",
     details: [
@@ -1020,9 +1020,9 @@ export const SmartGastroProject = {
     title: "Die SmartGastro.ai Lösung: Datenbasierte Intelligenz",
     details: [
       "Kombination historischer POS-Verkaufsdaten mit lokalen Wettervorhersagen (MeteoSchweiz Open Data) und registrierten Events im Umkreis von 30 km.",
-      "Einsatz hoch-optimierter Machine Learning Algorithmen (XGBoost & LightGBM) zur Generierung eines präzisen 7- bis 14-Tage-Forecasts pro Gericht und Tag.",
-      "Präzision: Erreichung einer nachgewiesenen Vorhersagegenauigkeit (MAPE) von unter 15% nach nur 3 Monaten Pilotbetrieb für die Top 10-Gerichte.",
-      "Automatisierte Cloud-Pipeline: Serverlose ETL-Abfragen in eine sichere PostgreSQL-Datenbank (gehostet im AWS-Rechenzentrum Schweiz zur Einhaltung des nDSG) täglich um 06:00 Uhr.",
+      "Prognose pro Gericht und Tag: heute Regelbasis mit gelernten Delta-Korrekturen (Prototyp V3.5, im Betrieb seit Mai 2026). XGBoost ist die Zielarchitektur und wird erst nach zwei vollen Saisonzyklen geprüft.",
+      "Prognosegüte ehrlich ausgewiesen: Im Walk-Forward-Backtest (August 2026) liegt der MAPE bei 43.2 % gegen 81.4 % der naiven Baseline, also halber Fehler. Das Ziel unter 15 % (Top-10-Gerichte) ist an zwei Saisonzyklen geknüpft und noch nicht erreicht.",
+      "Automatisierte Cloud-Pipeline: Serverlose ETL-Abfragen in eine sichere PostgreSQL-Datenbank (gehostet im AWS-Rechenzentrum Schweiz zur Einhaltung des nDSG) täglich um 05:00 Uhr.",
       "Actionable Dashboard: Klares Web-Dashboard für den Küchenchef mit automatischen Bestell- und Vorbereitungsmengen, inklusive Erklärbarkeit (z. B. 'Samstag +10% wegen Bauernmarkt Lienz und sonnigem Wetter').",
       "Self-Learning Feedback Loop: Der Küchenchef gibt abends mit einem Klick das reale 'Ist' ein oder lädt den CSV-Tagesabschluss hoch. Die KI lernt kontinuierlich aus den Abweichungen (KI-Delta)."
     ]
@@ -1032,28 +1032,29 @@ export const SmartGastroProject = {
     statusQuo: {
       sales: 800000,
       cogs: 264000, // 33% Wareneinsatz
-      foodWaste: 18200, // 8% des Wareneinsatzes
-      outOfStock: 8000, // 1% entgangener Umsatz
-      planningHours: 11640 // Stress & Überstunden
+      foodWaste: 18000, // Mitte von CHF 1'000–2'000 pro Monat, hochgerechnet auf 12 Monate
+      outOfStock: 12, // Out-of-Stock pro Monat (Ausgangslage)
+      planningMinutesPerDay: 45
     },
     savings: {
       foodWaste: 9000, // -50% Food Waste
-      outOfStock: 3750, // +0.5% Umsatz durch bessere Verfügbarkeit
+      menuOptimization: 3750, // Menü-Optimierung (Annahme)
       planningTime: 2875, // Zeitersparnis (30 Min/Tag, 230 Tage)
       overtimeReduction: 3125, // Reduktion Stress & Überstunden
       totalBenefit: 18750 // Jährlicher Gesamtnutzen
     },
     costs: {
-      onboarding: 7500, // Einmalige Einrichtung und IT-Onboarding
+      setup: 6000, // Einrichtung/Datenbereinigung
+      onboarding: 1500,
       license: 4800, // Jährliche Lizenzgebühr (CHF 400/Monat)
       totalYear1: 12300,
-      totalYear2: 5300, // Nur Lizenz + CHF 500 Wartung
-      totalYear3: 5300
+      // Wartung erst ab Jahr 2
     },
     metrics: {
-      roiYear1: "152%", // ROI im ersten Jahr ((Nutzen CHF 18'750 - Lizenz CHF 4'800) / Onboarding CHF 7'500)
-      breakeven: "ca. 7 Monate",
-      netProfit3Years: 33350, // Kumulierter 3rd Year Net Benefit
+      roiYear1: "52%", // Netto-ROI Jahr 1: (18'750 - 12'300) / 12'300
+      breakeven: "6.5 Monate",
+      netBenefitYear1: 6450,
+      roiThreeYears: "146%",
       stressLevelReduction: "Von 7/10 auf 4/10"
     }
   },
@@ -1066,7 +1067,7 @@ export const SmartGastroProject = {
     { name: "Stakeholder Interviews", desc: "Befragungen von Küchenchef Fotios und Serviceleiterin Alexandra zur Erhebung der schmerzhaften Alltagsprozesse." },
     { name: "Ishikawa Analyse", desc: "Strukturierte Analyse der Hauptfehlerquellen für Überproduktion (Mensch, Methode, Maschine, Material, Umwelt)." },
     { name: "MoSCoW Priorisierung", desc: "Klassifikation funktionaler Anforderungen (z.B. Must-Have: Täglicher automatischer POS Import, 7-Tage Forecast, Override Funktion)." },
-    { name: "BPMN & Prozessfluss", desc: "Modellierung des täglichen Arbeitsablaufs ab 06:00 Uhr ETL-Prozess bis 22:30 Uhr Tagesabschluss." },
+    { name: "BPMN & Prozessfluss", desc: "Modellierung des täglichen Arbeitsablaufs ab 05:00 Uhr Datenabruf bis zum Tagesabschluss." },
     { name: "Total Cost of Ownership", desc: "Umfassende betriebswirtschaftliche Kalkulation von SaaS-Gebühren, Schulungen und Onboarding-Beratung." }
   ],
   forecastData: [

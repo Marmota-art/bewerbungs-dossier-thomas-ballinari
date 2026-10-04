@@ -11,6 +11,8 @@ import {
   Coins,
   Cpu,
   Download,
+  ChevronDown,
+  KeyRound,
   ExternalLink,
   FileText,
   Filter,
@@ -69,6 +71,12 @@ import { ChatMessageContent } from "./components/ChatMessageContent";
 import thomasPhoto from "./thomas.png";
 import ipsoUmbrellaPhoto from "./assets/ipso-smart-regenschirm.jpg";
 
+const PROJECT_FILES = [
+  { id: "praxisprojekt", title: "Praxisprojekt V3 (PDF, 29 Seiten)", meta: "Dokumentation, Abgabe 30. September 2026", action: "Öffnen" },
+  { id: "praesentation", title: "Präsentation V6.0 Dunkel (PowerPoint)", meta: "Managementpräsentation, 11 Folien plus Anhang", action: "Herunterladen" },
+  { id: "datenschutz", title: "Datenschutzkonzept V1.3 (Word)", meta: "Stand 22. September 2026, nach DSG", action: "Herunterladen" },
+];
+
 export default function App() {
   // Tab states: 'home' | 'about' | 'resume' | 'testimonials' | 'certificates' | 'skills' | 'projects' | 'chatbot' | 'contact' | 'monads'
   const [activeTab, setActiveTab] = useState<string>("home");
@@ -89,9 +97,20 @@ export default function App() {
   const [simFeedbackLog, setSimFeedbackLog] = useState<string[]>([]);
   const [simData, setSimData] = useState<any[]>(SmartGastroProject.forecastData);
   const [activeMonadsStep, setActiveMonadsStep] = useState<number>(0);
+  // Projektdateien (Rolldown) und Demo-Zugangscode (nur mit Zugangscode der App abrufbar)
+  const [projectFilesOpen, setProjectFilesOpen] = useState<boolean>(false);
+  const [demoAccessCode, setDemoAccessCode] = useState<string | null | undefined>(undefined);
 
   // Project selection state
   const [selectedProject, setSelectedProject] = useState<string>("smartgastro"); // 'smartgastro' | 'smartumbrella'
+
+  useEffect(() => {
+    if (selectedProject !== "smartgastro" || demoAccessCode !== undefined) return;
+    fetch("/api/projekt/demo-zugang", { credentials: "same-origin" })
+      .then((res) => (res.ok ? res.json() : { code: null }))
+      .then((data) => setDemoAccessCode(typeof data?.code === "string" ? data.code : null))
+      .catch(() => setDemoAccessCode(null));
+  }, [selectedProject, demoAccessCode]);
 
   // IPSO Smart-Regenschirm simulator states
   const [umbrellaConnected, setUmbrellaConnected] = useState<boolean>(true);
@@ -1428,8 +1447,72 @@ export default function App() {
                 </div>
                 <div className="text-left font-mono">
                   <p className="text-[10px] text-slate-500">ABGABETERMIN EIDG. FA:</p>
-                  <p className="text-xs text-slate-300 font-sans mt-0.5">22. August 2026 (Staatliche Prüfung)</p>
+                  <p className="text-xs text-slate-300 font-sans mt-0.5">30. September 2026 (Praxisprojekt V3)</p>
                 </div>
+              </div>
+            </div>
+
+            {/* Demo-Zugangscode und Projektdateien */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="p-5 rounded-2xl bg-slate-900/60 border border-teal-500/30 space-y-3">
+                <div className="flex items-center gap-2 text-teal-300 font-bold text-sm">
+                  <KeyRound className="w-4 h-4" />
+                  <span>Zugang zur Demo (angenommene Zahlen)</span>
+                </div>
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  Die Online-Demo arbeitet mit angenommenen Zahlen an einem fiktiven Beispieltag, nicht mit echten Betriebsdaten. Bitte behandeln Sie den Code vertraulich und geben Sie ihn nicht weiter.
+                </p>
+                <div className="flex flex-wrap items-center gap-3">
+                  <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">Zugangscode:</span>
+                  <code className="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-teal-300 font-mono text-sm select-all">
+                    {demoAccessCode ? demoAccessCode : demoAccessCode === undefined ? "wird geladen …" : "auf Anfrage"}
+                  </code>
+                </div>
+                <a
+                  href={SmartGastroProject.demo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs transition-all"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span>Demo öffnen</span>
+                </a>
+              </div>
+
+              <div className="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden">
+                <button
+                  type="button"
+                  onClick={() => setProjectFilesOpen((v) => !v)}
+                  aria-expanded={projectFilesOpen}
+                  className="w-full flex items-center justify-between gap-3 p-5 text-left hover:bg-slate-900 transition-colors"
+                >
+                  <span className="flex items-center gap-2 text-teal-300 font-bold text-sm">
+                    <FileText className="w-4 h-4" />
+                    <span>Projektdateien ({PROJECT_FILES.length})</span>
+                  </span>
+                  <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform ${projectFilesOpen ? "rotate-180" : ""}`} />
+                </button>
+                {projectFilesOpen && (
+                  <ul className="border-t border-slate-800 divide-y divide-slate-800">
+                    {PROJECT_FILES.map((f) => (
+                      <li key={f.id} className="p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+                        <div className="space-y-0.5">
+                          <p className="text-sm font-semibold text-white">{f.title}</p>
+                          <p className="text-[11px] text-slate-500">{f.meta}</p>
+                        </div>
+                        <a
+                          href={`/api/projekt/dateien/${f.id}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center justify-center gap-2 shrink-0 px-3.5 py-2 rounded-lg bg-slate-950 border border-teal-500/40 text-teal-300 hover:text-teal-200 hover:border-teal-400 font-bold text-xs transition-all"
+                        >
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          <span>{f.action}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
 
@@ -1478,25 +1561,29 @@ export default function App() {
                   <h4 className="text-xs text-slate-400 font-bold uppercase tracking-wider font-mono border-b border-slate-800 pb-2">Status Quo (Ausgangslage)</h4>
                   <div className="space-y-3 font-mono text-xs">
                     <div className="flex justify-between">
-                      <span className="text-slate-500">Jahresumsatz (gemessen):</span>
+                      <span className="text-slate-500">Jahresumsatz:</span>
                       <span className="text-slate-200">CHF 800'000</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-500">Wareneinsatz (33%):</span>
                       <span className="text-slate-200">CHF 264'000</span>
                     </div>
-                    <div className="font-semibold text-red-400 mt-2">Versteckte Verluste:</div>
+                    <div className="font-semibold text-red-400 mt-2">Heutige Probleme:</div>
                     <div className="flex justify-between text-[11px] text-slate-350">
-                      <span>• Food Waste (8% COGS):</span>
-                      <span>CHF 18'200 / J.</span>
+                      <span>• Food Waste:</span>
+                      <span>CHF 1'000–2'000 / Mt.</span>
                     </div>
                     <div className="flex justify-between text-[11px] text-slate-350">
-                      <span>• Out-of-Stock (-1% Ums.):</span>
-                      <span>CHF 8'000 / J.</span>
+                      <span>• Planung:</span>
+                      <span>45 Min. / Tag</span>
                     </div>
                     <div className="flex justify-between text-[11px] text-slate-350">
-                      <span>• Stress & Mehraufwand:</span>
-                      <span>CHF 11'640 / J.</span>
+                      <span>• Out-of-Stock:</span>
+                      <span>12 / Monat</span>
+                    </div>
+                    <div className="flex justify-between text-[11px] text-slate-350">
+                      <span>• Stresslevel im Team:</span>
+                      <span>7 von 10</span>
                     </div>
                   </div>
                 </div>
@@ -1510,7 +1597,7 @@ export default function App() {
                       <span>+ CHF 9'000</span>
                     </div>
                     <div className="flex justify-between text-emerald-400">
-                      <span>Weniger Out-of-Stock (+0.5%):</span>
+                      <span>Menü-Optimierung (Annahme):</span>
                       <span>+ CHF 3'750</span>
                     </div>
                     <div className="flex justify-between text-emerald-400">
@@ -1522,7 +1609,7 @@ export default function App() {
                       <span>+ CHF 3'125</span>
                     </div>
                     <div className="flex justify-between border-t border-slate-800 pt-2 font-bold text-white">
-                      <span>Gesamter Jahresnutzen:</span>
+                      <span>Jahresnutzen (Annahmen):</span>
                       <span>CHF 18'750</span>
                     </div>
                   </div>
@@ -1533,8 +1620,8 @@ export default function App() {
                   <h4 className="text-xs text-slate-400 font-bold uppercase tracking-wider font-mono border-b border-slate-800 pb-2">Investitions-Fakten</h4>
                   <div className="space-y-2.5 text-xs font-mono">
                     <div className="flex justify-between">
-                      <span className="text-slate-500">Einmal-Aufbau / Setup:</span>
-                      <span className="text-slate-200">CHF 7'500</span>
+                      <span className="text-slate-500">Einrichtung + Onboarding:</span>
+                      <span className="text-slate-200">CHF 7'500 (6'000 + 1'500)</span>
                     </div>
                     <div className="flex justify-between">
                       <span className="text-slate-500">SaaS Lizenz (Lizenz/Mt):</span>
@@ -1545,7 +1632,7 @@ export default function App() {
                       <span className="text-slate-205 text-white font-bold">CHF 12'300</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-400 font-semibold">ROI (Jahr 1):</span>
+                      <span className="text-slate-400 font-semibold">Netto-ROI (Jahr 1):</span>
                       <span className="text-teal-400 font-extrabold">{SmartGastroProject.businessCase.metrics.roiYear1}</span>
                     </div>
                     <div className="flex justify-between">
@@ -2275,7 +2362,7 @@ export default function App() {
                           <span className="text-teal-400">&gt; WaiterOne POS Kassa API</span>
                           <span className="text-slate-500">Transaktions-Daten</span>
                         </div>
-                        <div className="text-center py-1 text-teal-500/60 font-bold">⬇ ETL-Skript (Täglich 06:00)</div>
+                        <div className="text-center py-1 text-teal-500/60 font-bold">⬇ ETL-Skript (Täglich 05:00)</div>
                         <div className="flex justify-between items-center bg-slate-950 p-2.5 rounded-lg border border-slate-800">
                           <span className="text-blue-400">&gt; MeteoSchweiz API + Events</span>
                           <span className="text-slate-500">Wetter/Kontext Vektor</span>

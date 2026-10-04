@@ -77,11 +77,11 @@ Priorisierung
 Kassadaten, Wetter- und Eventdaten 
 – Lieferobjekte: Systemarchitektur, BPMN-Prozessablauf, Dashboard & UI-Konzept, User 
 Stories, Release-Plan 
-– Business Case: ROI ~52% im 1. Jahr, Break-Even nach 7 Monaten, Einsparpotenzial CHF 
+– Business Case: ROI ~52% im 1. Jahr, Break-Even nach 6.5 Monaten, Einsparpotenzial CHF 
 18'750/Jahr/Restaurant 
-– Technische Machbarkeit bestätigt: POS-Prototyp V3.3 + REST API (WaiterOne) – 
+– Technische Machbarkeit bestätigt: POS-Prototyp V3.5 + REST API (WaiterOne) – 
 Expertengespräch mit WaiterOne-Founder 
-– Pilotempfehlung: 5–10 Betriebe ab Q3 2026 (Abgabe: 22. August 2026) 
+– Pilotbetrieb im Restaurant Löwenburg seit Mai 2026, kein Rollout auf weitere Betriebe (Abgabe: 30. September 2026) 
 KI-Professional (Business) – Zertifikat 
 HSO Wirtschafts- und Informatikschule, Bern   |   Bern / Oerlikon   |   2025 
 – Grundlagen der Künstlichen Intelligenz 

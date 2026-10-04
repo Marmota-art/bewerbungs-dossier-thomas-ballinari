@@ -10,6 +10,7 @@
   directory = "netlify/functions"
   node_bundler = "esbuild"
   external_node_modules = ["express"]
+  included_files = ["data/projekt-dateien/**"]
 
 [[redirects]]
   from = "/api/*"
