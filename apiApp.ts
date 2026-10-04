@@ -15,6 +15,7 @@ import { getChatPersonalFactsKnowledge } from "./src/chatPersonalFacts";
 import { getChatRagDossierKnowledge } from "./src/chatRagDossier";
 import { getChatAmagooKnowledge } from "./src/chatAmagooKnowledge";
 import { getChatPraxisprojektV3Knowledge } from "./src/chatPraxisprojektV3";
+import { getChatErstloesungenKnowledge } from "./src/chatErstloesungenKnowledge";
 import { getChatPersonalKnowledgeBase } from "./src/chatPersonalKnowledge";
 import { getChatKiSpecialistKnowledge } from "./src/chatKiSpecialistKnowledge";
 import {
@@ -102,7 +103,7 @@ PERSÖNLICHE DATEN & PROFIL:
 
 ${getChatPersonalFactsKnowledge()}
 ${getChatRagDossierKnowledge() ? `\n${getChatRagDossierKnowledge()}\n` : ""}
-${getChatAmagooKnowledge() ? `\n${getChatAmagooKnowledge()}\n` : ""}${getChatPraxisprojektV3Knowledge() ? `\n${getChatPraxisprojektV3Knowledge()}\n` : ""}
+${getChatAmagooKnowledge() ? `\n${getChatAmagooKnowledge()}\n` : ""}${getChatPraxisprojektV3Knowledge() ? `\n${getChatPraxisprojektV3Knowledge()}\n` : ""}${getChatErstloesungenKnowledge() ? `\n${getChatErstloesungenKnowledge()}\n` : ""}
 ${getChatPersonalKnowledgeBase() ? `\n${getChatPersonalKnowledgeBase()}\n` : ""}
 ${getChatKiSpecialistKnowledge() ? `\n${getChatKiSpecialistKnowledge()}\n` : ""}
 ${getChatRecipesKnowledge() ? `\n${getChatRecipesKnowledge()}\n` : ""}
