@@ -1,3 +1,4 @@
+import ErstloesungenPage from "./ErstloesungenPage";
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import {
   Award,
@@ -71,7 +72,7 @@ import thomasPhoto from "./thomas.png";
 import ipsoUmbrellaPhoto from "./assets/ipso-smart-regenschirm.jpg";
 
 export default function App() {
-  // Tab states: 'home' | 'about' | 'resume' | 'testimonials' | 'certificates' | 'skills' | 'projects' | 'chatbot' | 'contact' | 'monads'
+  // Tab states: 'home' | 'about' | 'resume' | 'testimonials' | 'certificates' | 'skills' | 'projects' | 'erstloesungen' | 'chatbot' | 'contact' | 'monads'
   const [activeTab, setActiveTab] = useState<string>("home");
 
   // Sub-filter states
@@ -507,6 +508,7 @@ export default function App() {
               { id: "testimonials", label: "Arbeitszeugnisse" },
               { id: "certificates", label: "Zertifikate" },
               { id: "projects", label: "Projekte" },
+              { id: "erstloesungen", label: "Erstlösungen" },
               { id: "skills", label: "Skills" },
               { id: "chatbot", label: "Frag Thomas", icon: Sparkles },
               { id: "contact", label: "Kontakt" }
@@ -547,6 +549,7 @@ export default function App() {
           { id: "testimonials", label: "Zeugnisse" },
           { id: "certificates", label: "Zertifikate" },
           { id: "projects", label: "Projekte" },
+              { id: "erstloesungen", label: "Erstlösungen" },
           { id: "skills", label: "Skills" },
           { id: "chatbot", label: "Frag Thomas" },
           { id: "contact", label: "Kontakt" }
@@ -2110,6 +2113,9 @@ export default function App() {
             )}
           </section>
         )}
+
+        {/* ERSTLÖSUNGEN AMAGOO */}
+        {activeTab === "erstloesungen" && <ErstloesungenPage onAsk={() => setActiveTab("chatbot")} />}
 
         {/* MONADS CUSTOM TAB */}
         {activeTab === "monads" && (
