@@ -339,16 +339,6 @@ app.get("/api/analytics/summary", async (req, res) => {
   return res.json(summary);
 });
 
-// Demo-Zugangscode (nur mit gültigem Zugangscode der App abrufbar)
-app.get("/api/projekt/demo-zugang", (req, res) => {
-  if (!isSiteAccessGranted(req)) {
-    return res.status(401).json({ error: "Geschützter Zugang: Bitte Zugangscode eingeben." });
-  }
-  res.setHeader("Cache-Control", "private, no-store");
-  const code = process.env.DEMO_ACCESS_CODE?.trim() || "";
-  return res.json({ code: code || null });
-});
-
 app.post("/api/chat", async (req, res) => {
   if (!isSiteAccessGranted(req)) {
     return res.status(401).json({ error: "Geschützter Zugang: Bitte Zugangscode eingeben." });

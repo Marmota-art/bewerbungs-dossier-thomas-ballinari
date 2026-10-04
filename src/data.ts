@@ -999,6 +999,7 @@ export const SmartGastroProject = {
   subTitle: "KI-gestützte Nachfrageprognose im Schweizer Gastgewerbe",
   demo: {
     version: "V3.5",
+    accessCode: "Schnipo-9464-Bern",
     label: "Demo-Login SmartGastro.ai Dashboard",
     url: "https://smartgastro-demoforecast.netlify.app/",
     description: "Interaktiver Prototyp mit POS-Anbindung (WaiterOne) und Forecast-Dashboard. Der Zugang erfolgt über einen Demo-Login, die Zugangsdaten erhalten Sie auf Anfrage.",

@@ -90,19 +90,10 @@ export default function App() {
   const [simFeedbackLog, setSimFeedbackLog] = useState<string[]>([]);
   const [simData, setSimData] = useState<any[]>(SmartGastroProject.forecastData);
   const [activeMonadsStep, setActiveMonadsStep] = useState<number>(0);
-  // Demo-Zugangscode (nur mit Zugangscode der App abrufbar)
-  const [demoAccessCode, setDemoAccessCode] = useState<string | null | undefined>(undefined);
 
   // Project selection state
   const [selectedProject, setSelectedProject] = useState<string>("smartgastro"); // 'smartgastro' | 'smartumbrella'
 
-  useEffect(() => {
-    if (selectedProject !== "smartgastro" || demoAccessCode !== undefined) return;
-    fetch("/api/projekt/demo-zugang", { credentials: "same-origin" })
-      .then((res) => (res.ok ? res.json() : { code: null }))
-      .then((data) => setDemoAccessCode(typeof data?.code === "string" ? data.code : null))
-      .catch(() => setDemoAccessCode(null));
-  }, [selectedProject, demoAccessCode]);
 
   // IPSO Smart-Regenschirm simulator states
   const [umbrellaConnected, setUmbrellaConnected] = useState<boolean>(true);
@@ -1431,7 +1422,7 @@ export default function App() {
                     <KeyRound className="w-3.5 h-3.5" /> Zugangscode Demo-Login:
                   </span>
                   <code className="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-teal-300 font-mono text-sm select-all">
-                    {demoAccessCode ? demoAccessCode : demoAccessCode === undefined ? "wird geladen …" : "auf Anfrage"}
+                    {SmartGastroProject.demo.accessCode}
                   </code>
                   <span className="text-[11px] text-slate-500">Demo mit angenommenen Zahlen. Bitte vertraulich behandeln.</span>
                 </div>
