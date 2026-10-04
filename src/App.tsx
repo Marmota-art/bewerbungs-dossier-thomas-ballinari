@@ -11,7 +11,6 @@ import {
   Coins,
   Cpu,
   Download,
-  ChevronDown,
   KeyRound,
   ExternalLink,
   FileText,
@@ -71,12 +70,6 @@ import { ChatMessageContent } from "./components/ChatMessageContent";
 import thomasPhoto from "./thomas.png";
 import ipsoUmbrellaPhoto from "./assets/ipso-smart-regenschirm.jpg";
 
-const PROJECT_FILES = [
-  { id: "praxisprojekt", title: "Praxisprojekt V3 (PDF, 29 Seiten)", meta: "Dokumentation, Abgabe 30. September 2026", action: "Öffnen" },
-  { id: "praesentation", title: "Präsentation V6.0 Dunkel (PowerPoint)", meta: "Managementpräsentation, 11 Folien plus Anhang", action: "Herunterladen" },
-  { id: "datenschutz", title: "Datenschutzkonzept V1.3 (Word)", meta: "Stand 22. September 2026, nach DSG", action: "Herunterladen" },
-];
-
 export default function App() {
   // Tab states: 'home' | 'about' | 'resume' | 'testimonials' | 'certificates' | 'skills' | 'projects' | 'chatbot' | 'contact' | 'monads'
   const [activeTab, setActiveTab] = useState<string>("home");
@@ -97,8 +90,7 @@ export default function App() {
   const [simFeedbackLog, setSimFeedbackLog] = useState<string[]>([]);
   const [simData, setSimData] = useState<any[]>(SmartGastroProject.forecastData);
   const [activeMonadsStep, setActiveMonadsStep] = useState<number>(0);
-  // Projektdateien (Rolldown) und Demo-Zugangscode (nur mit Zugangscode der App abrufbar)
-  const [projectFilesOpen, setProjectFilesOpen] = useState<boolean>(false);
+  // Demo-Zugangscode (nur mit Zugangscode der App abrufbar)
   const [demoAccessCode, setDemoAccessCode] = useState<string | null | undefined>(undefined);
 
   // Project selection state
@@ -1434,6 +1426,15 @@ export default function App() {
                   <ExternalLink className="w-4 h-4" />
                   <span>{SmartGastroProject.demo.label} öffnen</span>
                 </a>
+                <div className="mt-3 flex flex-wrap items-center gap-3">
+                  <span className="inline-flex items-center gap-1.5 text-[10px] font-mono text-slate-500 uppercase tracking-wider">
+                    <KeyRound className="w-3.5 h-3.5" /> Zugangscode Demo-Login:
+                  </span>
+                  <code className="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-teal-300 font-mono text-sm select-all">
+                    {demoAccessCode ? demoAccessCode : demoAccessCode === undefined ? "wird geladen …" : "auf Anfrage"}
+                  </code>
+                  <span className="text-[11px] text-slate-500">Demo mit angenommenen Zahlen. Bitte vertraulich behandeln.</span>
+                </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-slate-800">
@@ -1452,68 +1453,24 @@ export default function App() {
               </div>
             </div>
 
-            {/* Demo-Zugangscode und Projektdateien */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              <div className="p-5 rounded-2xl bg-slate-900/60 border border-teal-500/30 space-y-3">
-                <div className="flex items-center gap-2 text-teal-300 font-bold text-sm">
-                  <KeyRound className="w-4 h-4" />
-                  <span>Zugang zur Demo (angenommene Zahlen)</span>
-                </div>
-                <p className="text-xs text-slate-400 leading-relaxed">
-                  Die Online-Demo arbeitet mit angenommenen Zahlen an einem fiktiven Beispieltag, nicht mit echten Betriebsdaten. Bitte behandeln Sie den Code vertraulich und geben Sie ihn nicht weiter.
-                </p>
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="text-[10px] font-mono text-slate-500 uppercase tracking-wider">Zugangscode:</span>
-                  <code className="px-3 py-1.5 rounded-lg bg-slate-950 border border-slate-800 text-teal-300 font-mono text-sm select-all">
-                    {demoAccessCode ? demoAccessCode : demoAccessCode === undefined ? "wird geladen …" : "auf Anfrage"}
-                  </code>
-                </div>
-                <a
-                  href={SmartGastroProject.demo.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-teal-500 hover:bg-teal-400 text-slate-950 font-bold text-xs transition-all"
-                >
-                  <ExternalLink className="w-3.5 h-3.5" />
-                  <span>Demo öffnen</span>
-                </a>
+            {/* Governance und Datenschutz */}
+            <div className="p-6 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-4">
+              <div className="flex items-center gap-2 text-teal-300 font-bold text-sm">
+                <Lock className="w-4 h-4" />
+                <span>Eigenes Governance- und Datenschutzkonzept für dieses Projekt</span>
               </div>
-
-              <div className="rounded-2xl bg-slate-900/60 border border-slate-800 overflow-hidden">
-                <button
-                  type="button"
-                  onClick={() => setProjectFilesOpen((v) => !v)}
-                  aria-expanded={projectFilesOpen}
-                  className="w-full flex items-center justify-between gap-3 p-5 text-left hover:bg-slate-900 transition-colors"
-                >
-                  <span className="flex items-center gap-2 text-teal-300 font-bold text-sm">
-                    <FileText className="w-4 h-4" />
-                    <span>Projektdateien ({PROJECT_FILES.length})</span>
-                  </span>
-                  <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform ${projectFilesOpen ? "rotate-180" : ""}`} />
-                </button>
-                {projectFilesOpen && (
-                  <ul className="border-t border-slate-800 divide-y divide-slate-800">
-                    {PROJECT_FILES.map((f) => (
-                      <li key={f.id} className="p-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-                        <div className="space-y-0.5">
-                          <p className="text-sm font-semibold text-white">{f.title}</p>
-                          <p className="text-[11px] text-slate-500">{f.meta}</p>
-                        </div>
-                        <a
-                          href={`/api/projekt/dateien/${f.id}`}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center gap-2 shrink-0 px-3.5 py-2 rounded-lg bg-slate-950 border border-teal-500/40 text-teal-300 hover:text-teal-200 hover:border-teal-400 font-bold text-xs transition-all"
-                        >
-                          <ExternalLink className="w-3.5 h-3.5" />
-                          <span>{f.action}</span>
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
+              <p className="text-xs text-slate-400 leading-relaxed">
+                Für SmartGastro.ai habe ich ein eigenes Governance- und Datenschutzkonzept nach dem Schweizer Datenschutzgesetz (DSG) erstellt. Es regelt, wer was darf, welche Daten wohin gehen und wie die KI kontrolliert bleibt.
+              </p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-xs text-slate-300 leading-relaxed list-disc pl-5">
+                <li>Rollen klar getrennt: Der Betrieb ist verantwortlich, ich arbeite als Auftragsbearbeiter nur auf Weisung.</li>
+                <li>Mensch entscheidet: KI-Vorschläge werden erst nach ausdrücklicher Freigabe übernommen. Jede Prognose lässt sich mit «Warum diese Zahl?» erklären.</li>
+                <li>Keine Personendaten in der KI: Es gehen nur Ortschaften, Zeiträume, Artikel, Mengen und Preise an das Sprachmodell.</li>
+                <li>Datenhaltung in der Schweiz (Rechenzentrum Zürich), Zugriff nach dem Prinzip der geringsten Berechtigung.</li>
+                <li>Gästedaten aus Reservationen werden nach 30 Tagen automatisch gelöscht, das Änderungsprotokoll nach 12 Monaten.</li>
+                <li>Datenschutz-Folgenabschätzung geprüft (Ergebnis: nicht erforderlich), dazu ein Massnahmenplan mit Terminen und Verantwortlichen.</li>
+                <li>Die Demo arbeitet nur mit angenommenen Zahlen, ohne Betriebs- oder Personendaten.</li>
+              </ul>
             </div>
 
             {/* Problem vs. Solution comparative card block */}
